@@ -1,10 +1,10 @@
 Lets look at a Java Program
 ---------------------------
 
-A time honored tradition in Computer Science is to write a program
+A time-honored tradition in Computer Science is to write a program
 called “hello world.” The “hello world” program is simple and easy.
 There are no logic errors to make, so getting it to run relies only on
-understanding the syntax. To be clear lets look a a “complicated”
+understanding the syntax. To be clear, lets look at a “complicated”
 version of hello world for Python:
 
 ::
@@ -39,7 +39,7 @@ Now lets look at the same program written in Java:
     }
 
 What we see is that at the core there are a few similarities, such as a
-main and the string “Hello World” However there is a lot more stuff
+main and the string “Hello World” However, there is a lot more stuff
 around the edges that make it harder to see the core of the program. Do
 not worry! An important skill for a computer scientist is to learn what
 to ignore and what to look at carefully. You will soon find that there
@@ -97,10 +97,10 @@ the Python interpreter interprets your Python. However since byte code
 is much closer to the native language of the computer it can run faster.
 
 When the compiler does the translation it can find many different kinds
-of errors. For example if you make a typo the compiler will find the
+of errors. For example, if you make a typo, the compiler will find the
 typo and point it out to you before you ever run the program. We will
 look at some examples of compiler errors shortly. Chances are you will
-create some on your own very soon too.
+create some on your own very soon, too.
 
 Now that we have run our hello world program, lets go back and look at
 it carefully to see what we can learn about the Java language. This
@@ -117,13 +117,13 @@ Lets take the hello world example a line at a time to see how these
 rules are applied. On line 1 we see that we are declaring a class called
 Hello. As rule 1 says all Java code resides inside a class. Unlike
 Python where a program can simply be a bunch of statements in a file,
-Java programs must be inside a class. So, we define a class, ``Hello``
-is not a very useful class it has no instance variables, and only one
-method. You will also notice the curly brace ``{`` In Java blocks of
+Java programs must be inside a class. So, we define a class ``Hello``,
+which is not a very useful class because it has no instance variables, and only one
+method. You will also notice the curly brace ``{``. In Java, blocks of
 code are identified by pairs of curly braces. The block starts with a
 ``{`` and ends with a ``}``. You will notice that I indented my code
 that followed the left brace, but in Java this is only done by
-convention it is not enforced.
+convention, it is not enforced.
 
 On the next line we start our method definition. The name of this method
 is:
@@ -158,9 +158,9 @@ The next word, **static** tells Java that this is a method that is part
 of the class, but is not a method for any one instance of the class. The
 kind of methods we typically wrote in Python required an instance in
 order for the method to be called. With a static method, the object to
-the left of the . is a class, not an instance of the class. For example
+the left of the ``.`` is a class, not an instance of the class. For example,
 the way that we would call the ``main`` method directly is:
-``Hello.main(parameter1)``. For now you can think of static methods the
+``Hello.main(parameter1)``. For now, you can think of static methods the
 same way you think of methods in Python modules that don’t require an
 instance, for example the math module contains many methods: sin, cos,
 etc. You probably evaluated these methods using the names
@@ -168,7 +168,7 @@ etc. You probably evaluated these methods using the names
 
 The next word, ``void`` tells the Java compiler that the method ``main``
 will not return a value. This is roughly analogous to omitting the
-return statement in a Python method. In other words the method will run
+return statement in a Python method. In other words, the method will run
 to completion and exit but will not return a value that you can use in
 an assignment statement. As we look at other examples we will see that
 every Java function must tell the compiler what kind of an object it
@@ -180,13 +180,13 @@ Next we have the proper name for the method: ``main``. The rules for
 names in Java are similar to the rules in Python. Names can include
 letters, numbers, and the ``_``. Names in Java must start with a letter.
 
-Finally we have the parameter list for the method. In this example we
-have one parameter. The name of the parameter is ``args`` however,
-because everything in Java must have a type we also have to tell the
+Finally, we have the parameter list for the method. In this example we
+have one parameter. The name of the parameter is ``args``, however,
+because everything in Java must have a type, we also have to tell the
 compiler that the value of ``args`` is an array of strings. For the
-moment You can just think of an array as being the same thing as a list
-in Python. The practical benefit of declaring that the method main must
-accept one parameter and the parameter must be a an array of strings is
+moment you can just think of an array as being the same thing as a list
+in Python. The practical benefit of declaring that the method ``main`` must
+accept one parameter and the parameter must be an array of strings is
 that if you call ``main`` somewhere else in your code and and pass it an
 array of integers or even a single string, the compiler will flag it as
 an error.
@@ -207,7 +207,7 @@ method in Java.
 Now there is one more character on this line that is significant and
 that is the ``;`` at the end. In Java the ``;`` signifies the end of a
 statement. Unlike Python where statements are almost always only one
-line long java statements can spread across many lines. The compiler
+line long, Java statements can spread across many lines. The compiler
 knows it has reached the end of a statement when it encounters a ``;``.
 This is a very important difference to remember. In Java the following
 statements are all legal and equivalent. I would not encourage you to
