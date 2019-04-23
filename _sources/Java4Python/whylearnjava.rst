@@ -41,13 +41,13 @@ Why Learn Java? Why not C or C++?
 
     -  Java is more popular
 
-    -  Java is industrial strength used for large systems by large
+    -  Java is industrial strength and used for large systems by large
        groups of people
 
-    -  If you know Java learning C++ is easy.
+    -  If you know Java, learning C++ is easy.
 
-Java is an enormous language. There are over 3700 different classes
+Java is an enormous language. There are over 3,700 different classes
 included in the Java 6 Standard Edition. We could not begin to scratch
-the surface of these classes even if we devoted all 2700 minutes of
-class time that we have in a semester. However Java is very powerful and
+the surface of these classes even if we devoted all 2,700 minutes of
+class time that we have in a semester. However, Java is very powerful and
 we will write some very powerful programs this semester.
