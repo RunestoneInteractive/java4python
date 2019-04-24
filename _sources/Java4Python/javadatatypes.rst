@@ -6,7 +6,7 @@ Numeric
 
 One of the great things about Python is that all of the basic data types
 are objects. Integers are objects, floating point numbers are objects,
-lists are objects, everything. In Java that is not the case. In Java
+lists are objects, everything. In Java that is not the case. In Java,
 some of the most basic data types like integers and floating point
 numbers are not objects. The benefit of having these primitive data
 types be non-objects is that operations on the primitives are fast. The
@@ -24,12 +24,12 @@ non-object primitives ended up with Objectified versions.
            boolean  Boolean
 ================== ========
 
-In older versions of Java it was the programmers responsibility to
+In older versions of Java, it was the programmers responsibility to
 convert back and forth from a primitive to an object whenever necessary.
-This processing of converting a primitive to an object was called
+This process of converting a primitive to an object was called
 “boxing.” The reverse process is called “unboxing.” In Java 5, the
 compiler became smart enough to know when to convert back and forth and
-is called “autoboxing.” In this book we will typically use the Object
+is called “autoboxing.” In this book, we will typically use the Object
 version of all the numeric data types and let the compiler do its thing.
 
 Lets go back in time and look at another of our very early Python
@@ -46,7 +46,7 @@ temperature to Celsius.
 
     main()
 
-Next, lets look at the Java Equivalent.
+Next, lets look at the Java equivalent.
 
 .. activecode:: convert1
     :language: java
@@ -85,32 +85,32 @@ at them in the following order:
 Import
 ~~~~~~
 
-In Java you can use any class that is available without having to import
-the class subject to two very important conditions:
+In Java, you can use any class that is available without having to import
+the class, subject to two very important conditions:
 
 1. The javac and java must know that the class exists.
 
 2. You must use the full name of the class
 
-You first question might be how do the ``java`` and ``javac`` commands
+Your first question might be how do the ``java`` and ``javac`` commands
 know that certain classes exist. The answer is the following:
 
 1. Java knows about all the classes that are defined in .java and .class
    files in your current working directory.
 
-2. Java knows about all the classes that are shipped with java.
+2. Java knows about all the classes that are shipped with Java.
 
 3. Java knows about all the classes that are included in your
    ``CLASSPATH`` environment variable. Your ``CLASSPATH`` environment
    variable can name two kinds of structures.
 
-   1. A jar file that contains java classes
+   1. A jar file that contains Java classes
 
-   2. Another unix directory that contains java class files
+   2. Another unix directory that contains Java class files
 
 You can think of the import statement in Java as working a little bit
 like the ``from module import xxx`` statement in Python. However, behind
-the scenes the two statements actually do very different things. The
+the scenes, the two statements actually do very different things. The
 first important difference to understand is that the class naming system
 in Java is very hierarchical. The *full* name of the Scanner class is
 really ``java.util.Scanner``. You can think of this name as having two
@@ -125,8 +125,8 @@ compiler that we are going to use a shortened version of the class’s
 name. In this example we are going to use the class
 ``java.util.Scanner`` but we can refer to it as just ``Scanner``. We
 could use the ``java.util.Scanner`` class without any problem and
-without any import statement provided that we always referred to it by
-its full name. As an Experiment you may want to try this yourself.
+without any import statement, provided that we always referred to it by
+its full name. As an experiment, you may want to try this yourself.
 Remove the import statement and change the string Scanner to
 ``java.util.Scanner`` in the rest of the code. The program should still
 compile and run.
@@ -151,7 +151,7 @@ reference a Scanner object. This means that if we were to try an
 assignment like ``fahr = "xyz"`` the compiler would generate an error
 because ``"xyz"`` is a string and ``fahr`` is supposed to be a double.
 
-For Python programmers the following error is likely to be even more
+For Python programmers, the following error is likely to be even more
 common. Suppose we forgot the declaration for ``cel`` and instead left
 line 6 blank. What would happen when we type ``javac TempConv.java`` on
 the command line?
@@ -171,7 +171,7 @@ the command line?
     2 errors
 
 When you see the first kind of error, where the symbol is on the left
-side of the equals sign it usually means that you have not declared the
+side of the equals sign, it usually means that you have not declared the
 variable. If you have ever tried to use a Python variable that you have
 not initialized the second error message will be familiar to you. The
 difference here is that we see the message before we ever try to test
@@ -181,33 +181,33 @@ our program. More common error messages are discussed in the section
 The general rule in Java is that you must decide what kind of an object
 your variable is going to reference and then you must declare that
 variable before you use it. There is much more to say about the static
-typing of Java but for now this is enough.
+typing of Java, but for now this is enough.
 
 Input / Output / Scanner
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the previous section you saw that we created a ``Scanner`` object. In
-Java Scanner objects make getting input from the user, a file, or even
+Java, Scanner objects make getting input from the user, a file, or even
 over the network relatively easy. In our case we simply want to ask the
 user to type in a number at the command line, so in line 9 we construct
 a Scanner by calling the constructor and passing it the ``System.in``
 object. Notice that this Scanner object is assigned to the name ``in``,
 which we declared to be a ``Scanner`` on line 7. ``System.in`` is
-similar to ``System.out`` except of course it is used for input. If you
+similar to ``System.out`` except, of course, it is used for input. If you
 are wondering why we must create a Scanner to read data from
 ``System.in`` when we can write data directly to ``System.out`` using
 ``println``, you are not alone. We will talk about the reasons why this
-is so later when we talk in depth about Java streams. You will also see
+is so later when we talk in-depth about Java streams. You will also see
 in other examples that we can create a Scanner by passing the Scanner a
 File object. You can think of a scanner as a kind of “adapter” that
 makes low level objects easier to use.
 
 On line 11 we use the Scanner object to read in a number. Here again we
 see the implications of Java being a strongly typed language. Notice
-that we must call the method ``nextDouble``. Because the variable
+that we must call the method ``nextDouble`` because the variable
 ``fahr`` was declared as a double. So, we must have a function that is
 guaranteed to return each kind of object we might want to read. In this
-case we need to read a Double so we call the function nextDouble. The
+case, we need to read a Double so we call the function ``nextDouble``. The
 compiler matches up these assignment statments and if you try to assign
 the results of a method call to the wrong kind of variable it will be
 flagged as an error.
@@ -229,9 +229,9 @@ to find them in the next chapter.
               String           next()             returns the next thing to read as a String
 ==================== ================ ======================================================
 
-Of course Java is more well known for producing applications that have
+Of course, Java is more well-known for producing applications that have
 more of a user interface to them than reading and writing from the
-command line. Lets look at a version of our temperature control
+command line. Lets look at a version of our temperature conversion
 application that uses dialog boxes for input and output.
 
 .. activecode:: swing
@@ -268,14 +268,14 @@ The next dialog box is ``JOptionPane.showMessageDialog``. Notice that
 the first parameter is ``null`` In Java ``null`` serves the same purpose
 as ``None`` in Python. The first parameter is null because we do not
 have a ‘main window’ for this little application. When we look at
-creating full blown java programs with user interfaces, we will learn
+creating full-blown Java programs with user interfaces, we will learn
 more about this parameter.
 
 The second parameter is ``"The temperature in C is, " + cel``. Now you
 may be thinking to yourself that this must surely be a violation of the
-strong typing I have been describing to you. After all you should not be
+strong typing I have been describing to you. After all, you should not be
 able to add together a string and a Double right? You are correct,
-however, all java objects have a method called ``tostring``. The
+however, all Java objects have a method called ``tostring``. The
 ``tostring`` method acts much like the Python method ``__str__()`` and
 is called automatically by the compiler whenever it makes sense to
 convert a Java object to a string.
@@ -290,7 +290,7 @@ That is not to say that you can’t index into a Java string, you can. You
 can also pull out a substring just as you can with slicing. The
 difference is that Java uses method calls where Python uses Operators.
 
-In fact this is the first example of another big difference between Java
+In fact, this is the first example of another big difference between Java
 and Python. Java does not support any operator overloading. Table 3 maps
 common Python string operations to their Java counterparts. For the
 examples shown in the table we will use a string variable called “str”
@@ -353,16 +353,16 @@ We will get output that looks like this:
 
 Lets review what is happening in this little program. In the first line
 we create a list and initialize the first 10 positions in the list to be
-0. Next we open the data file called ‘test.dat’ Third, we have a loop
+0. Next we open the data file called ‘test.dat’. Third, we have a loop
 that reads each line of the file. As we read each line we convert it to
 an integer and increment the counter at the position in the list
 indicated by the number on the line we just read. Finally we iterate
-over each element in the list printing out both the position in the list
+over each element in the list, printing out both the position in the list
 and the total value stored in that position.
 
 To write the Java version of this program we will have to introduce
 several new Java concepts. First, you will see the Java equivalent of a
-list, called an ``ArrayLlist.`` Next you will see three different kinds
+list, called an ``ArrayList.`` Next, you will see three different kinds
 of loops used in Java. Two of the loops we will use are going to be very
 familiar, the third one is different from what you are used to in Python
 but is easy when you understand the syntax:
@@ -407,7 +407,7 @@ Here is the Java code needed to write the exact same program:
             }
 
             count = new ArrayList<Integer>(10);
-            for (Integer i =0; i<10;i++) {
+            for (Integer i = 0; i < 10; i++) {
                 count.add(i,0);
             }
 
@@ -439,7 +439,7 @@ Here is the Java code needed to write the exact same program:
 Before going any further, I suggest you try to compile the above program
 and run it on some test data that you create.
 
-Now, lets look at what is happening in the Java source. As usual we
+Now, let's look at what is happening in the Java source. As usual, we
 declare the variables we are going to use at the beginning of the
 method. In this example we are declaring a Scanner variable called data,
 an integer called idx and an ``ArrayList`` called count. However, there
@@ -450,7 +450,7 @@ the ``ArrayList`` will contain Integers. The syntax we use to declare
 what kind of object the list will contain is the ``<Type>``
 syntax.
 
-Technically, you don’t *have* to declare what is going to be on an array
+Technically, you don’t *have* to declare what is going to be in an array
 list. The compiler will allow you to leave the ``<``*Type*``>`` off the
 declaration. If you don’t tell Java what kind of object is going to be
 on the list Java will give you a warning message like this:
@@ -467,12 +467,12 @@ list like this! So, if you forget you will surely see more errors later
 in your code. (Try it and see what you get)
 
 Lines 13—20 are required to open the file. Why so many lines to open a
-file in Java? The additional code mainly comes form the fact that Java
+file in Java? The additional code mainly comes from the fact that Java
 forces you to reckon with the possibility that the file you want to open
 is not going to be there. If you attempt to open a file that is not
 there you will get an error. A try/catch construct allows us to try
 things that are risky, and gracefully recover from an error if one
-occurs. The following example shows the general structure of a try catch
+occurs. The following example shows the general structure of a try/catch
 block.
 
 ::
@@ -485,14 +485,14 @@ block.
        We will catch that exception here!
     }
 
-Notice that in line 16 we are catching an ``IOException``. In fact we
+Notice that in line 16 we are catching an ``IOException``. In fact, we
 will see later that we can have multiple catch blocks to catch different
 types of exceptions. If we want to be lazy and catch any old exception
 we can catch an ``Exception`` which is the parent of all exceptions.
 
-On line 22 we create our array list and give it an initial size of 10.
-Strictly speaking it is not necessary to give the ``ArrayList`` any
-size. It will grow or shrink dynamically as needed just like a list in
+On line 22 we create our ``ArrayList`` and give it an initial size of 10.
+Strictly speaking, it is not necessary to give the ``ArrayList`` any
+size. It will grow or shrink dynamically as needed, just like a list in
 Python. On line 23 we start the first of three loops. The for loop on
 lines 23–25 serves the same purpose as the Python statement
 ``count = [0]*10``, that is it initializes the first 10 positions in the
@@ -500,15 +500,15 @@ lines 23–25 serves the same purpose as the Python statement
 
 The syntax of this for loop probably looks very strange to you, but in
 fact it is not too different from what happens in Python using range. In
-fact ``for(Integer i = 0; i < 10; i++)`` is exactly equivalent to the
+fact ``for (Integer i = 0; i < 10; i++)`` is exactly equivalent to the
 Python ``for i in range(10)`` The first statement inside the parenthesis
 declares and initializes a loop variable i. The second statement is a
 Boolean expression that is our exit condition. In other words we will
 keep looping as long as this expression evaluates to true. The third
 clause is used to increment the value of the loop variable at the end of
 iteration through the loop. In fact ``i++`` is Java shorthand for
-``i = i +`` Java also supports the shorthand ``i--`` to decrement the
-value of i. Like Python you can also write ``i += 2`` as shorthand for
+``i = i + 1`` Java also supports the shorthand ``i--`` to decrement the
+value of i. Like Python, you can also write ``i += 2`` as shorthand for
 ``i = i + 2`` Try to rewrite the following Python for loops as Java for
 loops:
 
@@ -523,7 +523,7 @@ loops:
 
 The next loop (lines 27–30) shows a typical Java pattern for reading
 data from a file. Java while loops and Python while loops are identical
-in their logic. In this case we will continue to process the body of the
+in their logic. In this case, we will continue to process the body of the
 loop as long as ``data.hasNextInt()`` returns true.
 
 Line 29 illustrates another important difference between Python and
@@ -534,7 +534,7 @@ logical operations is done using methods. So, to set the value of an
 ``ArrayList`` element we use the ``set`` method. The first parameter of
 ``set`` indicates the index or position in the ``ArrayList`` we are
 going to change. The next parameter is the value we want to set. Notice
-that once again we cannot use the indexing square bracket operator to
+that, once again, we cannot use the indexing square bracket operator to
 retrieve a value from the list, but we must use the ``get`` method.
 
 The last loop in this example is similar to the Python for loop where
@@ -551,7 +551,7 @@ that you had an error on this line. Why?
 Arrays
 ------
 
-As I said at the outset of this Section we are going to use Java
+As I said at the outset of this section, we are going to use Java
 ``ArrayLists`` because they are easier to use and more closely match the
 way that Python lists behave. However, if you look at Java code on the
 internet or even in your Core Java books you are going to see examples
@@ -608,7 +608,7 @@ Dictionary
 ----------
 
 Just as Python provides the dictionary when we want to have easy access
-to key, value pairs, Java also provides us a similar mechanism. Rather
+to key-value pairs, Java also provides us a similar mechanism. Rather
 than the dictionary terminology, Java calls these objects Maps. Java
 provides two different implementations of a map, one is called the
 ``TreeMap`` and the other is called a ``HashMap``. As you might guess
