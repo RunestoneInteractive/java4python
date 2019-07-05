@@ -3,3 +3,6 @@ build/*
 *.pyc
 source/doctrees/*
 *~
+sphinx-enki-info.txt
+sphinx_settings.json
+

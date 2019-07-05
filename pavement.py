@@ -7,6 +7,7 @@ import os.path
 import sys
 from socket import gethostname
 import pkg_resources
+from runestone import get_master_url
 
 sys.path.append(getcwd())
 sys.path.append('../modules')
@@ -22,22 +23,18 @@ except ImportError:
 project_name = "java4python"
 ###############################
 
+dynamic_pages = True
 master_url = None
 doctrees = None
 if master_url is None:
-    if gethostname() in ['runestone.academy', 'runestone-deploy', 'rsbuilder']:
-        master_url = 'https://runestone.academy'
-        if os.path.exists('../../custom_courses/{}'.format(project_name)):
-            doctrees = '../../custom_courses/{}/doctrees'.format(project_name)
-        else:
-            doctrees = './build/{}/doctrees'.format(project_name)
-    else:
-        master_url = 'http://127.0.0.1:8000'
-        doctrees = './build/{}/doctrees'.format(project_name)
+    master_url = get_master_url()
 
 master_app = 'runestone'
 serving_dir = "./build/java4python"
-dest = "../../static"
+if dynamic_pages:
+    dest = './published'
+else:
+    dest = "../../static"
 
 options(
     sphinx = Bunch(docroot=".",),
@@ -55,10 +52,18 @@ options(
             'appname':master_app,
             'loglevel':10,
             'course_url':master_url,
+            'dynamic_pages': dynamic_pages,
             'use_services': 'true',
             'python3': 'true',
             'dburl': 'postgresql://bmiller@localhost/runestone',
             'basecourse': 'java4python',
+            'jobe_server': 'http://jobe2.cosc.canterbury.ac.nz',
+            'proxy_uri_runs': '/jobe/index.php/restapi/runs/',
+            'proxy_uri_files': '/jobe/index.php/restapi/files/',
+            'downloads_enabled': 'false',
+            'enable_chatcodes': 'false',
+            'allow_pairs': 'false'
+
         }
 
     )
