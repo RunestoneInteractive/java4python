@@ -57,9 +57,6 @@ options(
             'python3': 'true',
             'dburl': 'postgresql://bmiller@localhost/runestone',
             'basecourse': 'java4python',
-            'jobe_server': 'http://jobe2.cosc.canterbury.ac.nz',
-            'proxy_uri_runs': '/jobe/index.php/restapi/runs/',
-            'proxy_uri_files': '/jobe/index.php/restapi/files/',
             'downloads_enabled': 'false',
             'enable_chatcodes': 'false',
             'allow_pairs': 'false'
