@@ -176,7 +176,7 @@ variable. If you have ever tried to use a Python variable that you have
 not initialized the second error message will be familiar to you. The
 difference here is that we see the message before we ever try to test
 our program. More common error messages are discussed in the section
-[sec:common\_mistakes] {Common Mistakes}.
+`Common Mistakes <commonmistakes.html>`_.
 
 The general rule in Java is that you must decide what kind of an object
 your variable is going to reference and then you must declare that

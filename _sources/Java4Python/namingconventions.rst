@@ -2,8 +2,6 @@
 Naming Conventions
 ==================
 
-{sec:naming\_conventions}
-
 Java has some very handy naming conventions.
 
 -  Class names always start with an upper case letter. For example,

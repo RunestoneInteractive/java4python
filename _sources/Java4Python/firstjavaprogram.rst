@@ -45,7 +45,7 @@ not worry! An important skill for a computer scientist is to learn what
 to ignore and what to look at carefully. You will soon find that there
 are some elements of Java that will fade into the background as you
 become used to seeing them. One thing that will help you is to learn a
-little bit about Java [sec:naming\_conventions] {Naming Conventions}.
+little bit about Java `Naming Conventions <namingconventions.html>`_.
 
 The first question you probably have about this little program is “How
 do I run it?” Running a Java program is not as simple as running a
@@ -70,7 +70,7 @@ The command ``javac`` compiles our java source code into compiled byte
 code and saves it in a file called ``Hello.class``. ``Hello.class`` is a
 binary file so you won’t learn much if you try to examine the class file
 with an editor. Hopefully you didn’t make any mistakes, but if you did
-you may want to consult the [sec:common\_mistakes] {Common Mistakes}
+you may want to consult the `Common Mistakes <commonmistakes.html>`_
 section for helpful hints on compiler errors.
 
 Now that we have compiled our java source code we can run the compiled
