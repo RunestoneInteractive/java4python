@@ -1,3 +1,4 @@
+.. _Naming Conventions:
 
 Naming Conventions
 ==================
