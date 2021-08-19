@@ -181,8 +181,6 @@ alternative then the program would print(out both A and B.)
 Boolean Operators
 -----------------
 
-{sub:boolean\_operators}
-
 The conditionals used in the if statement can be boolean variables,
 simple comparisons, and compound boolean expressions.
 
