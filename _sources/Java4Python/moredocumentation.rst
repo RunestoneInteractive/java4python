@@ -1,5 +1,7 @@
-Java Documentation Online
-=========================
+.. _Java Documentation:
+
+Java Documentation
+==================
 
 All Java class libraries are documented and available online. Here are
 two good resources for you to use:

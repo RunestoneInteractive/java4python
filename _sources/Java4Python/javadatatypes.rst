@@ -32,9 +32,9 @@ compiler became smart enough to know when to convert back and forth and
 is called “autoboxing.” In this book, we will typically use the Object
 version of all the numeric data types and let the compiler do its thing.
 
-Lets go back in time and look at another of our very early Python
-programs. Here is a simple Python function to convert a Fahrenheit
+Let's look at a simple Python function which converts a Fahrenheit
 temperature to Celsius.
+If this program were run on the command-line, you would enter the temperature when prompted -- the Javascript pop-up for input is only an artifact of the digital textbook.
 
 .. activecode:: tcpython
     :language: python
@@ -46,7 +46,7 @@ temperature to Celsius.
 
     main()
 
-Next, lets look at the Java equivalent.
+Next, lets look at the Java equivalent. If this program were run on the command-line, you would enter the temperature when prompted -- the "Input for Program" text box is only an artifact of the digital textbook.
 
 .. activecode:: convert1
     :language: java
@@ -67,10 +67,7 @@ Next, lets look at the Java equivalent.
 
             cel = (fahr - 32) * 5.0/9.0;
             System.out.println("The temperature in C is: " + cel);
-
-            System.exit(0);
         }
-
     }
 
 There are several new concepts introduced in this example. We will look
@@ -88,7 +85,7 @@ Import
 In Java, you can use any class that is available without having to import
 the class, subject to two very important conditions:
 
-1. The javac and java must know that the class exists.
+1. The ``javac`` and ``java`` commands must know that the class exists.
 
 2. You must use the full name of the class
 
@@ -104,9 +101,9 @@ know that certain classes exist. The answer is the following:
    ``CLASSPATH`` environment variable. Your ``CLASSPATH`` environment
    variable can name two kinds of structures.
 
-   1. A jar file that contains Java classes
+   1. A .jar file that contains Java classes
 
-   2. Another unix directory that contains Java class files
+   2. Another directory that contains Java class files
 
 You can think of the import statement in Java as working a little bit
 like the ``from module import xxx`` statement in Python. However, behind
@@ -115,7 +112,7 @@ first important difference to understand is that the class naming system
 in Java is very hierarchical. The *full* name of the Scanner class is
 really ``java.util.Scanner``. You can think of this name as having two
 parts: The first part ``java.util`` is called the **package** and the
-last part is the class. We’ll talk more about the class naming system a
+last part is the **class**. We’ll talk more about the class naming system a
 bit later. The second important difference is that it is the Java class
 loader’s responsibility to load classes into memory, not the import
 statement’s.
@@ -147,7 +144,7 @@ variable to refer to an object of any other type.
 In the example above, lines 5—7 contain variable declarations.
 Specifically we are saying that ``fahr`` and ``cel`` are going to
 reference objects that are of type ``Double``. The variable ``in`` will
-reference a Scanner object. This means that if we were to try an
+reference a ``Scanner`` object. This means that if we were to try an
 assignment like ``fahr = "xyz"`` the compiler would generate an error
 because ``"xyz"`` is a string and ``fahr`` is supposed to be a double.
 
@@ -186,23 +183,23 @@ typing of Java, but for now this is enough.
 Input / Output / Scanner
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the previous section you saw that we created a ``Scanner`` object. In
-Java, Scanner objects make getting input from the user, a file, or even
+In the previous section we created a ``Scanner`` object. In
+Java, ``Scanner`` objects make getting input from the user, a file, or even
 over the network relatively easy. In our case we simply want to ask the
 user to type in a number at the command line, so in line 9 we construct
-a Scanner by calling the constructor and passing it the ``System.in``
-object. Notice that this Scanner object is assigned to the name ``in``,
+a ``Scanner`` by calling the constructor and passing it the ``System.in``
+object. Notice that this ``Scanner`` object is assigned to the name ``in``,
 which we declared to be a ``Scanner`` on line 7. ``System.in`` is
 similar to ``System.out`` except, of course, it is used for input. If you
-are wondering why we must create a Scanner to read data from
+are wondering why we must create a ``Scanner`` to read data from
 ``System.in`` when we can write data directly to ``System.out`` using
 ``println``, you are not alone. We will talk about the reasons why this
 is so later when we talk in-depth about Java streams. You will also see
-in other examples that we can create a Scanner by passing the Scanner a
-File object. You can think of a scanner as a kind of “adapter” that
+in other examples that we can create a ``Scanner`` by passing the ``Scanner`` a
+``File`` object. You can think of a ``Scanner`` as a kind of “adapter” that
 makes low level objects easier to use.
 
-On line 11 we use the Scanner object to read in a number. Here again we
+On line 11 we use the ``Scanner`` object to read in a number. Here again we
 see the implications of Java being a strongly typed language. Notice
 that we must call the method ``nextDouble`` because the variable
 ``fahr`` was declared as a double. So, we must have a function that is
@@ -212,9 +209,9 @@ compiler matches up these assignment statments and if you try to assign
 the results of a method call to the wrong kind of variable it will be
 flagged as an error.
 
-Table 2 shows you some commonly used methods of the scanner class. There
+The table below shows some commonly used methods of the ``Scanner`` class. There
 are many more methods supported by this class and we will talk about how
-to find them in the next chapter.
+to find them in our chapter about :ref:`Java Documentation`.
 
 ==================== ================ ======================================================
          Return type      Method name                                            Description
@@ -229,56 +226,6 @@ to find them in the next chapter.
               String           next()             returns the next thing to read as a String
 ==================== ================ ======================================================
 
-Of course, Java is more well-known for producing applications that have
-more of a user interface to them than reading and writing from the
-command line. Lets look at a version of our temperature conversion
-application that uses dialog boxes for input and output.
-
-.. activecode:: swing
-    :language: java
-    :sourcefile: TempConvGUI.java
-
-    import javax.swing.*;
-
-    public class TempConvGUI {
-
-        public static void main(String[] args) {
-            String fahrString;
-            Double fahr, cel;
-
-            fahrString = JOptionPane.showInputDialog("Enter the temperature in F");
-            fahr = new Double(fahrString);
-            cel = (fahr - 32) * 5.0/9.0;
-
-            JOptionPane.showMessageDialog(null,"The temperature in C is, " + cel);
-        }
-
-    }
-
-This example illustrates a couple of interesting points:
-
-First, the function call ``JOptionPane.showInputDialog`` pops up a
-dialog box to allow you to enter a temperature. But, since you could
-enter anything into the text input box it returns a ``String``. On the
-next line the string is converted into a Double by the Double
-constructor. This is similar to what happens in Python when you call
-``float()`` with either a string or an integer as the argument.
-
-The next dialog box is ``JOptionPane.showMessageDialog``. Notice that
-the first parameter is ``null`` In Java ``null`` serves the same purpose
-as ``None`` in Python. The first parameter is null because we do not
-have a ‘main window’ for this little application. When we look at
-creating full-blown Java programs with user interfaces, we will learn
-more about this parameter.
-
-The second parameter is ``"The temperature in C is, " + cel``. Now you
-may be thinking to yourself that this must surely be a violation of the
-strong typing I have been describing to you. After all, you should not be
-able to add together a string and a Double right? You are correct,
-however, all Java objects have a method called ``tostring``. The
-``tostring`` method acts much like the Python method ``__str__()`` and
-is called automatically by the compiler whenever it makes sense to
-convert a Java object to a string.
 
 String
 ------
@@ -288,34 +235,32 @@ are immutable. However, manipulating strings in Java is not quite as
 obvious since Strings do not support an indexing or slicing operator.
 That is not to say that you can’t index into a Java string, you can. You
 can also pull out a substring just as you can with slicing. The
-difference is that Java uses method calls where Python uses Operators.
+difference is that Java uses method calls where Python uses operators.
 
 In fact, this is the first example of another big difference between Java
 and Python. Java does not support any operator overloading. Table 3 maps
 common Python string operations to their Java counterparts. For the
 examples shown in the table we will use a string variable called “str”
 
-========================== ======================== =============================================================
+========================== ==================================== =============================================================
                     Python                     Java                                                   Description
-========================== ======================== =============================================================
-                ``str[3]``        ``str.charAt(3)``                             Return character in 3rd  position
-              ``str[2:4]``   ``str.substring(2,4)``         Return substring from 2nd up to but not including 4th
-              ``len(str)``         ``str.length()``                               Return the length of the string
-         ``str.find('x')``     ``str.indexOf('x')``                                Find the first occurrence of x
-           ``str.split()``      ``str.split('\s')``   Split the string on whitespace into a list/array of strings
-        ``str.split(',')``       ``str.split(',')``      Split the string at ``','`` into a list/array of strings
-             ``str + str``      ``str.concat(str)``                              Concatenate two strings together
-           ``str.strip()``           ``str.trim()``                 Remove any whitespace at the beginning or end
-========================== ======================== =============================================================
+========================== ==================================== =============================================================
+                ``str[3]``        ``str.charAt(3)``             Return character in 3rd  position
+              ``str[2:4]``   ``str.substring(2,4)``             Return substring from 2nd up to but not including 4th
+              ``len(str)``         ``str.length()``             Return the length of the string
+         ``str.find('x')``     ``str.indexOf('x')``             Find the first occurrence of x
+           ``str.split()``      ``str.split('\s')``             Split the string on whitespace into a list/array of strings
+        ``str.split(',')``       ``str.split(',')``             Split the string at ``','`` into a list/array of strings
+             ``str + str`` ``str + str`` or ``str.concat(str)`` Concatenate two strings together
+           ``str.strip()``           ``str.trim()``             Remove any whitespace at the beginning or end
+========================== ==================================== =============================================================
 
 List
 ----
 
-Lets look at another early Python program. We are going to read numbers
-from a file and produce a histogram that shows the frequency of the
-various numbers. The data file we will use has one number between 0 and
-9 on each line of the file. Here is a simple Python program that creates
-and prints a histogram.
+Next, let's look at a program which reads numbers from a file and produces a histogram showing the frequency of the numbers.
+The data file we will use has one number between 0 and 9 on each line of the file.
+Here is a simple Python program that creates and prints a histogram.
 
 .. activecode:: histopy
     :language: python
@@ -331,28 +276,22 @@ and prints a histogram.
         for num in count:
             print(idx, " occured ", num, " times.")
             idx += 1
+    
+    main()
 
-Now if we run this program on a data file that looks like this:
 
-    9 8 4 5 3 5 2 1 5
+Test running the program. It will read this data:
 
-We will get output that looks like this:
+.. datafile:: test.dat
 
-::
+   1
+   2
+   3
+   9
+   1
 
-    0 occurred 0 times
-    1 occurred 1 times
-    2 occurred 1 times
-    3 occurred 1 times
-    4 occurred 1 times
-    5 occurred 3 times
-    6 occurred 0 times
-    7 occurred 0 times
-    8 occurred 1 times
-    9 occurred 1 times
-
-Lets review what is happening in this little program. In the first line
-we create a list and initialize the first 10 positions in the list to be
+Lets review what is happening in this little program. First, we create a list
+and initialize the first 10 positions in the list to be
 0. Next we open the data file called ‘test.dat’. Third, we have a loop
 that reads each line of the file. As we read each line we convert it to
 an integer and increment the counter at the position in the list
@@ -367,16 +306,17 @@ of loops used in Java. Two of the loops we will use are going to be very
 familiar, the third one is different from what you are used to in Python
 but is easy when you understand the syntax:
 
-while
-    Used with boolean expression for loop exit condition.
+- ``while (condition) { code }``
 
-for
-    Used to iterate over a sequence. This is very similar to
-    ``for i in xxx`` where xxx is a list or string or file.
+  - The ``code`` will be repeatedly executed until the ``condition`` becomes false.
 
-for
-    Used to iterate through a sequence of numbers. This is most similar
-    to for ``i in range()``, except the syntax is different.
+- ``for (initialization statement; condition; loop statement) { code }``
+
+  - The ``code`` will be repeatedly executed until the ``condition`` becomes false. As shown in the example below, the ``initialization statement`` and ``loop statement`` make this form useful for iterating over a range of numbers, similar to how you might use ``for i in range(10)`` in Python. 
+
+- ``for (Type variable : collection) { code }``
+
+  - The ``code`` will be executed once for each element in the ``collection``. Each execution, ``variable`` will be assigned to the next element of ``collection``. Known as the "for-each" loop. This form is useful for iterating over members of a collection, similar to how you might use ``for a in array`` in Python.
 
 Here is the Java code needed to write the exact same program:
 
@@ -401,7 +341,7 @@ Here is the Java code needed to write the exact same program:
                     data = new Scanner(new File("test.dat"));
             }
             catch ( IOException e) {
-                System.out.println("Sorry but I was unable to open your data file");
+                System.out.println("Unable to open data file");
                 e.printStackTrace();
                 System.exit(0);
             }
@@ -425,15 +365,6 @@ Here is the Java code needed to write the exact same program:
     }
 
 
-.. datafile:: test.dat
-
-   1 2 3
-   4 5
-   6
-   7
-   8 9 1 2 3
-   4
-   5
 
 
 Before going any further, I suggest you try to compile the above program
@@ -441,12 +372,12 @@ and run it on some test data that you create.
 
 Now, let's look at what is happening in the Java source. As usual, we
 declare the variables we are going to use at the beginning of the
-method. In this example we are declaring a Scanner variable called data,
-an integer called idx and an ``ArrayList`` called count. However, there
+method. In this example we are declaring a ``Scanner`` variable called ``data``,
+an integer called ``idx`` and an ``ArrayList`` called ``count``. However, there
 is a new twist to the ``ArrayList`` declaration. Unlike Python where
 lists can contain just about anything, in Java we let the compiler know
 what kind of objects our array list is going to contain. In this case
-the ``ArrayList`` will contain Integers. The syntax we use to declare
+the ``ArrayList`` will contain ``Integers``. The syntax we use to declare
 what kind of object the list will contain is the ``<Type>``
 syntax.
 
@@ -460,7 +391,7 @@ on the list Java will give you a warning message like this:
     Note: Histo.java uses unchecked or unsafe operations.
     Note: Recompile with -Xlint:unchecked for details.
 
-Without the <Integer> part of the declaration Java simply assumes that
+Without the ``<Integer>`` part of the declaration Java simply assumes that
 *any* object can be on the list. However, without resorting to an ugly
 notation called casting, you cannot do anything with the objects on a
 list like this! So, if you forget you will surely see more errors later
@@ -478,7 +409,7 @@ block.
 ::
 
     try {
-       Put some risky code in here.... like opening a file
+       Put some risky code in here, like opening a file
     }
     catch (Exception e) {
        If an error happens in the try block an exception is thrown.
@@ -489,6 +420,7 @@ Notice that in line 16 we are catching an ``IOException``. In fact, we
 will see later that we can have multiple catch blocks to catch different
 types of exceptions. If we want to be lazy and catch any old exception
 we can catch an ``Exception`` which is the parent of all exceptions.
+However, catching ``Exception`` is a terrible practice, since you may inadvertently catch exceptions you do not intend to, making it harder to identify bugs in your program.
 
 On line 22 we create our ``ArrayList`` and give it an initial size of 10.
 Strictly speaking, it is not necessary to give the ``ArrayList`` any
@@ -502,7 +434,7 @@ The syntax of this for loop probably looks very strange to you, but in
 fact it is not too different from what happens in Python using range. In
 fact ``for (Integer i = 0; i < 10; i++)`` is exactly equivalent to the
 Python ``for i in range(10)`` The first statement inside the parenthesis
-declares and initializes a loop variable i. The second statement is a
+declares and initializes a loop variable ``i``. The second statement is a
 Boolean expression that is our exit condition. In other words we will
 keep looping as long as this expression evaluates to true. The third
 clause is used to increment the value of the loop variable at the end of
@@ -512,14 +444,14 @@ value of i. Like Python, you can also write ``i += 2`` as shorthand for
 ``i = i + 2`` Try to rewrite the following Python for loops as Java for
 loops:
 
-    -  ``for i in range(2,101,2)``
+-  ``for i in range(2,101,2)``
 
-    -  ``for i in range(1,100)``
+-  ``for i in range(1,100)``
 
-    -  ``for i in range(100,0,-1)``
+-  ``for i in range(100,0,-1)``
 
-    -  ``for x,y in zip(range(10),range(0,20,2))`` [hint, you can
-       separate statements in the same clause with a ,]
+-  ``for x,y in zip(range(10),range(0,20,2))`` [hint, you can
+   separate statements in the same clause with a ,]
 
 The next loop (lines 27–30) shows a typical Java pattern for reading
 data from a file. Java while loops and Python while loops are identical
@@ -543,7 +475,7 @@ for loop over all kinds of sequences, which are called Collection
 classes in Java. The for loop on line 33 ``for(Integer i : count)`` is
 equivalent to the Python loop ``for i in count:`` This loop iterates
 over all of the elements in the ArrayList called count. Each time
-through the loop the Integer variable i is bound to the next element of
+through the loop the Integer variable ``i`` is bound to the next element of
 the ``ArrayList``. If you tried the experiment of removing the
 ``<Integer>`` part of the ``ArrayList`` declaration you probably noticed
 that you had an error on this line. Why?
@@ -574,13 +506,11 @@ program to use primitive arrays rather than array lists.
             Integer[] count = {0,0,0,0,0,0,0,0,0,0};
             Integer idx;
 
-
-
             try {
-                    data = new Scanner(new File("test.dat"));
+                data = new Scanner(new File("test.dat"));
             }
             catch ( IOException e) {
-                System.out.println("Sorry but I was unable to open your data file");
+                System.out.println("Unable to open data file");
                 e.printStackTrace();
                 System.exit(0);
             }
@@ -599,9 +529,9 @@ program to use primitive arrays rather than array lists.
     }
 
 The main difference between this example and the previous example is
-that we declare count to be an Array of integers. We also can initialize
+that we declare ``count`` to be an ``Array`` of integers. We also can initialize
 short arrays directly using the syntax shown on line 8. Then notice that
-on line 24 we can use the square bracket notation to index into an
+on line 22 we can use the square bracket notation to index into an
 array.
 
 Dictionary
@@ -681,7 +611,7 @@ histogram program.
                     data = new Scanner(new File("alice30.txt"));
             }
             catch ( IOException e) {
-                System.out.println("Sorry but I was unable to open your data file");
+                System.out.println("Unable to open data file");
                 e.printStackTrace();
                 System.exit(0);
             }
