@@ -1,8 +1,7 @@
+.. _Naming Conventions:
 
 Naming Conventions
 ==================
-
-{sec:naming\_conventions}
 
 Java has some very handy naming conventions.
 
