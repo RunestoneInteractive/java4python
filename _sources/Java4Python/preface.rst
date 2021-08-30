@@ -13,7 +13,8 @@ languages.
 
 This book does not attempt to replace the many good Java reference books
 that are available, in fact I use this in my course along with
-Horstman’s *Core Java* volumes. Please feel free to use this book for
+`Cay Horstman’s "Core Java" volumes <https://horstmann.com/corejava/index.html>`_. 
+Please feel free to use this book for
 yourself, or if it fits a class you are teaching you are welcome to use
 this as a resource for your own class.
 
