@@ -65,7 +65,22 @@ options(
 
     )
 )
+template_args = {
+    'course_id':project_name,
+    'login_required':'false',
+    'appname':master_app,
+    'loglevel':10,
+    'course_url':master_url,
+    'dynamic_pages': dynamic_pages,
+    'use_services': 'true',
+    'python3': 'true',
+    'dburl': 'postgresql://bmiller@localhost/runestone',
+    'basecourse': 'java4python',
+    'downloads_enabled': 'false',
+    'enable_chatcodes': 'false',
+    'allow_pairs': 'false'
 
+}
 if project_name == "<project_name>":
   print("Please edit pavement.py and give your project a name")
   exit()
