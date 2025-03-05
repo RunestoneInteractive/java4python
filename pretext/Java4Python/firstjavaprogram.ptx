@@ -37,7 +37,7 @@ public class Hello {
             to ignore and what to look at carefully. You will soon find that there
             are some elements of Java that will fade into the background as you
             become used to seeing them. One thing that will help you is to learn a
-            little bit about Java <xref ref="java4-python_java4-python_namingconventions"/>.</p>
+            little bit about Java <xref ref="naming-conventions-id1"/>.</p>
   <p>The first question you probably have about this little program is &#x201C;How
             do I run it?&#x201D; Running a Java program is not as simple as running a
             Python program. The first thing you need to do with a Java program is
@@ -61,7 +61,7 @@ $ ls -l Hello.*
             code and saves it in a file called <c>Hello.class</c>. <c>Hello.class</c> is a
             binary file so you won&#x2019;t learn much if you try to examine the class file
             with an editor. Hopefully you didn&#x2019;t make any mistakes, but if you did
-            you may want to consult the <xref ref="java4-python_java4-python_commonmistakes"/>
+            you may want to consult the <xref ref="common-mistakes-id1"/>
             section for helpful hints on compiler errors.</p>
   <p>Now that we have compiled our java source code we can run the compiled
             code using the <c>java</c> command.</p>

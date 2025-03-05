@@ -235,7 +235,7 @@ location: class TempConv
                     not initialized the second error message will be familiar to you. The
                     difference here is that we see the message before we ever try to test
                     our program. More common error messages are discussed in the section
-                    <xref ref="java4-python_java4-python_commonmistakes"/>.</p>
+                    <xref ref="common-mistakes-id1"/>.</p>
       <p>The general rule in Java is that you must decide what kind of an object
                     your variable is going to reference and then you must declare that
                     variable before you use it. There is much more to say about the static
@@ -269,7 +269,7 @@ location: class TempConv
                     flagged as an error.</p>
       <p>The table below shows some commonly used methods of the <c>Scanner</c> class. There
                     are many more methods supported by this class and we will talk about how
-                    to find them in our chapter about <xref ref="java4-python_java4-python_moredocumentation"/>.</p>
+                    to find them in our chapter about <xref ref="java-documentation-id1"/>.</p>
       <table>
         <tabular>
           <row header="yes">
