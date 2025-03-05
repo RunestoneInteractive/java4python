@@ -79,15 +79,15 @@ public class ElseIf {
          System.out.println('F');
      } else {
          if (grade &lt; 70) {
-             System.out.println('F');
+             System.out.println('D');
          } else {
              if (grade &lt; 80) {
-                 System.out.println('F');
+                 System.out.println('C');
              } else {
                  if (grade &lt; 90) {
-                     System.out.println('F');
+                     System.out.println('B');
                  } else {
-                     System.out.println('F');
+                     System.out.println('A');
                  }
              }
          }
