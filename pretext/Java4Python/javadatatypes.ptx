@@ -582,7 +582,7 @@ main()
       </ul>
     </p>
     <p>Here is the Java code needed to write the exact same program:</p>
-    <program interactive="activecode" language="java">
+    <program interactive="activecode" language="java" datafile="test.dat">
       <input>
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -748,7 +748,7 @@ catch (Exception e) {
                 of something called arrays. In fact you have already seen one example of
                 an array declared in the &#x2018;Hello World&#x2019; program. Lets rewrite this
                 program to use primitive arrays rather than array lists.</p>
-    <program interactive="activecode" language="java">
+    <program interactive="activecode" language="java" datafile="test.dat">
       <input>
 import java.util.Scanner;
 import java.io.File;
@@ -842,7 +842,7 @@ say.)
   </pre></datafile>
     <p>Notice that the structure of the program is very similar to the numeric
                 histogram program.</p>
-    <program interactive="activecode" language="java">
+    <program interactive="activecode" language="java" datafile="alice30.txt">
       <input>
 import java.util.Scanner;
 import java.util.ArrayList;
