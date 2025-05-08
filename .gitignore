@@ -1,6 +1,7 @@
 build/*
 .idea/*
 *.pyc
+*.pkl
 source/doctrees/*
 *~
 sphinx-enki-info.txt

@@ -4,7 +4,7 @@
     project. To edit the content of your document, open `source/cppds2.ptx`
     (default location).
 -->
-<project>
+<project ptx-version="2">
   <targets>
     <target name="web">
       <format>html</format>
