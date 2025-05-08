@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+        <xi:include href="./meta_bookinfo.ptx"/>
+        <book xml:id= "java4py2">
+            <title>Java For Python Programmer</title>
+            <subtitle>The PreTeXt Interactive Edition</subtitle> 
+                <xi:include href="./meta_frontmatter.ptx" />
+                <xi:include href="./ch_1_introduction.ptx" />
+                <xi:include href="./ch_2_whylearnjava.ptx" />
+                <xi:include href="ch_3_firstjavaprogram.ptx" />
+                <xi:include href="ch_4_javadatatypes.ptx" />
+                <xi:include href="ch_5_conditionals.ptx" />
+                <xi:include href="ch_6_loopsanditeration.ptx" />
+                <xi:include href="ch_7_definingclasses.ptx" />
+                <xi:include href="ch_8_namingconventions.ptx" />
+                <xi:include href="ch_9_commonmistakes.ptx" />
+                <xi:include href="ch_10_moredocumentation.ptx" />
+                <xi:include href="meta_backmatter.ptx" />
+        </book>
+    </pretext>

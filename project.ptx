@@ -8,37 +8,37 @@
   <targets>
     <target name="web">
       <format>html</format>
-      <source>pretext/java4py2.ptx</source>
+      <source>pretext/source/main.ptx</source>
       <publication>pretext/publication-rs-for-all.xml</publication>
       <output-dir>output/html</output-dir>
     </target>
     <target name="runestone">
       <format>html</format>
-      <source>pretext/java4py2.ptx</source>
+      <source>pretext/source/main.ptx</source>
       <publication>pretext/publication-rs-academy.xml</publication>
-      <output-dir>published/java4py2</output-dir>
+      <output-dir>published/main</output-dir>
     </target>
     <target name="epub">
       <format>epub</format>
-      <source>pretext/java4py2.ptx</source>
+      <source>pretext/source/main.ptx</source>
       <publication>pretext/publication-pub.xml</publication>
       <output-dir>published/epub</output-dir>
     </target>
     <target name="latex">
       <format>latex</format>
-      <source>pretext/java4py2.ptx</source>
+      <source>pretext/source/main.ptx</source>
       <publication>pretext/publication-rs-for-all.xml</publication>
       <output-dir>output/latex</output-dir>
     </target>
     <target name="pdf" pdf-method="xelatex">
       <format>pdf</format>
-      <source>pretext/java4py2.ptx</source>
+      <source>pretext/source/main.ptx</source>
       <publication>pretext/publication-rs-for-all.xml</publication>
       <output-dir>output/pdf</output-dir>
     </target>
     <target name="subset">
       <format>html</format>
-      <source>source/java4py2.ptx</source>
+      <source>pretext/source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/subset</output-dir>
       <stringparam key="debug.skip-knowls" value="yes"/>
