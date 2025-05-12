@@ -26,6 +26,8 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
         <directories external="Figures" generated="GenFigs"/>
     </source>
     <html>
+        <index-page 
+            xref="java4py2"/>
         <platform host="runestone"/>
         <!-- knowled checkpoints interfere with ActiveCode problems -->
         <knowl exercise-inline="no" example="no" listing="yes"/>

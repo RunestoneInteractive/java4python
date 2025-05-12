@@ -4,9 +4,9 @@
         <book xml:id= "java4py2">
             <title>Java For Python Programmer</title>
             <subtitle>The PreTeXt Interactive Edition</subtitle> 
-                <xi:include href="./meta_frontmatter.ptx" />
-                <xi:include href="./ch_1_introduction.ptx" />
-                <xi:include href="./ch_2_whylearnjava.ptx" />
+                <xi:include href="meta_frontmatter.ptx" />
+                <xi:include href="ch_1_introduction.ptx" />
+                <xi:include href="ch_2_whylearnjava.ptx" />
                 <xi:include href="ch_3_firstjavaprogram.ptx" />
                 <xi:include href="ch_4_javadatatypes.ptx" />
                 <xi:include href="ch_5_conditionals.ptx" />

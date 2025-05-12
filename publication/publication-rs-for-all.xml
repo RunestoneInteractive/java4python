@@ -5,6 +5,8 @@
         <directories external="Figures" generated="GenFigs" />
     </source>
     <html>
+        <index-page 
+            ref="java4py2"/>
         <platform host="web" />
         <!-- knowled checkpoints interfere with ActiveCode problems -->
         <knowl exercise-inline="no" example="no" listing="no" />
