@@ -37,7 +37,7 @@
     <p>Here is a mostly complete implementation of a Fraction class in Python
             that we will refer to throughout this section:</p>
     <program interactive="activecode" language="python">
-      <input>
+      <code>
 class Fraction:
     def __init__(self, num, den):
         """
@@ -103,7 +103,7 @@ def gcd(m, n):
     return n
 
 print(sorted([Fraction(5, 16), Fraction(3, 16), Fraction(1, 16) + 1]))
-        </input>
+        </code>
       <tests>
 
 
@@ -121,21 +121,21 @@ print(sorted([Fraction(5, 16), Fraction(3, 16), Fraction(1, 16) + 1]))
             begin looking at the code that uses them. With that in mind the first
             part of the Fraction class definition is as follows:</p>
     <program language="java">
-      <input>
+      <code>
 public class Fraction {
     private Integer numerator;
     private Integer denominator;
 }
-</input>
+</code>
     </program>
     <p>Notice that we have declared the numerator and denominator to be
             private. This means that the compiler will generate an error if another
             method tries to write code like the following:</p>
     <program language="java">
-      <input>
+      <code>
 Fraction f = new Fraction(1,2);
 Integer y = f.numerator * 10;
-</input>
+</code>
     </program>
     <p>Direct access to instance variables is not allowed. Therefore if we
             legitimately want to be able to access information such as the numerator
@@ -143,7 +143,7 @@ Integer y = f.numerator * 10;
             It is very common programming practice to provide getter and setter
             methods for instance variables in Java.</p>
     <program language="java">
-      <input>
+      <code>
 public Integer getNumerator() {
     return numerator;
 }
@@ -159,7 +159,7 @@ public Integer getDenominator() {
 public void setDenominator(Integer denominator) {
     this.denominator = denominator;
 }
-</input>
+</code>
     </program>
   </introduction>
   <subsection xml:id="writing-a-constructor">
@@ -171,12 +171,12 @@ public void setDenominator(Integer denominator) {
                 class and has no return type is a constructor. Our constructor will take
                 two parameters: the numerator and the denominator.</p>
     <program language="java">
-      <input>
+      <code>
 public Fraction(Integer top, Integer bottom) {
     num = top;
     den = bottom;
 }
-</input>
+</code>
     </program>
     <p>There are a couple of important things to notice here. First, you will
                 notice that the constructor does not have a <c>self</c> parameter. You will
@@ -190,12 +190,12 @@ public Fraction(Integer top, Integer bottom) {
                 the Fraction constructor uses <c>this</c> to differentiate between
                 parameters and instance variables.</p>
     <program language="java">
-      <input>
+      <code>
 public Fraction(Integer num, Integer den) {
     this.num = num;
     this.den = den;
 }
-</input>
+</code>
     </program>
   </subsection>
   <subsection xml:id="methods">
@@ -207,7 +207,7 @@ public Fraction(Integer num, Integer den) {
     <p>A point of terminology: Python has both &#x201C;functions&#x201D; (<c>def</c> outside a class) and &#x201C;methods&#x201D; (<c>def</c> inside a class). Since Java requires all code to be inside classes, it only has &#x201C;methods.&#x201D; Those from a C++ background might refer to methods as &#x201C;member functions.&#x201D;</p>
     <p>Let&#x2019;s begin by implementing addition in Java:</p>
     <program language="java">
-      <input>
+      <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * this.numerator +
                              this.denominator * otherFrac.getNumerator();
@@ -215,7 +215,7 @@ public Fraction add(Fraction otherFrac) {
     Integer common = gcd(newNum, newDen);
     return new Fraction(newNum/common, newDen/common);
 }
-</input>
+</code>
     </program>
     <p>First you will notice that the <c>add</c> method is declared as
                 <c>public Fraction</c> The <c>public</c> part means that any other method may
@@ -223,7 +223,7 @@ public Fraction add(Fraction otherFrac) {
                 return a fraction as its result.</p>
     <p>Second, you will notice that the method makes use of the <c>this</c> variable. In this method, <c>this</c> is not necessary, because there is no ambiguity about the <c>numerator</c> and <c>denominator</c> variables. So this version of the code is equivalent:</p>
     <program language="java">
-      <input>
+      <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * numerator +
                              denominator * otherFrac.getNumerator();
@@ -231,7 +231,7 @@ public Fraction add(Fraction otherFrac) {
     Integer common = gcd(newNum, newDen);
     return new Fraction(newNum/common, newDen/common);
 }
-</input>
+</code>
     </program>
     <p>The addition takes place by multiplying each numerator by the opposite
                 denominator before adding. This procedure ensures that we are adding two
@@ -273,7 +273,7 @@ public Fraction add(Fraction otherFrac) {
                     add the two <c>Fractions</c> together. The new methods that accomplish this
                     task are as follows:</p>
       <program language="java">
-        <input>
+        <code>
 public Fraction(Integer num) {
     this.numerator = num;
     this.denominator = 1;
@@ -282,7 +282,7 @@ public Fraction(Integer num) {
 public Fraction add(Integer other) {
     return add(new Fraction(other));
 }
-</input>
+</code>
       </program>
       <p>Notice that the overloading approach can provide us with a certain
                     elegance to our code. Rather than utilizing if statements to check the
@@ -293,7 +293,7 @@ public Fraction add(Integer other) {
       <p>Our full <c>Fraction</c> class to this point would look like the following. You
                     should compile and run the program to see what happens.</p>
       <program interactive="activecode" language="java">
-        <input>
+        <code>
 public class Fraction {
 
     private Integer numerator;
@@ -345,7 +345,7 @@ public class Fraction {
     }
 
 }
-        </input>
+        </code>
         <tests>
 
 
@@ -358,9 +358,9 @@ public class Fraction {
     <p>If you ran the program above you probably noticed that the output is not
                 very satisfying. Chances are your output looked something like this:</p>
     <program language="java">
-      <input>
+      <code>
 Fraction@6ff3c5b5
-</input>
+</code>
     </program>
     <p>The reason is that we have not yet provided a friendly string
                 representation for our <c>Fraction</c> objects. Just like in
@@ -430,11 +430,11 @@ Fraction@6ff3c5b5
                     nicer we will implement the <c>toString</c> method for the <c>Fraction</c>
                     class. A simple version of the method is provided below.</p>
       <program language="java">
-        <input>
+        <code>
 public String toString() {
     return numerator.toString() + "/" + denominator.toString();
 }
-</input>
+</code>
       </program>
       <p>The other important class for us to implement from the list of methods
                     inherited from <c>Object</c> is the <c>equals</c> method. In Java, when two objects are compared using the <c>==</c> operator they are tested to see if they are exactly the same object (that is, do the two objects occupy the same
@@ -443,19 +443,19 @@ public String toString() {
                     However it is important to remember that since Java does not have
                     operator overloading <term>if you want to use your</term> <c>equals</c> <term>method you must call it directly</term>. Therefore once you write your own <c>equals</c> method:</p>
       <program language="java">
-        <input>
+        <code>
 object1 == object2
-</input>
+</code>
       </program>
       <p>is NOT the same as</p>
       <program language="java">
-        <input>
+        <code>
 object1.equals(object2)
-</input>
+</code>
       </program>
       <p>Here is an <c>equals</c> method for the <c>Fraction</c> class:</p>
       <program language="java">
-        <input>
+        <code>
 public boolean equals(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
@@ -464,7 +464,7 @@ public boolean equals(Fraction other) {
     else
         return false;
 }
-</input>
+</code>
       </program>
       <p>One important thing to remember about <c>equals</c> is that it only checks
                     to see if two objects are equal &#x2013; it does not have any notion of less than
@@ -485,11 +485,11 @@ public boolean equals(Fraction other) {
                     trace this power back to the strong typing nature of Java.</p>
       <p>Here is code that makes the <c>Fraction</c> class a child of <c>Number</c>:</p>
       <program language="java">
-        <input>
+        <code>
 public class Fraction extends Number {
     ...
 }
-</input>
+</code>
       </program>
       <p>The keyword <c>extends</c> tells the compiler that the class <c>Fraction</c>
                     extends, or adds new functionality to the <c>Number</c> class. A child
@@ -523,7 +523,7 @@ public class Fraction extends Number {
       <p>This really isn&#x2019;t much work for us to implement these methods, as all
                     we have to do is some type conversion and some division:</p>
       <program language="java">
-        <input>
+        <code>
 public double doubleValue() {
     return numerator.doubleValue() / denominator.doubleValue();
 }
@@ -542,7 +542,7 @@ public int intValue() {
 public long longValue() {
     return numerator.longValue() / denominator.longValue();
 }
-</input>
+</code>
       </program>
       <p>By having the <c>Fraction</c> class extend the <c>Number</c> class we can now
                     pass a <c>Fraction</c> to any Java method that specifies it can receive a
@@ -563,11 +563,11 @@ public long longValue() {
                     <c>doubleValue</c>.</p>
       <p>Suppose you try to define a method as follows:</p>
       <program language="java">
-        <input>
+        <code>
 public void test(Number a, Number b) {
     a.add(b);
 }
-</input>
+</code>
       </program>
       <p>The Java compiler would give an error because <c>add</c> is not a defined
                     method of the <c>Number</c> class. You will <term>still get this error</term> even if all your code that calls this <c>test</c> method passes two <c>Fractions</c> as parameters (remember that <c>Fraction</c> does implement <c>add</c>).</p>
@@ -597,7 +597,7 @@ public void test(Number a, Number b) {
     <p>The <c>Comparable</c> interface says that any object that claims to be
                 <c>Comparable</c> must implement the <c>compareTo</c> method. Here is an excerpt from <url href="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)" visual="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)">the official documentation</url> for the <c>compareTo</c> method as specified by the <c>Comparable</c> interface.</p>
     <program language="text">
-      <input>
+      <code>
 int compareTo(T o)
 
 Compares this object with the specified object for order. Returns a
@@ -608,28 +608,28 @@ all x and y. (This implies that x.compareTo(y) must throw an exception
 iff y.compareTo(x) throws an exception.)
 
 ...
-</input>
+</code>
     </program>
     <p>To make our <c>Fraction</c> class <c>Comparable</c> we must modify the class
                 declaration line as follows:</p>
     <program language="java">
-      <input>
+      <code>
 public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
     ...
 }
-</input>
+</code>
     </program>
     <p>The specification <c>Comparable&lt;Fraction&gt;</c> makes it clear that <c>Fraction</c>
                 is only comparable with another <c>Fraction</c>. The <c>compareTo</c> method could
                 be implemented as follows:</p>
     <program language="java">
-      <input>
+      <code>
 public int compareTo(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
     return num1 - num2;
 }
-</input>
+</code>
     </program>
   </subsection>
   <subsection xml:id="static-member-variables">
@@ -640,7 +640,7 @@ public int compareTo(Fraction other) {
                 right way to do it is to use a static variable. In Python we could do
                 this as follows:</p>
     <program interactive="activecode" language="python">
-      <input>
+      <code>
 class Student:
     numStudents = 0
 
@@ -656,7 +656,7 @@ def main():
     print('Number of students:', Student.numStudents)
 
 main()
-        </input>
+        </code>
       <tests>
 
 
@@ -664,7 +664,7 @@ main()
     </program>
     <p>In Java we would write this same example using a static declaration.</p>
     <program interactive="activecode" language="java">
-      <input>
+      <code>
 public class Student {
     public static Integer numStudents = 0;
 
@@ -685,7 +685,7 @@ public class Student {
         System.out.println("Number of students: "+Student.numStudents.toString());
     }
 }
-        </input>
+        </code>
       <tests>
 
 
@@ -706,7 +706,7 @@ public class Student {
                 be a static method of the class. Furthermore, since we are only going to
                 use this <c>gcd</c> method for our own purposes we can make it <c>private</c>.</p>
     <program language="java">
-      <input>
+      <code>
 private static Integer gcd(Integer m, Integer n) {
     while (m % n != 0) {
         Integer oldm = m;
@@ -716,14 +716,14 @@ private static Integer gcd(Integer m, Integer n) {
     }
     return n;
 }
-</input>
+</code>
     </program>
   </subsection>
   <subsection xml:id="full-implementation-of-the-fraction-class">
     <title>Full Implementation of the Fraction Class</title>
     <p>Here is a final version of the <c>Fraction</c> class in Java, which includes all the features we discussed:</p>
     <program interactive="activecode" language="java">
-      <input>
+      <code>
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -837,7 +837,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
     }
 
 }
-        </input>
+        </code>
       <tests>
 
 

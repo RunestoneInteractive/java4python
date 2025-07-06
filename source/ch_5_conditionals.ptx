@@ -50,7 +50,7 @@ else:
                 functionality of an elif statement by nesting if and else. Here is a
                 simple example in both Python and Java.</p>
     <program interactive="activecode" language="python">
-      <input>
+      <code>
 grade = int(input('enter a grade'))
 if grade &lt; 60:
     print('F')
@@ -62,7 +62,7 @@ elif grade &lt; 90:
     print('B')
 else:
     print('A')
-        </input>
+        </code>
       <tests>
 
 
@@ -70,7 +70,7 @@ else:
     </program>
     <p>In Java we have a couple of ways to write this</p>
     <program interactive="activecode" language="java">
-      <input>
+      <code>
 public class ElseIf {
     public static void main(String args[]) {
      int grade = 85;
@@ -94,7 +94,7 @@ public class ElseIf {
      }
    }
  }
-        </input>
+        </code>
       <tests>
 
 
@@ -105,7 +105,7 @@ public class ElseIf {
                 braces. Since the if is the only statement used in each else we can get
                 away with the following.</p>
     <program interactive="activecode" language="java">
-      <input>
+      <code>
 public class ElseIf {
     public static void main(String args[]) {
      int grade = 85;
@@ -120,7 +120,7 @@ public class ElseIf {
      } else  System.out.println('A');
     }
 }
-        </input>
+        </code>
       <tests>
 
 
@@ -133,7 +133,7 @@ public class ElseIf {
                 elif statement of Python under certain conditions. To write the grade
                 program using a switch statement we would use the following:</p>
     <program interactive="activecode" language="java">
-      <input>
+      <code>
 public class SwitchUp {
     public static void main(String args[]) {
      int grade = 85;
@@ -158,7 +158,7 @@ public class SwitchUp {
      }
    }
  }
-        </input>
+        </code>
       <tests>
 
 

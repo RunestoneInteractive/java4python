@@ -16,7 +16,7 @@
 &gt;&gt;&gt;</pre>
   <p>Now lets look at the same program written in Java:</p>
   <program interactive="activecode" language="java">
-    <input>
+    <code>
 public class Hello {
 
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class Hello {
     }
 
 }
-        </input>
+        </code>
     <tests>
 
 
@@ -50,12 +50,12 @@ public class Hello {
             define in the file. Once we have saved the file we <term>compile</term> it from
             the command line as follows:</p>
   <program language="java">
-    <input>
+    <code>
 $ javac Hello.java
 $ ls -l Hello.*
 -rw-r--r--   1 bmiller  bmiller  391 Jul 19 17:47 Hello.class
 -rw-r--r--   1 bmiller  bmiller  117 Jul 19 17:46 Hello.java
-</input>
+</code>
   </program>
   <p>The command <c>javac</c> compiles our java source code into compiled byte
             code and saves it in a file called <c>Hello.class</c>. <c>Hello.class</c> is a
@@ -66,11 +66,11 @@ $ ls -l Hello.*
   <p>Now that we have compiled our java source code we can run the compiled
             code using the <c>java</c> command.</p>
   <program language="java">
-    <input>
+    <code>
 $ java Hello
 Hello World!
 $
-</input>
+</code>
   </program>
   <p>Now you may be wondering what good is that extra step? What does
             compiling do for us? There are a couple of important benefits we get
@@ -116,9 +116,9 @@ $
             rules are applied. On line 1 we see that we are declaring a class called
             Hello:</p>
   <program language="java">
-    <input>
+    <code>
 public class Hello {
-</input>
+</code>
   </program>
   <p>As rule 1 says all Java code resides inside a class. Unlike
             Python where a program can simply be a bunch of statements in a file,
@@ -132,9 +132,9 @@ public class Hello {
   <p>On the next line we start our method definition. The name of this method
             is:</p>
   <program language="java">
-    <input>
+    <code>
 public static void main(String[] args)
-</input>
+</code>
   </program>
   <p>Everything on this line is significant, and helps in the identification
             of this method. For example the following lines look similar but are in
@@ -207,9 +207,9 @@ public static void main(String[] args)
   <p>That is a lot of new material to digest in only a single line of Java!
             Lets press on and look at the next line:</p>
   <program language="java">
-    <input>
+    <code>
 System.out.println("Hello World!");
-</input>
+</code>
   </program>
   <p>This line should look a bit
             more familiar to you. Python and Java both use the dot notation for
@@ -233,7 +233,7 @@ System.out.println("Hello World!");
             statements are all legal and equivalent. I would not encourage you to
             write your code like this, but you should know that it is legal.</p>
   <program language="java">
-    <input>
+    <code>
 System.out.println("Hello World");
 System.out.println("Hello World")
 ;
@@ -245,7 +245,7 @@ System.
   out.
     println("Hello World")
     ;
-</input>
+</code>
   </program>
   <p>The last two lines of the hello world program simply close the two
             blocks using <c>}</c>. The first or outer block is the class definition. The second or
@@ -253,12 +253,12 @@ System.
   <p>If we wanted to translate the Java back to Python we would have
             something like the following class definition.</p>
   <program language="java">
-    <input>
+    <code>
 class Hello(object):
     @staticmethod
     def main(args):
         print("Hello World!")
-</input>
+</code>
   </program>
   <p>Notice that we used the decorator <c>@staticmethod</c> to tell the Python
             interpreter that <c>main</c> is going to be a static method. The impact of
@@ -266,10 +266,10 @@ class Hello(object):
             first parameter of the main method! Using this definition we can call
             the main method in a Python session like this:</p>
   <program language="java">
-    <input>
+    <code>
 &gt;&gt;&gt; Hello.main("")
 Hello World!
 &gt;&gt;&gt;
-</input>
+</code>
   </program>
 </section>

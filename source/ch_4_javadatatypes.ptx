@@ -79,14 +79,14 @@
                 temperature to Celsius.
                 If this program were run on the command-line, you would enter the temperature when prompted &#x2013; the Javascript pop-up for input is only an artifact of the digital textbook.</p>
     <program interactive="activecode" language="python">
-      <input>
+      <code>
 def main():
     fahr = int(input("Enter the temperature in F: "))
     cel = (fahr - 32) * 5.0/9.0
     print("the temperature in C is: ", cel)
 
 main()
-        </input>
+        </code>
       <tests>
 
 
@@ -94,7 +94,7 @@ main()
     </program>
     <p>Next, lets look at the Java equivalent. If this program were run on the command-line, you would enter the temperature when prompted &#x2013; the &#x201C;Input for Program&#x201D; text box is only an artifact of the digital textbook.</p>
     <program interactive="activecode" language="java">
-      <input>
+      <code>
 import java.util.Scanner;
 
 public class TempConv {
@@ -111,7 +111,7 @@ public class TempConv {
         System.out.println("The temperature in C is: " + cel);
     }
 }
-        </input>
+        </code>
     <stdin> </stdin>
       <tests>
 
@@ -496,7 +496,7 @@ location: class TempConv
                 The data file we will use has one number between 0 and 9 on each line of the file.
                 Here is a simple Python program that creates and prints a histogram.</p>
     <program interactive="activecode" language="python">
-      <input>
+      <code>
 def main():
     count = [0]*10
     data = open('test.dat')
@@ -510,7 +510,7 @@ def main():
         idx += 1
 
 main()
-        </input>
+        </code>
       <tests>
 
 
@@ -584,7 +584,7 @@ main()
     </p>
     <p>Here is the Java code needed to write the exact same program:</p>
     <program interactive="activecode" language="java" datafile="test.dat">
-      <input>
+      <code>
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
@@ -623,7 +623,7 @@ public class Histo {
         }
     }
 }
-        </input>
+        </code>
       <tests>
 
 
@@ -750,7 +750,7 @@ catch (Exception e) {
                 an array declared in the &#x2018;Hello World&#x2019; program. Lets rewrite this
                 program to use primitive arrays rather than array lists.</p>
     <program interactive="activecode" language="java" datafile="test.dat">
-      <input>
+      <code>
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
@@ -782,7 +782,7 @@ public class HistoArray {
         }
     }
 }
-        </input>
+        </code>
       <tests>
 
 
@@ -807,7 +807,7 @@ public class HistoArray {
                 will count the frequency of words in a document. A simple Python program
                 for this job could look like this:</p>
     <program interactive="activecode" language="python">
-      <input>
+      <code>
 def main():
     data = open('alice30.txt')
     wordList = data.read().split()
@@ -821,7 +821,7 @@ def main():
         print("%-20s occurred %4d times" % (k, count[k]))
 
 main()
-        </input>
+        </code>
       <tests>
 
 
@@ -844,7 +844,7 @@ say.)
     <p>Notice that the structure of the program is very similar to the numeric
                 histogram program.</p>
     <program interactive="activecode" language="java" datafile="alice30.txt">
-      <input>
+      <code>
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
@@ -885,7 +885,7 @@ public class HistoMap {
         }
     }
 }
-        </input>
+        </code>
       <tests>
 
 
