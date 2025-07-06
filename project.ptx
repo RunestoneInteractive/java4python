@@ -19,8 +19,7 @@
       format="html"
       platform="runestone"
       source="main.ptx"
-      publication="publication-rs-academy.xml"
-      xsl="xsl/runestone.xsl">
+      publication="publication-rs-academy.xml">
       <stringparams author.tools="yes" html.css.extra="external/custom-styles.css" />
     </target>
   </targets>
