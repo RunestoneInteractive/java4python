@@ -10,78 +10,79 @@
     <section xml:id="numeric">
         <title>Numeric</title>
 
-        <p>
-            One of the great things about Python is that all of the basic data types are objects.
-            Integers are objects, floating point numbers are objects, lists are objects, everything.
-            In Java that is not the case.
-            In Java, some of the most basic data types like integers and floating point numbers are not objects.
-            The benefit of having these primitive data types be non-objects is that operations on the primitives are fast.
-            The problem is that it became difficult for programmers to combine objects and non-objects in the way that we do in Python.
-            So, eventually all the non-object primitives ended up with Objectified versions.
-        </p>
+        <introduction>
+            <p>
+                One of the great things about Python is that all of the basic data types are objects.
+                Integers are objects, floating point numbers are objects, lists are objects, everything.
+                In Java that is not the case.
+                In Java, some of the most basic data types like integers and floating point numbers are not objects.
+                The benefit of having these primitive data types be non-objects is that operations on the primitives are fast.
+                The problem is that it became difficult for programmers to combine objects and non-objects in the way that we do in Python.
+                So, eventually all the non-object primitives ended up with Objectified versions.
+            </p>
 
-        <table>
-            <tabular>
-                <row header="yes">
-                    <cell> Primitive </cell>
-                    <cell> Object </cell>
-                </row>
+            <table>
+                <tabular>
+                    <row header="yes">
+                        <cell> Primitive </cell>
+                        <cell> Object </cell>
+                    </row>
 
-                <row>
-                    <cell> int </cell>
-                    <cell> Integer </cell>
-                </row>
+                    <row>
+                        <cell> int </cell>
+                        <cell> Integer </cell>
+                    </row>
 
-                <row>
-                    <cell> float </cell>
-                    <cell> Float </cell>
-                </row>
+                    <row>
+                        <cell> float </cell>
+                        <cell> Float </cell>
+                    </row>
 
-                <row>
-                    <cell> double </cell>
-                    <cell> Double </cell>
-                </row>
+                    <row>
+                        <cell> double </cell>
+                        <cell> Double </cell>
+                    </row>
 
-                <row>
-                    <cell> char </cell>
-                    <cell> Char </cell>
-                </row>
+                    <row>
+                        <cell> char </cell>
+                        <cell> Char </cell>
+                    </row>
 
-                <row>
-                    <cell> boolean </cell>
-                    <cell> Boolean </cell>
-                </row>
-            </tabular>
-        </table>
+                    <row>
+                        <cell> boolean </cell>
+                        <cell> Boolean </cell>
+                    </row>
+                </tabular>
+            </table>
 
-        <p>
-            In older versions of Java, it was the programmers responsibility to convert back and forth from a primitive to an object whenever necessary.
-            This process of converting a primitive to an object was called &#x201C;boxing.&#x201D; The reverse process is called &#x201C;unboxing.&#x201D; In Java 5, the compiler became smart enough to know when to convert back and forth and is called &#x201C;autoboxing.&#x201D; In this book, we will typically use the Object version of all the numeric data types and let the compiler do its thing.
-        </p>
+            <p>
+                In older versions of Java, it was the programmers responsibility to convert back and forth from a primitive to an object whenever necessary.
+                This process of converting a primitive to an object was called &#x201C;boxing.&#x201D; The reverse process is called &#x201C;unboxing.&#x201D; In Java 5, the compiler became smart enough to know when to convert back and forth and is called &#x201C;autoboxing.&#x201D; In this book, we will typically use the Object version of all the numeric data types and let the compiler do its thing.
+            </p>
 
-        <p>
-            Let&#x2019;s look at a simple Python function which converts a Fahrenheit temperature to Celsius.
-            If this program were run on the command-line, you would enter the temperature when prompted &#x2013; the Javascript pop-up for input is only an artifact of the digital textbook.
-        </p>
+            <p>
+                Let&#x2019;s look at a simple Python function which converts a Fahrenheit temperature to Celsius.
+                If this program were run on the command-line, you would enter the temperature when prompted &#x2013; the Javascript pop-up for input is only an artifact of the digital textbook.
+            </p>
 
 
-        <program interactive="activecode" language="python">
-            <code>
+            <program interactive="activecode" language="python">
+                <code>
 def main():
     fahr = int(input("Enter the temperature in F: "))
     cel = (fahr - 32) * 5.0/9.0
     print("the temperature in C is: ", cel)
 main()
-            </code> <tests> </tests>
-        </program>
+                </code> <tests> </tests>
+            </program>
 
-        <p>
+            <p>
  Next, lets look at the Java equivalent. If this program were run on the command-line, you would enter the temperature when prompted &#x2013; the &#x201C;Input for Program&#x201D; text box is only an artifact of the digital textbook. 
-        </p>
+            </p>
 
 
-        <program interactive="activecode" language="java">
-            <code>
+            <program interactive="activecode" language="java">
+                <code>
 import java.util.Scanner;
 public class TempConv {
     public static void main(String[] args) {
@@ -95,34 +96,35 @@ public class TempConv {
         System.out.println("The temperature in C is: " + cel);
     }
 }
-            </code> <stdin> </stdin> <tests> </tests>
-        </program>
+                </code> <stdin> </stdin> <tests> </tests>
+            </program>
 
-        <p>
+            <p>
  There are several new concepts introduced in this example. We will look at them in the following order: 
-        </p>
+            </p>
 
-        <p>
-            <ul>
-                <li>
-                    <p>
+            <p>
+                <ul>
+                    <li>
+                        <p>
  Import 
-                    </p>
-                </li>
+                        </p>
+                    </li>
 
-                <li>
-                    <p>
+                    <li>
+                        <p>
  Variable Declaration 
-                    </p>
-                </li>
+                        </p>
+                    </li>
 
-                <li>
-                    <p>
+                    <li>
+                        <p>
  Input/Output and the Scanner Class 
-                    </p>
-                </li>
-            </ul>
-        </p>
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </introduction>
 
 
         <subsection>

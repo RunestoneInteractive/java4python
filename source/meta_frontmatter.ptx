@@ -2,14 +2,18 @@
 
 <!-- This frontmatter division contains all content before the --> <!-- first chapter.  -->
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_frontmatter">
+    <bibinfo>
+    <author>
+        <personname>Dr. Brad Miller</personname>
+        <department>Computer Science</department>
+        <institution>Luther College</institution>
+    </author>
+    <date><today/>
+    </date>
+    </bibinfo>
+
     <titlepage>
-        <author>
-            <personname>Dr. Brad Miller</personname>
-            <department>Computer Science</department>
-            <institution>Luther College</institution>
-        </author>
-        <date><today/>
-        </date>
+        <titlepage-items></titlepage-items>
     </titlepage>
 
 

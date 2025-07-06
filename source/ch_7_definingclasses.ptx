@@ -226,25 +226,26 @@ public Fraction(Integer num, Integer den) {
     <section xml:id="methods">
         <title>Methods</title>
 
-        <p>
-            Now we come to one of the major differences between Java and Python.
-            The Python class definition used the special methods for addition and comparison that have the effect of redefining how the standard operators behave: in Python, <c>__add__</c> and <c>__lt__</c> change the behavior of <c>+</c> and <c>&lt;</c>, respectively.
-            In Java there is <term>no operator overloading</term>.
-            So we will have to write the method for addition a little differently.
-        </p>
+        <introduction>
+            <p>
+                Now we come to one of the major differences between Java and Python.
+                The Python class definition used the special methods for addition and comparison that have the effect of redefining how the standard operators behave: in Python, <c>__add__</c> and <c>__lt__</c> change the behavior of <c>+</c> and <c>&lt;</c>, respectively.
+                In Java there is <term>no operator overloading</term>.
+                So we will have to write the method for addition a little differently.
+            </p>
 
-        <p>
-            A point of terminology: Python has both &#x201C;functions&#x201D; (<c>def</c> outside a class) and &#x201C;methods&#x201D; (<c>def</c> inside a class).
-            Since Java requires all code to be inside classes, it only has &#x201C;methods.&#x201D; Those from a C++ background might refer to methods as &#x201C;member functions.&#x201D;
-        </p>
+            <p>
+                A point of terminology: Python has both &#x201C;functions&#x201D; (<c>def</c> outside a class) and &#x201C;methods&#x201D; (<c>def</c> inside a class).
+                Since Java requires all code to be inside classes, it only has &#x201C;methods.&#x201D; Those from a C++ background might refer to methods as &#x201C;member functions.&#x201D;
+            </p>
 
-        <p>
-            Let&#x2019;s begin by implementing addition in Java:
-        </p>
+            <p>
+                Let&#x2019;s begin by implementing addition in Java:
+            </p>
 
 
-        <program language="java">
-            <code>
+            <program language="java">
+                <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * this.numerator +
                              this.denominator * otherFrac.getNumerator();
@@ -252,23 +253,23 @@ public Fraction add(Fraction otherFrac) {
     Integer common = gcd(newNum, newDen);
     return new Fraction(newNum/common, newDen/common);
 }
-            </code>
-        </program>
+                </code>
+            </program>
 
-        <p>
-            First you will notice that the <c>add</c> method is declared as <c>public Fraction</c> The <c>public</c> part means that any other method may call the <c>add</c> method.
-            The <c>Fraction</c> part means that <c>add</c> will return a fraction as its result.
-        </p>
+            <p>
+                First you will notice that the <c>add</c> method is declared as <c>public Fraction</c> The <c>public</c> part means that any other method may call the <c>add</c> method.
+                The <c>Fraction</c> part means that <c>add</c> will return a fraction as its result.
+            </p>
 
-        <p>
-            Second, you will notice that the method makes use of the <c>this</c> variable.
-            In this method, <c>this</c> is not necessary, because there is no ambiguity about the <c>numerator</c> and <c>denominator</c> variables.
-            So this version of the code is equivalent:
-        </p>
+            <p>
+                Second, you will notice that the method makes use of the <c>this</c> variable.
+                In this method, <c>this</c> is not necessary, because there is no ambiguity about the <c>numerator</c> and <c>denominator</c> variables.
+                So this version of the code is equivalent:
+            </p>
 
 
-        <program language="java">
-            <code>
+            <program language="java">
+                <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * numerator +
                              denominator * otherFrac.getNumerator();
@@ -276,21 +277,22 @@ public Fraction add(Fraction otherFrac) {
     Integer common = gcd(newNum, newDen);
     return new Fraction(newNum/common, newDen/common);
 }
-            </code>
-        </program>
+                </code>
+            </program>
 
-        <p>
-            The addition takes place by multiplying each numerator by the opposite denominator before adding.
-            This procedure ensures that we are adding two fractions with common denominators.
-            Using this approach the denominator is computed by multiplying the two denominators.
-            The greatest common divisor method, <c>gcd</c>, is used to find a common divisor to simplify the numerator and denominator in the result.
-        </p>
+            <p>
+                The addition takes place by multiplying each numerator by the opposite denominator before adding.
+                This procedure ensures that we are adding two fractions with common denominators.
+                Using this approach the denominator is computed by multiplying the two denominators.
+                The greatest common divisor method, <c>gcd</c>, is used to find a common divisor to simplify the numerator and denominator in the result.
+            </p>
 
-        <p>
-            Finally on line 6 a new <c>Fraction</c> is returned as the result of the computation.
-            The value that is returned by the return statement must match the value that is specified as part of the declaration.
-            So, in this case the return value on line 8 must match the declared value on line 1.
-        </p>
+            <p>
+                Finally on line 6 a new <c>Fraction</c> is returned as the result of the computation.
+                The value that is returned by the return statement must match the value that is specified as part of the declaration.
+                So, in this case the return value on line 8 must match the declared value on line 1.
+            </p>
+        </introduction>
 
 
         <subsection>
@@ -399,23 +401,25 @@ public class Fraction {
     <section xml:id="inheritance">
         <title>Inheritance</title>
 
-        <p>
+        <introduction>
+            <p>
  If you ran the program above you probably noticed that the output is not very satisfying. Chances are your output looked something like this: 
-        </p>
+            </p>
 
 
-        <program language="java">
-            <code>
+            <program language="java">
+                <code>
 Fraction@6ff3c5b5
-            </code>
-        </program>
+                </code>
+            </program>
 
-        <p>
-            The reason is that we have not yet provided a friendly string representation for our <c>Fraction</c> objects.
-            Just like in Python, whenever an object is printed by the <c>println</c> method it must be converted to string format.
-            In Python you can control how that looks by writing an <c>__str__</c> method for your class.
-            If you do not then you will get the default, which looks something like the above.
-        </p>
+            <p>
+                The reason is that we have not yet provided a friendly string representation for our <c>Fraction</c> objects.
+                Just like in Python, whenever an object is printed by the <c>println</c> method it must be converted to string format.
+                In Python you can control how that looks by writing an <c>__str__</c> method for your class.
+                If you do not then you will get the default, which looks something like the above.
+            </p>
+        </introduction>
 
 
         <subsection>
