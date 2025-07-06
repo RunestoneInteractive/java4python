@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-
-
 <docinfo>
-<author-biographies length="short" />
-
-<document-id edition="2">java4py2</document-id>
-
-
-<initialism></initialism>
-
-
-<cross-references text="title" />
-
+    <author-biographies length="short" /> <document-id edition="2">java4py2</document-id> <initialism></initialism> <cross-references text="title" />
 </docinfo>
