@@ -9,7 +9,9 @@
 
     <section xml:id="forgetting-to-declare-your-variables">
         <title>Forgetting to declare your variables</title>
-
+        <p>
+            This error occurs because the variable count is being used without being declared first. Java doesn't recognize count as a known variable in the class Histo, so it throws a "cannot find symbol" error. To fix this, you need to declare count with a proper type before assigning a value to it.
+        </p>
         <pre>
             Histo.java:21: cannot find symbol
             symbol  : variable count
@@ -22,7 +24,9 @@
 
     <section xml:id="not-importing-a-class">
         <title>Not importing a class</title>
-
+        <p>
+            This error is occuring because the Scanner class is being used without being imported first. Java doesn't automatically recognise classes from external packages. You need to import the package where Scanner is defined  before using it.
+        </p>
         <pre>
             Histo.java:9: cannot find symbol
             symbol  : class Scanner
@@ -55,7 +59,9 @@
 
     <section xml:id="forgetting-a-semicolon">
         <title>Forgetting a Semicolon</title>
-
+        <p>
+            This error occurs when there is a missing semicolon at the end of a statement. In this case you might realize that 'System.exit(0);' has a semicolon. the error is actually caused by the preivious line, however the compiler throws this confusing error because it points to the next line where it expected the code to continue.
+        </p>
         <pre>
             Histo.java:19:
             ';' expected
@@ -67,7 +73,9 @@
 
     <section xml:id="forgetting-to-declare-the-kind-of-object-in-a-container">
         <title>Forgetting to declare the kind of object in a container</title>
-
+        <p>
+            This is a warning not an error, and it is warning you that you are using a container class without declaring the type of its contents. this is being flagged as an <em>unchecked or unsafe operation</em> because it can lead to runtime errors.
+        </p>
         <pre>
             Note: Histo.java uses unchecked or unsafe operations. Note:
             Recompile with -Xlint:unchecked for details.
