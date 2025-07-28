@@ -18,5 +18,8 @@
         <xi:include href="ch_9_commonmistakes.ptx" />
         <xi:include href="ch_10_moredocumentation.ptx" />
         <xi:include href="meta_backmatter.ptx" />
+
+
+        <xi:include href="ap-java-cheatsheet.ptx" />
     </book>
 </pretext>

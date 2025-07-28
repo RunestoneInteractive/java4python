@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="ap-java-cheatsheet" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Java Cheat Sheet</title>
+  <paragraphs>
+  <title>Purpose of this Cheat Sheet</title>
+  <p>
+  </p>
+  <p>
+      The following is intended to be useful in better understanding Java functions coming from a Python background.
+      </p>
+      </paragraphs>
+<paragraphs>
+<table>
+    <tabular>
+        <row header="yes">
+            <cell> Python Function </cell>
+            <cell> Java Equivalent </cell>
+            <cell> Description </cell>
+        </row>
+        <row>
+            <cell> print() </cell>
+            <cell> System.out.println() </cell>
+            <cell> Prints output to the console. </cell>
+        </row>
+        <row>
+            <cell> len() </cell>
+            <cell> array.length </cell>
+            <cell> Returns the length of an array. </cell>
+        </row>
+        <row>
+            <cell> range() </cell>
+            <cell> for (int i = 0; i &lt; n; i++) </cell>
+            <cell> Used in loops to iterate a specific number of times. </cell>
+        </row>
+        <row>
+            <cell> str() </cell>
+            <cell> String.valueOf() </cell>
+            <cell> Converts an object to a string. </cell>
+        </row>
+        <row>
+            <cell> int() </cell>
+            <cell> Integer.parseInt() </cell>
+            <cell> Converts a string to an integer. </cell>
+        </row>
+        <row>
+            <cell> float() </cell>
+            <cell> Float.parseFloat() </cell>
+            <cell> Converts a string to a float. </cell>
+        </row>
+        <row>
+            <cell> list.append() </cell>
+            <cell> ArrayList.add() </cell>
+            <cell> Adds an element to the end of a list. </cell>
+        </row>
+        <row>
+            <cell> list.pop() </cell>
+            <cell> ArrayList.remove(index) </cell>
+            <cell> Removes and returns the element at the specified index. </cell>
+        </row>
+        <row>
+            <cell> list.sort() </cell>
+            <cell> Collections.sort(list) </cell>
+            <cell> Sorts a list in ascending order. </cell>
+        </row>
+        <row>
+            <cell> list.reverse() </cell>
+            <cell> Collections.reverse(list) </cell>
+            <cell> Reverses the order of elements in a list. </cell>
+        </row>
+        <row>
+            <cell> dict.get() </cell>
+            <cell> Map.get(key) </cell>
+            <cell> Retrieves the value associated with a key in a map. </cell>
+        </row>
+        <row>
+            <cell> dict.keys() </cell>
+            <cell> Map.keySet() </cell>
+            <cell> Returns a set of keys in a map. </cell>
+        </row>
+        <row>
+            <cell> dict.values() </cell>
+            <cell> Map.values() </cell>
+            <cell> Returns a collection of values in a map. </cell>
+        </row>
+        <row>
+            <cell> dict.items() </cell>
+            <cell> Map.entrySet() </cell>
+            <cell> Returns a set of key-value pairs in a map. </cell>
+        </row>
+        <row>
+            <cell> input() </cell>
+            <cell> Scanner.nextLine() </cell>
+            <cell> Reads a line of input from the console. </cell>
+        </row>
+        <row>
+            <cell> open() </cell>
+            <cell> FileReader, BufferedReader </cell>
+            <cell> Used to read from files. </cell>
+        </row>
+        <row>
+            <cell> enumerate() </cell>
+            <cell> for (int i = 0; i &lt; list.size(); i++) { ... } </cell>
+            <cell> Used to iterate over a list with an index. </cell>
+        </row>
+    </tabular>
+</table>
+<table>
+    <tabular>
+        <row header="yes">
+            <cell> Operator Type </cell>
+            <cell> Operator </cell>
+            <cell> Description </cell>
+            <cell> Example </cell>
+        </row>
+        <row>
+            <cell> Arithmetic </cell>
+            <cell> +, -, *, / </cell>
+            <cell> Addition, Subtraction, Multiplication, Division </cell>
+            <cell> 5 + 2 </cell>
+        </row>
+        <row>
+            <cell> Arithmetic </cell>
+            <cell> // </cell>
+            <cell> Floor Division (rounds down) </cell>
+            <cell> 7 // 2 → 3 </cell>
+        </row>
+        <row>
+            <cell> Arithmetic </cell>
+            <cell> % </cell>
+            <cell> Modulus (remainder) </cell>
+            <cell> 7 % 2 → 1 </cell>
+        </row>
+        <row>
+            <cell> Arithmetic </cell>
+            <cell> ** </cell>
+            <cell> Exponent </cell>
+            <cell> 2 ** 3 → 8 </cell>
+        </row>
+        <row>
+            <cell> Comparison </cell>
+            <cell> ==, != </cell>
+            <cell> Equal to, Not equal to </cell>
+            <cell> x == y </cell>
+        </row>
+        <row>
+            <cell> Comparison </cell>
+            <cell> &gt;, &lt;, &gt;=, &lt;= </cell>
+            <cell> Greater/Less than, or equal to </cell>
+            <cell> x &gt; 5 </cell>
+        </row>
+        <row>
+            <cell> Logical </cell>
+            <cell> and, or, not </cell>
+            <cell> Logical AND, OR, NOT </cell>
+            <cell> x &gt; 1 and y &lt; 10 </cell>
+        </row>
+        <row>
+            <cell> Assignment </cell>
+            <cell> +=, -=, *=, /= </cell>
+            <cell> Adds, subtracts, multiplies, or divides and assigns </cell>
+            <cell> x += 1 </cell>
+        </row>
+        <row>
+            <cell> Bitwise </cell>
+            <cell> &lt;&lt;, &gt;&gt;, &gt;&gt;&gt; </cell>
+            <cell> Left, right, and unsigned right shift. </cell>
+            <cell> x &lt;&lt; 2 </cell>
+        </row>
+        <row>
+            <cell> Ternary </cell>
+            <cell> ? : </cell>
+            <cell> One-line if-else expression. </cell>
+            <cell> condition ? val1 : val2 </cell>
+        </row>
+    </tabular>
+</table>
+
+<p>
+    <ul>
+        <li>
+            <p>
+                Short-Circuiting: The logical operators <c>&amp;&amp;</c> (AND) and <c>||</c> (OR) are efficient. They stop evaluating as soon as the outcome is known. For example, in <c>if (user != null &amp;&amp; user.isAdmin())</c>, the code will not attempt to call <c>.isAdmin()</c> if <c>user</c> is null, preventing an error.
+            </p>
+        </li>
+            <li>
+            <p>
+                Streams: Java's Stream API provides a powerful way to process collections of objects. A stream can be used to filter, map, and reduce data in a sequence of steps, similar to Python's list comprehensions but more powerful.
+            </p>
+        </li>
+        <li>
+            <p>
+                The Ternary Operator provides a compact, one-line if-else statement. For instance, <c>result = "Pass" if score &gt;= 60 else "Fail"</c> is much shorter than a full if-else block.
+            </p>
+        </li>
+
+        <li>
+            <p>
+                List Comprehension offers a concise and readable way to create new lists based on existing sequences. Instead of a multi-line loop, you can write <c>squares = [i**2 for i in range(10)]</c> to generate a list of squares.
+            </p>
+        </li>
+
+        <li>
+            <p>
+                F-Strings (Formatted String Literals) simplify embedding expressions and variables directly inside strings. This makes code like <c>print(f"Hello, {name}!")</c> much cleaner than traditional string concatenation.
+            </p>
+        </li>
+
+        <li>
+            <p>
+                Tuple and List Unpacking allows for assigning elements of a sequence to multiple variables in a single line, such as <c>name, age = ["Alice", 30]</c>. This also enables simple variable swapping with <c>a, b = b, a</c>.
+            </p>
+        </li>
+        
+        <li>
+            <p>
+                Chained Comparisons make range checks more intuitive and mathematical. You can write <c>if 18 &lt;= age &lt; 65:</c> instead of the more verbose <c>if age &gt;= 18 and age &lt; 65:</c>.
+            </p>
+        </li>
+    </ul>
+</p>
+
+</paragraphs>
+</section>
+
+
+
