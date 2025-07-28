@@ -4,85 +4,89 @@
 <chapter xml:id="introduction">
     <title>Introduction</title>
 
-    <p>
-        This book assumes that you are already familiar with the <url href="http://www.python.org" visual="http://www.python.org">Python</url> programming language.
-        We will use Python as a starting point for our journey into <url href="http://java.sun.com" visual="http://java.sun.com">Java</url>.
-        We will begin by looking at a very simple Java program, just to see what the language looks like and how we get a program to run.
-        Next, we will look at the main constructs that are common to most programming languages:
-    </p>
+<section xml:id="sec-introduction">
+    <title>Introduction to Java for Python Programmers</title>
 
-    <blockquote>
         <p>
-            <ul>
-                <li>
-                    <p>
-                        Data Types
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Loops
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Reading user input
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Conditionals
-                    </p>
-                </li>
-            </ul>
+            This book assumes that you are already familiar with the <url href="http://www.python.org" visual="http://www.python.org">Python</url> programming language.
+            We will use Python as a starting point for our journey into <url href="http://java.sun.com" visual="http://java.sun.com">Java</url>.
+            We will begin by looking at a very simple Java program, just to see what the language looks like and how we get a program to run.
+            Next, we will look at the main constructs that are common to most programming languages:
         </p>
-    </blockquote>
 
-    <p>
-        Once we have the basics of Java behind us we will move on to look at the features of Java that are both unique and powerful.
-    </p>
+        <blockquote>
+            <p>
+                <ul>
+                    <li>
+                        <p>
+                            Data Types
+                        </p>
+                    </li>
 
-    <blockquote>
+                    <li>
+                        <p>
+                            Loops
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Reading user input
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Conditionals
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </blockquote>
+
         <p>
-            <ul>
-                <li>
-                    <p>
-                        Classes
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Interfaces
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Collections
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Graphical User Interface Programming
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        Generic Programming
-                    </p>
-                </li>
-            </ul>
+            Once we have the basics of Java behind us we will move on to look at the features of Java that are both unique and powerful.
         </p>
-    </blockquote>
 
-    <p>
-        Please note that this book is a work in progress.
-        I will continue to update and post new versions.
-    </p>
+        <blockquote>
+            <p>
+                <ul>
+                    <li>
+                        <p>
+                            Classes
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Interfaces
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Collections
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Graphical User Interface Programming
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Generic Programming
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </blockquote>
+
+        <p>
+            Please note that this book is a work in progress.
+            I will continue to update and post new versions.
+        </p>
+</section>
 </chapter>
