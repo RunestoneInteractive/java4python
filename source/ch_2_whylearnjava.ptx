@@ -4,6 +4,9 @@
 <chapter xml:id="why-learn-another-programming-language">
     <title>Why Learn another programming Language?</title>
 
+    <section xml:id="why-learn-another-programming-language1">
+    <title>Why Learn another programming Language?</title>
+    
     <introduction>
         <p>
             Python is a nice language for beginning programming for several reasons.
@@ -40,6 +43,7 @@
             If you know what is common in languages that is a good place to start.
         </p>
     </introduction>
+</section>
 
     <section xml:id="why-learn-java-why-not-c-or-c">
         <title>Why Learn Java? Why not C or C++?</title>
@@ -80,12 +84,17 @@
             But for these and other reasons, we&#x2019;ve decided to use Java for this course.
             Learning Java will be a good preparation for learning these and other languages!
         </p>
-        <rubric>Footnotes</rubric> <footnote auto="1" backrefs="id1" docname="Java4Python/whylearnjava" names="pythonspeed"> <label>1</label>
+
         <p>
+        <rubric>Footnotes</rubric>
+        </p>
+        
+        <p>
+         <footnote auto="1" backrefs="id1" docname="Java4Python/whylearnjava" names="pythonspeed"> <label>1</label> 
             Although Python code is generally slower than Java and C++ code, in practice Python programs can achieve equivalent performance.
             This can be done by compiling Python code to C code (see: <url href="https://cython.org" visual="https://cython.org">Cython</url>) or by calling high-performance libraries from Python (e.g., <url href="https://numpy.org" visual="https://numpy.org">NumPy</url>, <url href="https://scikit-learn.org/stable/" visual="https://scikit-learn.org/stable/">scikit-learn</url>, etc.).
             So native language performance is just one criteria to consider when deciding which language to use for a program.
-        </p>
         </footnote>
+        </p>
     </section>
 </chapter>
