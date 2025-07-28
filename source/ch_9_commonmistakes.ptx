@@ -11,7 +11,7 @@
         <title>Forgetting to declare your variables</title>
 
         <p>
-            This error occurs because the variable count is being used without being declared first. We know that the variable count is causing the issue because the error message has an arrow pointing at it. Java doesn't recognize count as a known variable in the class Histo, so it throws a "cannot find symbol" error. To fix this, you need to declare count with a proper type before assigning a value to it.
+            The 'cannot find symbol' error for the variable <c>count</c> on line 7 indicates that <c>count</c> was used before it was declared within the <c>Histo</c> class. In Java, all variables must be explicitly declared with a data type (e.g., <c>int</c>, <c>String</c>, <c>ArrayList&lt;Integer&gt;</c>) before they can be assigned a value or referenced in any way. The arrow in the error message points to where the undeclared variable <c>count</c> was first encountered. To resolve this, <c>count</c> needs to be declared with its appropriate type (e.g., <c>ArrayList&lt;Integer&gt; count;</c>) before any attempt to initialize or use it.
         </p>
         <pre>
             Main.java:7: error: cannot find symbol
