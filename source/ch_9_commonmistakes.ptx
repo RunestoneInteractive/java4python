@@ -22,13 +22,16 @@
 
     <section xml:id="not-importing-a-class">
         <title>Not importing a class</title>
+        <p>
+             You may Notice that this error message looks similar to the previous one, however it has an entirely diferent cause. In Java, classes like Scanner that are part of external packages (like <c>java.util</c>) must be explicitly imported into your source file. Java does not automatically recognize these classes. To resolve this error, you need to add an import statement for the <c>Scanner</c> class at the beginning of your <c>Histo.java</c> file, typically import <c>java.util.Scanner;</c>.
+        </p>
 
         <pre>
-            Histo.java:9: cannot find symbol
-            symbol  : class Scanner
-            location: class Histo
+            Histo.java:3: error: cannot find symbol
                 Scanner data = null;
                 ^
+              symbol:   class Scanner
+              location: class Histo
         </pre>
 
     </section>
