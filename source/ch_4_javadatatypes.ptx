@@ -59,6 +59,39 @@
                 In older versions of Java, it was the programmers responsibility to convert back and forth from a primitive to an object whenever necessary.
                 This process of converting a primitive to an object was called &#x201C;boxing.&#x201D; The reverse process is called &#x201C;unboxing.&#x201D; In Java 5, the compiler became smart enough to know when to convert back and forth and is called &#x201C;autoboxing.&#x201D; In this book, we will typically use the Object version of all the numeric data types and let the compiler do its thing.
             </p>
+            <p>
+            With that distinction in mind, here are the common types you'll use, most of which are similar to Python's types:
+<ul>
+                <li>
+                    <p>
+                    int: The primitive type for integers (whole numbers), such as 3, 0, and -76.
+                    </p>
+                </li>
+                <li>
+                    <p>            
+                    double: The primitive type for floating-point numbers like 6.3 or -0.9.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    boolean: The primitive type that can only be true or false.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    char: The primitive type for a single character, like 'a' or 'Z'. It is represented using single quotes.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        String: An object type that represents a sequence of characters in double quotes, like "Hello".
+                    </p>
+                </li>
+
+            </ul>
+
+            A data type fundamentally defines a set of values and the operations you can perform on them. For instance, you can do math with int and double values, but not with boolean values. This is simlar to Python, where you can perform arithmetic on integers and floats, but not on booleans or strings.
+            </p>
 
             <p>
                 Let&#x2019;s look at a simple Python function which converts a Fahrenheit temperature to Celsius.
@@ -117,11 +150,6 @@ public class TempConv {
                         </p>
                     </li>
 
-                    <li>
-                        <p>
- Input/Output and the Scanner Class 
-                        </p>
-                    </li>
                 </ul>
             </p>
         </introduction>
@@ -202,13 +230,19 @@ public class TempConv {
         </subsection>
 
 
-        <subsection>
-            <title>Declaring Variables</title>
+    <subsection>
+        <title>Variable Declaration</title>
 
             <p>
- Here is where we run into one of the most important differences between Java and Python. Python is a <term>dynamically typed</term> language. In a dynamically typed language a variable can refer to any kind of object at any time. When the variable is used, the interpreter figures out what kind of object it is. Java is a <term>statically typed</term> language. In a statically typed language the association between a variable and the type of object the variable can refer to is determined when the variable is <term>declared</term>. Once the declaration is made it is an error for a variable to refer to an object of any other type. 
+        Here is where we run into one of the most important differences between Java and Python. Python is a <term>dynamically typed</term> language. In a dynamically typed language a variable can refer to any kind of object at any time. When the variable is used, the interpreter figures out what kind of object it is. Java is a <term>statically typed</term> language. In a statically typed language the association between a variable and the type of object the variable can refer to is determined when the variable is <term>declared</term>. Once the declaration is made it is an error for a variable to refer to an object of any other type. 
             </p>
+<p>
+    A valid variable name in Java can contain letters, digits, and underscores. It must begin with a letter, an underscore, or a dollar sign. It cannot start with a digit and it cannot be a reserved keyword (like class, int, or static). Variable names are case-sensitive, so <c>fahr</c> and <c>Fahr</c> are different variables. The convention is to use lower case for variable names, and to use camel case (where the first word is lowercase and subsequent words are capitalized) for multi-word variable names, such as <c>fahrenheitTemperature</c>.
+</p>
 
+<p>
+    An important feature of Java is that when you declare a variable of a primitive type (like int or double), the system automatically allocates a fixed amount of memory to store its value directly. This is different from reference types (like String or Scanner), where the variable holds a memory address that points to the actual object data stored elsewhere. This distinction makes operations on primitives very fast.
+</p>
             <p>
  In the example above, lines 5&#x2014;7 contain variable declarations. Specifically we are saying that <c>fahr</c> and <c>cel</c> are going to reference objects that are of type <c>Double</c>. The variable <c>in</c> will reference a <c>Scanner</c> object. This means that if we were to try an assignment like <c>fahr = "xyz"</c> the compiler would generate an error because <c>"xyz"</c> is a string and <c>fahr</c> is supposed to be a double. 
             </p>
@@ -223,86 +257,94 @@ public class TempConv {
             </p>
 
             <p>
- The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of Java, but for now this is enough. 
+ The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. In our temperature converter, the calculation (fahr - 32) * 5.0/9.0 works correctly because 5.0 and 9.0 are treated as double values, preventing the integer division that would occur if we had written 5/9, which would result in 0.
             </p>
-        </subsection>
+            </subsection>
+        </section>
 
+    <section xml:id="typecasting">
+        <title>Typecasting</title>
 
-        <subsection>
-            <title>Input / Output / Scanner</title>
+        <p>
+            Typecasting is the process of converting a variable from one type to another. In Java, this is often necessary when you want to perform operations that require different data types. For example, if you have an integer and you want to convert it to a double for more precise calculations, you would use typecasting.
+        </p>
 
-            <p>
- In the previous section we created a <c>Scanner</c> object. In Java, <c>Scanner</c> objects make getting input from the user, a file, or even over the network relatively easy. In our case we simply want to ask the user to type in a number at the command line, so in line 9 we construct a <c>Scanner</c> by calling the constructor and passing it the <c>System.in</c> object. Notice that this <c>Scanner</c> object is assigned to the name <c>in</c>, which we declared to be a <c>Scanner</c> on line 7. <c>System.in</c> is similar to <c>System.out</c> except, of course, it is used for input. If you are wondering why we must create a <c>Scanner</c> to read data from <c>System.in</c> when we can write data directly to <c>System.out</c> using <c>println</c>, you are not alone. We will talk about the reasons why this is so later when we talk in-depth about Java streams. You will also see in other examples that we can create a <c>Scanner</c> by passing the <c>Scanner</c> a <c>File</c> object. You can think of a <c>Scanner</c> as a kind of &#x201C;adapter&#x201D; that makes low level objects easier to use. 
-            </p>
+        <p>
+            In Java, typecasting can be done in two ways: implicit and explicit. Implicit typecasting occurs automatically when converting from a smaller data type to a larger one (like int to double), while explicit typecasting requires you to specify the conversion manually (like double to int).
+        </p>
 
-            <p>
- On line 11 we use the <c>Scanner</c> object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method <c>nextDouble</c> because the variable <c>fahr</c> was declared as a double. So, we must have a function that is guaranteed to return each kind of object we might want to read. In this case, we need to read a Double so we call the function <c>nextDouble</c>. The compiler matches up these assignment statments and if you try to assign the results of a method call to the wrong kind of variable it will be flagged as an error. 
-            </p>
+        <p>
+            Implicit typecasting happens automatically when converting a value from a smaller data type to a larger one, as there is no risk of losing information. For example, you can assign an int to a double without any special syntax. 
+        </p>
+        <pre> 
+        int myInt = 10;
+        double myDouble = myInt; // Automatic casting from int to double
+        </pre>
+            
+        <p>
+            Explicit typecasting is required when converting from a larger data type to a smaller one, as you might lose data. You must do this manually by placing the target type in parentheses () before the value.
+        </p>
+        <pre>
+        double originalDouble = 9.78;
+        int castedInt = (int) originalDouble; // Explicitly casts double to int. The value of castedInt is now 9.
+        </pre>
 
-            <p>
- The table below shows some commonly used methods of the <c>Scanner</c> class. There are many more methods supported by this class and we will talk about how to find them in our chapter about <xref ref="java-documentation-id1"/>. 
-            </p>
+        <p>
+        Besides primitive types, type casting is also a fundamental concept when working with objects, especially within an inheritance hierarchy. This involves converting an object reference from one class type to another, typically between a superclass and a subclass. This is often referred to as upcasting and downcasting.
+    </p>
+    <p>
+        Let's imagine we have a simple class hierarchy: an <c>Animal</c> superclass and a <c>Dog</c> subclass.
+    </p>
+    <pre>
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
 
-            <table>
-                <tabular>
-                    <row header="yes">
-                        <cell> Return type </cell>
-                        <cell> Method name </cell>
-                        <cell> Description </cell>
-                    </row>
+class Dog extends Animal {
+    public void bark() {
+        System.out.println("The dog barks!");
+    }
+}
+    </pre>
 
-                    <row>
-                        <cell> boolean </cell>
-                        <cell> hasNext() </cell>
-                        <cell> returns true if more data is present </cell>
-                    </row>
+    <p>
+        <strong>Upcasting (Implicit):</strong> Upcasting is casting a subclass instance to a superclass reference type. This is always safe because a subclass object is guaranteed to have all the methods and properties of its superclass. Therefore, upcasting is done implicitly by the compiler.
+    </p>
+    <pre>
+// A Dog object is created, but the reference is of type Animal.
+// This is implicit upcasting.
+Animal myAnimal = new Dog(); 
 
-                    <row>
-                        <cell> boolean </cell>
-                        <cell> hasNextInt() </cell>
-                        <cell> returns true if the next thing to read is an integer </cell>
-                    </row>
+myAnimal.makeSound(); // This is valid, as makeSound() is defined in Animal.
 
-                    <row>
-                        <cell> boolean </cell>
-                        <cell> hasNextFloat() </cell>
-                        <cell> returns true if the next thing to read is a float </cell>
-                    </row>
+// myAnimal.bark(); // This would cause a compile-time error!
+// The compiler only knows about the methods in the Animal reference type.
+    </pre>
+    <p>
+        <strong>Downcasting (Explicit):</strong> Downcasting is casting a superclass reference back to its original subclass type. This is potentially unsafe because the superclass reference might not actually point to an object of the target subclass. You must perform an explicit cast. If you cast to the wrong type, Java will throw a <c>ClassCastException</c> at runtime.
+    </p>
+    <p>
+        To safely downcast, you should first check the object's type using the <c>instanceof</c> operator.
+    </p>
+    <pre>
+// 'myAnimal' is an Animal reference, but it points to a Dog object.
+if (myAnimal instanceof Dog) {
+    // The check passed, so this downcast is safe.
+    Dog myDog = (Dog) myAnimal;
 
-                    <row>
-                        <cell> boolean </cell>
-                        <cell> hasNextDouble() </cell>
-                        <cell> returns true if the next thing to read is a double </cell>
-                    </row>
+    // Now we can access methods specific to the Dog class.
+    myDog.bark(); // This is now valid.
+}
+    </pre>
 
-                    <row>
-                        <cell> Integer </cell>
-                        <cell> nextInt() </cell>
-                        <cell> returns the next thing to read as an integer </cell>
-                    </row>
+        <p>
+            In this example, we first create a <c>Dog</c> object and assign it to an <c>Animal</c> reference (upcasting). Then, we check if the <c>Animal</c> reference is actually pointing to a <c>Dog</c> object before downcasting it back to a <c>Dog</c> reference.
+        </p>
+        </section>
 
-                    <row>
-                        <cell> Float </cell>
-                        <cell> nextFloat() </cell>
-                        <cell> returns the next thing to read as a float </cell>
-                    </row>
-
-                    <row>
-                        <cell> Double </cell>
-                        <cell> nextDouble() </cell>
-                        <cell> returns the next thing to read as a Double </cell>
-                    </row>
-
-                    <row>
-                        <cell> String </cell>
-                        <cell> next() </cell>
-                        <cell> returns the next thing to read as a String </cell>
-                    </row>
-                </tabular>
-            </table>
-        </subsection>
-    </section>
-
+    
     <section xml:id="string">
         <title>String</title>
 
