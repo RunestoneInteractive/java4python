@@ -4,8 +4,46 @@
 <chapter xml:id="filemmanipulation">
     <title>File IO</title>
 
-    <p>
-        This chapter will cover File IO.
-    </p>
+    <introduction>
+        <p>
+            File handling is an integral part of programming. Most programming languages have the ability to read from, write to, create, delete, move, and copy files.  
+        </p>
+    </introduction>
+    
+
+    <section xml:id="file-class-import">
+        <title>Class Imports</title>
+
+        <p>
+            Before any code can be written to handle files, the proper classes must be imported. Java includes a class called <c>File</c> in the io library. The class can be imported with the following line. Be sure to capitalize File.
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+import java.io.File;
+            </code> <tests> </tests>
+        </program>
+
+        <p>
+            This class provides a lot of functionality for file hanling, however, the <c>IOException</c> class should also be included and used to handle file operation errors. If this class is not included and a file operation throws an exception, a compile error will occur. 
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+import java.io.IOException;
+            </code> <tests> </tests>
+        </program>
+
+        <p>
+            Next, the Scanner class from the util library will need to be imported if there is any need for the program being written to read a file. It should be noted that this library is unneccesary if the program will not be reading any data from a file.
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+import java.io.IOException;
+            </code> <tests> </tests>
+        </program>
+        
+    </section>
 
 </chapter>
