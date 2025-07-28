@@ -10,19 +10,22 @@
     <section xml:id="forgetting-to-declare-your-variables">
         <title>Forgetting to declare your variables</title>
 
+        <p>
+            This error occurs because the variable count is being used without being declared first. We know that the variable count is causing the issue because the error message has an arrow pointing at it. Java doesn't recognize count as a known variable in the class Histo, so it throws a "cannot find symbol" error. To fix this, you need to declare count with a proper type before assigning a value to it.
+        </p>
         <pre>
-            Histo.java:21: cannot find symbol
-            symbol  : variable count
-            location: class Histo
+            Main.java:7: error: cannot find symbol
                 count = new ArrayList&lt;Integer&gt;(10);
                 ^
+              symbol:   variable count
+              location: class Main
         </pre>
 
     </section>
 
     <section xml:id="not-importing-a-class">
         <title>Not importing a class</title>
-
+        
         <pre>
             Histo.java:9: cannot find symbol
             symbol  : class Scanner
