@@ -4,6 +4,15 @@
 <backmatter xml:id="meta_backmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title> Appendices </title>
 
+    <appendix>
+
+    <title>Java Cheat Sheet</title>
+    <p>This is a quick reference guide for Java syntax and concepts.</p>
+    <xi:include href="ap-java-cheatsheet.ptx" />
+    </appendix>
+
+
+
     <appendix xml:id="backmatter_appendix">
         <title>Shameless Plug</title>
 
