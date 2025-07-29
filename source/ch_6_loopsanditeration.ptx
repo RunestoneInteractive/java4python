@@ -4,15 +4,13 @@
 <chapter xml:id="loops-and-iteration">
     <title>Loops and Iteration</title>
 
-    <introduction>
-        <p>
-            You have already seen a couple of examples of iteration and looping in Java.
-            So this section will just serve as a reference for the differences in Syntax.
-        </p>
-    </introduction>
-
     <section xml:id="definite-loop">
         <title>Definite Loop</title>
+
+        <p>
+            You have already seen a couple of examples of iteration and looping in Java.
+            So this section will just serve as a reference for the differences in syntax.
+        </p>
 
         <p>
             In Python the easiest way to write a definite loop is using the for loop in conjunction with the range function.
