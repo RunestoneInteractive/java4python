@@ -19,13 +19,7 @@
     <preface xml:id="meta_frontmatter-acknowledgments">
         <title>Acknowledgements</title>
         <p>
-            <ul>
-             <li>Rob Beezer for creating PreTeXt</li>
-             <li>Moise Dete-Kpinssounon for converting the original version to PreTeXt</li>
-             <li>Oscar Levin for creating the rst to PreTeXt transition tool that helped Moise's conversion work</li>
-             <li>Berea College for funding interns and supporting independent studies that facilitated the conversion and improvement of the book</li>
-             <li>Beryl Hoffman and her impressive work on CSAwsome, which we are leveraging</li>
-            </ul>
+            Thank you to the following people for their hard work and contributions to this book: Dr. Brad Miller for writing the original book; Rob Beezer for creating PreTeXt; Moise Dete-Kpinssounon for converting the original version to PreTeXt; Oscar Levin for developing the reStructuredText-to-PreTeXt transition tool that supported Moise’s conversion work; Berea College for funding interns and supporting independent studies that facilitated the book’s conversion and improvement; and Beryl Hoffman for her impressive work on CSAwesome, which we are leveraging.  
         </p>
     </preface>
 
