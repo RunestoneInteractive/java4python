@@ -472,6 +472,11 @@ The <c>code</c> will be executed once for each element in the <c>collection</c>.
 Here is the Java code needed to write the exact same program:
         </p>
 
+        <note>
+            <p>
+            The Java code below contains the first mention of the <idx>null</idx> <term><c>null</c></term> literal. Similar to Python’s None object, null in Java is used to indicate that a variable does not currently reference any object in memory. This is often used for variables that have not yet been initialized or for methods that return no object.
+            </p>
+        </note>
 
         <program interactive="activecode" language="java" datafile="test.dat">
             <code>
