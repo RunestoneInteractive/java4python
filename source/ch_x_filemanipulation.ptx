@@ -25,7 +25,7 @@
         </program>
 
         <p>
-            This class provides a lot of functionality for file hanling, however, the <c>IOException</c> class should also be included and used to handle file operation errors. If this class is not included and a file operation throws an exception, a compile error will occur. 
+            This class provides a lot of functionality for file handling, however, the <c>IOException</c> class should also be included and used to handle file operation errors. If this class is not included and a file operation throws an exception, a compile error will occur. 
         </p>
 
         <program interactive="activecode" language="java">
@@ -35,7 +35,7 @@
         </program>
 
         <p>
-            Next, the Scanner class from the util library will need to be imported if there is any need for the program being written to read a file. It should be noted that this library is unneccesary if the program will not be reading any data from a file.
+            Next, the Scanner class from the util library will need to be imported if there is any need for the program being written to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
 
         <program interactive="activecode" language="java">
@@ -97,7 +97,7 @@
         </program>
 
         <pre>
-            Note: You may have noticed the use of another mthod from the File class; 
+            Note: You may have noticed the use of another method from the File class; 
             <c>getName()</c>. This method returns a string containing the name of 
             the file. 
         </pre>
@@ -147,6 +147,7 @@
             public class CreateFile {
                 public static void main(String[] args) {
                     try {
+                        File myFile = new File("myfile.txt");
                         if (myFile.createNewFile()) { // If the file was created successfully
                             System.out.println("The file " + myFile.getName() + " was created sucessfully.");
                         } else { // If a file with the file name chosen already exists
@@ -163,7 +164,7 @@
         </program>
 
         <p>
-            You may be wondering; "What if I don't want to create a file in the current working directory?" Good question! In Windows environments, you can specify the file path using two back slashes for each back slash in the file path. For each pair of back slashes, the first backslash acts as an escape character. So, if you want to save a file to this directory:
+            You may be wondering: "What if I don't want to create a file in the current working directory?" Good question! In Windows environments, you can specify the file path using two back slashes for each back slash in the file path. For each pair of back slashes, the first backslash acts as an escape character. So, if you want to save a file to this directory:
         </p>
 
         <pre>
@@ -189,6 +190,15 @@
             File myFile = new File("/home/UserName/Documents/myfile.txt");
             </code> <tests> </tests>
         </program>
+    </section>
+
+    <section xml:id="file-write">
+        <title>Writing to Files</title>
+
+        <p>
+            The <c>createNewFile()</c> method is useful for attempting to create files and reporting if the operation was successful, however, createNewFile() does not write anything to files it creates. In fact, if you use <c>createNewFile()</c> to create a .txt file and then open the file, the file will be blank.
+        </p>
+        
     </section>
 
 </chapter>
