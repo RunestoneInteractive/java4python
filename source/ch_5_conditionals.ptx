@@ -14,27 +14,66 @@
     <section xml:id="simple-if">
         <title>Simple if</title>
 
-        <pre>if condition: statement1 statement2 ...</pre>
         <p>
-            In Java this same pattern is simply written as:
+            In Python the simple if statement is written as:
         </p>
 
-        <pre>if (condition) { statement1 statement2 ... }</pre>
+        <program interactive="activecode" language="python">
+            <code>
+score = 95
+if score &gt;= 90:
+    print("Excellent work!")
+            </code>
+        </program>
+        <p>
+            In Java, this same pattern requires two changes: the condition must be in parentheses <code>()</code>, and the code block must be enclosed in curly braces <code>{}</code>.
+        </p>
+        <program interactive="activecode" language="java">
+            <code>
+            public class SimpleIfExample {
+                public static void main(String[] args) {
+                    int score = 70;
+                    if (score &lt;= 70) {
+                        System.out.println("Needs work!");
+                    }
+                }
+            }
+            </code>
+        </program>
         <p>
             Once again you can see that in Java the curly braces define a block rather than indentation.
-            In Java the parenthesis around the condition are required because if is technically a function that evaluates to True or False.
+            In Java the parenthesis around the condition are required because it is technically a function that evaluates to True or False.
         </p>
     </section>
 
     <section xml:id="if-else">
         <title>if else</title>
 
-        <pre>if condition: statement1 statement2 ... else: statement1 statement2 ...</pre>
-        <p>
-            In Java this is written as:
-        </p>
+            <p>The Java equivalent follows the same syntactical rules as before.</p>
+        <program interactive="activecode" language="python">
+            <code>
+            age = 16
+            if age &gt;= 18:
+                print("You can vote.")
+            else:
+                print("You are not yet eligible to vote.")
+            </code>
+            </program>
 
-        <pre>if (condition) { statement1 statement2 ... } else { statement1 statement2 ... }</pre>
+        <program language="java">
+            <code>
+        public class IfElseExample {
+            public static void main(String[] args) {
+                int age = 16;
+                if (age &gt;= 18) {
+                    System.out.println("You can vote.");
+                } else {
+                    System.out.println("You are not yet eligible to vote.");
+                }
+            }
+        }
+            </code>
+        </program>
     </section>
 
     <section xml:id="elif">
