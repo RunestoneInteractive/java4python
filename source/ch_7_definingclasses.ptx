@@ -4,6 +4,8 @@
 <chapter xml:id="defining-classes-in-java">
     <title>Defining Classes in Java</title>
 
+<section xml:id="defining-classes-in-java1">
+    <title>Defining Classes in Java</title>
     <introduction>
         <p>
             You have already seen how to define classes in Java.
@@ -180,6 +182,7 @@ public void setDenominator(Integer denominator) {
             </code>
         </program>
     </introduction>
+</section>
 
     <section xml:id="writing-a-constructor">
         <title>Writing a constructor</title>
