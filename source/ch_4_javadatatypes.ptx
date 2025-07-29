@@ -474,7 +474,7 @@ Here is the Java code needed to write the exact same program:
 
         <note>
             <p>
-            The Java code below contains the first mention of the <idx>null</idx> <term><c>null</c></term> literal. Similar to Python’s None object, null in Java is used to indicate that a variable does not currently reference any object in memory. This is often used for variables that have not yet been initialized or for methods that return no object.
+            The Java code below contains the first mention of the <idx><c>null</c></idx> <c>null</c> literal. Similar to Python’s <c>None</c> object, <c>null</c> in Java is used to indicate that a variable does not currently reference any object in memory. This is often used for variables that have not yet been initialized or for methods that return no object.
             </p>
         </note>
 
