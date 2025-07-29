@@ -4,14 +4,13 @@
 <chapter xml:id="conditionals">
     <title>Conditionals</title>
 
-    <introduction>
+    <section xml:id="simple-if">
+
         <p>
             Conditional statements in Python and Java are very similar.
             In Python we have three patterns:
         </p>
-    </introduction>
-
-    <section xml:id="simple-if">
+        
         <title>Simple if</title>
 
         <pre>if condition: statement1 statement2 ...</pre>
