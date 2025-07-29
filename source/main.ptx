@@ -20,6 +20,5 @@
         <xi:include href="meta_backmatter.ptx" />
 
 
-        <xi:include href="ap-java-cheatsheet.ptx" />
     </book>
 </pretext>
