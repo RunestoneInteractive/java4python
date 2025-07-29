@@ -4,22 +4,6 @@
 <backmatter xml:id="meta_backmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title> Appendices </title>
 
-    <colophon>
-        <p>
-            I started writing this article in 2006 using Python&#x2019;s restructured text.
-            In 2007 I switched to markdown since everything else I was writing used markdown.
-            In particular I switched to the variant of markdown used by the excellent <url href="http://johnmacfarlane.net/pandoc/" visual="http://johnmacfarlane.net/pandoc/">pandoc</url> program.
-            Pandoc does an excellent job of converting markdown to html, latex, pdf, and other formats.
-            The markdown source for this article is available <url href="http://www.cs.luther.edu/~bmiller/JavaForPython.md" visual="http://www.cs.luther.edu/~bmiller/JavaForPython.md">here</url>.
-            Finally the document became so big that I used <c>pandoc</c> to convert it to latex for preparing the final version.
-            I used The <c>htlatex</c> program to generate html for the online version of this document.
-        </p>
-    </colophon>
-
-    <appendix xml:id="appendix-java-cheatsheet">
-        <title>Java Cheatsheet</title>
-        <xi:include href="ap-java-cheatsheet.ptx" />
-    </appendix>
     <appendix xml:id="backmatter_appendix">
         <title>Shameless Plug</title>
 

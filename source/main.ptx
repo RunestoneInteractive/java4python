@@ -19,6 +19,9 @@
         <xi:include href="ch_10_moredocumentation.ptx" />
         <xi:include href="meta_backmatter.ptx" />
 
+        <index>
+            <title> Index </title>
+            <index-list/>
 
     </book>
 </pretext>
