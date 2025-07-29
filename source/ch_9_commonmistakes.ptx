@@ -44,18 +44,21 @@
         <title>Forgetting to use the new keyword to create an object</title>
 
         <p>
-            Here&#x2019;s an example of the error message that occurs when you forget to use the new keyword.
-            Notice that the message is pretty unhelpful.
-            Java <em>thinks</em> you are trying to call the Method Scanner, but there are two problems.
-            First, Scanner is not really a method; rather, it is a constructor.:
+          This error message occurs when you forget to use the <c>new</c> keyword to instantiate an object. 
+          Specifically, on line 8 of <c>Histo.java</c>, <c>data = Scanner(new File("test.dat"));</c> leads to a 'cannot find symbol' error. 
+          While the message states 'symbol: method Scanner(File)', this can be misleading. 
+          Java incorrectly interprets <c>Scanner()</c> as an attempt to call a static method named <c>Scanner</c> within the <c>Histo</c> class 
+          (or an inherited one). However, <c>Scanner</c> is a constructor of the <c>Scanner</c> class, not a standalone method, 
+          and therefore requires the new keyword (e.g., <c>data = new Scanner(new File("test.dat"));</c>) to create a new <c>Scanner</c> object.
+
         </p>
 
         <pre>
-            Histo.java:14: cannot find symbol
-            symbol  : method Scanner(java.io.File)
-            location: class Histo
+            Histo.java:8: error: cannot find symbol
                 data = Scanner(new File("test.dat"));
-                ^
+                    ^
+              symbol:   method Scanner(File)
+              location: class Histo
         </pre>
 
     </section>
