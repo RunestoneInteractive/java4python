@@ -658,6 +658,10 @@ main()
             </code> <tests> </tests>
         </program>
 
+        <p>
+    This program reads the file <c>alice30.txt</c> (which follows), and it then splits it into a list of words. Next it creates a dictionary called <c>count</c> which maps each word to the number of times that word occurs in the text. Finally, it prints out the words in alphabetical order along with their frequency.
+        </p>
+
         <datafile label="datafile-alice1" filename="alice30.txt" editable="no" cols="30" rows="15"><pre> 
             Down, down, down.  Would the fall NEVER come to an end! 
              'I wonder how many miles I've fallen by this time?' she said aloud. 'I must 
