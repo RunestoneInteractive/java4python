@@ -25,17 +25,7 @@
         </program>
 
         <p>
-            This class provides a lot of functionality for file handling, however, the IOException class should also be included and used to handle file operation errors. If this class is not included and a file operation throws an exception, a compile error will occur. 
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            import java.io.IOException;
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            Next, the Scanner class from the util library will need to be imported if there is any need for the program being written to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
+            The Scanner class from the util library will need to be imported if there is any need for the program being written to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
 
         <program interactive="activecode" language="java">
@@ -45,12 +35,28 @@
         </program>
 
         <p>
-            Finally, the FileWriter class can be used to write to files. In the same way that the Scanner class isn't needed unless the program will read from a file, the FileWriter class isn't needed unless the program will write to a file.
+            The FileWriter class can be used to write to files. In the same way that the Scanner class isn't needed unless the program will read from a file, the FileWriter class isn't needed unless the program will write to a file.
         </p>
 
         <program interactive="activecode" language="java">
             <code>
             import java.io.FileWriter;
+            </code> <tests> </tests>
+        </program>
+
+        <p>
+            Finally, these last two classes provide error handling and must be used in tandem with the File class. IOException handles file creation and writing errors, while FileNotFoundException handles errors when trying to read files that do not exist. 
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            import java.io.IOException;
+            </code> <tests> </tests>
+        </program>
+
+        <program interactive="activecode" language="java">
+            <code>
+            import java.io.FileNotFoundException
             </code> <tests> </tests>
         </program>
         
@@ -131,9 +137,9 @@
             </code> <tests> </tests>
         </program>
 
-        <p>
-            You may have noticed the <c>IOException e</c> part in the parenthesis next to the catch. This creates a variable called <c>e</c> that refers to an IOException object. In other words, <c>e</c> refers to the error created if the <c>try</c> block fails. The line <c>e.printStackTrace();</c> prints the stack trace to the console. This is what the console may output if the program tries to create a file, but is blocked by the Operating System due to insufficient permissions:
-        </p>
+        <pre>
+            Note: The <c>IOException e</c> part in the parenthesis next to the catch. This creates a variable called <c>e</c> that refers to an IOException object. In other words, <c>e</c> refers to the error created if the <c>try</c> block fails. The line <c>e.printStackTrace();</c> prints the stack trace to the console. This is what the console may output if the program tries to create a file, but is blocked by the Operating System due to insufficient permissions:
+        </pre>
 
         <program language="$">
             <input>
@@ -210,7 +216,7 @@
         </p>
 
         <p>
-            To write to a file, we will need to create a different class. We will do the same setup as the previous section. First, we will import the classes (File and Scanner are not needed) and create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
+            To write to a file, we will need to create a different class. We will do the same setup as the previous section. First, we will import the classes (File and Scanner are not needed) and create the framework for a class that will write to a file. Let's call this class WriteFile:
         </p>
 
         <program interactive="activecode" language="java">
@@ -247,9 +253,9 @@
             </code> <tests> </tests>
         </program>
 
-        <p>
-            You may have noticed the <c>close()</c> function being used after writing to a file. This is a very important step and must be included when working with files! Without using this method, the file may remain active in system resources even after the program is closed. This can lead file corruption or other terrible problems that are best avoided!
-        </p>
+        <pre>
+            Note: the <c>close()</c> function being used after writing to a file. This is a very important step and must be included when working with files! Without using this method, the file may remain active in system resources even after the program is closed. This can lead file corruption or other terrible problems that are best avoided!
+        </pre>
 
         <p>
             Next, we will again add the required try/catch blocks utilizing the IOException class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation:
@@ -387,7 +393,115 @@
 
             </code> <tests> </tests>
         </program>
+    </section>
 
+    <section xml:id="file-read">
+        <title>Reading Files</title>
+
+        <p>
+            Let's take a look at how we can use Java to read file contents. We'll start again with library imports and building a class, this time importing the Scanner and FileNotFoundException classes. We will call this class ReadFile:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            import java.io.File;
+            import java.io.FileNotFoundException;
+            import java.util.Scanner
+
+            public class ReadFile {
+                public static void main(String[] args) {
+
+                }
+            }
+            </code> <tests> </tests>
+        </program>
+
+        <p>
+            We will then create both a new File exactly the same as the one from the section on creating files. Additionally, we will create a Scanner object. The Scanner object is the object that does the file reading. We will call this scanner fileReader:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            File myFile = new File("myfile.txt");
+            Scanner fileReader = new Scanner(myFile);
+            </code> <tests> </tests>
+        </program>
+
+        <pre>
+            Note: The myFile File object we created on the first line was passed to the Scanner object created on the second line.
+        </pre>
+
+        <p>
+            The next lines consist of a while loop that reads each line of the file passed to the Scanner object and reads them:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            while (fileReader.hasNextLine()) {
+                String data = fileReader.nextLine();
+                System.out.println(data);
+            }
+            fileReader.close();
+            </code> <tests> </tests>
+        </program>
+
+        <p>
+            The <c>hasNextLine()</c> method checks checks if the line below the current line has any data. This will evaluate to true even if the next line only contains blank spaces. Within the while loop, a string variable called <c>data</c> is used to store the current line that the Scanner object is pointing to. The <c>nextLine()</c> method does two things. Firstly, it reads the current line. Secondly, it moves the Scanner's position to the next line. In other words, for each iteration of the while loop, each line in the text is read, stored temporarily in the data variable, and printed to the console. Finally, the <c>close()</c> method accomplishes and holds the same importance as the same method discussed in the section on writing to files.
+        </p>
+        
+        <p>
+            Alternatively, the following code can be used to store the all lines of myfile.txt to one variable:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            String data = "";
+            while (fileReader.hasNextLine()) {
+                data = data + fileReader.nextLine() + System.lineSeparator();    
+            }
+            System.out.println(data);
+            fileReader.close();
+            </code> <tests> </tests>
+        </program>
+
+        <p>
+            Pay close attention to the details of this code. <c>data</c> must be declared using an empty string or it may not work correctly within the while loop. Additionally, care must be given to reassigning <c>data</c> in the while loop. <c>data</c> is concatinated (to ensure all lines are included) with <c>fileReader.nextLine()</c> and a lineSeparator. Each step of this process ensures what is stored in data matches exactly what is in myfile.txt.
+        </p>
+
+        <p>
+            Using the second method of storing all file contents to one file, the resulting full code including try/catch blocks (this time using FileNotFoundException instead of IOException) will look like this:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            import java.io.File;
+            import java.io.FileNotFoundException;
+            import java.util.Scanner
+
+            public class ReadFile {
+                public static void main(String[] args) {
+                    try {
+                        File myFile = new File("myfile.txt");
+                        Scanner fileReader = new Scanner(myFile);
+                        String data = "";
+                        while (fileReader.hasNextLine()) {
+                            data = data + fileReader.nextLine() + System.lineSeparator();    
+                        }
+                        System.out.println(data);
+                        fileReader.close();
+                    } catch (FileNotFoundException e) {
+                        System.out.println("An error occurred.");
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </code> <tests> </tests>
+        </program>
+
+        <p>
+            In this code, we simply print the contents of the file to the console, but it is easy to imagine how the <c>data</c> variable could be used in conjunction with the write class created in the previous section to create a copy of myfile.txt.
+        </p>
+        
     </section>
 
 </chapter>
