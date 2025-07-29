@@ -90,6 +90,12 @@
     <title>Java Development Environment</title>
 
     <introduction>
+        <note>
+          <p>
+            Thank you to Beryl Hoffman for contributing to this section from her CSAwesome: AP Java Programming book.
+          </p>
+        </note>
+      
         <p>
             The tool that we use to compile a Java source file into a Java class file
             is called a <term>compiler</term>. Most programmers use an
