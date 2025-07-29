@@ -4,7 +4,7 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_frontmatter">
     <bibinfo>
     <author>
-        <personname>Drs. Brad Miller and Jan Pearce</personname>
+        <personname>Brad Miller and Jan Pearce</personname>
     </author>
     <date><today/>
     </date>
@@ -13,6 +13,13 @@
     <titlepage>
         <titlepage-items></titlepage-items>
     </titlepage>
+
+    <preface xml:id="meta_frontmatter-acknowledgments">
+        <title>Acknowledgements</title>
+        <p>
+            Thank you to the following people and organizations for their hard work and contributions to this book: Brad Miller for writing the original version of this book and for creating Runestone Academy; Rob Beezer for creating the PreTeXt language in which this book is authored; Moise Dete-Kpinssounon for converting the original version to PreTeXt; Oscar Levin for developing the reStructuredText-to-PreTeXt transition tool that supported the conversion work from the previous version; Berea College for funding interns and supporting independent studies that facilitated the book’s conversion and improvement; and Beryl Hoffman for her impressive work on CSAwesome, which we are leveraging as a model in several sections that are new to this version.  
+        </p>
+    </preface>
 
 
     <preface xml:id="meta_frontmatter-preface">
