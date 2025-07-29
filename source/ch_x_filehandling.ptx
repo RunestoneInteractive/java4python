@@ -417,7 +417,7 @@
         </program>
 
         <p>
-            We will then create both a new File exactly the same as the one from the section on creating files. Additionally, we will create a Scanner object. The Scanner object is the object that does the file reading. We will call this scanner fileReader:
+            We will then create a new File exactly the same as the one from the section on creating files. Additionally, we will create a Scanner object. The Scanner object is the object that does the file reading. We will call this scanner fileReader:
         </p>
 
         <program interactive="activecode" language="java">
