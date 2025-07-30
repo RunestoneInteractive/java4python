@@ -53,7 +53,22 @@
 
     <section xml:id="forgetting-to-use-the-new-keyword-to-create-an-object">
         <title>Forgetting to use the new keyword to create an object</title>
+        <program language="java" interactive="activecode">
+            <code>
+                // Histo.java // Line 1: The filename for this example
+                import java.io.File;    // Line 2: Import the File class, needed for file operations
+                import java.util.Scanner; // Line 3: Import the Scanner class, now correctly imported
 
+                public class Histo { // Line 5: Class declaration
+
+                    public static void main(String[] args) { // Line 7: Main method declaration
+                        
+                        Scanner data = Scanner(new File("test.dat")); // Line 9: This Line will cause an error
+
+                    } // Line 12: End of main method
+                } // Line 13: End of class
+            </code>
+        </program>
         <p>
           This error message occurs when you forget to use the <c>new</c> keyword to instantiate an object. 
           Specifically, on line 8 of <c>Histo.java</c>, <c>data = Scanner(new File("test.dat"));</c> leads to a 'cannot find symbol' error. 
@@ -63,14 +78,6 @@
           and therefore requires the new keyword (e.g., <c>data = new Scanner(new File("test.dat"));</c>) to create a new <c>Scanner</c> object.
 
         </p>
-
-        <pre>
-            Histo.java:8: error: cannot find symbol
-                data = Scanner(new File("test.dat"));
-                    ^
-              symbol:   method Scanner(File)
-              location: class Histo
-        </pre>
 
     </section>
 
