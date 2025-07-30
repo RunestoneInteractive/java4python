@@ -10,7 +10,7 @@
     <section xml:id="forgetting-to-declare-your-variables">
         <title>Forgetting to declare your variables</title>
         <program language="java" interactive="activecode">
-            <input>
+            <code>
             import java.util.ArrayList; // Line 1: Import necessary class
 
             public class Main { // Line 3: Class declaration
@@ -22,7 +22,7 @@
 
                 } // Line 10: End of main method
             } // Line 11: End of class    
-            </input>
+        </code>
         </program>
         <p>
             The 'cannot find symbol' error for the variable <c>count</c> on line 6 indicates that <c>count</c> was used before it was declared within the <c>Histo</c> class. In Java, all variables must be explicitly declared with a data type (e.g., <c>int</c>, <c>String</c>, <c>ArrayList&lt;Integer&gt;</c>) before they can be assigned a value or referenced in any way. The arrow in the error message points to where the undeclared variable <c>count</c> was first encountered. To resolve this, <c>count</c> needs to be declared with its appropriate type (e.g., <c>ArrayList&lt;Integer&gt; count;</c>) before any attempt to initialize or use it.
@@ -32,18 +32,22 @@
 
     <section xml:id="not-importing-a-class">
         <title>Not importing a class</title>
+        <program language="java" interactive="activecode">
+            <code>
+            // Histo.java
+            public class Histo { // Line 2: Class declaration
 
+                public static void main(String[] args) { // Line 4: Main method declaration
+                    
+                    Scanner data = null; // Line 6: This line will cause the "cannot find symbol" error
+
+                } // Line 8: End of main method
+            } // Line 9: End of class
+        </code>
+        </program>
         <p>
              You may notice that this error message looks similar to the previous one, however, it has an entirely different cause. In Java, classes like <c>Scanner</c> that are part of external packages (like <c>java.util</c>) must be explicitly imported into your source file. Java does not automatically recognize these classes. To resolve this error, you need to add an import statement for the <c>Scanner</c> class at the beginning of your <c>Histo.java</c> file, typically import <c>java.util.Scanner;</c>.
         </p>
-
-        <pre>
-            Histo.java:3: error: cannot find symbol
-                Scanner data = null;
-                ^
-              symbol:   class Scanner
-              location: class Histo
-        </pre>
 
     </section>
 
@@ -73,7 +77,7 @@
     <section xml:id="forgetting-a-semicolon">
         <title>Forgetting a Semicolon</title>
         <program language="java" interactive="activecode">
-            <input>
+            <code>
             // Histo.java
             import java.util.Scanner; // Line 1
                                         // Line 2
@@ -84,7 +88,7 @@
                     System.out.println("This line will not compile."); // Line 8
                 }
             }
-        </input>
+        </code>
         </program>
         <p>
             The error "';' expected" on line 7 of <c>Histo.java</c> means that a semicolon is missing at the end of the statement <c>Scanner data = null</c>. In Java, every statement must be terminated with a semicolon (<c>;</c>) to indicate its completion. The arrow points to <c>null</c> because that's where the compiler expected to find the semicolon.
