@@ -12,6 +12,7 @@
       </paragraphs>
 <paragraphs>
 <table>
+    <title>Function/Method Equivalents: Python to Java</title>
     <tabular>
         <row header="yes">
             <cell> Python Function </cell>
@@ -25,8 +26,8 @@
         </row>
         <row>
             <cell> len() </cell>
-            <cell> array.length </cell>
-            <cell> Returns the length of an array. </cell>
+            <cell> array.length or list.size() </cell>
+            <cell> Returns the length of an array or size of a list. </cell>
         </row>
         <row>
             <cell> range() </cell>
@@ -56,7 +57,7 @@
         <row>
             <cell> list.pop() </cell>
             <cell> ArrayList.remove(index) </cell>
-            <cell> Removes and returns the element at the specified index. </cell>
+            <cell> Removes and returns the element at an index. Assign the return value to use it. </cell>
         </row>
         <row>
             <cell> list.sort() </cell>
@@ -106,6 +107,7 @@
     </tabular>
 </table>
 <table>
+    <title>Operator Equivalents and Usage</title>
     <tabular>
         <row header="yes">
             <cell> Operator Type </cell>
@@ -121,9 +123,9 @@
         </row>
         <row>
             <cell> Arithmetic </cell>
-            <cell> // </cell>
-            <cell> Floor Division (rounds down) </cell>
-            <cell> 7 // 2 → 3 </cell>
+            <cell> / </cell>
+            <cell> Integer Division (truncates toward zero) </cell>
+            <cell> 7 / 2 → 3 </cell>
         </row>
         <row>
             <cell> Arithmetic </cell>
@@ -133,14 +135,14 @@
         </row>
         <row>
             <cell> Arithmetic </cell>
-            <cell> ** </cell>
+            <cell> Math.pow() </cell>
             <cell> Exponent </cell>
-            <cell> 2 ** 3 → 8 </cell>
+            <cell> Math.pow(2, 3) → 8.0 </cell>
         </row>
         <row>
             <cell> Comparison </cell>
             <cell> ==, != </cell>
-            <cell> Equal to, Not equal to </cell>
+            <cell> Equal to, Not equal to (use .equals() for objects) </cell>
             <cell> x == y </cell>
         </row>
         <row>
@@ -151,27 +153,15 @@
         </row>
         <row>
             <cell> Logical </cell>
-            <cell> and, or, not </cell>
+            <cell> &amp;&amp;, ||, ! </cell>
             <cell> Logical AND, OR, NOT </cell>
-            <cell> x &gt; 1 and y &lt; 10 </cell>
+            <cell> x > 1 &amp;&amp; y &lt; 10 </cell>
         </row>
         <row>
             <cell> Assignment </cell>
             <cell> +=, -=, *=, /= </cell>
             <cell> Adds, subtracts, multiplies, or divides and assigns </cell>
             <cell> x += 1 </cell>
-        </row>
-        <row>
-            <cell> Bitwise </cell>
-            <cell> &lt;&lt;, &gt;&gt;, &gt;&gt;&gt; </cell>
-            <cell> Left, right, and unsigned right shift. </cell>
-            <cell> x &lt;&lt; 2 </cell>
-        </row>
-        <row>
-            <cell> Ternary </cell>
-            <cell> ? : </cell>
-            <cell> One-line if-else expression. </cell>
-            <cell> condition ? val1 : val2 </cell>
         </row>
     </tabular>
 </table>
@@ -190,31 +180,31 @@
         </li>
         <li>
             <p>
-                The Ternary Operator provides a compact, one-line if-else statement. For instance, <c>result = "Pass" if score &gt;= 60 else "Fail"</c> is much shorter than a full if-else block.
+                The Ternary Operator provides a compact, one-line if-else statement. For instance, <c>String result = (score &gt;= 60) ? "Pass" : "Fail";</c> is much shorter than a full if-else block.
             </p>
         </li>
 
         <li>
             <p>
-                List Comprehension offers a concise and readable way to create new lists based on existing sequences. Instead of a multi-line loop, you can write <c>squares = [i**2 for i in range(10)]</c> to generate a list of squares.
+                Java's Stream API is the idiomatic alternative to Python's List Comprehension. Instead of a multi-line loop, you can write <c>List&lt;Integer&gt; squares = IntStream.range(0, 10).map(i -&gt; i * i).boxed().collect(Collectors.toList());</c> to generate a list of squares.
             </p>
         </li>
 
         <li>
             <p>
-                F-Strings (Formatted String Literals) simplify embedding expressions and variables directly inside strings. This makes code like <c>print(f"Hello, {name}!")</c> much cleaner than traditional string concatenation.
+                Java uses methods like <c>String.format()</c> or <c>System.out.printf()</c> for embedding expressions in strings, similar to Python's F-Strings. This makes code like <c>String message = String.format("Hello, %s!", name);</c> cleaner than traditional string concatenation.
             </p>
         </li>
 
         <li>
             <p>
-                Tuple and List Unpacking allows for assigning elements of a sequence to multiple variables in a single line, such as <c>name, age = ["Alice", 30]</c>. This also enables simple variable swapping with <c>a, b = b, a</c>.
+                Java does not have a direct equivalent to Python's tuple and list unpacking. Assignment must be done one variable at a time, such as <c>String name = "Alice"; int age = 30;</c>.
             </p>
         </li>
         
         <li>
             <p>
-                Chained Comparisons make range checks more intuitive and mathematical. You can write <c>if 18 &lt;= age &lt; 65:</c> instead of the more verbose <c>if age &gt;= 18 and age &lt; 65:</c>.
+                Java does not support chained comparisons. Range checks must use logical operators, such as <c>if (age &gt;= 18 &amp;&amp; age &lt; 65)</c>.
             </p>
         </li>
     </ul>
@@ -222,6 +212,3 @@
 
 </paragraphs>
 </section>
-
-
-
