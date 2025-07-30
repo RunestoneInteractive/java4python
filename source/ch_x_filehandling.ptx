@@ -501,7 +501,35 @@
         <p>
             In this code, we simply print the contents of the file to the console, but it is easy to imagine how the <c>data</c> variable could be used in conjunction with the write class created in the previous section to create a copy of myfile.txt.
         </p>
+    </section>
+
+    <section xml:id="file-delete">
+        <title>Deleting Files</title>
+
+        <p>
+            Finally, we will take a look at using Java to delete files. This one is pretty straight-forward and follows the structure used to create files. This time, however, try/catch blocks are not needed for the program to compile. We will call this class DeleteFile. The completed code should look something like this:
+        </p>
         
+        <program interactive="activecode" language="java">
+            <code>
+            import java.io.File; 
+
+            public class DeleteFile {
+                public static void main(String[] args) { 
+                    File myFile = new File("myfile.txt"); 
+                    if (myFile.delete()) { 
+                        System.out.println("Deleted " + myFile.getName());
+                    } else {
+                        System.out.println("File could not be deleted.");
+                    } 
+                } 
+            }
+            </code> <tests> </tests>
+        </program>
+
+        <p>
+            This is almost identical to the code within the try block of the CreateFile class we made earlier. The main difference is the use of the delete() method. This method will delete any file with the name provided when creating the myFile object. Similarly to the createNewFile() method, it will return <c>true</c> if the file existed and could be deleted, and false if the file could not be deleted. 
+        </p>
     </section>
 
 </chapter>
