@@ -138,6 +138,7 @@ We can get even closer to the elif statement by taking advantage of the Java rul
         </p>
 
 
+
         <program interactive="activecode" language="java">
             <code>
 public class ElseIf {
@@ -164,6 +165,38 @@ public class ElseIf {
         <p>
 Java also supports a <c>switch</c> statement that acts something like the elif statement of Python under certain conditions. To write the grade program using a switch statement we would use the following:
         </p>
+
+        <note>
+            <p>
+                Depending on your knowledge and experience with Python you may already be familar and questioning why we are not using the <c>match</c> statement in our Python examples.The answer is that Unforunately, this book runs its active code examples on Python 3.7, which does not support the <c>match</c> statement. The <c>match</c> statement was introduced in Python 3.10. Below is an example of the <c>match</c> statement simmilar to our grade method.
+            </p>
+                    <program language="python">
+            <title>Match Case example</title>
+            <code>
+                grade = 100 // 10
+                def grading(grade):
+                    match grade:
+                        case 10 | 9:
+                            return 'A'
+                        case 8:
+                            return 'B'
+                        case 7:
+                            return 'C'
+                        case 6:
+                            return 'D'
+                        case _:
+                            return 'F'
+                print(grading(grade))
+            </code>
+        </program>
+        </note>
+
+        <p>
+            The <c>switch</c> statement in Java provides a clean and efficient alternative to chaining multiple <c>if-else</c> conditions, especially when comparing a single variable against several constant values. It supports a variety of data types, including primitive types (<c>byte</c>, <c>short</c>, <c>char</c>, <c>int</c>), their wrapper classes, <c>enumerations</c>, and <c>String</c> (introduced in Java 7). Each <c>case</c> within a <c>switch</c> must be defined using a constant expression, and duplicate <c>case</c> values are not permitted. By default, control flow "<c>falls through</c>" from one <c>case</c> to the next unless a <c>break</c>, <c>return</c>, or <c>throw</c> statement is used to terminate execution. Java 14 introduced <c>switch expressions</c>, enhancing functionality by allowing the <c>switch</c> to return values and eliminating <c>fall-through</c> via the <c>-&gt;</c> arrow syntax. These expressions can even use <c>yield</c> within code blocks for more complex evaluations. It’s important to note that traditional <c>switch</c> statements do not support <c>null</c> values and will throw a <c>NullPointerException</c> if evaluated with <c>null</c>. As the language evolves, newer versions of Java continue to extend <c>switch</c> capabilities with features like <c>pattern matching</c> and enhanced <c>type handling</c>, making it a more powerful and expressive tool for decision-making in Java programs.
+        </p>
+
+
+
 
 
         <program interactive="activecode" language="java">
