@@ -105,6 +105,25 @@
 
     <section xml:id="forgetting-to-declare-the-kind-of-object-in-a-container">
         <title>Forgetting to declare the kind of object in a container</title>
+        <program language="java" interactive="activecode">
+            <code>
+                // UncheckedWarningDemo.java 
+                import java.util.ArrayList; // Line 2: Import the ArrayList class
+
+                public class UncheckedWarningDemo { // Line 4: Class declaration
+
+                    public static void main(String[] args) { // Line 6: Main method declaration
+
+                        // This is where the potential for unchecked operations begins.
+                        ArrayList rawList = new ArrayList();//Line 9
+
+                        rawList.add("Hello");//Line 11: This is the line that will throw an error
+
+                        System.out.println("Element added: " + rawList.get(0));
+                    } // Line 14: End of main method
+                } // Line 15: End of class
+            </code>
+        </program>
         <p>
             This is a compiler warning, not an error, indicating a potential type safety issue. It occurs because you are calling the <c>add()</c> method on <c>rawList</c>, which is an <c>ArrayList</c> used as a raw type (i.e., without specifying a generic type like <c>&lt;String&gt;</c> or <c>&lt;Integer&gt;</c>).
         </p>
@@ -112,13 +131,6 @@
         <p>
             When <c>ArrayList</c> is used as a raw type, the compiler cannot guarantee the type of elements being added or retrieved, leading to "unchecked" operations. The <c>E extends Object</c> part refers to the generic type parameter <c>E</c> that <c>ArrayList</c> should have, which defaults to <c>Object</c> when the type is not specified, making the <c>add()</c> call unchecked. This can lead to <c>ClassCastExceptions</c> at runtime if incompatible types are later retrieved and cast.
         </p>
-        <pre>
-            UncheckedWarningDemo.java:8: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
-                    rawList.add("Hello");
-                            ^
-              where E is a type-variable:
-                E extends Object declared in class ArrayList
-        </pre>
 
     </section>
 </chapter>
