@@ -38,9 +38,11 @@
         What we see is that at the core there are a few similarities, such as a main and the string &#x201C;Hello World&#x201D;. However, there is a lot more stuff around the edges that make it harder to see the core of the program. Do not worry! An important skill for a computer scientist is to learn what to ignore and what to look at carefully. You will soon find that there are some elements of Java that will fade into the background as you become used to seeing them. One thing that will help you is to learn a little bit about Java <xref ref="naming-conventions-id1"/>. 
             </p>
 
-            <p>
-        The first question you probably have about this little program is &#x201C;How do I run it?&#x201D; Running a Java program is not as simple as running a Python program. The first thing you need to do with a Java program is compile it. The first big difference between Java and Python is that Python is an interpreted language. We could run our Python programs in the Python <term>interpreter</term> and we were quite happy to do that. Java makes running programs a two step process. First we must type the hello world program into a file and save that file using the name <c>Hello.java</c> The file name must be the same as the public class you define in the file. Once we have saved the file we <term>compile</term> it from the command line as follows: 
-            </p>
+    <p>
+        <idx>interpreter</idx>
+        <idx>compile</idx>
+ The first question you probably have about this little program is &#x201C;How do I run it?&#x201D; Running a Java program is not as simple as running a Python program. The first thing you need to do with a Java program is compile it. The first big difference between Java and Python is that Python is an interpreted language. We could run our Python programs in the Python <term>interpreter</term> and we were quite happy to do that. Java makes running programs a two step process. First we must type the hello world program into a file and save that file using the name <c>Hello.java</c> The file name must be the same as the public class you define in the file. Once we have saved the file we <term>compile</term> it from the command line as follows: 
+    </p>
 
 
             <program language="java">
@@ -91,12 +93,14 @@
                 </ul>
             </p>
 
-            <p>
-                The job of the compiler is to turn your java code into language that the Java Virtual Machine (JVM) can understand.
-                We call the code that the JVM understands <term>byte code</term>.
-                The JVM interprets the byte code much like the Python interpreter interprets your Python.
-                However since byte code is much closer to the native language of the computer it can run faster.
-            </p>
+    <p>
+        <idx>JVM</idx>
+        <idx>byte code</idx>
+        The job of the compiler is to turn your java code into language that the Java Virtual Machine (<term>JVM</term>) can understand.
+        We call the code that the JVM understands <term>byte code</term>.
+        The JVM interprets the byte code much like the Python interpreter interprets your Python.
+        However since byte code is much closer to the native language of the computer it can run faster.
+    </p>
 
             <p>
                 When the compiler does the translation it can find many different kinds of errors.
@@ -204,35 +208,38 @@
                 Much of what could be revealed by this one line is better understood through other examples, so be patient.
             </p>
 
-            <p>
-                The first word, <term>public</term> indicates to the Java compiler that this is a method that anyone can call.
-                We will see that Java enforces several levels of security on the methods we write, including <term>public</term>, <term>protected</term>, and <term>private</term> methods.
-            </p>
+    <p>
+        <idx><c>public</c></idx>
+        <idx><c>protected</c></idx>
+        <idx><c>private</c></idx>
+        The first word, <term>public</term> indicates to the Java compiler that this is a method that anyone can call.
+        We will see that Java enforces several levels of security on the methods we write, including public, <term>protected</term>, and <term>private</term> methods.
+    </p>
 
-            <p>
-                The next word, <term>static</term> tells Java that this is a method that is part of the class, but is not a method for any one instance of the class.
-                The kind of methods we typically wrote in Python required an instance in order for the method to be called.
-                With a static method, the object to the left of the <c>.</c> is a class, not an instance of the class.
-                For example, the way that we would call the <c>main</c> method directly is: <c>Hello.main(parameter1)</c>.
-                For now, you can think of static methods the same way you think of methods in Python modules that don&#x2019;t require an instance, for example the math module contains many methods: sin, cos, etc.
-                You probably evaluated these methods using the names <c>math.cos(90)</c> or <c>math.sin(60)</c>.
-            </p>
+    <p><idx><c>static</c></idx>
+        The next word, <term>static</term> tells Java that this is a method that is part of the class, but is not a method for any one instance of the class.
+        The kind of methods we typically wrote in Python required an instance in order for the method to be called.
+        With a static method, the object to the left of the <c>.</c> is a class, not an instance of the class.
+        For example, the way that we would call the <c>main</c> method directly is: <c>Hello.main(parameter1)</c>.
+        For now, you can think of static methods the same way you think of methods in Python modules that don&#x2019;t require an instance, for example the math module contains many methods: sin, cos, etc.
+        You probably evaluated these methods using the names <c>math.cos(90)</c> or <c>math.sin(60)</c>.
+    </p>
 
-            <p>
-                The next word, <term>void</term> tells the Java compiler that the method <c>main</c> will not return a value.
-                This is roughly analogous to omitting the return statement in a Python method.
-                In other words, the method will run to completion and exit but will not return a value that you can use in an assignment statement.
-                As we look at other examples we will see that every Java function must tell the compiler what kind of an object it will return.
-                This is in keeping with the rule that says everything in Java must have a type.
-                In this case we use the special type called <c>void</c> which means no type.
-            </p>
+    <p><idx><c>void</c></idx>
+        The next word, <term>void</term> tells the Java compiler that the method <c>main</c> will not return a value.
+        This is roughly analogous to omitting the return statement in a Python method.
+        In other words, the method will run to completion and exit but will not return a value that you can use in an assignment statement.
+        As we look at other examples we will see that every Java function must tell the compiler what kind of an object it will return.
+        This is in keeping with the rule that says everything in Java must have a type.
+        In this case we use the special type called <c>void</c> which means no type.
+    </p>
 
-            <p>
-                Next we have the proper name for the method: <term>main</term>.
-                The rules for names in Java are similar to the rules in Python.
-                Names can include letters, numbers, and the <c>_</c>.
-                Names in Java must start with a letter.
-            </p>
+    <p><idx><c>main</c></idx>
+        Next we have the proper name for the method: <term>main</term>.
+        The rules for names in Java are similar to the rules in Python.
+        Names can include letters, numbers, and the <c>_</c>.
+        Names in Java must start with a letter.
+    </p>
 
             <p>
                 Finally, we have the parameter list for the method.

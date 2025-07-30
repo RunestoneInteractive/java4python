@@ -4,9 +4,7 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_frontmatter">
     <bibinfo>
     <author>
-        <personname>Dr. Brad Miller</personname>
-        <department>Computer Science</department>
-        <institution>Luther College</institution>
+        <personname>Brad Miller and Jan Pearce</personname>
     </author>
     <date><today/>
     </date>
@@ -15,6 +13,13 @@
     <titlepage>
         <titlepage-items></titlepage-items>
     </titlepage>
+
+    <preface xml:id="meta_frontmatter-acknowledgments">
+        <title>Acknowledgements</title>
+        <p>
+            Thank you to the following people and organizations for their hard work and contributions to this book: Brad Miller for writing the original version of this book and for creating Runestone Academy; Rob Beezer for creating the PreTeXt language in which this book is authored; Moise Dete-Kpinssounon for converting the original version to PreTeXt; Oscar Levin for developing the reStructuredText-to-PreTeXt transition tool that supported the conversion work from the previous version; Berea College for funding interns and supporting independent studies that facilitated the book’s conversion and improvement; and Beryl Hoffman for her impressive work on CSAwesome, which we are leveraging as a model in several sections that are new to this version.  
+        </p>
+    </preface>
 
 
     <preface xml:id="meta_frontmatter-preface">
@@ -28,23 +33,36 @@
         </p>
 
         <p>
-            This book does not attempt to replace the many good Java reference books that are available, in fact I use this in my course along with <url href="https://horstmann.com/corejava/index.html" visual="https://horstmann.com/corejava/index.html">Cay Horstman&#x2019;s &#x201C;Core Java&#x201D; volumes</url>.
+            This book does not attempt to replace the many good Java reference books that are available, in fact Dr. Miller used to use this in his course along with <url href="https://horstmann.com/corejava/index.html" visual="https://horstmann.com/corejava/index.html">Cay Horstman&#x2019;s &#x201C;Core Java&#x201D; volumes</url>.
             Please feel free to use this book for yourself, or if it fits a class you are teaching you are welcome to use this as a resource for your own class.
         </p>
 
         <p>
-            I have published this article using a Creative Commons license to encourage you to use it, change it, and modify it for your own purposes.
-            I would appreciate knowing what you think if you do use this book, and I would love to see any modifications or additions you make.
+            We have published this article using a Creative Commons license to encourage you to use it, change it, and modify it for your own purposes.
+            We would appreciate knowing what you think if you do use this book, and we would love to see any modifications or additions you make.
         </p>
 
-        <p>
-            Brad Miller <url href="mailto://bmiller@luther.edu" visual="mailto://bmiller@luther.edu">bmiller@luther.edu</url> January, 2008
-        </p>
 
         <blockquote>
             <p>
                 <image source="somerights20.png" width="50%" alt="image"/> This work is licensed under a Creative Commons Attribution 3.0 United States License. See <url href="http://creativecommons.org" visual="http://creativecommons.org">http://creativecommons.org</url>
                 </p>
             </blockquote>
+        </preface>
+
+        <preface xml:id="history_of_this_book">
+            <title>History of this Book</title>
+            <p>
+                Brad Miller started writing this article in 2006 using Python&#x2019;s restructured text.
+                In 2007 I switched to markdown since everything else he was writing used markdown.
+                In particular he switched to the variant of markdown used by the excellent <url href="https://pandoc.org/" visual="https://pandoc.org/">pandoc</url> program.
+                Pandoc does an excellent job of converting markdown to html, latex, pdf, and other formats.
+   
+                Finally, the document became so big that Brad used <c>pandoc</c> to convert it to latex for preparing the final version.
+                He used The <c>htlatex</c> program to generate html for an online version of this document.
+            </p>
+            <p>
+                Brad Miller founded Runestone Academy in 2011 during a sabbatical from Luther College, and the original versions of this book was written in ReStructuredText.
+            </p>
         </preface>
     </frontmatter>
