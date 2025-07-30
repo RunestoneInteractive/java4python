@@ -65,6 +65,20 @@
 
     <section xml:id="forgetting-a-semicolon">
         <title>Forgetting a Semicolon</title>
+        <program language="java" interactive="activecode">
+            <input>
+            // Histo.java
+            import java.util.Scanner; // Line 1
+                                        // Line 2
+            public class Histo {         // Line 3
+                                        // Line 4
+                public static void main(String[] args) { // Line 5
+                    Scanner data = null    // Line 7: The error will point here
+                    System.out.println("This line will not compile."); // Line 8
+                }
+            }
+        </input>
+        </program>
         <p>
             The error "';' expected" on line 7 of <c>Histo.java</c> means that a semicolon is missing at the end of the statement <c>Scanner data = null</c>. In Java, every statement must be terminated with a semicolon (<c>;</c>) to indicate its completion. The arrow points to <c>null</c> because that's where the compiler expected to find the semicolon.
         </p>
