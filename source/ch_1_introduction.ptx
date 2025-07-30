@@ -75,6 +75,16 @@
                             Graphical User Interface Programming
                         </p>
                     </li>
+                                    <li>
+                        <p>
+                            Generic Programming
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </blockquote>
+
+</section>
 
 
 <section xml:id="sec-Java_Development_Environment">
@@ -296,15 +306,5 @@
   </subsection>
 </section>
 
-                    <li>
-                        <p>
-                            Generic Programming
-                        </p>
-                    </li>
-                </ul>
-            </p>
-        </blockquote>
-
-</section>
 
 </chapter>
