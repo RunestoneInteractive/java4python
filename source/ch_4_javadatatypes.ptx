@@ -467,11 +467,6 @@ The <c>code</c> will be executed once for each element in the <c>collection</c>.
 Here is the Java code needed to write the exact same program:
         </p>
 
-        <note>
-            <p>
-            The Java code below contains the first mention of the <idx><c>null</c></idx> <c>null</c> literal. Similar to Python’s <c>None</c> object, <c>null</c> in Java is used to indicate that a variable does not currently reference any object in memory. This is often used for variables that have not yet been initialized or for methods that return no object.
-            </p>
-        </note>
 
         <program interactive="activecode" language="java" datafile="test.dat">
             <code>
@@ -658,22 +653,7 @@ main()
             </code> <tests> </tests>
         </program>
 
-        <p>
-    This program reads the file <c>alice30.txt</c> (which follows), and it then splits it into a list of words. Next it creates a dictionary called <c>count</c> which maps each word to the number of times that word occurs in the text. Finally, it prints out the words in alphabetical order along with their frequency.
-        </p>
-
-        <datafile label="datafile-alice1" filename="alice30.txt" editable="no" cols="30" rows="15"><pre> 
-            Down, down, down.  Would the fall NEVER come to an end! 
-             'I wonder how many miles I've fallen by this time?' she said aloud. 'I must 
-             be getting somewhere near the centre of the earth.  
-             Let me see:  that would be four thousand miles down, I think--' 
-             (for, you see, Alice had learnt several things of this sort in her lessons 
-             in the schoolroom, and though this was not a VERY good opportunity for 
-             showing off her knowledge, as there was no one to listen to her, still it 
-             was good practice to say it over) '--yes, that's about the right distance
-             --but then I wonder what Latitude or Longitude I've got to?'  
-             (Alice had no idea what Latitude was, or Longitude either, 
-             but thought they were nice grand words to say.) </pre></datafile>
+        <datafile label="datafile-alice1" filename="alice30.txt" editable="no" cols="30" rows="15"><pre> Down, down, down.  Would the fall NEVER come to an end!  'I wonder how many miles I've fallen by this time?' she said aloud. 'I must be getting somewhere near the centre of the earth.  Let me see:  that would be four thousand miles down, I think--' (for, you see, Alice had learnt several things of this sort in her lessons in the schoolroom, and though this was not a VERY good opportunity for showing off her knowledge, as there was no one to listen to her, still it was good practice to say it over) '--yes, that's about the right distance--but then I wonder what Latitude or Longitude I've got to?'  (Alice had no idea what Latitude was, or Longitude either, but thought they were nice grand words to say.) </pre></datafile>
         <p>
  Notice that the structure of the program is very similar to the numeric histogram program. 
         </p>
@@ -722,4 +702,149 @@ public class HistoMap {
  Improve the program above to remove the punctuation. 
         </p>
     </section>
+    <section xml:id="chapter4_summary">
+  <title>Summary &amp; Reading Questions</title>
+    <p><ol label="1">
+        <li>
+            <p>All variables must be declared with their type before use in Java due to static typing.</p>
+        </li>
+        <li>
+            <p>Java has primitive types (<c>int</c>, <c>float</c>, <c>double</c>, <c>char</c>, <c>boolean</c>) and their corresponding Object wrapper classes (<c>Integer</c>, <c>Float</c>, <c>Double</c>, <c>Character</c>, <c>Boolean</c>) with automatic conversion between them called autoboxing.</p>
+        </li>
+        <li>
+            <p>The <c>import</c> statement in Java allows you to use shortened class names instead of fully qualified names like <c>java.util.Scanner</c>.</p>
+        </li>
+        <li>
+            <p><c>Scanner</c> objects are used to read input from various sources, including <c>System.in</c> for keyboard input.</p>
+        </li>
+        <li>
+            <p>Java Strings are immutable like Python, but use methods like <c>charAt()</c> and <c>substring()</c> instead of indexing operators.</p>
+        </li>
+        <li>
+            <p><c>ArrayList</c> is Java's dynamic array implementation that is similar to Python lists, but must declare the type of objects it contains using generics like <c>ArrayList&lt;Integer&gt;</c>.</p>
+        </li>
+        <li>
+            <p>Maps (<c>HashMap</c> and <c>TreeMap</c>) are Java's equivalent to Python dictionaries for storing key-value pairs.</p>
+        </li>
+    </ol></p>
+    <reading-questions xml:id="rqs-summary4">
+        <exercise label = "summary-arraylist">
+            <statement>
+                <p>What is the correct way to declare an ArrayList that will hold String objects in Java?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>ArrayList&lt;String&gt; list;</p>
+                    </statement>
+                    <feedback>
+                        <p>Good job!</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>ArrayList list;</p>
+                    </statement>
+                    <feedback>
+                        <p>No, you must specify the type of objects it will hold using generics.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>ArrayList[String] list;</p>
+                    </statement>
+                    <feedback>
+                        <p>No, the syntax for generics uses &lt; &gt; brackets, not [ ].</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>ArrayList() list;</p>
+                    </statement>
+                    <feedback>
+                        <p>No, this is not a valid declaration.</p>
+                    </feedback>
+                </choice>
+            </choices>            
+        </exercise>
+        <exercise label = "summary-autoboxing">
+            <statement>
+                <p>The process of automatically converting between primitive types and their Object wrapper classes in Java is called:</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>Autoboxing</p>
+                    </statement>
+                    <feedback>
+                        <p>Right! Good job!</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>Casting</p>
+                    </statement>
+                    <feedback>
+                        <p>No, casting is manually converting a type.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>Overloading</p>
+                    </statement>
+                    <feedback>
+                        <p>No, overloading refers to methods, not type conversion.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>Unboxing</p>
+                    </statement>
+                    <feedback>
+                        <p>No, unboxing is the reverse of autoboxing.</p>
+                    </feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label = "summary-string-methods">
+            <statement>
+                <p>Which method would you use to get the character at position 3 in a Java String called str?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>str.charAt(3)</p>
+                    </statement>
+                    <feedback>
+                        <p>Correct!</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>str[3]</p>
+                    </statement>
+                    <feedback>
+                        <p>No, Java does not support this type of indexing.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>str.get(3)</p>
+                    </statement>
+                    <feedback>
+                        <p>No, this method does not exist in Java.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>str.substring(3)</p>
+                    </statement>
+                    <feedback>
+                        <p>No, this will return a substring starting at position 3, not a single character.</p>
+                    </feedback>
+                </choice>
+            </choices>            
+        </exercise>
+    </reading-questions>
+</section>
 </chapter>
