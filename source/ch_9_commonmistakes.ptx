@@ -9,17 +9,24 @@
 
     <section xml:id="forgetting-to-declare-your-variables">
         <title>Forgetting to declare your variables</title>
+        <program language="java" interactive="activecode">
+            <input>
+            import java.util.ArrayList; // Line 1: Import necessary class
 
+            public class Main { // Line 3: Class declaration
+                public static void main(String[] args) { // Line 4: Main method declaration
+                
+                    count = new ArrayList&lt;Integer&lt;(10); // Line 6: Attempt to use 'count' without declaration
+
+                    System.out.println("ArrayList created."); // Line 8: This line won't be reached due to the error.
+
+                } // Line 10: End of main method
+            } // Line 11: End of class    
+            </input>
+        </program>
         <p>
-            The 'cannot find symbol' error for the variable <c>count</c> on line 7 indicates that <c>count</c> was used before it was declared within the <c>Histo</c> class. In Java, all variables must be explicitly declared with a data type (e.g., <c>int</c>, <c>String</c>, <c>ArrayList&lt;Integer&gt;</c>) before they can be assigned a value or referenced in any way. The arrow in the error message points to where the undeclared variable <c>count</c> was first encountered. To resolve this, <c>count</c> needs to be declared with its appropriate type (e.g., <c>ArrayList&lt;Integer&gt; count;</c>) before any attempt to initialize or use it.
+            The 'cannot find symbol' error for the variable <c>count</c> on line 6 indicates that <c>count</c> was used before it was declared within the <c>Histo</c> class. In Java, all variables must be explicitly declared with a data type (e.g., <c>int</c>, <c>String</c>, <c>ArrayList&lt;Integer&gt;</c>) before they can be assigned a value or referenced in any way. The arrow in the error message points to where the undeclared variable <c>count</c> was first encountered. To resolve this, <c>count</c> needs to be declared with its appropriate type (e.g., <c>ArrayList&lt;Integer&gt; count;</c>) before any attempt to initialize or use it.
         </p>
-        <pre>
-            Main.java:7: error: cannot find symbol
-                count = new ArrayList&lt;Integer&gt;(10);
-                ^
-              symbol:   variable count
-              location: class Main
-        </pre>
 
     </section>
 
@@ -82,11 +89,6 @@
         <p>
             The error "';' expected" on line 7 of <c>Histo.java</c> means that a semicolon is missing at the end of the statement <c>Scanner data = null</c>. In Java, every statement must be terminated with a semicolon (<c>;</c>) to indicate its completion. The arrow points to <c>null</c> because that's where the compiler expected to find the semicolon.
         </p>
-        <pre>
-            Histo.java:7: error: ';' expected
-                Scanner data = null
-                                   ^
-        </pre>
 
     </section>
 
