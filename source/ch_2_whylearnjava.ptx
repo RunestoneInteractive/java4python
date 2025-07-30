@@ -91,4 +91,95 @@
         </p>
         </footnote>
     </section>
+    <section xml:id="learn_languages_summary">
+    <title>Summary &amp; Reading Questions</title>
+    <p><ol label="1">
+        <li>
+            <p>Learning multiple programming languages helps programmers adapt to different styles and environments.</p>
+        </li>
+        <li>
+            <p>Python is a dynamic scripting language that is beginner-friendly, but it is less strict with types and generally slower than compiled languages.</p>
+        </li>
+        <li>
+            <p>Languages like Java and C++ are statically typed and offer better performance and maintainability for large-scale projects.</p>
+        </li>
+        <li>
+            <p>Java has a simpler syntax than C++ and includes automatic garbage collection, which reduces the complexity of memory management.</p>
+        </li>
+        <li>
+            <p>Java’s extensive standard library enables the development of sophisticated programs without relying on external dependencies.</p>
+        </li>
+    </ol></p>
+    <reading-questions xml:id="rqs-learnlang2">
+        <exercise label="summary-lang-1">
+            <statement>
+                <p>Which of the following best describes Python as a programming language?</p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p>Statically typed and high-performance</p></statement>
+                    <feedback><p>No. This better describes languages like Java or C++.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p>Dynamically typed and beginner-friendly</p></statement>
+                    <feedback><p>That’s right! Python is dynamically typed and easy for beginners.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Industrial strength and verbose</p></statement>
+                    <feedback><p>No. Python is more informal and concise.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Memory-managed and pointer-based</p></statement>
+                    <feedback><p>No. That describes lower-level languages like C or C++.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="summary-lang-2">
+            <statement>
+                <p>Why is Java a better language for beginners compared to C++?</p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p>It requires more manual memory management</p></statement>
+                    <feedback><p>No. Java manages memory automatically.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>It has a smaller standard library</p></statement>
+                    <feedback><p>No. Java has a very large standard library.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p>It avoids complex syntax and has automatic garbage collection</p></statement>
+                    <feedback><p>Correct! These features make Java easier for beginners.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>It supports operator overloading</p></statement>
+                    <feedback><p>No. That's a C++ feature and it adds complexity.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="summary-lang-3">
+            <statement>
+                <p>What is a major benefit of learning multiple programming languages?</p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p>You will only need to code in Python</p></statement>
+                    <feedback><p>No. Relying on just one language is limiting.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>You will avoid working on large projects</p></statement>
+                    <feedback><p>No. That’s not related to learning multiple languages.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p>You gain exposure to different language features and paradigms</p></statement>
+                    <feedback><p>Great choice! This helps you become a more adaptable programmer.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>You will never have to learn new libraries</p></statement>
+                    <feedback><p>No. Libraries are often language-specific and still need to be learned.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+    </reading-questions>
+</section>
 </chapter>
