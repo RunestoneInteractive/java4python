@@ -241,7 +241,29 @@ public Fraction(Integer num, Integer den) {
                 A point of terminology: Python has both &#x201C;functions&#x201D; (<c>def</c> outside a class) and &#x201C;methods&#x201D; (<c>def</c> inside a class).
                 Since Java requires all code to be inside classes, it only has &#x201C;methods.&#x201D; Those from a C++ background might refer to methods as &#x201C;member functions.&#x201D;
             </p>
-
+            <p>
+                Before we dive into the <c>add</c> method, it's important to understand how Java passes arguments to methods, as this is a common point of confusion for programmers coming from Python. The terminology is different, but the practical result for objects is effectively identical.
+            </p>
+            <p>
+                <ul>
+                    <li>
+                        <p>
+                            <term>Java is strictly pass-by-value.</term> For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <em>value of the reference</em> (the memory address) is passed.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <term>Python is pass-by-assignment</term> (or pass-by-object-reference). Since everything in Python is an object, the rule is consistent: a copy of the reference to the object is passed.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                What does this mean in practice? <strong>For objects, the behavior is the same in both languages.</strong> When you pass a <c>Fraction</c> object to the <c>add</c> method, both the original variable outside the method and the parameter inside the method (<c>otherFrac</c>) refer to the <strong>exact same object</strong> in memory. This allows the method to use the object's getters to read its state. If you were to call a setter method on <c>otherFrac</c>, the change would be reflected in the original object.
+            </p>
+            <p>
+                However, if you reassign the parameter to a completely new object inside the method (e.g., <c>otherFrac = new Fraction(0,1);</c>), it would <em>not</em> affect the original variable outside the method, because you are only changing the local copy of the reference.
+            </p>
             <p>
                 Let&#x2019;s begin by implementing addition in Java:
             </p>
