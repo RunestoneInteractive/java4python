@@ -23,7 +23,7 @@
                 public static void main(String[] args) { 
 
                     // Attempt to use 'count' without declaration
-                    count = new ArrayList&lt;Integer&lt;(10);
+                    count = new ArrayList&lt;Integer&gt;(10);
 
                     // This line won't be reached due to the error.
                     System.out.println("ArrayList created."); 
