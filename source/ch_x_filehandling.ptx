@@ -15,7 +15,7 @@
         <title>Class Imports</title>
 
         <p>
-            Java has several libraries included for file handling, though, they must be imported. Java includes a class called File in the io library. The class can be imported with the following line. Be sure to capitalize File.
+            Java has several libraries included for file handling, though, they must be imported. Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
         </p>
 
         <program interactive="activecode" language="java">
@@ -25,7 +25,7 @@
         </program>
 
         <p>
-            The Scanner class from the util library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
+            The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
 
         <program interactive="activecode" language="java">
@@ -35,7 +35,7 @@
         </program>
 
         <p>
-            The FileWriter class can be used to write to files. In the same way that the Scanner class isn't needed unless the program will read from a file, the FileWriter class isn't needed unless the program will write to a file.
+            The <c>FileWriter</c> class can be used to write to files. In the same way that the <c>Scanner</c> class isn't needed unless the program will read from a file, the <c>FileWriter</c> class isn't needed unless the program will write to a file.
         </p>
 
         <program interactive="activecode" language="java">
@@ -45,7 +45,7 @@
         </program>
 
         <p>
-            Finally, these last two classes provide error handling and must be used in tandem with the File class when reading from or writing to files. IOException handles file creation and writing errors, while FileNotFoundException handles errors when trying to read files. 
+            Finally, these last two classes provide error handling and must be used in tandem with the <c>File</c> class when reading from or writing to files. <c>IOException</c> handles file creation and writing errors, while <c>FileNotFoundException</c> handles errors when trying to read files. 
         </p>
 
         <program interactive="activecode" language="java">
@@ -66,7 +66,7 @@
         <title>Creating Files</title>
         
         <p>
-            Before we can write code that creates a file, we must first import the necessary classes mentioned in the previous section (Scanner and FileWriter are not needed for a class that only creates files) and create a class. We will call this class CreateFile.
+            Before we can write code that creates a file, we must first import the necessary classes mentioned in the previous section (<c>Scanner</c> and <c>FileWriter</c> are not needed for a class that only creates files) and create a class. We will call this class <c>CreateFile</c>.
         </p>
 
         <program interactive="activecode" language="java">
@@ -83,7 +83,7 @@
         </program>
 
         <p>
-            Next, within the main function, we will create a File object. It is important to create a meaningful name for the File object. We will call ours <c>myFile</c>.
+            Next, within the main function, we will create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
         </p>
 
         <program interactive="activecode" language="java">
@@ -94,19 +94,19 @@
 
         <note>
             <p>
-                myFile is the name of the object within the program, while "myfile.txt" is the name of the file itself and will be the file name if the operation that creates the file is successful.
+                <c>myFile</c> is the name of the object within the program, while <c>myfile.txt</c> is the name of the file itself and will be the file name if the operation that creates the file is successful.
             </p>
         </note>
 
         <p>
-            Now that we have created a new File object, we can create a file using the <c>createNewFile()</c> method from the File class. While the previous line of code creates an object within the program for the file, this method actually does the work of creating a file and saving it in the current working directory. This method returns a boolean value. If the method returns <c>true</c>, the file was successfully created. If the method returns <c>false</c>, there is already a file using the chosen file name. We can use this method's possible return values in tandem with an if/else selection to determine if the file was created, or if a file with that file name already exists in the directory.
+            Now that we have created a new <c>File</c> object, we can create a file using the <c>createNewFile()</c> method from the <c>File</c> class. While the previous line of code creates an object within the program for the file, this method actually does the work of creating a file and saving it in the current working directory. This method returns a boolean value. If the method returns <c>true</c>, the file was successfully created. If the method returns <c>false</c>, there is already a file using the chosen file name. We can use this method's possible return values in tandem with an if/else selection to determine if the file was created, or if a file with that file name already exists in the directory.
         </p>
 
         <p>
             First, lets look at the equivalent Python code:
         </p>
 
-        <program language="python">
+        <program interactive="activecode" language="python">
             <code>
             import os
 
@@ -149,7 +149,7 @@
         </note>
 
         <p>
-            The code may seem complete at this point, but if you remember from the previous section, error handling using the IOException is required for program to compile. Let's utilize best practices and add in try/catch blocks to handle exceptions thrown by the IOException class.
+            The code may seem complete at this point, but if you remember from the previous section, error handling using the <c>IOException</c> is required for program to compile. Let's utilize best practices and add in try/catch blocks to handle exceptions thrown by the <c>IOException</c> class.
         </p>
 
         <program interactive="activecode" language="java">
@@ -169,7 +169,7 @@
 
         <note>
             <p>
-                The <c>IOException e</c> part in the parenthesis next to the catch. This creates a variable called <c>e</c> that refers to an IOException object. In other words, <c>e</c> refers to the error created if the try block fails. The line <c>e.printStackTrace();</c> prints the stack trace to the console. This is what the console may output if the program tries to create a file, but is blocked by the Operating System due to insufficient permissions:
+                The <c>IOException e</c> part in the parenthesis next to the catch. This creates a variable called <c>e</c> that refers to an IOException object. In other words, <c>e</c> refers to the error created if the try block fails. The line <c>e.printStackTrace();</c> prints the stack trace to the console. This is what the console may output if the program tries to create a file, but is blocked by the operating system due to insufficient permissions:
             </p>
         </note>
 
@@ -191,7 +191,7 @@
             First, the equivalent Python code:
         </p>
 
-        <program language="python">
+        <program interactive="activecode" language="python">
             <code>
             import os
 
@@ -240,7 +240,7 @@
         </program>
 
         <p>
-            You may be wondering: "What if I don't want to create a file in the current working directory?" Good question! In Windows environments, you can specify the file path using two back slashes for each back slash in the file path. For each pair of back slashes, the first backslash acts as an escape character. So, if you want to save a file to this directory:
+            You may be wondering: "What if I don't want to create a file in the current working directory?" Good question! In Windows environments, you can specify the file path using two back slashes for each back slash in the file path. For each pair of back slashes, the first back slash acts as an escape character. So, if you want to save a file to this directory:
         </p>
 
         <pre>
@@ -272,11 +272,11 @@
         <title>Writing to Files</title>
 
         <p>
-            The <c>createNewFile()</c> method is useful for attempting to create files and reporting if the operation was successful, however, <c>createNewFile()</c> does not write anything to files it creates. In fact, if you use <c>createNewFile()</c> to create a .txt file and then open the file, the file will be blank.
+            The <c>createNewFile()</c> method is useful for attempting to create files and reporting if the operation was successful, however, <c>createNewFile()</c> does not write anything to files it creates. In fact, if you use <c>createNewFile()</c> to create a <c>.txt</c> file and then open the file, the file will be blank.
         </p>
 
         <p>
-            To write to a file, we will need to create a different class. We will do the same setup as the previous section. First, we will import the classes (File and Scanner are not needed) and create the framework for a class that will write to a file. Let's call this class WriteFile:
+            To write to a file, we will need to create a different class. We will do the same setup as the previous section. First, we will import the classes (<c>File</c> and <c>Scanner</c> are not needed) and create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
         </p>
 
         <program interactive="activecode" language="java">
@@ -293,7 +293,7 @@
         </program>
         
         <p>
-            Next, we will create a FileWriter object. Let's call it myWriter:
+            Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
         </p>
 
         <program interactive="activecode" language="java">
@@ -303,7 +303,7 @@
         </program>
 
         <p>
-            In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The write() method takes most standard data types:
+            In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types:
         </p>
 
         <program interactive="activecode" language="java">
@@ -320,10 +320,10 @@
         </note>
 
         <p>
-            Next, we will again add the required try/catch blocks utilizing the IOException class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
+            Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
         </p>
 
-        <program language="python">
+        <program interactive="activecode" language="python">
             <code>
                 try:
                     with open("myfile.txt", "w") as my_writer:
@@ -358,7 +358,7 @@
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
         </p>
 
-        <program language="python">
+        <program interactive="activecode" language="python">
             <code>
             try:
                 with open("myfile.txt", "w") as my_writer:
@@ -402,12 +402,12 @@
 
         <note>
             <p>
-                If a file does not already exist (for example, myfile.txt does not exist), the <c>write()</c> method will create the file. Despite this, it is still a good idea to create separate methods or classes for creating and writing to files. Not only is it good practice to ensure methods only accomplish one thing, but the <c>createNewFile()</c> method avoids overwriting files that already exist. Imagine a file with the name myfile.txt already exists and contains important information. Attempting to create a file using the <c>write()</c> method will delete that data forever.
+                If a file does not already exist (for example, <c>myfile.txt</c> does not exist), the <c>write()</c> method will create the file. Despite this, it is still a good idea to create separate methods or classes for creating and writing to files. Not only is it good practice to ensure methods only accomplish one thing, but the <c>createNewFile()</c> method avoids overwriting files that already exist. Imagine a file with the name <c>myfile.txt</c> already exists and contains important information. Attempting to create a file using the <c>write()</c> method will delete that data forever.
             </p>
         </note>
 
         <p>
-            Speaking of overwriting data, what if we want to append text to the end of any text already in myfile.txt? To accomplish this, we can pass a boolean argument along with the file name when creating a new data argument:
+            Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a boolean argument along with the file name when creating a new data argument:
         </p>
 
         <program interactive="activecode" language="java">
@@ -442,7 +442,7 @@
         </program>
 
         <p>
-            and then run the program twice, the contents of myfile.txt would be:
+            and then run the program twice, the contents of <c>myfile.txt</c> would be:
         </p>
 
         <program language="$">
@@ -538,7 +538,7 @@
             The next lines consist of a while loop that reads each line of the file passed to the Scanner object and reads them. First, a Python code example. A for loop is used instead in the Python example:
         </p>
 
-        <program language="python">
+        <program interactive="activecode" language="python">
             <code>
                 with open("filename.txt", "r") as file_reader:
                     for line in file_reader:
@@ -589,7 +589,7 @@
             Using the second method of storing all file contents to one file, the resulting full code including try/catch blocks (this time using FileNotFoundException instead of IOException) will look something like this. First, the Python code:
         </p>
 
-        <program language="python">
+        <program interactive="activecode" language="python">
             <code>
                 try:
                     with open("myfile.txt", "r") as file_reader:
