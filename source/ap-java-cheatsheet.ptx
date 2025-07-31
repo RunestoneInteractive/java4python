@@ -20,88 +20,88 @@
             <cell> Description </cell>
         </row>
         <row>
-            <cell> print() </cell>
-            <cell> System.out.println() </cell>
+            <cell><c>print()</c></cell>
+            <cell><c>System.out.println()</c></cell>
             <cell> Prints output to the console. </cell>
         </row>
         <row>
-            <cell> len() </cell>
-            <cell> array.length or list.size() </cell>
+            <cell><c>len()</c></cell>
+            <cell><c>array.length</c> or <c>list.size()</c></cell>
             <cell> Returns the length of an array or size of a list. </cell>
         </row>
         <row>
-            <cell> range() </cell>
-            <cell> for (int i = 0; i &lt; n; i++) </cell>
+            <cell><c>range()</c></cell>
+            <cell><c>for (int i = 0; i &lt; n; i++)</c></cell>
             <cell> Used in loops to iterate a specific number of times. </cell>
         </row>
         <row>
-            <cell> str() </cell>
-            <cell> String.valueOf() </cell>
+            <cell><c>str()</c></cell>
+            <cell><c>String.valueOf()</c></cell>
             <cell> Converts an object to a string. </cell>
         </row>
         <row>
-            <cell> int() </cell>
-            <cell> Integer.parseInt() </cell>
+            <cell><c>int()</c></cell>
+            <cell><c>Integer.parseInt()</c></cell>
             <cell> Converts a string to an integer. </cell>
         </row>
         <row>
-            <cell> float() </cell>
-            <cell> Float.parseFloat() </cell>
+            <cell><c>float()</c></cell>
+            <cell><c>Float.parseFloat()</c></cell>
             <cell> Converts a string to a float. </cell>
         </row>
         <row>
-            <cell> list.append() </cell>
-            <cell> ArrayList.add() </cell>
+            <cell><c>list.append()</c></cell>
+            <cell><c>ArrayList.add()</c></cell>
             <cell> Adds an element to the end of a list. </cell>
         </row>
         <row>
-            <cell> list.pop() </cell>
-            <cell> ArrayList.remove(index) </cell>
-            <cell> Removes and returns the element at an index. Assign the return value to use it. </cell>
+            <cell><c>list.pop()</c></cell>
+            <cell><c>ArrayList.remove(index)</c></cell>
+            <cell> Removes and assign the return value to use it.</cell>
         </row>
         <row>
-            <cell> list.sort() </cell>
-            <cell> Collections.sort(list) </cell>
+            <cell><c>list.sort()</c></cell>
+            <cell><c>Collections.sort(list)</c></cell>
             <cell> Sorts a list in ascending order. </cell>
         </row>
         <row>
-            <cell> list.reverse() </cell>
-            <cell> Collections.reverse(list) </cell>
+            <cell><c>list.reverse()</c></cell>
+            <cell><c>Collections.reverse(list)</c></cell>
             <cell> Reverses the order of elements in a list. </cell>
         </row>
         <row>
-            <cell> dict.get() </cell>
-            <cell> Map.get(key) </cell>
+            <cell><c>dict.get()</c></cell>
+            <cell><c>Map.get(key)</c></cell>
             <cell> Retrieves the value associated with a key in a map. </cell>
         </row>
         <row>
-            <cell> dict.keys() </cell>
-            <cell> Map.keySet() </cell>
+            <cell><c>dict.keys()</c></cell>
+            <cell><c>Map.keySet()</c></cell>
             <cell> Returns a set of keys in a map. </cell>
         </row>
         <row>
-            <cell> dict.values() </cell>
-            <cell> Map.values() </cell>
+            <cell><c>dict.values()</c></cell>
+            <cell><c>Map.values()</c></cell>
             <cell> Returns a collection of values in a map. </cell>
         </row>
         <row>
-            <cell> dict.items() </cell>
-            <cell> Map.entrySet() </cell>
+            <cell><c>dict.items()</c></cell>
+            <cell><c>Map.entrySet()</c></cell>
             <cell> Returns a set of key-value pairs in a map. </cell>
         </row>
         <row>
-            <cell> input() </cell>
-            <cell> Scanner.nextLine() </cell>
+            <cell><c>input()</c></cell>
+            <cell><c>Scanner.nextLine()</c></cell>
             <cell> Reads a line of input from the console. </cell>
         </row>
         <row>
-            <cell> open() </cell>
-            <cell> FileReader, BufferedReader </cell>
+            <cell><c>open()</c></cell>
+            <cell><c>FileReader</c>, <c>BufferedReader</c></cell>
             <cell> Used to read from files. </cell>
         </row>
         <row>
-            <cell> enumerate() </cell>
-            <cell> for (int i = 0; i &lt; list.size(); i++) { ... } </cell>
+            <cell><c>enumerate()</c></cell>
+            <cell><c>for (int i = 0; i &lt; list.size(); i++) { ... }</c></cell>
             <cell> Used to iterate over a list with an index. </cell>
         </row>
     </tabular>
@@ -117,51 +117,51 @@
         </row>
         <row>
             <cell> Arithmetic </cell>
-            <cell> +, -, *, / </cell>
+            <cell><c>+</c>, <c>-</c>, <c>*</c>, <c>/</c></cell>
             <cell> Addition, Subtraction, Multiplication, Division </cell>
-            <cell> 5 + 2 </cell>
+            <cell><c>5 + 2</c></cell>
         </row>
         <row>
             <cell> Arithmetic </cell>
-            <cell> / </cell>
+            <cell><c>/</c></cell>
             <cell> Integer Division (truncates toward zero) </cell>
-            <cell> 7 / 2 → 3 </cell>
+            <cell><c>7 / 2</c> → 3 </cell>
         </row>
         <row>
             <cell> Arithmetic </cell>
-            <cell> % </cell>
+            <cell><c>%</c></cell>
             <cell> Modulus (remainder) </cell>
-            <cell> 7 % 2 → 1 </cell>
+            <cell><c>7 % 2</c> → 1 </cell>
         </row>
         <row>
             <cell> Arithmetic </cell>
-            <cell> Math.pow() </cell>
+            <cell><c>Math.pow()</c></cell>
             <cell> Exponent </cell>
-            <cell> Math.pow(2, 3) → 8.0 </cell>
+            <cell><c>Math.pow(2, 3)</c> → 8.0 </cell>
         </row>
         <row>
             <cell> Comparison </cell>
-            <cell> ==, != </cell>
-            <cell> Equal to, Not equal to (use .equals() for objects) </cell>
-            <cell> x == y </cell>
+            <cell><c>==</c>, <c>!=</c></cell>
+            <cell> Equal to, Not equal to (use <c>.equals()</c> for objects) </cell>
+            <cell><c>x == y</c></cell>
         </row>
         <row>
             <cell> Comparison </cell>
-            <cell> &gt;, &lt;, &gt;=, &lt;= </cell>
+            <cell><c>&gt;</c>, <c>&lt;</c>, <c>&gt;=</c>, <c>&lt;=</c></cell>
             <cell> Greater/Less than, or equal to </cell>
-            <cell> x &gt; 5 </cell>
+            <cell><c>x &gt; 5</c></cell>
         </row>
         <row>
             <cell> Logical </cell>
-            <cell> &amp;&amp;, ||, ! </cell>
+            <cell><c>&amp;&amp;</c>, <c>||</c>, <c>!</c></cell>
             <cell> Logical AND, OR, NOT </cell>
-            <cell> x > 1 &amp;&amp; y &lt; 10 </cell>
+            <cell><c>x &gt; 1 &amp;&amp; y &lt; 10</c></cell>
         </row>
         <row>
             <cell> Assignment </cell>
-            <cell> +=, -=, *=, /= </cell>
+            <cell><c>+=</c>, <c>-=</c>, <c>*=</c>, <c>/=</c></cell>
             <cell> Adds, subtracts, multiplies, or divides and assigns </cell>
-            <cell> x += 1 </cell>
+            <cell><c>x += 1</c></cell>
         </row>
     </tabular>
 </table>
@@ -170,41 +170,32 @@
     <ul>
         <li>
             <p>
+                Ternary Operator: Provides a compact, one-line if-else statement. For instance, <c>String result = (score &gt;= 60) ? "Pass" : "Fail";</c> is much shorter than a full if-else block.
+            </p>
+        </li>
+        <li>
+            <p>
+                No Chained Comparisons: Java does not support chained comparisons. Range checks must use logical operators, such as <c>if (age &gt;= 18 &amp;&amp; age &lt; 65)</c>. In Python, this could be written as <c>if 18 &lt;= age &lt; 65:</c>.
+            </p>
+        </li>
+        <li>
+            <p>
+                String Formatting: Java uses methods like <c>String.format()</c> or <c>System.out.printf()</c> for embedding expressions in strings, similar to Python's F-Strings. For example, <c>String message = String.format("Hello, %s!", name);</c> is cleaner than traditional string concatenation.
+            </p>
+        </li>
+        <li>
+            <p>
+                No Tuple or List Unpacking: Java does not have a direct equivalent to Python's tuple and list unpacking. Assignment must be done one variable at a time, such as <c>String name = "Alice"; int age = 30;</c>.
+            </p>
+        </li>
+        <li>
+            <p>
                 Short-Circuiting: The logical operators <c>&amp;&amp;</c> (AND) and <c>||</c> (OR) are efficient. They stop evaluating as soon as the outcome is known. For example, in <c>if (user != null &amp;&amp; user.isAdmin())</c>, the code will not attempt to call <c>.isAdmin()</c> if <c>user</c> is null, preventing an error.
             </p>
         </li>
-            <li>
-            <p>
-                Streams: Java's Stream API provides a powerful way to process collections of objects. A stream can be used to filter, map, and reduce data in a sequence of steps, similar to Python's list comprehensions but more powerful.
-            </p>
-        </li>
         <li>
             <p>
-                The Ternary Operator provides a compact, one-line if-else statement. For instance, <c>String result = (score &gt;= 60) ? "Pass" : "Fail";</c> is much shorter than a full if-else block.
-            </p>
-        </li>
-
-        <li>
-            <p>
-                Java's Stream API is the idiomatic alternative to Python's List Comprehension. Instead of a multi-line loop, you can write <c>List&lt;Integer&gt; squares = IntStream.range(0, 10).map(i -&gt; i * i).boxed().collect(Collectors.toList());</c> to generate a list of squares.
-            </p>
-        </li>
-
-        <li>
-            <p>
-                Java uses methods like <c>String.format()</c> or <c>System.out.printf()</c> for embedding expressions in strings, similar to Python's F-Strings. This makes code like <c>String message = String.format("Hello, %s!", name);</c> cleaner than traditional string concatenation.
-            </p>
-        </li>
-
-        <li>
-            <p>
-                Java does not have a direct equivalent to Python's tuple and list unpacking. Assignment must be done one variable at a time, such as <c>String name = "Alice"; int age = 30;</c>.
-            </p>
-        </li>
-        
-        <li>
-            <p>
-                Java does not support chained comparisons. Range checks must use logical operators, such as <c>if (age &gt;= 18 &amp;&amp; age &lt; 65)</c>.
+                Streams API: Java's Stream API is the idiomatic alternative to Python's List Comprehensions. It can be used to filter, map, and reduce data in a sequence of steps. For example, to generate a list of squares, instead of a multi-line loop, you can write <c>List&lt;Integer&gt; squares = IntStream.range(0, 10).map(i -&gt; i * i).boxed().collect(Collectors.toList());</c>.
             </p>
         </li>
     </ul>
