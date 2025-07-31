@@ -167,24 +167,24 @@
             <statement>
                 <p>What is a major benefit of learning multiple programming languages?</p>
             </statement>
-            <choices>
-                <choice>
-                    <statement><p>You will only need to code in Python</p></statement>
-                    <feedback><p>No. Relying on just one language is limiting.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p>You will avoid working on large projects</p></statement>
-                    <feedback><p>No. That’s not related to learning multiple languages.</p></feedback>
-                </choice>
-                <choice correct="yes">
-                    <statement><p>You gain exposure to different language features and paradigms</p></statement>
-                    <feedback><p>Great choice! This helps you become a more adaptable programmer.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p>You will never have to learn new libraries</p></statement>
-                    <feedback><p>No. Libraries are often language-specific and still need to be learned.</p></feedback>
-                </choice>
-            </choices>
+        <choices>
+        <choice>
+            <statement><p>You can standardize all projects using one universal syntax</p></statement>
+            <feedback><p>No. Each language has its own syntax and is suited for different tasks.</p></feedback>
+        </choice>
+        <choice>
+            <statement><p>You will minimize runtime errors across all platforms</p></statement>
+            <feedback><p>No. Runtime errors depend more on logic and environment than the number of languages you know.</p></feedback>
+        </choice>
+        <choice correct="yes">
+            <statement><p>You gain exposure to different language features and paradigms</p></statement>
+            <feedback><p>Great choice! This helps you become a more adaptable and well-rounded programmer.</p></feedback>
+        </choice>
+        <choice>
+            <statement><p>You can bypass the need for understanding compilation and interpretation</p></statement>
+            <feedback><p>No. Understanding how code is executed remains essential regardless of how many languages you know.</p></feedback>
+        </choice>
+        </choices>
         </exercise>
     </reading-questions>
 </section>
