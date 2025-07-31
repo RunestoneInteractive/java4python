@@ -5,16 +5,15 @@
     <title>Conditionals</title>
 
     <section xml:id="simple-if">
-
-        <p>
+        <title>Using the Simple <c>if</c> Statement</title>
+        <p><idx>conditional statements</idx>
             Conditional statements in Python and Java are very similar.
             In Python we have three patterns:
         </p>
-        
-        <title>Simple if</title>
+    
 
         <p>
-            In Python the simple if statement is written as:
+            In Python the simple <c>if</c> statement is written as:
         </p>
 
         <program interactive="activecode" language="python">
@@ -25,7 +24,7 @@ if score &gt;= 90:
             </code>
         </program>
         <p>
-            In Java, this same pattern requires two changes: the condition must be in parentheses <code>()</code>, and the code block must be enclosed in curly braces <code>{}</code>.
+            In Java, this same pattern requires two changes: the condition must be in parentheses <c>()</c>, and the code block must be enclosed in curly braces <c>{}</c>.
         </p>
         <program interactive="activecode" language="java">
             <code>
@@ -41,12 +40,12 @@ if score &gt;= 90:
         </program>
         <p>
             Once again you can see that in Java the curly braces define a block rather than indentation.
-            In Java the parenthesis around the condition are required because it is technically a function that evaluates to True or False.
+            In Java the parenthesis around the condition are required because it is technically a function that evaluates to <c>True</c> or <c>False</c>.
         </p>
     </section>
 
     <section xml:id="if-else">
-        <title>if else</title>
+        <title>Using the <c>if</c> - <c>else</c> Statement</title>
 
             <p>The Java equivalent follows the same syntactical rules as before.</p>
         <program interactive="activecode" language="python">
@@ -76,11 +75,11 @@ if score &gt;= 90:
     </section>
 
     <section xml:id="elif">
-        <title>elif</title>
+        <title>Can we use <c>elif</c>?</title>
 
-        <p>
-            Java does not have an elif pattern like Python.
-            In Java you can get the functionality of an elif statement by nesting if and else.
+        <p><idx><c>elif</c> statement</idx>
+            Java does not have an <c>elif</c> pattern like Python.
+            In Java you can get the functionality of an <c>elif</c> statement by nesting <c>if</c> and <c>else</c>.
             Here is a simple example in both Python and Java.
         </p>
 
@@ -102,7 +101,7 @@ else:
         </program>
 
         <p>
-In Java we have a couple of ways to write this
+In Java we have a couple of ways to write this.
         </p>
 
 
@@ -134,8 +133,9 @@ public class ElseIf {
         </program>
 
         <p>
-We can get even closer to the elif statement by taking advantage of the Java rule that a single statement does not need to be enclosed in curly braces. Since the if is the only statement used in each else we can get away with the following.
+We can get even closer to the <c>elif</c> statement by taking advantage of the Java rule that a single statement does not need to be enclosed in curly braces. Since the if is the only statement used in each else we can get away with the following.
         </p>
+
 
 
         <program interactive="activecode" language="java">
@@ -159,11 +159,46 @@ public class ElseIf {
     </section>
 
     <section xml:id="switch">
-        <title>switch</title>
+        <title>Using the <c>switch</c> Statement</title>
 
         <p>
-Java also supports a <c>switch</c> statement that acts something like the elif statement of Python under certain conditions. To write the grade program using a switch statement we would use the following:
+Java also supports a <c>switch</c> statement that acts something like the <c>elif</c> statement of Python under certain conditions. To write the grade program using a <c>switch</c> statement we would use the following:
         </p>
+
+        <note>
+            <p>
+                Depending on your knowledge and experience with Python you may already be familiar and questioning why we are not using the <c>match</c> statement in our Python examples. The answer is that this book currently runs its active code examples on Python 3.7, which does not support the <c>match</c> statement. The <c>match</c> statement was introduced in Python 3.10. Below is an example of the <c>match</c> statement similar to our grade method.
+            </p>
+                    <program language="python">
+            <title>Match Case Example</title>
+            <code>
+                grade = 100 // 10
+                def grading(grade):
+                    match grade:
+                        case 10 | 9:
+                            return 'A'
+                        case 8:
+                            return 'B'
+                        case 7:
+                            return 'C'
+                        case 6:
+                            return 'D'
+                        case _:
+                            return 'F'
+                print(grading(grade))
+            </code>
+        </program>
+        </note>
+
+        <p><idx><c>switch</c></idx>
+            The <c>switch</c> statement in Java provides a clean and efficient alternative to chaining multiple <c>if-else</c> conditions, especially when comparing a single variable against several constant values. It supports a variety of data types, including primitive types (<c>byte</c>, <c>short</c>, <c>char</c>, <c>int</c>), their wrapper classes, <c>enumerations</c>, and <c>String</c> (introduced in Java 7). Each <c>case</c> within a <c>switch</c> must be defined using a constant expression, and duplicate <c>case</c> values are not permitted. By default, control flow "<c>falls through</c>" from one <c>case</c> to the next unless a <c>break</c>, <c>return</c>, or <c>throw</c> statement is used to terminate execution. 
+        </p>
+        <p><idx><c>switch</c> expressions</idx>
+            Java 14 introduced <c>switch</c> <term>expressions</term>, enhancing functionality by allowing the <c>switch</c> to return values and eliminating <c>fall-through</c> via the <c>-&gt;</c> arrow syntax. These expressions can even use <c>yield</c> within code blocks for more complex evaluations. It’s important to note that traditional <c>switch</c> statements do not support <c>null</c> values and will throw a <c>NullPointerException</c> if evaluated with <c>null</c>. As the language evolves, newer versions of Java continue to extend <c>switch</c> capabilities with features like <c>pattern matching</c> and enhanced <c>type handling</c>, making it a more powerful and expressive tool for decision-making in Java programs.
+        </p>
+
+
+
 
 
         <program interactive="activecode" language="java">
@@ -195,19 +230,85 @@ public class SwitchUp {
         </program>
 
         <p>
-The <c>switch</c> statement is not used very often, and I recommend you do not use it! First, it is not as powerful as the <c>else if</c> model because the switch variable can only be compared for equality with an integer or enumerated constant. Second it is very easy to forget to put in the <c>break</c> statement. If the break statement is left out then then the next alternative will be automatically executed. For example if the grade was 95 and the <c>break</c> was omitted from the <c>case 9:</c> alternative then the program would print(out both A and B.)
+The <c>switch</c> statement is not used very often, and we recommend you do not use it. First, it is not as powerful as the <c>else if</c> model because the switch variable can only be compared for equality with an integer or enumerated constant. Second, it is very easy to forget to put in the <c>break</c> statement, so it is more error-prone. If the break statement is left out then then the next alternative will be automatically executed. For example, if the grade was 95 and the <c>break</c> was omitted from the <c>case 9:</c> alternative then the program would print(out both A and B.)
         </p>
     </section>
 
     <section xml:id="boolean-operators">
         <title>Boolean Operators</title>
 
-        <p>
-The conditionals used in the if statement can be boolean variables, simple comparisons, and compound boolean expressions.
+        <p><idx>Boolean operators</idx>
+The conditionals used in the if statement can be Boolean variables, simple comparisons, and compound Boolean expressions.
         </p>
 
+<p><idx>ternary operator</idx>
+Java also supports the <c>boolean</c> expression using the ternary operator 
+<c>condition ? trueValue : falseValue</c>. This operator tests a condition as part 
+of an assignment statement. The following table summarizes how this works:
+</p>
+
+<table>
+  <title>Ternary Operator in Java</title>
+  <tabular>
+    <row>
+      <cell><term>Component</term></cell>
+      <cell><term>Description</term></cell>
+    </row>
+    <row>
+      <cell><c>condition</c></cell>
+      <cell>The Boolean expression that is evaluated (e.g., <c>a % 2 == 0</c>).</cell>
+    </row>
+    <row>
+        <cell><c>?</c></cell>
+        <cell> This is the ternary operator that separates the condition from the <c>trueValue</c>.</cell>
+    </row>
+    <row>
+      <cell><c>trueValue</c></cell>
+      <cell>The value assigned if the condition is true (e.g., <c>a * a</c>).</cell>
+    </row>
+    <row>
+        <cell><c>:</c></cell>
+        <cell> This is the ternary operator that separates the <c>trueValue</c> from the <c>falseValue</c>.</cell>
+    </row>
+    <row>
+      <cell><c>falseValue</c></cell>
+      <cell>The value assigned if the condition is false (e.g., <c>3 * x - 1</c>).</cell>
+    </row>
+    <row>
+      <cell>Example Usage</cell>
+      <cell><c>a = a % 2 == 0 ? a * a : 3 * x - 1</c></cell>
+    </row>
+    <row>
+      <cell>Equivalent if-else Code</cell>
+      <cell>Can also be written with a regular <c>if-else</c> statement, but the ternary form is more concise.</cell>
+    </row>
+  </tabular>
+</table>
+
+<p>
+Using this operator can make code shorter and more readable in cases where a simple conditional assignment is needed.
+</p>
+        <program interactive ="activecode" language ="java">
+            <code>
+                class Main {
+                        public static void main(String[] args) {
+                        int a = 4;
+                        int x = 2;
+
+                        // Using the ternary operator
+                        a = (a % 2 == 0) ? a * a : 3 * x - 1;
+
+                        System.out.println("Result: " + a);
+                    }
+                }
+                  
+            </code>
+        </program>
+
         <p>
-Java also supports the boolean expression. <c>condition ? trueValue : falseValue</c> This expression can be used to test a condition as part of an assignment statement. For example <c>a = a % 2 == 0 ? a*a : 3*x -1</c> In the previous assignment statement the expression <c>a%2 ==0</c> is first checked. If it is true then a is assigned the value <c>a * a</c> if it is false then a is assigned the value of <c>3*x-1</c>. Of course all of this could have been accomplished using a regular if else statement, but sometimes the convenience of a single statement is too much to resist.
+            In this example we are using this ternary operator to assign a value to <c>a</c> based on whether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, it should be used reasonably, as it can make code less readable if overused or used in complex expressions.
         </p>
+
+
     </section>
 </chapter>
