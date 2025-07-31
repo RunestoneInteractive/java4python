@@ -15,17 +15,21 @@
         </p>
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
-            import java.util.ArrayList; // Line 1: Import necessary class
+            import java.util.ArrayList; // Import necessary class
 
-            public class Main { // Line 3: Class declaration
-                public static void main(String[] args) { // Line 4: Main method declaration
-                
-                    count = new ArrayList&lt;Integer&lt;(10); // Line 6: Attempt to use 'count' without declaration
+            public class Main { // Class declaration
 
-                    System.out.println("ArrayList created."); // Line 8: This line won't be reached due to the error.
+                // Main method declaration
+                public static void main(String[] args) { 
 
-                } // Line 10: End of main method
-            } // Line 11: End of class    
+                    // Attempt to use 'count' without declaration
+                    count = new ArrayList&lt;Integer&gt;(10);
+
+                    // This line won't be reached due to the error.
+                    System.out.println("ArrayList created."); 
+
+                } // End of main method
+            } // End of class    
         </code>
         </program>
         <p>
@@ -36,20 +40,21 @@
 
     <section xml:id="not-importing-a-class">
         <title>Not importing a class</title>
-        <program language="java" interactive="activecode" line-numbers="yes">
-            <p>
+        <p>
                 In Python, many classes are available by default. However, in Java, you must explicitly import most classes from external packages that you want to use.
             </p>
+        <program language="java" interactive="activecode" line-numbers="yes">
+            
             <code>
             // Histo.java
-            public class Histo { // Line 2: Class declaration
+            public class Histo { // Class declaration
 
-                public static void main(String[] args) { // Line 4: Main method declaration
-                    
-                    Scanner data = null; // Line 6: This line will cause the "cannot find symbol" error
+                public static void main(String[] args) { // Main method declaration
+                    // This line will cause the "cannot find symbol" error
+                    Scanner data = null; 
 
-                } // Line 8: End of main method
-            } // Line 9: End of class
+                } // End of main method
+            } //  End of class
         </code>
         </program>
         <p>
@@ -65,18 +70,18 @@
         </p>
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
-                // Histo.java // Line 1: The filename for this example
-                import java.io.File;    // Line 2: Import the File class, needed for file operations
-                import java.util.Scanner; // Line 3: Import the Scanner class, now correctly imported
+                // Histo.java // The filename for this example
+                import java.io.File;    // Import the File class, needed for file operations
+                import java.util.Scanner; // Import the Scanner class, now correctly imported
 
-                public class Histo { // Line 5: Class declaration
+                public class Histo { // Class declaration
 
-                    public static void main(String[] args) { // Line 7: Main method declaration
+                    public static void main(String[] args) { // Main method declaration
                         
-                        Scanner data = Scanner(new File("test.dat")); // Line 9: This Line will cause an error
+                        Scanner data = Scanner(new File("test.dat")); // This Line will cause an error
 
-                    } // Line 12: End of main method
-                } // Line 13: End of class
+                    } // End of main method
+                } // End of class
             </code>
         </program>
         <p>
@@ -99,15 +104,15 @@
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
             // Histo.java
-            import java.util.Scanner; // Line 1
-                                        // Line 2
-            public class Histo {         // Line 3
-                                        // Line 4
-                public static void main(String[] args) { // Line 5
-                    Scanner data = null    // Line 7: The error will point here
-                    System.out.println("This line will not compile."); // Line 8
-                }
-            }
+            import java.util.Scanner; // Imports Scanner
+                                        
+            public class Histo {         // Class declaration
+                                        
+                public static void main(String[] args) { // Main method declaration
+                    Scanner data = null    // The error will point here
+                    System.out.println("This line will not compile.");
+                }// End of main method
+            }//End of class
         </code>
         </program>
         <p>
@@ -124,20 +129,20 @@
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
                 // UncheckedWarningDemo.java 
-                import java.util.ArrayList; // Line 2: Import the ArrayList class
+                import java.util.ArrayList; // Import the ArrayList class
 
-                public class UncheckedWarningDemo { // Line 4: Class declaration
+                public class UncheckedWarningDemo { // Class declaration
 
-                    public static void main(String[] args) { // Line 6: Main method declaration
+                    public static void main(String[] args) { // Main method declaration
 
                         // This is where the potential for unchecked operations begins.
-                        ArrayList rawList = new ArrayList();//Line 9
+                        ArrayList rawList = new ArrayList();
 
-                        rawList.add("Hello");//Line 11: This is the line that will throw an error
-
+                        rawList.add("Hello");
+                        //This is the line that will throw an error
                         System.out.println("Element added: " + rawList.get(0));
-                    } // Line 14: End of main method
-                } // Line 15: End of class
+                    } // End of main method
+                } // End of class
             </code>
         </program>
         <p>
