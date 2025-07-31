@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:id="recursion-in-java">
-    <title>Recursion in Java: A Transition from Python</title>
+    <title>Recursion in Java</title>
+    <introduction>
+    </introduction>
 
-    <section xml:id="translating-recursion-to-java">
-        <title>Translating Your Recursive Logic to Java</title>
-        <introduction>
-            <p>
-                As you know from Python, recursion is a powerful problem-solving technique involving base cases and recursive steps. When moving to Java, the core logic you've learned remains identical. The challenge is adapting that logic to Java's statically-typed, class-based syntax.
+    <section xml:id="basic-recursion">
+        <title>Basic Recursion</title>
+        <p>
+            In this chapter, we will explore how to translate your recursive logic from Python to Java. While the core concepts of recursion remain the same, the syntax and structure of your code will change somewhat.
+
+        </p>
+            <p><idx>recursion</idx>
+                As you may know from Python, <term>recursion</term> is a powerful problem-solving technique involving base cases and recursive steps in which a function or method calls itself. When moving to Java, the core logic you've learned remains identical. The challenge is adapting that logic to Java's statically-typed, class-based syntax.
             </p>
             <p>
-                Let's take the familiar factorial function. The logical steps are the same, but the implementation details change.
+                Let's take the familiar factorial function (which calculates the factorial of a number, namely the product of all positive integers from 1 to n). The logical steps in the code are the same, but the implementation details change.
             </p>
             <p>
                 Here is the standard implementation in Python:
@@ -24,13 +29,20 @@
                     else:
                         return n * factorial(n - 1)
 
-                print(f"5! is {factorial(5)}")
+                # Let's calculate the factorial of 5.
+                x = 5
+                print("The factorial of " + x + " is: " + result)
                 </code> <tests> </tests>
             </program>
             <p>
-                To write this in Java, you must place the function (now called a method) inside a class and declare the data types for its parameters and return value.
+               The Java version follows the same recursive logic but requires three key syntax changes: the method must be inside a class, you must declare the parameter and return types (<c>int n</c> and <c>int return</c>), and you use <c>public static</c> to make it callable from <c>main</c>. The base case and recursive step remain conceptually identical.
             </p>
-            <program language="java">
+
+            <p>
+                Here is the equivalent Java code:
+            </p>
+
+            <program interactive="activecode" language="java">
                 <code>
                 public class Main {
                     // A recursive function to calculate the factorial of a number.
@@ -43,10 +55,12 @@
                         return n * factorial(n - 1);
                     }
 
+                    // Let's calculate the factorial of 5.
                     public static void main(String[] args) {
-                        int n = 3; // Let's calculate the factorial of 3.
-                        int result = Main.factorial(n); // Call the existing factorial method.
-                        System.out.println("The factorial of " + n + " is: " + result); // Output: The factorial of 3 is: 6
+                        int x = 5; 
+                        int result = Main.factorial(x); // Call the existing factorial method.
+                        // Print the result.
+                        System.out.println("The factorial of " + x + " is: " + result);
                     }
                 }
                 </code>
@@ -54,12 +68,11 @@
             <p>
                 Notice the key differences: instead of <c>def</c>, the method signature <c>public static int</c> declares its visibility, that it belongs to the class rather than an object, and that it returns an <c>int</c>. All logic is contained within curly braces <c>{}</c>.
             </p>
-        </introduction>
     </section>
 
     <section xml:id="java-patterns-for-recursion">
-        <title>Common Recursive Patterns in Java</title>
-        <introduction>
+        <title>Common Recursive Patterns</title>
+
             <p>
                 You're likely familiar with how some recursive algorithms, like the naive Fibonacci implementation, are elegant but inefficient due to redundant calculations. In Java, a common and robust pattern to solve this is using a private helper method. This separates the clean, public-facing API from the more complex internal recursion.
             </p>
@@ -94,7 +107,6 @@
             <p>
                 This public/private helper pattern is a cornerstone of good recursive design in Java, providing both efficiency and a clean interface.
             </p>
-        </introduction>
     </section>
 
     <section xml:id="recursion-limits-in-java">
