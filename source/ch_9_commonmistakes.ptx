@@ -9,7 +9,11 @@
 
     <section xml:id="forgetting-to-declare-your-variables">
         <title>Forgetting to declare your variables</title>
-        <program language="java" interactive="activecode">
+        <p>
+            In Python, you can use a variable without declaring it first, but in Java, you must declare all variables before using them.
+            If you try to use a variable that has not been declared, the Java compiler will give you an error message like this:
+        </p>
+        <program language="java" interactive="activecode" line-numbers="yes">
             <code>
             import java.util.ArrayList; // Line 1: Import necessary class
 
@@ -32,7 +36,10 @@
 
     <section xml:id="not-importing-a-class">
         <title>Not importing a class</title>
-        <program language="java" interactive="activecode">
+        <program language="java" interactive="activecode" line-numbers="yes">
+            <p>
+                In Python, many classes are available by default. However, in Java, you must explicitly import most classes from external packages that you want to use.
+            </p>
             <code>
             // Histo.java
             public class Histo { // Line 2: Class declaration
@@ -53,7 +60,10 @@
 
     <section xml:id="forgetting-to-use-the-new-keyword-to-create-an-object">
         <title>Forgetting to use the new keyword to create an object</title>
-        <program language="java" interactive="activecode">
+        <p>
+            Unlike Python, where you can create a new object without explicitly using a keyword, Java requires the <c>new</c> keyword to instantiate a new object.
+        </p>
+        <program language="java" interactive="activecode" line-numbers="yes">
             <code>
                 // Histo.java // Line 1: The filename for this example
                 import java.io.File;    // Line 2: Import the File class, needed for file operations
@@ -83,7 +93,10 @@
 
     <section xml:id="forgetting-a-semicolon">
         <title>Forgetting a Semicolon</title>
-        <program language="java" interactive="activecode">
+        <p>
+            A common mistake in Java is to forget that every statement must end with a semicolon (<c>;</c>).
+        </p>
+        <program language="java" interactive="activecode" line-numbers="yes">
             <code>
             // Histo.java
             import java.util.Scanner; // Line 1
@@ -105,7 +118,10 @@
 
     <section xml:id="forgetting-to-declare-the-kind-of-object-in-a-container">
         <title>Forgetting to declare the kind of object in a container</title>
-        <program language="java" interactive="activecode">
+        <p>
+            Java is a statically typed language, meaning you must specify the type of objects that can be stored in a container like an <c>ArrayList</c>. If you forget to declare the type, the compiler will give you an error.
+        </p>
+        <program language="java" interactive="activecode" line-numbers="yes">
             <code>
                 // UncheckedWarningDemo.java 
                 import java.util.ArrayList; // Line 2: Import the ArrayList class
