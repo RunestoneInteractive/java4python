@@ -239,8 +239,74 @@ The <c>switch</c> statement is not used very often, and I recommend you do not u
 The conditionals used in the if statement can be boolean variables, simple comparisons, and compound boolean expressions.
         </p>
 
+<p>
+Java also supports the <c>boolean</c> expression using the ternary operator 
+<c>condition ? trueValue : falseValue</c>. This operator tests a condition as part 
+of an assignment statement. The following table summarizes how this works:
+</p>
+
+<table>
+  <title>Ternary Operator in Java</title>
+  <tabular>
+    <row>
+      <cell><term>Component</term></cell>
+      <cell><term>Description</term></cell>
+    </row>
+    <row>
+      <cell><c>condition</c></cell>
+      <cell>The boolean expression that is evaluated (e.g., <c>a % 2 == 0</c>).</cell>
+    </row>
+    <row>
+        <cell><c>?</c></cell>
+        <cell> This is the ternary operator that separates the condition from the <c>trueValue</c>.</cell>
+    </row>
+    <row>
+      <cell><c>trueValue</c></cell>
+      <cell>The value assigned if the condition is true (e.g., <c>a * a</c>).</cell>
+    </row>
+    <row>
+        <cell><c>:</c></cell>
+        <cell> This is the ternary operator that separates the <c>trueValue</c> from the <c>falseValue</c>.</cell>
+    </row>
+    <row>
+      <cell><c>falseValue</c></cell>
+      <cell>The value assigned if the condition is false (e.g., <c>3 * x - 1</c>).</cell>
+    </row>
+    <row>
+      <cell>Example Usage</cell>
+      <cell><c>a = a % 2 == 0 ? a * a : 3 * x - 1</c></cell>
+    </row>
+    <row>
+      <cell>Equivalent if-else Code</cell>
+      <cell>Can also be written with a regular <c>if-else</c> statement, but the ternary form is more concise.</cell>
+    </row>
+  </tabular>
+</table>
+
+<p>
+Using this operator can make code shorter and more readable in cases where a simple conditional assignment is needed.
+</p>
+        <program interactive ="activecode" language ="java">
+            <code>
+                class Main {
+                        public static void main(String[] args) {
+                        int a = 4;
+                        int x = 2;
+
+                        // Using the ternary operator
+                        a = (a % 2 == 0) ? a * a : 3 * x - 1;
+
+                        System.out.println("Result: " + a);
+                    }
+                }
+                  
+            </code>
+        </program>
+
         <p>
-Java also supports the boolean expression. <c>condition ? trueValue : falseValue</c> This expression can be used to test a condition as part of an assignment statement. For example <c>a = a % 2 == 0 ? a*a : 3*x -1</c> In the previous assignment statement the expression <c>a%2 ==0</c> is first checked. If it is true then a is assigned the value <c>a * a</c> if it is false then a is assigned the value of <c>3*x-1</c>. Of course all of this could have been accomplished using a regular if else statement, but sometimes the convenience of a single statement is too much to resist.
+            In this example we are using this ternary operator to assign a value to <c>a</c> based on wether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, it should be used reasonably, as it can make code less readable if overused or used in complex expressions.
         </p>
+
+
     </section>
 </chapter>
