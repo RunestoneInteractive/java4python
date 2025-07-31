@@ -42,20 +42,24 @@ public class DefiniteLoopExample {
             Recall that the <c>range</c> function provides you with a wide variety of options for controlling the value of the loop variable.
         </p>
 
-        <pre>range(stop)
-range(start,stop)
-range(start,stop,step)</pre>
+        <pre>
+        range(stop)
+        range(start,stop)
+        range(start,stop,step)
+        </pre>
 
         <p>
             The Java <c>for</c> loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parenthesis.
             You can think of it this way:
         </p>
 
-        <pre>for (start clause; stop clause; step clause) {
-    statement1
-    statement2
-    ...
-}</pre>
+        <pre>
+        for (start clause; stop clause; step clause) {
+            statement1
+            statement2
+        ...
+        }
+        </pre>
 
         <p>
             If you want to start at 100, stop at 0 and count backward by 5, the Python loop would be written as:

@@ -212,7 +212,20 @@ public class TempConv {
  For Python programmers, the following error is likely to be even more common. Suppose we forgot the declaration for <c>cel</c> and instead left line 6 blank. What would happen when we type <c>javac TempConv.java</c> on the command line? 
             </p>
 
-            <pre>TempConv.java:13: cannot find symbol symbol  : variable cel location: class TempConv cel = (fahr - 32) * 5.0/9.0; ^ TempConv.java:14: cannot find symbol symbol  : variable cel location: class TempConv System.out.println("The temperature in C is: " + cel); ^ 2 errors</pre>
+            <pre>
+            TempConv.java:13: cannot find symbol 
+            symbol  : variable cel 
+            location: class TempConv 
+            cel = (fahr - 32) * 5.0/9.0; 
+            ^ 
+            TempConv.java:14: cannot find symbol 
+            symbol  : variable cel 
+            location: class TempConv 
+            System.out.println("The temperature in C is: " + cel); 
+            ^ 
+            2 errors
+            </pre>
+            
             <p>
  When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program. More common error messages are discussed in the section <xref ref="common-mistakes-id1"/>. 
             </p>
@@ -522,7 +535,11 @@ public class Histo {
  Technically, you don&#x2019;t <em>have</em> to declare what is going to be in an array list. The compiler will allow you to leave the <c>&lt;``*Type*</c>&gt;`` off the declaration. If you don&#x2019;t tell Java what kind of object is going to be on the list Java will give you a warning message like this: 
         </p>
 
-        <pre>Note: Histo.java uses unchecked or unsafe operations. Note: Recompile with -Xlint:unchecked for details.</pre>
+        <pre>
+        Note: Histo.java uses unchecked or unsafe operations. 
+        Note: Recompile with -Xlint:unchecked for details.
+        </pre>
+
         <p>
  Without the <c>&lt;Integer&gt;</c> part of the declaration Java simply assumes that <em>any</em> object can be on the list. However, without resorting to an ugly notation called casting, you cannot do anything with the objects on a list like this! So, if you forget you will surely see more errors later in your code. (Try it and see what you get) 
         </p>
@@ -531,7 +548,14 @@ public class Histo {
  Lines 13&#x2014;20 are required to open the file. Why so many lines to open a file in Java? The additional code mainly comes from the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error. A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. The following example shows the general structure of a try/catch block. 
         </p>
 
-        <pre>try { Put some risky code in here, like opening a file } catch (Exception e) { If an error happens in the try block an exception is thrown. We will catch that exception here! }</pre>
+        <pre>
+        try { 
+            Put some risky code in here, like opening a file 
+        } catch (Exception e) { 
+            If an error happens in the try block an exception is thrown. We will catch that exception here! 
+        }
+        </pre>
+        
         <p>
  Notice that in line 16 we are catching an <c>IOException</c>. In fact, we will see later that we can have multiple catch blocks to catch different types of exceptions. If we want to be lazy and catch any old exception we can catch an <c>Exception</c> which is the parent of all exceptions. However, catching <c>Exception</c> is a terrible practice, since you may inadvertently catch exceptions you do not intend to, making it harder to identify bugs in your program. 
         </p>
