@@ -40,10 +40,11 @@
 
     <section xml:id="not-importing-a-class">
         <title>Not importing a class</title>
-        <program language="java" interactive="activecode" line-numbers="yes">
-            <p>
+        <p>
                 In Python, many classes are available by default. However, in Java, you must explicitly import most classes from external packages that you want to use.
             </p>
+        <program language="java" interactive="activecode" line-numbers="yes">
+            
             <code>
             // Histo.java
             public class Histo { // Class declaration
