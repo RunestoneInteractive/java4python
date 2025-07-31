@@ -329,4 +329,113 @@ Hello World!
 &gt;&gt;&gt;
         </code>
     </program>
+    <section xml:id="lets_look_java_program_summary">
+        <title>Summary &amp; Reading Questions</title>
+        <p><ol label="1">
+            <li>
+                <p>Java programs must be compiled before execution, unlike Python which is interpreted directly.</p>
+            </li>
+            <li>
+                <p>Every Java program must define a <c>class</c>, and all code must be inside that class.</p>
+            </li>
+            <li>
+                <p>Each Java program must include a <c>public static void main(String[] args)</c> method as the entry point.</p>
+            </li>
+            <li>
+                <p>Java enforces that every variable and method must have a clearly defined type, including <c>void</c> for methods that return nothing.</p>
+            </li>
+            <li>
+                <p>Statements in Java must end with a semicolon (<c>;</c>), and whitespace is not syntactically meaningful.</p>
+            </li>
+            <li>
+                <p>Java uses dot notation to access class members, such as <c>System.out.println</c> for output.</p>
+            </li>
+            <li>
+                <p>The <c>static</c> keyword indicates that a method belongs to the class itself, rather than to an instance of the class.</p>
+            </li>
+        </ol></p>
+        <reading-questions xml:id="rqs-hello-java">
+            <exercise label="hello-java-1">
+                <statement>
+                    <p>Which of the following must be true of every Java program?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement><p>It must contain a method called <c>main()</c> with no parameters.</p></statement>
+                        <feedback><p>No. The main method must include a specific parameter: <c>String[] args</c>.</p></feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement><p>It must include a <c>public static void main(String[] args)</c> method inside a class.</p></statement>
+                        <feedback><p>Correct! This is the required entry point for all Java applications.</p></feedback>
+                    </choice>
+                    <choice>
+                        <statement><p>It must be saved with a <c>.exe</c> extension.</p></statement>
+                        <feedback><p>No. Java source files use the <c>.java</c> extension and compile to <c>.class</c>.</p></feedback>
+                    </choice>
+                    <choice>
+                        <statement><p>It must be run using the Python interpreter.</p></statement>
+                        <feedback><p>No. Java uses its own compiler and Java Virtual Machine (JVM).</p></feedback>
+                    </choice>
+                </choices>
+            </exercise>
+            <exercise label="hello-java-2">
+                <statement>
+                    <p>What is the purpose of the <c>javac</c> command?</p>
+                </statement>
+                <choices>
+                    <choice correct="yes">
+                        <statement><p>To compile Java source code into bytecode</p></statement>
+                        <feedback><p>Exactly! <c>javac</c> compiles <c>.java</c> files into <c>.class</c> files.</p></feedback>
+                    </choice>
+                    <choice>
+                        <statement><p>To run a Python program</p></statement>
+                        <feedback><p>No. Python programs are run with the <c>python</c> or <c>python3</c> command.</p></feedback>
+                    </choice>
+                    <choice>
+                        <statement><p>To debug Java programs</p></statement>
+                        <feedback><p>No. <c>javac</c> only compiles code. Debugging is a separate process.</p></feedback>
+                    </choice>
+                    <choice>
+                        <statement><p>To edit Java source files</p></statement>
+                        <feedback><p>No. You use a text editor or IDE to edit Java files.</p></feedback>
+                    </choice>
+                </choices>
+            </exercise>
+            <exercise label="hello-java-3">
+                <statement>
+                    <p>What symbol does Java use to indicate the end of a statement?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement><p><c>#</c></p>
+                        </statement>
+                        <feedback>
+                            <p>No. <c>#</c> is used for comments in Python, not for statement termination.</p>
+                        </feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement><p><c>;</c></p>
+                        </statement>
+                        <feedback>
+                            <p>Correct! Java uses semicolons to mark the end of a statement.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement><p><c>.</c></p>
+                        </statement>
+                        <feedback>
+                            <p>No. <c>.</c> is used for dot notation, not to end a statement.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement><p><c>}</c></p>
+                        </statement>
+                        <feedback>
+                            <p>No. <c>}</c> is used to close code blocks.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+        </reading-questions>
+    </section>
 </chapter>
