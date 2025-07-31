@@ -304,7 +304,7 @@ Using this operator can make code shorter and more readable in cases where a sim
         </program>
 
         <p>
-            In this example we are using this ternary operator to assign a value to <c>a</c> based on wether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, it should be used reasonably, as it can make code less readable if overused or used in complex expressions.
+            In this example we are using this ternary operator to assign a value to <c>a</c> based on whether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, it should be used reasonably, as it can make code less readable if overused or used in complex expressions.
         </p>
 
 
