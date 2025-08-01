@@ -128,7 +128,7 @@
                 </program>
 
                 <p>
-        The instance variables (data members) we will need for our fraction class are the numerator and denominator. Of course in Python we can add instance variables to a class at any time by simply assigning a value to <c>objectReference.variableName</c>, whereas in Java all data members must be declared up front. 
+        The instance variables (<idx>data members<idx><term>data members</term>) we will need for our fraction class are the numerator and denominator. Of course in Python we can add instance variables to a class at any time by simply assigning a value to <c>objectReference.variableName</c>, whereas in Java all data members must be declared up front. 
                 </p>
 
                 <p>
@@ -146,7 +146,7 @@
                 </program>
 
                 <p>
-                    Notice that we have declared the numerator and denominator to be private.
+                    Notice that we have declared the numerator and denominator to be <idx>private</idx><term>private</term>.
                     This means that the compiler will generate an error if another method tries to write code like the following:
                 </p>
 
@@ -161,7 +161,7 @@
                 <p>
                     Direct access to instance variables is not allowed.
                     Therefore if we legitimately want to be able to access information such as the numerator or denominator for a particular fraction we must have getter methods.
-                    It is very common programming practice to provide getter and setter methods for instance variables in Java.
+                    It is very common programming practice to provide <idx>get</idx><term>get</term> and <idx>set</idx><term>set</term> methods for instance variables in Java.
                 </p>
 
 
