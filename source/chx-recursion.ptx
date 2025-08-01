@@ -3,12 +3,10 @@
     <title>Recursion in Java</title>
     <introduction>
     </introduction>
-
     <section xml:id="basic-recursion">
         <title>Basic Recursion</title>
         <p>
             In this chapter, we will explore how to translate your recursive logic from Python to Java. While the core concepts of recursion remain the same, the syntax and structure of your code will change somewhat.
-
         </p>
             <p><idx>recursion</idx>
                 As you may know from Python, <term>recursion</term> is a powerful problem-solving technique involving base cases and recursive steps in which a function or method calls itself. When moving to Java, the core logic you've learned remains identical. The challenge is adapting that logic to Java's statically-typed, class-based syntax.
@@ -21,60 +19,68 @@
             </p>
             <program interactive="activecode" language="python">
                 <code>
-                def factorial(n):
-                    # Base Case: 0! or 1! is 1
-                    if n &lt;= 1:
-                        return 1
-                    # Recursive Step: n * (n-1)!
-                    else:
-                        return n * factorial(n - 1)
-
-                # Let's calculate the factorial of 5.
-                x = 5
-                print("The factorial of " + x + " is: " + result)
-                </code> <tests> </tests>
+                class MathTools:
+                    """A utility class for mathematical operations."""
+                    def factorial(n: int) -&gt; int:
+                        """Calculates the factorial of n using recursion."""
+                        # A check for negative numbers is good practice.
+                        if n &lt; 0:
+                            raise ValueError("Factorial is not defined for negative numbers.")        # Base Case: 0! or 1! is 1
+                        if n &lt;= 1:
+                            return 1        # Recursive Step: n * (n-1)!
+                        # The call is now to the method within the class.
+                        return n * MathTools.factorial(n - 1)# This block shows how to use the class method.
+                if __name__ == "__main__":
+                    number = 5
+                    result = MathTools.factorial(number)  # Call the method on the class
+                    print(f"{number}! is {result}")
+                </code>
             </program>
             <p>
                The Java version follows the same recursive logic but requires three key syntax changes: the method must be inside a class, you must declare the parameter and return types (<c>int n</c> and <c>int return</c>), and you use <c>public static</c> to make it callable from <c>main</c>. The base case and recursive step remain conceptually identical.
             </p>
-
             <p>
                 Here is the equivalent Java code:
             </p>
-
             <program interactive="activecode" language="java">
                 <code>
-                public class Main {
-                    // A recursive function to calculate the factorial of a number.
+                public class MathTools {    /**
+                    * Calculates the factorial of n using recursion.
+                    * This is a static method, like Python's @staticmethod.
+                    * @param n The non-negative integer.
+                    * @return The factorial of n as a long to prevent overflow for larger numbers.
+                    */
                     public static int factorial(int n) {
-                        // Base case: factorial of 0 or 1 is 1.
+                        // A check for negative numbers is good practice.
+                        if (n &lt; 0) {
+                            throw new IllegalArgumentException("Factorial is not defined for negative numbers.");
+                        }        // Base Case: 0! or 1! is 1
                         if (n &lt;= 1) {
                             return 1;
-                        }
-                        // Recursive step.
+                        }        // Recursive Step: n * (n-1)!
                         return n * factorial(n - 1);
-                    }
-
-                    // Let's calculate the factorial of 5.
+                    }    /**
+                    * The main entry point for the application.
+                    * This is the Java equivalent of Python's 'if __name__ == "__main__":'
+                    */
                     public static void main(String[] args) {
-                        int x = 5; 
-                        int result = Main.factorial(x); // Call the existing factorial method.
-                        // Print the result.
-                        System.out.println("The factorial of " + x + " is: " + result);
+                        int number = 5;
+                        // The static method is called directly on the class.
+                        long result = MathTools.factorial(number);        System.out.println(number + "! is " + result);
                     }
                 }
                 </code>
             </program>
             <p>
-                Notice the key differences: instead of <c>def</c>, the method signature <c>public static int</c> declares its visibility, that it belongs to the class rather than an object, and that it returns an <c>int</c>. All logic is contained within curly braces <c>{}</c>.
+                Notice the key differences: instead of <c>def</c>, the method signature <c>public static int</c> declares its scope, that it belongs to the class rather than an object, and that it returns an <c>int</c>. All logic is contained within curly braces <c>{}</c>.
             </p>
     </section>
-
     <section xml:id="java-patterns-for-recursion">
         <title>Common Recursive Patterns</title>
-
             <p>
-                You're likely familiar with how some recursive algorithms, like the naive Fibonacci implementation, are elegant but inefficient due to redundant calculations. In Java, a common and robust pattern to solve this is using a private helper method. This separates the clean, public-facing API from the more complex internal recursion.
+                You're likely familiar with how some recursive algorithms, like the naive Fibonacci implementation,
+                are elegant but inefficient, due to branching recursive calls filling the call stack. A common and robust pattern to solve
+                this is using a private helper method. This separates the clean, public-facing API from the more complex internal recursion.
             </p>
             <p>
                 The following example demonstrates this pattern. The public <c>fib</c> method provides a simple entry point, while the private <c>fibHelper</c> method performs the efficient recursion by carrying its state (the previous two numbers) in its parameters.
@@ -102,13 +108,12 @@
                         System.out.println("Fibonacci of 10: " + fib(10)); // Expected: 55
                     }
                 }
-                </code> <tests> </tests>
+                </code>
             </program>
             <p>
                 This public/private helper pattern is a cornerstone of good recursive design in Java, providing both efficiency and a clean interface.
             </p>
     </section>
-
     <section xml:id="recursion-limits-in-java">
         <title>Recursion Limits: Python vs. Java</title>
         <p>
@@ -127,18 +132,15 @@
         <program language="java">
             <code>
                 public class Crash {
-
                     public static void causeStackOverflow() {
                         // This method calls itself endlessly without a stopping condition (a base case).
                         // Each call adds a new layer to the program's call stack.
                         // Eventually, the stack runs out of space, causing the error.
                         causeStackOverflow();
                     }
-
                     // A main method is required to run the program.
                     public static void main(String[] args) {
                         System.out.println("Calling the recursive method... this will end in an error!");
-                        
                         // This line starts the infinite recursion.
                         causeStackOverflow();
                     }
