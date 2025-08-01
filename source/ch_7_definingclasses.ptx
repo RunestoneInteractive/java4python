@@ -864,7 +864,7 @@ public class Student {
         </program>
 
         <p>
- In this example notice that we create a static member variable by using the <c>static</c> modifier on the variable declaration. Once a variable has been declared <c>static</c> in Java it can be accessed from inside the class without prefixing the name of the class as we had to do in Python. 
+ In this example notice that we create a <idx>static member variable</idx><term>static member variable</term> by using the <c>static</c> modifier on the variable declaration. Once a variable has been declared <c>static</c> in Java it can be accessed from inside the class without prefixing the name of the class as we had to do in Python. 
         </p>
     </section>
 
