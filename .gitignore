@@ -5,6 +5,9 @@
 # don't track unpublished builds or stage
 output
 
+# don't track cached files
+.cache
+
 # don't track assets generated from source
 generated-assets
 **/*.pkl
