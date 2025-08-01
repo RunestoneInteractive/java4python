@@ -96,6 +96,10 @@
             <p>
                 The following example demonstrates this pattern. The public <c>fib</c> method provides a simple entry point, while the private <c>fibHelper</c> method performs the efficient recursion by carrying its state (the previous two numbers) in its parameters.
             </p>
+            <p>
+                The following Java code demonstrates a similar pattern.
+            </p>
+
             <program interactive="activecode" language="java">
                 <code>
                 public class FibonacciExample {
@@ -139,6 +143,51 @@
         <p>
             However, regarding memory efficiency, the comparison is different. The maximum depth of the call stack for both the naive and the helper method is proportional to n, giving them both a space complexity of O(n). This means that while the helper method is much faster, it is equally vulnerable to a <c>StackOverflowError</c> for very large values of n. Because Java does not perform tail-call optimization, any recursive solution that goes too deep will exhaust the stack memory, regardless of its time efficiency. For true memory efficiency (O(1) space), an iterative loop-based solution is superior.
         </p>
+        <p>
+            The following Python code demonstrates the same pattern, using a public method to initiate the calculation and a private helper method to perform the recursion.
+        </p>
+        <program interactive="activecode" language="python">
+                <code>
+                class FibonacciExample:
+                    def fib(self, n: int) -&gt; int:
+                        """
+                        Public method to start the Fibonacci calculation.
+                        """
+                        if n &lt; 0:
+                            raise ValueError("Input cannot be negative.")
+                        # Initial call to the recursive helper with depth 0.
+                        return self._fib_helper(n, 0, 1, 0)
+
+                    def _fib_helper(self, count: int, a: int, b: int, depth: int) -&gt; int:
+                        """
+                        Private helper that performs the tail recursion to find the number.
+                        """
+                        # Create an indent string based on the recursion depth.
+                        indent = "  " * depth
+                        # Print when the method is entered (pushed onto the stack).
+                        print(f"{indent}[&gt;&gt;] ENTERING _fib_helper(count={count}, a={a}, b={b})")
+
+                        # Base Case: When the count reaches 0, 'a' holds the result.
+                        if count == 0:
+                            print(f"{indent}[&lt;&lt;] EXITING (Base Case) -&gt; returns {a}")
+                            return a
+                            
+                        # Recursive Step.
+                        result = self._fib_helper(count - 1, b, a + b, depth + 1)
+                        # Print when the method exits (popped from the stack).
+                        print(f"{indent}[&lt;&lt;] EXITING (Recursive Step) -&gt; passing {result}")
+                        return result
+
+                # The standard Python entry point, equivalent to Java's `main` method.
+                if __name__ == "__main__":
+                    calculator = FibonacciExample()
+                    n = 4  # Let's calculate the 4th Fibonacci number.
+                    print(f"--- Calculating fib({n}) ---")
+                    result = calculator.fib(n)
+                    print("--------------------------")
+                    print(f"The {n}th Fibonacci number is: {result}")
+                </code>
+            </program>
     </section>
     <section xml:id="recursion-limits-in-java">
         <title>Recursion Limits: Python vs. Java</title>
@@ -155,7 +204,31 @@
         <p>
             Neither language supports <idx> tail call optimization </idx><term>tail call optimization</term>, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative (loop-based) approach is the preferred solution in both Python and Java.
         </p>
-        <program language="java">
+        <p>
+            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to aRecursionError.
+        </p>
+        <program interactive="activecode" language="python">
+            <code>
+                def cause_recursion_error():
+                    """
+                    This function calls itself without a base case, guaranteeing an error.
+                    """
+                    cause_recursion_error()
+
+                # Standard Python entry point
+                if __name__ == "__main__":
+                    print("Calling the recursive function... this will end in an error!")
+                    
+                    # This line starts the infinite recursion.
+                    # Python will stop it and raise a RecursionError automatically.
+                    cause_recursion_error()
+            </code>
+        </program>
+
+        <p>
+            The following Java code demonstrates a similar situation, where a method calls itself indefinitely without a base case, leading to a StackOverflowError.
+        </p>
+        <program interactive="activecode" language="java">
             <code>
                 public class Crash {
                     public static void causeStackOverflow() {
