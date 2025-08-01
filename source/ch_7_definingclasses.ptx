@@ -233,7 +233,7 @@ public Fraction(Integer num, Integer den) {
             <p>
                 Now we come to one of the major differences between Java and Python.
                 The Python class definition used the special methods for addition and comparison that have the effect of redefining how the standard operators behave: in Python, <c>__add__</c> and <c>__lt__</c> change the behavior of <c>+</c> and <c>&lt;</c>, respectively.
-                In Java there is <term>no operator overloading</term>.
+                In Java there is no operator overloading.
                 So we will have to write the method for addition a little differently.
             </p>
 
@@ -248,12 +248,12 @@ public Fraction(Integer num, Integer den) {
                 <ul>
                     <li>
                         <p>
-                            <term>Java is strictly pass-by-value.</term> For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <em>value of the reference</em> (the memory address) is passed.
+                            <idx>pass-by-value</idx><term>Java is strictly pass-by-value.</term> For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <em><idx>value of the reference</idx><term>value of the reference</term></em> (the memory address) is passed.
                         </p>
                     </li>
                     <li>
                         <p>
-                            <term>Python is pass-by-assignment</term> (or pass-by-object-reference). Since everything in Python is an object, the rule is consistent: a copy of the reference to the object is passed.
+                            <idx>pass-by-assignment</idx><term>Python is pass-by-assignment</term> (or pass-by-object-reference). Since everything in Python is an object, the rule is consistent: a copy of the reference to the object is passed.
                         </p>
                     </li>
                 </ul>
@@ -282,7 +282,7 @@ public Fraction add(Fraction otherFrac) {
             </program>
 
             <p>
-                First you will notice that the <c>add</c> method is declared as <c>public Fraction</c> The <c>public</c> part means that any other method may call the <c>add</c> method.
+                First you will notice that the <c>add</c> method is declared as <c>public Fraction</c> The <c><idx>public</idx><term>public</term></c> part means that any other method may call the <c>add</c> method.
                 The <c>Fraction</c> part means that <c>add</c> will return a fraction as its result.
             </p>
 
@@ -333,14 +333,14 @@ public Fraction add(Fraction otherFrac) {
             <p>
                 In Java we can do runtime type checking, but the compiler will not allow us to pass an Integer to the <c>add</c> method since the parameter has been declared to be a Fraction.
                 The way that we solve this problem is by writing another <c>add</c> method with a different set of parameters.
-                In Java this practice is legal and common we call this practice <term>method overloading</term>.
+                In Java this practice is legal and common we call this practice <idx>method overloading</idx><term>method overloading</term>.
             </p>
 
             <p>
                 This idea of method overloading raises a very important difference between Python and Java.
                 In Python a method is known by its name only.
                 In Java a method is known by its signature.
-                The signature of a method includes its name, and the types of all of its parameters.
+                The <idx>signature</idx><term>signature</term> of a method includes its name, and the types of all of its parameters.
                 The name and the types of the parameters are enough information for the Java compiler to decide which method to call at runtime.
             </p>
 
