@@ -128,7 +128,7 @@
                 </program>
 
                 <p>
-        The instance variables (<idx>data members<idx><term>data members</term>) we will need for our fraction class are the numerator and denominator. Of course in Python we can add instance variables to a class at any time by simply assigning a value to <c>objectReference.variableName</c>, whereas in Java all data members must be declared up front. 
+        The instance variables (<idx>data members</idx><term>data members</term>) we will need for our fraction class are the numerator and denominator. Of course in Python we can add instance variables to a class at any time by simply assigning a value to <c>objectReference.variableName</c>, whereas in Java all data members must be declared up front. 
                 </p>
 
                 <p>
@@ -488,7 +488,8 @@ Fraction@6ff3c5b5
             <title>The <c>Object</c> Class</title>
 
             <p>
-                In Java, the equivalent of <c>__str__</c> is the <c>toString</c> method.
+                <idx>Object class</idx>
+                In Java, the equivalent of <c>__str__</c> is the <c><idx>toString</idx><term>toString</term></c> method.
                 Every object in Java already has a <c>toString</c> method defined for it because every class in Java automatically inherits from the <c>Object</c> class.
                 The <c>Object</c> class provides default implementations for the following methods.
             </p>
@@ -625,7 +626,7 @@ public boolean equals(Fraction other) {
                 If we want to make our <c>Fraction</c> class behave like <c>Integer</c>, <c>Double</c>, and the other numeric classes in Java then we need to make a couple of additional modifications to the class.
                 The first thing we will do is plug <c>Fraction</c> into the Java class hierarchy at the same place as <c>Integer</c> and its siblings.
                 If you look at the documentation for <c>Integer</c> you will see that <c>Integer</c>&#x2019;s parent class is <c>Number</c>.
-                Number is an <term>abstract class</term> that specifies several methods that all of its children must implement.
+                Number is an <idx>abstract class</idx><term>abstract class</term> that specifies several methods that all of its children must implement.
                 In Java an abstract class is more than just a placeholder for common methods.
                 In Java an abstract class has the power to specify certain methods that all of its children <term>must</term> implement.
                 You can trace this power back to the strong typing nature of Java.
@@ -645,7 +646,7 @@ public class Fraction extends Number {
             </program>
 
             <p>
-                The keyword <c>extends</c> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
+                The keyword <c><idx>extends</idx><term>extends</term></c> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
                 A child class always extends its parent.
             </p>
 
@@ -706,7 +707,7 @@ public long longValue() {
             <p>
                 By having the <c>Fraction</c> class extend the <c>Number</c> class we can now pass a <c>Fraction</c> to any Java method that specifies it can receive a <c>Number</c> as one of its parameters.
                 For example many Java user interface methods accept any object that is a subclass of <c>Number</c> as a parameter.
-                In Java the class hierarchy and the &#x201C;is-a&#x201D; relationships are very important.
+                In Java the class hierarchy and the &#x201C;<idx>is-a</idx><term>is-a</term>&#x201D; relationships are very important.
                 Whereas in Python you can pass any kind of object as a parameter to any method or function, the strong typing of Java makes sure that you only pass an object as a parameter that is of the type specified in the method signature, or one of the children of the type specified.
                 When you see a parameter of type <c>Number</c> it&#x2019;s important to remember that an <c>Integer</c> <em>is-a</em> <c>Number</c> and a <c>Double</c> <em>is-a</em> <c>Number</c> and a <c>Fraction</c> <em>is-a</em> <c>Number</c>, because these classes are children of <c>Number</c>.
             </p>
