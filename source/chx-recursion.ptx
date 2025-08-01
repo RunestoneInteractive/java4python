@@ -77,42 +77,68 @@
     </section>
     <section xml:id="java-patterns-for-recursion">
         <title>Common Recursive Patterns</title>
-            <p>
-                You're likely familiar with how some recursive algorithms, like the naive Fibonacci implementation,
-                are elegant but inefficient, due to branching recursive calls filling the call stack. A common and robust pattern to solve
-                this is using a private helper method. This separates the clean, public-facing API from the more complex internal recursion.
+
+        <p>
+            In many recursive algorithms, the recursive calls need extra information that the original caller shouldn't have to provide. For example, to recursively process an array, you need to keep track of the current position (index). To traverse a tree, you need to know the current node. This extra information clutters the public-facing method signature.
+        </p>
+        <p>
+            A common pattern to solve this is using a private helper method. This pattern lets you create a clean, simple public method that users will call, while the private helper method handles the complex details of the recursion. The public method typically makes the initial call to the private helper, providing the necessary starting values for the extra parameters.
+        </p>
+        <p>
+            Let's see this pattern in action with an example that calculates the sum of all elements in an integer array. The public <c>sum</c> method only takes the array, but the private <c>sumHelper</c> method also takes an index to track its progress through the array.
+        </p>
+        
+        <p>
+            You're likely familiar with how some recursive algorithms, like the naive Fibonacci implementation,
+            are elegant but inefficient, due to branching recursive calls filling the call stack. A common pattern to solve
+            this is using a private helper method. 
             </p>
             <p>
                 The following example demonstrates this pattern. The public <c>fib</c> method provides a simple entry point, while the private <c>fibHelper</c> method performs the efficient recursion by carrying its state (the previous two numbers) in its parameters.
             </p>
             <program interactive="activecode" language="java">
                 <code>
-                class Main {
-                    // A standard recursive Fibonacci function
-                    public static int fib(int n) {
-                        if (n &lt;= 0) { // Base case for F(0)
-                            return 0;
-                        } else if (n == 1) { // Base case for F(1)
-                            return 1;
-                        } else { // Recursive step for F(n) = F(n-1) + F(n-2)
-                            return fib(n - 1) + fib(n - 2);
+                public class FibonacciExample {
+                    public int fib(int n) {
+                        if (n &lt; 0) {
+                            throw new IllegalArgumentException("Input cannot be negative.");
                         }
+                        // Initial call to the recursive helper with depth 0.
+                        return this._fibHelper(n, 0, 1, 0);
+                    }
+                    private int _fibHelper(int count, int a, int b, int depth) {
+                        // Create an indent string based on the recursion depth.
+                        String indent = "  ".repeat(depth);
+                        // Print when the method is entered (pushed onto the stack).
+                        System.out.printf("%s[&gt;&gt;] ENTERING _fibHelper(count=%d, a=%d, b=%d)%n", indent, count, a, b);
+                        // Base Case: When the count reaches 0, 'a' holds the result.
+                        if (count == 0) {
+                            System.out.printf("%s[&lt;&lt;] EXITING (Base Case) -&gt; returns %d%n", indent, a);
+                            return a;
+                        }
+                        // Recursive Step.
+                        int result = this._fibHelper(count - 1, b, a + b, depth + 1);
+                        // Print when the method exits (popped from the stack).
+                        System.out.printf("%s[&lt;&lt;] EXITING (Recursive Step) -&gt; passing %d%n", indent, result);
+                        return result;
                     }
                     public static void main(String[] args) {
-                        // Test cases
-                        System.out.println("Fibonacci of 0: " + fib(0)); // Expected: 0
-                        System.out.println("Fibonacci of 1: " + fib(1)); // Expected: 1
-                        System.out.println("Fibonacci of 2: " + fib(2)); // Expected: 1
-                        System.out.println("Fibonacci of 3: " + fib(3)); // Expected: 2
-                        System.out.println("Fibonacci of 5: " + fib(5)); // Expected: 5
-                        System.out.println("Fibonacci of 10: " + fib(10)); // Expected: 55
+                        FibonacciExample calculator = new FibonacciExample();
+                        int n = 4; // Let's calculate the 4th Fibonacci number.
+                        System.out.printf("--- Calculating fib(%d) ---%n", n);
+                        int result = calculator.fib(n);
+                        System.out.println("--------------------------");
+                        System.out.printf("The %dth Fibonacci number is: %d%n", n, result);
                     }
                 }
                 </code>
             </program>
             <p>
-                This public/private helper pattern is a cornerstone of good recursive design in Java, providing both efficiency and a clean interface.
-            </p>
+            This helper method approach is significantly more efficient in terms of time than the classic branching recursion (where <c>fib(n)</c> calls <c>fib(n-1)</c> and <c>fib(n-2)</c>). The branching model has an exponential time complexity of roughly O(2^n) because it re-calculates the same values many times. In contrast, our helper method has a linear time complexity of O(n), as it avoids re-computation by carrying the previous two results (a and b) forward into the next call.
+        </p>
+        <p>
+            However, regarding memory efficiency, the comparison is different. The maximum depth of the call stack for both the naive and the helper method is proportional to n, giving them both a space complexity of O(n). This means that while the helper method is much faster, it is equally vulnerable to a <c>StackOverflowError</c> for very large values of n. Because Java does not perform tail-call optimization, any recursive solution that goes too deep will exhaust the stack memory, regardless of its time efficiency. For true memory efficiency (O(1) space), an iterative loop-based solution is superior.
+        </p>
     </section>
     <section xml:id="recursion-limits-in-java">
         <title>Recursion Limits: Python vs. Java</title>
