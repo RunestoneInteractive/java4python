@@ -743,16 +743,16 @@ public void test(Number a, Number b) {
             Lets turn our attention to making a list of fractions sortable by the standard Java sorting method <c>Collections.sort</c>.
             In Python, we would just need to implement the <c>__cmp__</c> method.
             But in Java we cannot be that informal.
-            In Java, things that are sortable must be <c>Comparable</c>.
+            In Java, things that are sortable must be <c><idx>Comparable</idx><term>Comparable</term></c>.
             Your first thought might be that <c>Comparable</c> is superclass of <c>Number</c>, but that is actually not the case.
-            Java only supports single inheritance, that is, a class can have only one parent.
+            Java only supports <idx>single inheritance</idx><term>single inheritance</term>, that is, a class can have only one parent.
             Although it would be possible to add an additional layer to the class hierarchy it would also complicate things dramatically, because not only are <c>Numbers</c> comparable, but <c>Strings</c> are also <c>Comparable</c> as would many other types.
             For example, we might have a <c>Student</c> class and we want to be able to sort students by their GPA.
             But <c>Student</c> might already extends the class <c>Person</c> for which there would be no natural comparison method.
         </p>
 
         <p>
-            Java&#x2019;s answer to this problem is the <c>Interface</c> mechanism.
+            Java&#x2019;s answer to this problem is the <c><idx>Interface</idx><term>Interface</term></c> mechanism.
             Interfaces are like a combination of &#x201C;inheritance&#x201D; and &#x201C;contracts&#x201D; all rolled into one.
             An interface is a <em>specification</em> that says any object that claims it implements this interface must provide the following methods.
             It sounds a little bit like an abstract class, however it is outside the inheritance mechanism.
