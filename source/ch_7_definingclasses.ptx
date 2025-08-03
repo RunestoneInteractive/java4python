@@ -215,7 +215,7 @@ public Fraction(Integer top, Integer bottom) {
             First, you will notice that the constructor does not have a <c>self</c> parameter.
             You will also notice that we can simply refer to the instance variables by name without the <c>self</c> prefix, because they have already been declared.
             This allows the Java compiler to do the work of dereferencing the current Java object.
-            Java does provide a special variable called <c><term>this</term></c> that works like the <c>self</c> variable.
+            Java does provide a special variable called <c>this</c> that works like the <c>self</c> variable.
             In Java, <c>this</c> is typically only used when it is needed to differentiate between a parameter or local variable and an instance variable.
             For example this alternate definition of the the Fraction constructor uses <c>this</c> to differentiate between parameters and instance variables.
         </p>
@@ -290,7 +290,7 @@ public Fraction add(Fraction otherFrac) {
             </program>
 
             <p>
-                First you will notice that the <c>add</c> method is declared as <c>public Fraction</c> The <c><term>public</term></c> part means that any other method may call the <c>add</c> method.
+                First you will notice that the <c>add</c> method is declared as <c>public Fraction</c> The <c>public</c> part means that any other method may call the <c>add</c> method.
                 The <c>Fraction</c> part means that <c>add</c> will return a fraction as its result.
             </p>
 
@@ -500,7 +500,7 @@ Fraction@6ff3c5b5
             <p>
                 <idx>object class</idx>
                 <idx><c>toString</c></idx>
-                In Java, the equivalent of <c>__str__</c> is the <c><term>toString</term></c> method.
+                In Java, the equivalent of <c>__str__</c> is the <c>toString</c> method.
                 Every object in Java already has a <c>toString</c> method defined for it because every class in Java automatically inherits from the <c>Object</c> class.
                 The <c>Object</c> class provides default implementations for the following methods.
             </p>
@@ -659,7 +659,7 @@ public class Fraction extends Number {
 
             <p>
                 <idx><c>extends</c></idx>
-                The keyword <c><term>extends</term></c> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
+                The keyword <c>extends</c> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
                 A child class always extends its parent.
             </p>
 
@@ -759,7 +759,7 @@ public void test(Number a, Number b) {
             Lets turn our attention to making a list of fractions sortable by the standard Java sorting method <c>Collections.sort</c>.
             In Python, we would just need to implement the <c>__cmp__</c> method.
             But in Java we cannot be that informal.
-            In Java, things that are sortable must be <c><term>Comparable</term></c>.
+            In Java, things that are sortable must be <c>Comparable</c>.
             Your first thought might be that <c>Comparable</c> is superclass of <c>Number</c>, but that is actually not the case.
             Java only supports <term>single inheritance</term>, that is, a class can have only one parent.
             Although it would be possible to add an additional layer to the class hierarchy it would also complicate things dramatically, because not only are <c>Numbers</c> comparable, but <c>Strings</c> are also <c>Comparable</c> as would many other types.
@@ -769,7 +769,7 @@ public void test(Number a, Number b) {
 
         <p>
             <idx><c>Interface</c></idx>
-            Java&#x2019;s answer to this problem is the <c><term>Interface</term></c> mechanism.
+            Java&#x2019;s answer to this problem is the <c>Interface</c> mechanism.
             Interfaces are like a combination of &#x201C;inheritance&#x201D; and &#x201C;contracts&#x201D; all rolled into one.
             An interface is a <em>specification</em> that says any object that claims it implements this interface must provide the following methods.
             It sounds a little bit like an abstract class, however it is outside the inheritance mechanism.
