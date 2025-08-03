@@ -33,7 +33,7 @@ public class Hello {
     </program>
 
     <p>
- What we see is that at the core there are a few similarities, such as a main and the string &#x201C;Hello World&#x201D;. However, there is a lot more stuff around the edges that make it harder to see the core of the program. Do not worry! An important skill for a computer scientist is to learn what to ignore and what to look at carefully. You will soon find that there are some elements of Java that will fade into the background as you become used to seeing them. One thing that will help you is to learn a little bit about Java <xref ref="naming-conventions-id1"/>. 
+ What we see is that at the core there are a few similarities, such as a main and the string &#x201C;Hello World&#x201D;. However, there is a lot more stuff around the edges that make it harder to see the core of the program. Do not worry! An important skill for a computer scientist is to learn what to ignore and what to look at carefully. You will soon find that there are some elements of Java that will fade into the background as you become used to seeing them.
     </p>
 
     <p>
