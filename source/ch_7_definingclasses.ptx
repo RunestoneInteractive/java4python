@@ -160,11 +160,11 @@
                 </program>
 
                 <p>
-                    <idx>get</idx>
-                    <idx>set</idx>
-                    Direct access to instance variables is not allowed.
-                    Therefore if we legitimately want to be able to access information such as the numerator or denominator for a particular fraction we must have getter methods.
-                    It is very common programming practice to provide <term>get</term> and <term>set</term> methods for instance variables in Java.
+                    <idx>getter method</idx>
+                    <idx>setter method</idx>
+                    Direct access to instance variables is not allowed in Java.
+                    Therefore if we legitimately want to be able to access information such as the numerator or the denominator for a particular fraction we must have a <term>getter method</term> that returns the needed value.
+                    Hence, it is a very common programming practice to both provide <term>getter methods</term> and <term>setter methods</term> when needed for instance variables in Java.
                 </p>
 
 
