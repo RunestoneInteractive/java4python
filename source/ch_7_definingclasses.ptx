@@ -128,7 +128,8 @@
                 </program>
 
                 <p>
-        The instance variables (data members) we will need for our fraction class are the numerator and denominator. Of course in Python we can add instance variables to a class at any time by simply assigning a value to <c>objectReference.variableName</c>, whereas in Java all data members must be declared up front. 
+                    <idx>data members</idx>
+        The instance variables (<term>data members</term>) we will need for our fraction class are the numerator and denominator. Of course in Python we can add instance variables to a class at any time by simply assigning a value to <c>objectReference.variableName</c>, whereas in Java all data members must be declared up front. 
                 </p>
 
                 <p>
@@ -146,7 +147,7 @@
                 </program>
 
                 <p>
-                    Notice that we have declared the numerator and denominator to be private.
+                    Notice that we have declared the numerator and denominator to be <term>private</term>.
                     This means that the compiler will generate an error if another method tries to write code like the following:
                 </p>
 
@@ -159,9 +160,11 @@
                 </program>
 
                 <p>
-                    Direct access to instance variables is not allowed.
-                    Therefore if we legitimately want to be able to access information such as the numerator or denominator for a particular fraction we must have getter methods.
-                    It is very common programming practice to provide getter and setter methods for instance variables in Java.
+                    <idx>getter method</idx>
+                    <idx>setter method</idx>
+                    Direct access to instance variables is not allowed in Java.
+                    Therefore if we legitimately want to be able to access information such as the numerator or the denominator for a particular fraction we must have a <term>getter method</term> that returns the needed value.
+                    Hence, it is a very common programming practice to both provide <term>getter methods</term> and <term>setter methods</term> when needed for instance variables in Java.
                 </p>
 
 
@@ -188,8 +191,9 @@ public void setDenominator(Integer denominator) {
         <title>Writing a constructor</title>
 
         <p>
+            <idx>constructors</idx>
             Once you have identified the instance variables for your class the next thing to consider is the constructor.
-            In Java, constructors have the same name as the class and are declared public.
+            In Java, <term>constructors</term> have the same name as the class and are declared public.
             They are declared without a return type.
             So any method that is named the same as the class and has no return type is a constructor.
             Our constructor will take two parameters: the numerator and the denominator.
@@ -206,6 +210,7 @@ public Fraction(Integer top, Integer bottom) {
         </program>
 
         <p>
+            <idx><c>this</c></idx>
             There are a couple of important things to notice here.
             First, you will notice that the constructor does not have a <c>self</c> parameter.
             You will also notice that we can simply refer to the instance variables by name without the <c>self</c> prefix, because they have already been declared.
@@ -233,7 +238,7 @@ public Fraction(Integer num, Integer den) {
             <p>
                 Now we come to one of the major differences between Java and Python.
                 The Python class definition used the special methods for addition and comparison that have the effect of redefining how the standard operators behave: in Python, <c>__add__</c> and <c>__lt__</c> change the behavior of <c>+</c> and <c>&lt;</c>, respectively.
-                In Java there is <term>no operator overloading</term>.
+                In Java there is no operator overloading.
                 So we will have to write the method for addition a little differently.
             </p>
 
@@ -248,11 +253,14 @@ public Fraction(Integer num, Integer den) {
                 <ul>
                     <li>
                         <p>
-                            <term>Java is strictly pass-by-value.</term> For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <em>value of the reference</em> (the memory address) is passed.
+                            <idx>pass-by-value</idx>
+                            <idx>value of the reference</idx>
+                            <term>Java is strictly pass-by-value.</term> For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <em><term>value of the reference</term></em> (the memory address) is passed.
                         </p>
                     </li>
                     <li>
                         <p>
+                            <idx>pass-by-assignment</idx>
                             <term>Python is pass-by-assignment</term> (or pass-by-object-reference). Since everything in Python is an object, the rule is consistent: a copy of the reference to the object is passed.
                         </p>
                     </li>
@@ -331,16 +339,18 @@ public Fraction add(Fraction otherFrac) {
             </p>
 
             <p>
+                <idx>method overloading</idx>
                 In Java we can do runtime type checking, but the compiler will not allow us to pass an Integer to the <c>add</c> method since the parameter has been declared to be a Fraction.
                 The way that we solve this problem is by writing another <c>add</c> method with a different set of parameters.
                 In Java this practice is legal and common we call this practice <term>method overloading</term>.
             </p>
 
             <p>
+                <idx>signature</idx>
                 This idea of method overloading raises a very important difference between Python and Java.
                 In Python a method is known by its name only.
                 In Java a method is known by its signature.
-                The signature of a method includes its name, and the types of all of its parameters.
+                The <term>signature</term> of a method includes its name, and the types of all of its parameters.
                 The name and the types of the parameters are enough information for the Java compiler to decide which method to call at runtime.
             </p>
 
@@ -488,6 +498,8 @@ Fraction@6ff3c5b5
             <title>The <c>Object</c> Class</title>
 
             <p>
+                <idx>object class</idx>
+                <idx><c>toString</c></idx>
                 In Java, the equivalent of <c>__str__</c> is the <c>toString</c> method.
                 Every object in Java already has a <c>toString</c> method defined for it because every class in Java automatically inherits from the <c>Object</c> class.
                 The <c>Object</c> class provides default implementations for the following methods.
@@ -622,6 +634,7 @@ public boolean equals(Fraction other) {
             <title>Abstract Classes and Methods</title>
 
             <p>
+                <idx>abstract class</idx>
                 If we want to make our <c>Fraction</c> class behave like <c>Integer</c>, <c>Double</c>, and the other numeric classes in Java then we need to make a couple of additional modifications to the class.
                 The first thing we will do is plug <c>Fraction</c> into the Java class hierarchy at the same place as <c>Integer</c> and its siblings.
                 If you look at the documentation for <c>Integer</c> you will see that <c>Integer</c>&#x2019;s parent class is <c>Number</c>.
@@ -645,6 +658,7 @@ public class Fraction extends Number {
             </program>
 
             <p>
+                <idx><c>extends</c></idx>
                 The keyword <c>extends</c> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
                 A child class always extends its parent.
             </p>
@@ -704,9 +718,10 @@ public long longValue() {
             </program>
 
             <p>
+                <idx>is-a</idx>
                 By having the <c>Fraction</c> class extend the <c>Number</c> class we can now pass a <c>Fraction</c> to any Java method that specifies it can receive a <c>Number</c> as one of its parameters.
                 For example many Java user interface methods accept any object that is a subclass of <c>Number</c> as a parameter.
-                In Java the class hierarchy and the &#x201C;is-a&#x201D; relationships are very important.
+                In Java the class hierarchy and the &#x201C;<term>is-a</term>&#x201D; relationships are very important.
                 Whereas in Python you can pass any kind of object as a parameter to any method or function, the strong typing of Java makes sure that you only pass an object as a parameter that is of the type specified in the method signature, or one of the children of the type specified.
                 When you see a parameter of type <c>Number</c> it&#x2019;s important to remember that an <c>Integer</c> <em>is-a</em> <c>Number</c> and a <c>Double</c> <em>is-a</em> <c>Number</c> and a <c>Fraction</c> <em>is-a</em> <c>Number</c>, because these classes are children of <c>Number</c>.
             </p>
@@ -739,18 +754,21 @@ public void test(Number a, Number b) {
         <title>Interfaces</title>
 
         <p>
+            <idx><c>Comparable</c></idx>
+            <idx>single inheritance</idx>
             Lets turn our attention to making a list of fractions sortable by the standard Java sorting method <c>Collections.sort</c>.
             In Python, we would just need to implement the <c>__cmp__</c> method.
             But in Java we cannot be that informal.
             In Java, things that are sortable must be <c>Comparable</c>.
             Your first thought might be that <c>Comparable</c> is superclass of <c>Number</c>, but that is actually not the case.
-            Java only supports single inheritance, that is, a class can have only one parent.
+            Java only supports <term>single inheritance</term>, that is, a class can have only one parent.
             Although it would be possible to add an additional layer to the class hierarchy it would also complicate things dramatically, because not only are <c>Numbers</c> comparable, but <c>Strings</c> are also <c>Comparable</c> as would many other types.
             For example, we might have a <c>Student</c> class and we want to be able to sort students by their GPA.
             But <c>Student</c> might already extends the class <c>Person</c> for which there would be no natural comparison method.
         </p>
 
         <p>
+            <idx><c>Interface</c></idx>
             Java&#x2019;s answer to this problem is the <c>Interface</c> mechanism.
             Interfaces are like a combination of &#x201C;inheritance&#x201D; and &#x201C;contracts&#x201D; all rolled into one.
             An interface is a <em>specification</em> that says any object that claims it implements this interface must provide the following methods.
@@ -863,7 +881,8 @@ public class Student {
         </program>
 
         <p>
- In this example notice that we create a static member variable by using the <c>static</c> modifier on the variable declaration. Once a variable has been declared <c>static</c> in Java it can be accessed from inside the class without prefixing the name of the class as we had to do in Python. 
+            <idx>static member variable</idx>
+ In this example notice that we create a <term>static member variable</term> by using the <c>static</c> modifier on the variable declaration. Once a variable has been declared <c>static</c> in Java it can be accessed from inside the class without prefixing the name of the class as we had to do in Python. 
         </p>
     </section>
 
