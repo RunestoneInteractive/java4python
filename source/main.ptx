@@ -7,17 +7,16 @@
 
         <subtitle>The PreTeXt Interactive Edition</subtitle>
         <xi:include href="meta_frontmatter.ptx" />
-        <xi:include href="ch_1_introduction.ptx" />
-        <xi:include href="ch_2_whylearnjava.ptx" />
-        <xi:include href="ch_3_firstjavaprogram.ptx" />
-        <xi:include href="ch_4_javadatatypes.ptx" />
-        <xi:include href="ch_5_conditionals.ptx" />
-        <xi:include href="ch_6_loopsanditeration.ptx" />
-        <xi:include href="ch_7_definingclasses.ptx" />
-        <xi:include href="ch_8_namingconventions.ptx" />
-        <xi:include href="ch_9_commonmistakes.ptx" />
-        <xi:include href="ch_10_moredocumentation.ptx" />
-        <xi:include href="chx-recursion.ptx" />
+
+        <xi:include href="ch1_overview.ptx" />
+        <xi:include href="ch3_firstjavaprogram.ptx" />
+        <xi:include href="ch4_javadatatypes.ptx" />
+        <xi:include href="ch5_conditionals.ptx" />
+        <xi:include href="ch6_loopsanditeration.ptx" />
+        <xi:include href="ch7_definingclasses.ptx" />
+        <xi:include href="ch8_filehandling.ptx" />
+        <xi:include href="ch9_commonmistakes.ptx" />
+        <xi:include href="ch10_moredocumentation.ptx" />
         <xi:include href="meta_backmatter.ptx" />
 
         <index>
