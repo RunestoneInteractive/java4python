@@ -13,6 +13,7 @@
         <xi:include href="ch5_conditionals.ptx" />
         <xi:include href="ch6_loopsanditeration.ptx" />
         <xi:include href="ch7_definingclasses.ptx" />
+        <xi:include href="chx_recursion.ptx" />
         <xi:include href="ch8_filehandling.ptx" />
         <xi:include href="ch9_commonmistakes.ptx" />
         <xi:include href="ch10_moredocumentation.ptx" />
