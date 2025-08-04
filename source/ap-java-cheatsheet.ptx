@@ -119,49 +119,49 @@
             <cell> Arithmetic </cell>
             <cell><c>+</c>, <c>-</c>, <c>*</c>, <c>/</c></cell>
             <cell> Addition, Subtraction, Multiplication, Division </cell>
-            <cell><c>5 + 2</c></cell>
+            <cell><c>5 + 2</c> → <c> 7 </c></cell>
         </row>
         <row>
             <cell> Arithmetic </cell>
             <cell><c>/</c></cell>
             <cell> Integer Division (truncates toward zero) </cell>
-            <cell><c>7 / 2</c> → 3 </cell>
+            <cell><c>7 / 2</c> → <c> 3 </c> </cell>
         </row>
         <row>
             <cell> Arithmetic </cell>
             <cell><c>%</c></cell>
             <cell> Modulus (remainder) </cell>
-            <cell><c>7 % 2</c> → 1 </cell>
+            <cell><c>7 % 2</c> → <c> 1 </c></cell>
         </row>
         <row>
             <cell> Arithmetic </cell>
             <cell><c>Math.pow()</c></cell>
             <cell> Exponent </cell>
-            <cell><c>Math.pow(2, 3)</c> → 8.0 </cell>
-        </row>
-        <row>
-            <cell> Comparison </cell>
-            <cell><c>==</c>, <c>!=</c></cell>
-            <cell> Equal to, Not equal to (use <c>.equals()</c> for objects) </cell>
-            <cell><c>x == y</c></cell>
-        </row>
-        <row>
-            <cell> Comparison </cell>
-            <cell><c>&gt;</c>, <c>&lt;</c>, <c>&gt;=</c>, <c>&lt;=</c></cell>
-            <cell> Greater/Less than, or equal to </cell>
-            <cell><c>x &gt; 5</c></cell>
-        </row>
-        <row>
-            <cell> Logical </cell>
-            <cell><c>&amp;&amp;</c>, <c>||</c>, <c>!</c></cell>
-            <cell> Logical AND, OR, NOT </cell>
-            <cell><c>x &gt; 1 &amp;&amp; y &lt; 10</c></cell>
+            <cell><c>Math.pow(2, 3)</c> → <c> 8.0 </c></cell>
         </row>
         <row>
             <cell> Assignment </cell>
             <cell><c>+=</c>, <c>-=</c>, <c>*=</c>, <c>/=</c></cell>
             <cell> Adds, subtracts, multiplies, or divides and assigns </cell>
-            <cell><c>x += 1</c></cell>
+            <cell><c>x += 1</c> → <c>x = x + 1</c> </cell>
+        </row>
+        <row>
+            <cell> Comparison </cell>
+            <cell><c>==</c>, <c>!=</c></cell>
+            <cell> Equal to, Not equal to (use <c>.equals()</c> for objects) </cell>
+            <cell><c>x == y</c> → <c>True</c> or <c>False</c> </cell>
+        </row>
+        <row>
+            <cell> Comparison </cell>
+            <cell><c>&gt;</c>, <c>&lt;</c>, <c>&gt;=</c>, <c>&lt;=</c></cell>
+            <cell> Greater/Less than, or equal to </cell>
+            <cell><c>x &gt; 5</c> → <c>True</c> or <c>False</c> </cell>
+        </row>
+        <row>
+            <cell> Logical </cell>
+            <cell><c>&amp;&amp;</c>, <c>||</c>, <c>!</c></cell>
+            <cell> Logical AND, OR, NOT </cell>
+            <cell><c>x &gt; 1 &amp;&amp; y &lt; 10</c> → <c>True</c> or <c>False</c> </cell>
         </row>
     </tabular>
 </table>
@@ -195,7 +195,7 @@
         </li>
         <li>
             <p>
-                Streams API: Java's Stream API is the idiomatic alternative to Python's List Comprehensions. It can be used to filter, map, and reduce data in a sequence of steps. For example, to generate a list of squares, instead of a multi-line loop, you can write <c>List&lt;Integer&gt; squares = IntStream.range(0, 10).map(i -&gt; i * i).boxed().collect(Collectors.toList());</c>.
+    Streams API: Java's Stream API is the idiomatic alternative to Python's List Comprehensions. It can be used to filter, map, and reduce data in a sequence of steps. For a simpler example, to generate a basic list of numbers, instead of a multi-line loop, you can write <c>List&lt;Integer&gt; numbers = IntStream.range(0, 5).boxed().toList(); </c> This single line creates a stream of numbers from 0 to 4, prepares them for the list with the `.boxed()` method, and collects them into the final result.
             </p>
         </li>
     </ul>
