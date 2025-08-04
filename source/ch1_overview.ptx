@@ -369,7 +369,7 @@
                 <li>
                     <p>
                         Java includes a larger standard library than C or C++, which means that sophisticated programs can be created in Java without including external dependencies.
-                        Java has over 4,000 different classes included in the Java 14 Standard Edition.
+                        The Java Standard Edition contains thousands of built-in classes that support tasks like file input/output, networking, data structures, and graphical interfaces.
                         We could not begin to scratch the surface of these classes even if we devoted all of class time! However, we will cover many useful and powerful features of the Java standard library this semester.
                     </p>
                 </li>
