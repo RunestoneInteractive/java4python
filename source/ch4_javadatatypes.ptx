@@ -4,13 +4,9 @@
 <chapter xml:id="java-data-types">
     <title>Java Data Types</title>
 
-    <introduction>
-    </introduction>
-
     <section xml:id="numeric">
         <title>Numeric</title>
 
-        <introduction>
             <p>
                 One of the great things about Python is that all of the basic data types are objects.
                 Integers are objects, floating point numbers are objects, lists are objects, everything.
@@ -58,6 +54,39 @@
             <p>
                 In older versions of Java, it was the programmers responsibility to convert back and forth from a primitive to an object whenever necessary.
                 This process of converting a primitive to an object was called &#x201C;boxing.&#x201D; The reverse process is called &#x201C;unboxing.&#x201D; In Java 5, the compiler became smart enough to know when to convert back and forth and is called &#x201C;autoboxing.&#x201D; In this book, we will typically use the Object version of all the numeric data types and let the compiler do its thing.
+            </p>
+            <p>
+            With that distinction in mind, here are the common types you'll use, most of which are similar to Python's types:
+<ul>
+                <li>
+                    <p>
+                    int: The primitive type for integers (whole numbers), such as 3, 0, and -76.
+                    </p>
+                </li>
+                <li>
+                    <p>            
+                    double: The primitive type for floating-point numbers like 6.3 or -0.9.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    boolean: The primitive type that can only be true or false.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    char: The primitive type for a single character, like 'a' or 'Z'. It is represented using single quotes.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        String: An object type that represents a sequence of characters in double quotes, like "Hello".
+                    </p>
+                </li>
+
+            </ul>
+
+            A data type fundamentally defines a set of values and the operations you can perform on them. For instance, you can do math with int and double values, but not with boolean values. This is simlar to Python, where you can perform arithmetic on integers and floats, but not on booleans or strings.
             </p>
 
             <p>
@@ -117,14 +146,8 @@ public class TempConv {
                         </p>
                     </li>
 
-                    <li>
-                        <p>
- Input/Output and the Scanner Class 
-                        </p>
-                    </li>
                 </ul>
             </p>
-        </introduction>
 
 
         <subsection>
@@ -202,13 +225,19 @@ public class TempConv {
         </subsection>
 
 
-        <subsection>
-            <title>Declaring Variables</title>
+    <subsection>
+        <title>Variable Declaration</title>
 
             <p>
- Here is where we run into one of the most important differences between Java and Python. Python is a <term>dynamically typed</term> language. In a dynamically typed language a variable can refer to any kind of object at any time. When the variable is used, the interpreter figures out what kind of object it is. Java is a <term>statically typed</term> language. In a statically typed language the association between a variable and the type of object the variable can refer to is determined when the variable is <term>declared</term>. Once the declaration is made it is an error for a variable to refer to an object of any other type. 
+        Here is where we run into one of the most important differences between Java and Python. Python is a <term>dynamically typed</term> language. In a dynamically typed language a variable can refer to any kind of object at any time. When the variable is used, the interpreter figures out what kind of object it is. Java is a <term>statically typed</term> language. In a statically typed language the association between a variable and the type of object the variable can refer to is determined when the variable is <term>declared</term>. Once the declaration is made it is an error for a variable to refer to an object of any other type. 
             </p>
+<p>
+    A valid variable name in Java can contain letters, digits, and underscores. It must begin with a letter, an underscore, or a dollar sign. It cannot start with a digit and it cannot be a reserved keyword (like class, int, or static). Variable names are case-sensitive, so <c>fahr</c> and <c>Fahr</c> are different variables. The convention is to use lower case for variable names, and to use camel case (where the first word is lowercase and subsequent words are capitalized) for multi-word variable names, such as <c>fahrenheitTemperature</c>.
+</p>
 
+<p>
+    An important feature of Java is that when you declare a variable of a primitive type (like int or double), the system automatically allocates a fixed amount of memory to store its value directly. This is different from reference types (like String or Scanner), where the variable holds a memory address that points to the actual object data stored elsewhere. This distinction makes operations on primitives very fast.
+</p>
             <p>
  In the example above, lines 5&#x2014;7 contain variable declarations. Specifically we are saying that <c>fahr</c> and <c>cel</c> are going to reference objects that are of type <c>Double</c>. The variable <c>in</c> will reference a <c>Scanner</c> object. This means that if we were to try an assignment like <c>fahr = "xyz"</c> the compiler would generate an error because <c>"xyz"</c> is a string and <c>fahr</c> is supposed to be a double. 
             </p>
@@ -217,92 +246,113 @@ public class TempConv {
  For Python programmers, the following error is likely to be even more common. Suppose we forgot the declaration for <c>cel</c> and instead left line 6 blank. What would happen when we type <c>javac TempConv.java</c> on the command line? 
             </p>
 
-            <pre>TempConv.java:13: cannot find symbol symbol  : variable cel location: class TempConv cel = (fahr - 32) * 5.0/9.0; ^ TempConv.java:14: cannot find symbol symbol  : variable cel location: class TempConv System.out.println("The temperature in C is: " + cel); ^ 2 errors</pre>
+            <pre>
+            TempConv.java:13: cannot find symbol 
+            symbol  : variable cel 
+            location: class TempConv 
+            cel = (fahr - 32) * 5.0/9.0; 
+            ^ 
+            TempConv.java:14: cannot find symbol 
+            symbol  : variable cel 
+            location: class TempConv 
+            System.out.println("The temperature in C is: " + cel); 
+            ^ 
+            2 errors
+            </pre>
+            
             <p>
  When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program. More common error messages are discussed in the section <xref ref="common-mistakes-id1"/>. 
             </p>
 
             <p>
- The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of Java, but for now this is enough. 
+ The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. In our temperature converter, the calculation (fahr - 32) * 5.0/9.0 works correctly because 5.0 and 9.0 are treated as double values, preventing the integer division that would occur if we had written 5/9, which would result in 0.
             </p>
-        </subsection>
+            </subsection>
+        </section>
 
+    <section xml:id="typecasting">
+        <title>Typecasting</title>
 
-        <subsection>
-            <title>Input / Output / Scanner</title>
+        <p>
+            Typecasting is the process of converting a variable from one type to another. In Java, this is often necessary when you want to perform operations that require different data types. For example, if you have an integer and you want to convert it to a double for more precise calculations, you would use typecasting.
+        </p>
 
-            <p>
- In the previous section we created a <c>Scanner</c> object. In Java, <c>Scanner</c> objects make getting input from the user, a file, or even over the network relatively easy. In our case we simply want to ask the user to type in a number at the command line, so in line 9 we construct a <c>Scanner</c> by calling the constructor and passing it the <c>System.in</c> object. Notice that this <c>Scanner</c> object is assigned to the name <c>in</c>, which we declared to be a <c>Scanner</c> on line 7. <c>System.in</c> is similar to <c>System.out</c> except, of course, it is used for input. If you are wondering why we must create a <c>Scanner</c> to read data from <c>System.in</c> when we can write data directly to <c>System.out</c> using <c>println</c>, you are not alone. We will talk about the reasons why this is so later when we talk in-depth about Java streams. You will also see in other examples that we can create a <c>Scanner</c> by passing the <c>Scanner</c> a <c>File</c> object. You can think of a <c>Scanner</c> as a kind of &#x201C;adapter&#x201D; that makes low level objects easier to use. 
-            </p>
+        <p>
+            In Java, typecasting can be done in two ways: implicit and explicit. Implicit typecasting occurs automatically when converting from a smaller data type to a larger one (like int to double), while explicit typecasting requires you to specify the conversion manually (like double to int).
+        </p>
 
-            <p>
- On line 11 we use the <c>Scanner</c> object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method <c>nextDouble</c> because the variable <c>fahr</c> was declared as a double. So, we must have a function that is guaranteed to return each kind of object we might want to read. In this case, we need to read a Double so we call the function <c>nextDouble</c>. The compiler matches up these assignment statments and if you try to assign the results of a method call to the wrong kind of variable it will be flagged as an error. 
-            </p>
+        <p>
+            Implicit typecasting happens automatically when converting a value from a smaller data type to a larger one, as there is no risk of losing information. For example, you can assign an int to a double without any special syntax. 
+        </p>
+        <pre> 
+        int myInt = 10;
+        double myDouble = myInt; // Automatic casting from int to double
+        </pre>
+            
+        <p>
+            Explicit typecasting is required when converting from a larger data type to a smaller one, as you might lose data. You must do this manually by placing the target type in parentheses () before the value.
+        </p>
+        <pre>
+        double originalDouble = 9.78;
+        int castedInt = (int) originalDouble; // Explicitly casts double to int. The value of castedInt is now 9.
+        </pre>
 
-            <p>
- The table below shows some commonly used methods of the <c>Scanner</c> class. There are many more methods supported by this class and we will talk about how to find them in our chapter about <xref ref="java-documentation-id1"/>. 
-            </p>
+        <p>
+        Besides primitive types, type casting is also a fundamental concept when working with objects, especially within an inheritance hierarchy. This involves converting an object reference from one class type to another, typically between a superclass and a subclass. This is often referred to as upcasting and downcasting.
+    </p>
+    <p>
+        Let's imagine we have a simple class hierarchy: an <c>Animal</c> superclass and a <c>Dog</c> subclass.
+    </p>
+    <pre>
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
 
-            <table>
-                <tabular>
-                    <row header="yes">
-                        <cell> Return type </cell>
-                        <cell> Method name </cell>
-                        <cell> Description </cell>
-                    </row>
+class Dog extends Animal {
+    public void bark() {
+        System.out.println("The dog barks!");
+    }
+}
+    </pre>
 
-                    <row>
-                        <cell> boolean </cell>
-                        <cell> hasNext() </cell>
-                        <cell> returns true if more data is present </cell>
-                    </row>
+    <p>
+        <strong>Upcasting (Implicit):</strong> Upcasting is casting a subclass instance to a superclass reference type. This is always safe because a subclass object is guaranteed to have all the methods and properties of its superclass. Therefore, upcasting is done implicitly by the compiler.
+    </p>
+    <pre>
+// A Dog object is created, but the reference is of type Animal.
+// This is implicit upcasting.
+Animal myAnimal = new Dog(); 
 
-                    <row>
-                        <cell> boolean </cell>
-                        <cell> hasNextInt() </cell>
-                        <cell> returns true if the next thing to read is an integer </cell>
-                    </row>
+myAnimal.makeSound(); // This is valid, as makeSound() is defined in Animal.
 
-                    <row>
-                        <cell> boolean </cell>
-                        <cell> hasNextFloat() </cell>
-                        <cell> returns true if the next thing to read is a float </cell>
-                    </row>
+// myAnimal.bark(); // This would cause a compile-time error!
+// The compiler only knows about the methods in the Animal reference type.
+    </pre>
+    <p>
+        <strong>Downcasting (Explicit):</strong> Downcasting is casting a superclass reference back to its original subclass type. This is potentially unsafe because the superclass reference might not actually point to an object of the target subclass. You must perform an explicit cast. If you cast to the wrong type, Java will throw a <c>ClassCastException</c> at runtime.
+    </p>
+    <p>
+        To safely downcast, you should first check the object's type using the <c>instanceof</c> operator.
+    </p>
+    <pre>
+// 'myAnimal' is an Animal reference, but it points to a Dog object.
+if (myAnimal instanceof Dog) {
+    // The check passed, so this downcast is safe.
+    Dog myDog = (Dog) myAnimal;
 
-                    <row>
-                        <cell> boolean </cell>
-                        <cell> hasNextDouble() </cell>
-                        <cell> returns true if the next thing to read is a double </cell>
-                    </row>
+    // Now we can access methods specific to the Dog class.
+    myDog.bark(); // This is now valid.
+}
+    </pre>
 
-                    <row>
-                        <cell> Integer </cell>
-                        <cell> nextInt() </cell>
-                        <cell> returns the next thing to read as an integer </cell>
-                    </row>
+        <p>
+            In this example, we first create a <c>Dog</c> object and assign it to an <c>Animal</c> reference (upcasting). Then, we check if the <c>Animal</c> reference is actually pointing to a <c>Dog</c> object before downcasting it back to a <c>Dog</c> reference.
+        </p>
+        </section>
 
-                    <row>
-                        <cell> Float </cell>
-                        <cell> nextFloat() </cell>
-                        <cell> returns the next thing to read as a float </cell>
-                    </row>
-
-                    <row>
-                        <cell> Double </cell>
-                        <cell> nextDouble() </cell>
-                        <cell> returns the next thing to read as a Double </cell>
-                    </row>
-
-                    <row>
-                        <cell> String </cell>
-                        <cell> next() </cell>
-                        <cell> returns the next thing to read as a String </cell>
-                    </row>
-                </tabular>
-            </table>
-        </subsection>
-    </section>
-
+    
     <section xml:id="string">
         <title>String</title>
 
@@ -472,6 +522,11 @@ The <c>code</c> will be executed once for each element in the <c>collection</c>.
 Here is the Java code needed to write the exact same program:
         </p>
 
+        <note>
+            <p>
+            The Java code below contains the first mention of the <idx><c>null</c></idx> <c>null</c> literal. Similar to Python’s <c>None</c> object, <c>null</c> in Java is used to indicate that a variable does not currently reference any object in memory. This is often used for variables that have not yet been initialized or for methods that return no object.
+            </p>
+        </note>
 
         <program interactive="activecode" language="java" datafile="test.dat">
             <code>
@@ -522,7 +577,11 @@ public class Histo {
  Technically, you don&#x2019;t <em>have</em> to declare what is going to be in an array list. The compiler will allow you to leave the <c>&lt;``*Type*</c>&gt;`` off the declaration. If you don&#x2019;t tell Java what kind of object is going to be on the list Java will give you a warning message like this: 
         </p>
 
-        <pre>Note: Histo.java uses unchecked or unsafe operations. Note: Recompile with -Xlint:unchecked for details.</pre>
+        <pre>
+        Note: Histo.java uses unchecked or unsafe operations. 
+        Note: Recompile with -Xlint:unchecked for details.
+        </pre>
+
         <p>
  Without the <c>&lt;Integer&gt;</c> part of the declaration Java simply assumes that <em>any</em> object can be on the list. However, without resorting to an ugly notation called casting, you cannot do anything with the objects on a list like this! So, if you forget you will surely see more errors later in your code. (Try it and see what you get) 
         </p>
@@ -531,7 +590,14 @@ public class Histo {
  Lines 13&#x2014;20 are required to open the file. Why so many lines to open a file in Java? The additional code mainly comes from the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error. A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. The following example shows the general structure of a try/catch block. 
         </p>
 
-        <pre>try { Put some risky code in here, like opening a file } catch (Exception e) { If an error happens in the try block an exception is thrown. We will catch that exception here! }</pre>
+        <pre>
+        try { 
+            Put some risky code in here, like opening a file 
+        } catch (Exception e) { 
+            If an error happens in the try block an exception is thrown. We will catch that exception here! 
+        }
+        </pre>
+        
         <p>
  Notice that in line 16 we are catching an <c>IOException</c>. In fact, we will see later that we can have multiple catch blocks to catch different types of exceptions. If we want to be lazy and catch any old exception we can catch an <c>Exception</c> which is the parent of all exceptions. However, catching <c>Exception</c> is a terrible practice, since you may inadvertently catch exceptions you do not intend to, making it harder to identify bugs in your program. 
         </p>
@@ -658,7 +724,22 @@ main()
             </code> <tests> </tests>
         </program>
 
-        <datafile label="datafile-alice1" filename="alice30.txt" editable="no" cols="30" rows="15"><pre> Down, down, down.  Would the fall NEVER come to an end!  'I wonder how many miles I've fallen by this time?' she said aloud. 'I must be getting somewhere near the centre of the earth.  Let me see:  that would be four thousand miles down, I think--' (for, you see, Alice had learnt several things of this sort in her lessons in the schoolroom, and though this was not a VERY good opportunity for showing off her knowledge, as there was no one to listen to her, still it was good practice to say it over) '--yes, that's about the right distance--but then I wonder what Latitude or Longitude I've got to?'  (Alice had no idea what Latitude was, or Longitude either, but thought they were nice grand words to say.) </pre></datafile>
+        <p>
+    This program reads the file <c>alice30.txt</c> (which follows), and it then splits it into a list of words. Next it creates a dictionary called <c>count</c> which maps each word to the number of times that word occurs in the text. Finally, it prints out the words in alphabetical order along with their frequency.
+        </p>
+
+        <datafile label="datafile-alice1" filename="alice30.txt" editable="no" cols="30" rows="15"><pre> 
+            Down, down, down.  Would the fall NEVER come to an end! 
+             'I wonder how many miles I've fallen by this time?' she said aloud. 'I must 
+             be getting somewhere near the centre of the earth.  
+             Let me see:  that would be four thousand miles down, I think--' 
+             (for, you see, Alice had learnt several things of this sort in her lessons 
+             in the schoolroom, and though this was not a VERY good opportunity for 
+             showing off her knowledge, as there was no one to listen to her, still it 
+             was good practice to say it over) '--yes, that's about the right distance
+             --but then I wonder what Latitude or Longitude I've got to?'  
+             (Alice had no idea what Latitude was, or Longitude either, 
+             but thought they were nice grand words to say.) </pre></datafile>
         <p>
  Notice that the structure of the program is very similar to the numeric histogram program. 
         </p>
@@ -707,4 +788,149 @@ public class HistoMap {
  Improve the program above to remove the punctuation. 
         </p>
     </section>
+<section xml:id="chapter4_summary">
+  <title>Summary &amp; Reading Questions</title>
+    <p><ol label="1">
+        <li>
+            <p>All variables must be declared with their type before use in Java due to static typing.</p>
+        </li>
+        <li>
+            <p>Java has primitive types (<c>int</c>, <c>float</c>, <c>double</c>, <c>char</c>, <c>boolean</c>) and their corresponding Object wrapper classes (<c>Integer</c>, <c>Float</c>, <c>Double</c>, <c>Character</c>, <c>Boolean</c>) with automatic conversion between them called autoboxing.</p>
+        </li>
+        <li>
+            <p>The <c>import</c> statement in Java allows you to use shortened class names instead of fully qualified names like <c>java.util.Scanner</c>.</p>
+        </li>
+        <li>
+            <p><c>Scanner</c> objects are used to read input from various sources, including <c>System.in</c> for keyboard input.</p>
+        </li>
+        <li>
+            <p>Java Strings are immutable like Python, but use methods like <c>charAt()</c> and <c>substring()</c> instead of indexing operators.</p>
+        </li>
+        <li>
+            <p><c>ArrayList</c> is Java's dynamic array implementation that is similar to Python lists, but must declare the type of objects it contains using generics like <c>ArrayList&lt;Integer&gt;</c>.</p>
+        </li>
+        <li>
+            <p>Maps (<c>HashMap</c> and <c>TreeMap</c>) are Java's equivalent to Python dictionaries for storing key-value pairs.</p>
+        </li>
+    </ol></p>
+    <reading-questions xml:id="rqs-summary4">
+        <exercise label = "summary-arraylist">
+            <statement>
+                <p>What is the correct way to declare an ArrayList that will hold String objects in Java?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>ArrayList&lt;String&gt; list;</p>
+                    </statement>
+                    <feedback>
+                        <p>Good job!</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>ArrayList list;</p>
+                    </statement>
+                    <feedback>
+                        <p>No, you must specify the type of objects it will hold using generics.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>ArrayList[String] list;</p>
+                    </statement>
+                    <feedback>
+                        <p>No, the syntax for generics uses &lt; &gt; brackets, not [ ].</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>ArrayList() list;</p>
+                    </statement>
+                    <feedback>
+                        <p>No, this is not a valid declaration.</p>
+                    </feedback>
+                </choice>
+            </choices>            
+        </exercise>
+        <exercise label = "summary-autoboxing">
+            <statement>
+                <p>The process of automatically converting between primitive types and their Object wrapper classes in Java is called:</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>Autoboxing</p>
+                    </statement>
+                    <feedback>
+                        <p>Right! Good job!</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>Casting</p>
+                    </statement>
+                    <feedback>
+                        <p>No, casting is manually converting a type.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>Overloading</p>
+                    </statement>
+                    <feedback>
+                        <p>No, overloading refers to methods, not type conversion.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>Unboxing</p>
+                    </statement>
+                    <feedback>
+                        <p>No, unboxing is the reverse of autoboxing.</p>
+                    </feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label = "summary-string-methods">
+            <statement>
+                <p>Which method would you use to get the character at position 3 in a Java String called str?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>str.charAt(3)</p>
+                    </statement>
+                    <feedback>
+                        <p>Correct!</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>str[3]</p>
+                    </statement>
+                    <feedback>
+                        <p>No, Java does not support this type of indexing.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>str.get(3)</p>
+                    </statement>
+                    <feedback>
+                        <p>No, this method does not exist in Java.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>str.substring(3)</p>
+                    </statement>
+                    <feedback>
+                        <p>No, this will return a substring starting at position 3, not a single character.</p>
+                    </feedback>
+                </choice>
+            </choices>            
+        </exercise>
+    </reading-questions>
+</section>
 </chapter>
