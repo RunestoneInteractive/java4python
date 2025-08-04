@@ -79,26 +79,12 @@
         <title>Common Recursive Patterns</title>
 
         <p>
-            In many recursive algorithms, the recursive calls need extra information that the original caller shouldn't have to provide. For example, to recursively process an array, you need to keep track of the current position (index). To traverse a tree, you need to know the current node. This extra information clutters the public-facing method signature.
+            In many recursive algorithms, the recursive calls need extra information that the original caller shouldn’t have to provide. This could be a counter, an index into an array, or the current node in a data structure. Forcing the user to provide these initial values makes the method's public interface clumsy and error-prone.
         </p>
         <p>
-            A common pattern to solve this is using a private helper method. This pattern lets you create a clean, simple public method that users will call, while the private helper method handles the complex details of the recursion. The public method typically makes the initial call to the private helper, providing the necessary starting values for the extra parameters.
-        </p>
-        <p>
-            Let's see this pattern in action with an example that calculates the sum of all elements in an integer array. The public <c>sum</c> method only takes the array, but the private <c>sumHelper</c> method also takes an index to track its progress through the array.
+            The private helper method pattern is the standard solution. It allows us to present a clean, simple public method while the private helper handles the complex, stateful details of the recursion. The public method acts as a wrapper, performing any initial setup before calling the private helper to begin the recursive process. Let's explore this with a detailed tree traversal example.
         </p>
         
-        <p>
-            You're likely familiar with how some recursive algorithms, like the naive Fibonacci implementation,
-            are elegant but inefficient, due to branching recursive calls filling the call stack. A common pattern to solve
-            this is using a private helper method. 
-            </p>
-            <p>
-                The following example demonstrates this pattern. The public <c>fib</c> method provides a simple entry point, while the private <c>fibHelper</c> method performs the efficient recursion by carrying its state (the previous two numbers) in its parameters.
-            </p>
-            <p>
-                The following Java code demonstrates a similar pattern.
-            </p>
 
             <program interactive="activecode" language="java">
                 <code>
@@ -177,13 +163,13 @@
                 </code>
             </program>
             <p>
-            This helper method approach is significantly more efficient in terms of time than the classic branching recursion (where <c>fib(n)</c> calls <c>fib(n-1)</c> and <c>fib(n-2)</c>). The branching model has an exponential time complexity of roughly O(2^n) because it re-calculates the same values many times. In contrast, our helper method has a linear time complexity of O(n), as it avoids re-computation by carrying the previous two results (a and b) forward into the next call.
+            The primary reason for using a helper function in this tree example is to separate the clean, simple "what do I want to do?" from the more complex "how do I actually do it recursively?".
+            </p>
+        <p>
+            The private static int <c>inOrderTraversalAndDepthHelper(TreeNode node)</c> method is where the real recursive logic resides. It's private because its job is purely to support the public method. Its parameter, <c>TreeNode</c> node, is the essential piece of state that changes with each recursive call, allowing the function to "move" through the tree.
         </p>
         <p>
-            However, regarding memory efficiency, the comparison is different. The maximum depth of the call stack for both the naive and the helper method is proportional to n, giving them both a space complexity of O(n). This means that while the helper method is much faster, it is equally vulnerable to a <c>StackOverflowError</c> for very large values of n. Because Java does not perform tail-call optimization, any recursive solution that goes too deep will exhaust the stack memory, regardless of its time efficiency. For true memory efficiency (O(1) space), an iterative loop-based solution is superior.
-        </p>
-        <p>
-            The following Python code demonstrates the same pattern, using a public method to initiate the calculation and a private helper method to perform the recursion.
+            The time and space complexity of this algorithm are important to understand. The algorithm has a time complexity of O(N), where N is the number of nodes in the tree. This is because the helper function visits every node exactly once to process it. The space complexity is determined by the maximum depth of the recursion on the call stack. This directly corresponds to the height of the tree, H. Therefore, the space complexity is O(H). In a well-balanced tree, the height is logarithmic in relation to the number of nodes, making the complexity O(logN). However, in the worst-case of a completely unbalanced (skewed) tree, the height is equal to the number of nodes, leading to a space complexity of O(N). The pattern translates directly to other languages like Python, demonstrating its fundamental utility in structuring recursive code.
         </p>
         <program interactive="activecode" language="python">
                 <code>
