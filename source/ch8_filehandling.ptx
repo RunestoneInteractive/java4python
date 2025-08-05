@@ -21,7 +21,7 @@
         <program interactive="activecode" language="java">
             <code>
             import java.io.File;
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -31,7 +31,7 @@
         <program interactive="activecode" language="java">
             <code>
             import java.util.Scanner;
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -41,7 +41,7 @@
         <program interactive="activecode" language="java">
             <code>
             import java.io.FileWriter;
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -51,45 +51,28 @@
         <program interactive="activecode" language="java">
             <code>
             import java.io.IOException;
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <program interactive="activecode" language="java">
             <code>
             import java.io.FileNotFoundException
-            </code> <tests> </tests>
+            </code> 
         </program>
         
     </section>
 
     <section xml:id="create-file">
         <title>Creating Files</title>
-        
-        <p>
-            Before we can write code that creates a file, we must first import the necessary classes mentioned in the previous section (<c>Scanner</c> and <c>FileWriter</c> are not needed for a class that only creates files) and create a class. We will call this class <c>CreateFile</c>.
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            import java.io.File;
-            import java.io.IOException;
-
-            public class CreateFile {
-                public static void main(String[] args) {
-
-                }
-            }
-            </code> <tests> </tests>
-        </program>
 
         <p>
-            Next, within the main function, we will create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
+            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
         </p>
 
         <program interactive="activecode" language="java">
             <code>
             File myFile = new File("myfile.txt");
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <note>
@@ -118,7 +101,7 @@
                 print(f"The file {filename} was created successfully.")
             else:
                 print(f"The file {filename} already exists.")
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -139,7 +122,7 @@
                     }
                 }
             }
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <note>
@@ -164,7 +147,7 @@
                 System.out.println("An error occurred.");
                 e.printStackTrace();
             }
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <note>
@@ -208,7 +191,7 @@
                 print("An error occurred.")
                 import traceback
                 traceback.print_exc()
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -236,7 +219,7 @@
 
                 }
             }
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -254,7 +237,7 @@
         <program interactive="activecode" language="java">
             <code>
             File myFile = new File("C:\\Users\\UserName\\Documents\\myfile.txt");
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -264,235 +247,7 @@
         <program interactive="activecode" language="java">
             <code>
             File myFile = new File("/home/UserName/Documents/myfile.txt");
-            </code> <tests> </tests>
-        </program>
-    </section>
-
-    <section xml:id="file-write">
-        <title>Writing to Files</title>
-
-        <p>
-            The <c>createNewFile()</c> method is useful for attempting to create files and reporting if the operation was successful, however, <c>createNewFile()</c> does not write anything to files it creates. In fact, if you use <c>createNewFile()</c> to create a <c>.txt</c> file and then open the file, the file will be blank.
-        </p>
-
-        <p>
-            To write to a file, we will need to create a different class. We will do the same setup as the previous section. First, we will import the classes (<c>File</c> and <c>Scanner</c> are not needed) and create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            import java.io.FileWriter;
-            import java.io.IOException;
-
-            public class WriteFile {
-                public static void main(String[] args) {
-
-                }
-            }
-            </code> <tests> </tests>
-        </program>
-        
-        <p>
-            Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            FileWriter myWriter = new FileWriter("myfile.txt");
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            myWriter.write("File successfully updated!");
-            myWriter.close();
-            </code> <tests> </tests>
-        </program>
-
-        <note>
-            <p>
-                You may have noticed the <c>close()</c> function being used after writing to the file. This is a very important step and must be included when working with files! Without using this method, the file may remain active in system resources even after the program is closed. This can lead file corruption or other terrible problems that are best avoided!
-            </p>
-        </note>
-
-        <p>
-            Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
-        </p>
-
-        <program interactive="activecode" language="python">
-            <code>
-                try:
-                    with open("myfile.txt", "w") as my_writer:
-                        my_writer.write("File successfully updated!")
-                    print("File successfully written to.")
-                except OSError as e:
-                    print("An error occurred.")
-                    import traceback
-                    traceback.print_exc()
-            </code>
-        </program>
-
-        <p>
-            And the equivalent Java code:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            try {
-                FileWriter myWriter = new FileWriter("myfile.txt");
-                myWriter.write("File successfully updated!");
-                myWriter.close();
-                System.out.println("File successfully written to.");
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
-        </p>
-
-        <program interactive="activecode" language="python">
-            <code>
-            try:
-                with open("myfile.txt", "w") as my_writer:
-                    my_writer.write("File successfully updated!")
-                print("File successfully written to.")
-            except OSError as e:
-                print("An error occurred.")
-                import traceback
-                traceback.print_exc()
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            The completed Java code:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            import java.io.FileWriter;
-            import java.io.IOException;
-
-            public class WriteFile {
-                public static void main(String[] args) {
-                    try {
-                        FileWriter myWriter = new FileWriter("myfile.txt");
-                        myWriter.write("File successfully updated!");
-                        myWriter.close();
-                        System.out.println("File successfully written to.");
-                    } catch (IOException e) {
-                        System.out.println("An error occurred.");
-                        e.printStackTrace();
-                    }
-                }
-            }
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            Files in a specific directory can be written to using the same technique as the last section in which file paths are specified, with two back slashes used in Windows environments. 
-        </p>    
-
-        <note>
-            <p>
-                If a file does not already exist (for example, <c>myfile.txt</c> does not exist), the <c>write()</c> method will create the file. Despite this, it is still a good idea to create separate methods or classes for creating and writing to files. Not only is it good practice to ensure methods only accomplish one thing, but the <c>createNewFile()</c> method avoids overwriting files that already exist. Imagine a file with the name <c>myfile.txt</c> already exists and contains important information. Attempting to create a file using the <c>write()</c> method will delete that data forever.
-            </p>
-        </note>
-
-        <p>
-            Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a boolean argument along with the file name when creating a new data argument:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the boolean argument:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            import java.io.FileWriter;
-            import java.io.IOException;
-
-            public class WriteFile {
-                public static void main(String[] args) {
-                    try {
-                        FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
-                        myWriter.write("File successfully updated!");
-                        myWriter.close();
-                        System.out.println("File successfully written to.");
-                    } catch (IOException e) {
-                        System.out.println("An error occurred.");
-                        e.printStackTrace();
-                    }
-                }
-            }
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            and then run the program twice, the contents of <c>myfile.txt</c> would be:
-        </p>
-
-        <program language="$">
-            <code>
-            File successfully updated!File successfully updated!
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            This doesn't look very good! There is no space between the first and second sentences! We can make this look a little better by simply adding a space after the exclamation mark in the string:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            myWriter.write("File successfully updated! "); // Added space at end
-            myWriter.close();
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            This works fine if you want all text to be on the same line, but what if we want each additional write to appear on a new line? The first solution may be to use the <c>\n</c> newline character:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            myWriter.write("File successfully updated!\n"); // Added newline character 
-            myWriter.close();
-            </code> <tests> </tests>
-        </program>
-            
-        <p>
-            This would work fine most of the time, but older Windows programs and operating systems use the <c>\r\n</c> newline character. To ensure the text appears on a new line regardless of what system the code is running on, concatenate the string with the <c>System.lineSeparator()</c> method:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            myWriter.write("File successfully updated!" + System.lineseparator()); // Added newline character 
-            myWriter.close();
-            </code> <tests> </tests>
-        </program>
-
-        <p>
-            Running either variation used for adding new lines twice will result in the following contents in myfile.txt:
-        </p>
-
-        <program language="$">
-            <code>
-            File successfully updated!
-            File successfully updated!
-            </code> <tests> </tests>
+            </code> 
         </program>
     </section>
 
@@ -514,7 +269,7 @@
 
                 }
             }
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -525,17 +280,11 @@
             <code>
             File myFile = new File("myfile.txt");
             Scanner fileReader = new Scanner(myFile);
-            </code> <tests> </tests>
+            </code> 
         </program>
 
-        <note>
-            <p>
-                The myFile File object we created on the first line was passed to the Scanner object created on the second line.
-            </p>
-        </note>
-
         <p>
-            The next lines consist of a while loop that reads each line of the file passed to the Scanner object and reads them. First, a Python code example. A for loop is used instead in the Python example:
+            The next lines consists of a Python code examplethat reads each line of the file passed to the Scanner object.:
         </p>
 
         <program interactive="activecode" language="python">
@@ -557,7 +306,7 @@
                 System.out.println(data);
             }
             fileReader.close();
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
@@ -576,7 +325,7 @@
             }
             System.out.println(data);
             fileReader.close();
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <note>
@@ -632,12 +381,227 @@
                     }
                 }
             }
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
             In this code, we simply print the contents of the file to the console, but it is easy to imagine how the <c>data</c> variable could be used in conjunction with the write class created in the previous section to create a copy of myfile.txt.
         </p>
+    </section>
+
+    <section xml:id="file-write">
+        <title>Writing to Files</title>
+
+        <p>
+            The <c>createNewFile()</c> method is useful for attempting to create files and reporting if the operation was successful, however, <c>createNewFile()</c> does not write anything to files it creates. In fact, if you use <c>createNewFile()</c> to create a <c>.txt</c> file and then open the file, the file will be blank.
+        </p>
+
+        <p>
+            Let us create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            import java.io.FileWriter;
+            import java.io.IOException;
+
+            public class WriteFile {
+                public static void main(String[] args) {
+
+                }
+            }
+            </code> 
+        </program>
+        
+        <p>
+            Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            FileWriter myWriter = new FileWriter("myfile.txt");
+            </code> 
+        </program>
+
+        <p>
+            In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            myWriter.write("File successfully updated!");
+            myWriter.close();
+            </code> 
+        </program>
+
+        <note>
+            <p>
+                You may have noticed the <c>close()</c> function being used after writing to the file. This is a very important step and must be included when working with files! Without using this method, the file may remain active in system resources even after the program is closed. This can lead file corruption or other terrible problems that are best avoided!
+            </p>
+        </note>
+
+        <p>
+            Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
+        </p>
+
+        <program interactive="activecode" language="python">
+            <code>
+                with open("filename.txt", "r") as file_reader:
+                while True:
+                    line = file_reader.readline()
+                    if not line:  # End of file
+                        break
+                    print(line.strip())
+            </code>
+        </program>
+
+        <p>
+            And the equivalent Java code:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            try {
+                FileWriter myWriter = new FileWriter("myfile.txt");
+                myWriter.write("File successfully updated!");
+                myWriter.close();
+                System.out.println("File successfully written to.");
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+            </code> 
+        </program>
+
+        <p>
+            And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
+        </p>
+
+        <program interactive="activecode" language="python">
+            <code>
+            try:
+                with open("myfile.txt", "w") as my_writer:
+                    my_writer.write("File successfully updated!")
+                print("File successfully written to.")
+            except OSError as e:
+                print("An error occurred.")
+                import traceback
+                traceback.print_exc()
+            </code> 
+        </program>
+
+        <p>
+            The completed Java code:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            import java.io.FileWriter;
+            import java.io.IOException;
+
+            public class WriteFile {
+                public static void main(String[] args) {
+                    try {
+                        FileWriter myWriter = new FileWriter("myfile.txt");
+                        myWriter.write("File successfully updated!");
+                        myWriter.close();
+                        System.out.println("File successfully written to.");
+                    } catch (IOException e) {
+                        System.out.println("An error occurred.");
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </code> 
+        </program>
+
+        <p>
+            Files in a specific directory can be written to using the same technique as the last section in which file paths are specified, with two back slashes used in Windows environments. 
+        </p>    
+
+        <note>
+            <p>
+                If a file does not already exist (for example, <c>myfile.txt</c> does not exist), the <c>write()</c> method will create the file. Despite this, it is still a good idea to create separate methods or classes for creating and writing to files. Not only is it good practice to ensure methods only accomplish one thing, but the <c>createNewFile()</c> method avoids overwriting files that already exist. Imagine a file with the name <c>myfile.txt</c> already exists and contains important information. Attempting to create a file using the <c>write()</c> method will delete that data forever.
+            </p>
+        </note>
+
+        <p>
+            Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a boolean argument along with the file name when creating a new data argument:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
+            </code> 
+        </program>
+
+        <p>
+            Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the boolean argument:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            import java.io.FileWriter;
+            import java.io.IOException;
+
+            public class WriteFile {
+                public static void main(String[] args) {
+                    try {
+                        FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
+                        myWriter.write("File successfully updated!");
+                        myWriter.close();
+                        System.out.println("File successfully written to.");
+                    } catch (IOException e) {
+                        System.out.println("An error occurred.");
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </code> 
+        </program>
+
+        <p>
+            Then if we run the program twice, the contents of <c>myfile.txt</c> would be:
+        </p>
+
+        <program language="$">
+            <code>
+            File successfully updated!File successfully updated!
+            </code> 
+        </program>
+
+        <p>
+            This doesn't look very good! If we want each additional write to appear on a new line? The first solution may be to use the <c>\n</c> newline character:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            myWriter.write("File successfully updated!\n"); // Added newline character 
+            myWriter.close();
+            </code> 
+        </program>
+
+        <p>
+            The System.lineseseparator() method is a better solution. This method returns the system's default line separator, which is platform-dependent. For example, on Windows, it returns <c>\n</c>, while on Linux and macOS, it returns <c>\n</c>. Using this method ensures that your code works correctly across different operating systems:
+        </p>
+
+        <program interactive="activecode" language="java">
+            <code>
+            myWriter.write("File successfully updated!" + System.lineseparator()); // Added newline character 
+            myWriter.close();
+            </code> 
+        </program>
+
+        <p>
+            Running it twice will result in the following contents in myfile.txt:
+        </p>
+
+        <program language="$">
+            <code>
+            File successfully updated!
+            File successfully updated!
+            </code> 
+        </program>
     </section>
 
     <section xml:id="file-delete">
@@ -661,7 +625,7 @@
                     } 
                 } 
             }
-            </code> <tests> </tests>
+            </code> 
         </program>
 
         <p>
