@@ -256,17 +256,30 @@
 
         <p>
             Let's take a look at how we can use Java to read file contents. We'll start again with library imports and building a class, this time importing the Scanner and FileNotFoundException classes. We will call this class ReadFile:
-        </p>
-
-        <program interactive="activecode" language="java">
+        </p>   
+            <datafile label="my-file" filename="myfile.txt" xml:id= "my-file" editable="no" include-source="yes">
+                <pre>
+                    1
+                    2
+                    3
+                    4
+                    5
+                    6
+                    7
+                    8
+                </pre>
+            </datafile>
+            
+        
+        <program interactive="activecode"  language="java" add-files= "my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner
+            import java.util.Scanner;
 
             public class ReadFile {
                 public static void main(String[] args) {
-
+                    
                 }
             }
             </code> 
@@ -280,6 +293,8 @@
             <code>
             File myFile = new File("myfile.txt");
             Scanner fileReader = new Scanner(myFile);
+
+            
             </code> 
         </program>
 
@@ -299,13 +314,25 @@
             The equivalent Java code:
         </p>
 
-        <program interactive="activecode" language="java">
+        <program interactive="activecode"  language="java" add-files= "my-file">
             <code>
-            while (fileReader.hasNextLine()) {
-                String data = fileReader.nextLine();
-                System.out.println(data);
+            import java.io.File;
+            import java.io.FileNotFoundException;
+            import java.util.Scanner;
+
+            public class ReadFile {
+                public static void main(String[] args) {
+                    File myFile = new File("myfile.txt");
+                    Scanner fileReader = new Scanner(myFile);
+
+                    while (fileReader.hasNextLine()) {
+                        String data = fileReader.nextLine();
+                        System.out.println(data);
+                    }
+                    fileReader.close();
+                    
+                }
             }
-            fileReader.close();
             </code> 
         </program>
 
