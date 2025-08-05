@@ -275,11 +275,22 @@
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner;
+            import java.util.Scanner;// Code generated on: 2025-08-05
+            public class Main {
+                public static void main(String[] args) {        
 
-            public class ReadFile {
-                public static void main(String[] args) {
-                    
+                    // This 'try-with-resources' statement handles opening the file
+                    // and guarantees it is closed automatically, which is best practice.
+                    try (Scanner fileReader = new Scanner(new File("myfile.txt"))) {     
+
+                        // If this line is reached, the file was opened successfully.
+                        System.out.println("Success! The file 'myfile.txt' is now open.");  
+
+                    } catch (FileNotFoundException e) {            
+
+                        // This block runs only if 'myfile.txt' does not exist.
+                        System.out.println("Error: The file 'myfile.txt' could not be found.");        
+                    }
                 }
             }
             </code> 
@@ -314,7 +325,7 @@
         </program>
 
         <p>
-            The next lines consists of a Python code examplethat reads each line of the file passed to the Scanner object.:
+            The next lines consists of a Python code example that reads each line of the file passed to the Scanner object.:
         </p>
 
         <program interactive="activecode" language="python">
@@ -406,7 +417,7 @@
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner
+            import java.util.Scanner;
 
             public class ReadFile {
                 public static void main(String[] args) {
