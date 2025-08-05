@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="ap-java-cheatsheet" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Java Cheat Sheet</title>
+  <paragraphs>
+  <title>Purpose of this Cheat Sheet</title>
+  <p>
+  </p>
+  <p>
+      The following is intended to be useful in better understanding Java functions coming from a Python background.
+      </p>
+      </paragraphs>
+<paragraphs>
+<table>
+    <title>Function/Method Equivalents: Python to Java</title>
+    <tabular>
+        <row header="yes">
+            <cell> Python Function </cell>
+            <cell> Java Equivalent </cell>
+            <cell> Description </cell>
+        </row>
+        <row>
+            <cell><c>print()</c></cell>
+            <cell><c>System.out.println()</c></cell>
+            <cell> Prints output to the console. </cell>
+        </row>
+        <row>
+            <cell><c>len()</c></cell>
+            <cell><c>array.length</c> or <c>list.size()</c></cell>
+            <cell> Returns the length of an array or size of a list. </cell>
+        </row>
+        <row>
+            <cell><c>range()</c></cell>
+            <cell><c>for (int i = 0; i &lt; n; i++)</c></cell>
+            <cell> Used in loops to iterate a specific number of times. </cell>
+        </row>
+        <row>
+            <cell><c>str()</c></cell>
+            <cell><c>String.valueOf()</c></cell>
+            <cell> Converts an object to a string. </cell>
+        </row>
+        <row>
+            <cell><c>int()</c></cell>
+            <cell><c>Integer.parseInt()</c></cell>
+            <cell> Converts a string to an integer. </cell>
+        </row>
+        <row>
+            <cell><c>float()</c></cell>
+            <cell><c>Float.parseFloat()</c></cell>
+            <cell> Converts a string to a float. </cell>
+        </row>
+        <row>
+            <cell><c>list.append()</c></cell>
+            <cell><c>ArrayList.add()</c></cell>
+            <cell> Adds an element to the end of a list. </cell>
+        </row>
+        <row>
+            <cell><c>list.pop()</c></cell>
+            <cell><c>ArrayList.remove(index)</c></cell>
+            <cell> Removes and assign the return value to use it.</cell>
+        </row>
+        <row>
+            <cell><c>list.sort()</c></cell>
+            <cell><c>Collections.sort(list)</c></cell>
+            <cell> Sorts a list in ascending order. </cell>
+        </row>
+        <row>
+            <cell><c>list.reverse()</c></cell>
+            <cell><c>Collections.reverse(list)</c></cell>
+            <cell> Reverses the order of elements in a list. </cell>
+        </row>
+        <row>
+            <cell><c>dict.get()</c></cell>
+            <cell><c>Map.get(key)</c></cell>
+            <cell> Retrieves the value associated with a key in a map. </cell>
+        </row>
+        <row>
+            <cell><c>dict.keys()</c></cell>
+            <cell><c>Map.keySet()</c></cell>
+            <cell> Returns a set of keys in a map. </cell>
+        </row>
+        <row>
+            <cell><c>dict.values()</c></cell>
+            <cell><c>Map.values()</c></cell>
+            <cell> Returns a collection of values in a map. </cell>
+        </row>
+        <row>
+            <cell><c>dict.items()</c></cell>
+            <cell><c>Map.entrySet()</c></cell>
+            <cell> Returns a set of key-value pairs in a map. </cell>
+        </row>
+        <row>
+            <cell><c>input()</c></cell>
+            <cell><c>Scanner.nextLine()</c></cell>
+            <cell> Reads a line of input from the console. </cell>
+        </row>
+        <row>
+            <cell><c>open()</c></cell>
+            <cell><c>FileReader</c>, <c>BufferedReader</c></cell>
+            <cell> Used to read from files. </cell>
+        </row>
+        <row>
+            <cell><c>enumerate()</c></cell>
+            <cell><c>for (int i = 0; i &lt; list.size(); i++) { ... }</c></cell>
+            <cell> Used to iterate over a list with an index. </cell>
+        </row>
+    </tabular>
+</table>
+<table>
+    <title>Operator Equivalents and Usage</title>
+    <tabular>
+        <row header="yes">
+            <cell> Operator Type </cell>
+            <cell> Operator </cell>
+            <cell> Description </cell>
+            <cell> Example </cell>
+        </row>
+        <row>
+            <cell> Arithmetic </cell>
+            <cell><c>+</c>, <c>-</c>, <c>*</c>, <c>/</c></cell>
+            <cell> Addition, Subtraction, Multiplication, Division </cell>
+            <cell><c>5 + 2</c> → <c> 7 </c></cell>
+        </row>
+        <row>
+            <cell> Arithmetic </cell>
+            <cell><c>/</c></cell>
+            <cell> Integer Division (truncates toward zero) </cell>
+            <cell><c>7 / 2</c> → <c> 3 </c> </cell>
+        </row>
+        <row>
+            <cell> Arithmetic </cell>
+            <cell><c>%</c></cell>
+            <cell> Modulus (remainder) </cell>
+            <cell><c>7 % 2</c> → <c> 1 </c></cell>
+        </row>
+        <row>
+            <cell> Arithmetic </cell>
+            <cell><c>Math.pow()</c></cell>
+            <cell> Exponent </cell>
+            <cell><c>Math.pow(2, 3)</c> → <c> 8.0 </c></cell>
+        </row>
+        <row>
+            <cell> Assignment </cell>
+            <cell><c>+=</c>, <c>-=</c>, <c>*=</c>, <c>/=</c></cell>
+            <cell> Adds, subtracts, multiplies, or divides and assigns </cell>
+            <cell><c>x += 1</c> → <c>x = x + 1</c> </cell>
+        </row>
+        <row>
+            <cell> Comparison </cell>
+            <cell><c>==</c>, <c>!=</c></cell>
+            <cell> Equal to, Not equal to (use <c>.equals()</c> for objects) </cell>
+            <cell><c>x == y</c> → <c>True</c> or <c>False</c> </cell>
+        </row>
+        <row>
+            <cell> Comparison </cell>
+            <cell><c>&gt;</c>, <c>&lt;</c>, <c>&gt;=</c>, <c>&lt;=</c></cell>
+            <cell> Greater/Less than, or equal to </cell>
+            <cell><c>x &gt; 5</c> → <c>True</c> or <c>False</c> </cell>
+        </row>
+        <row>
+            <cell> Logical </cell>
+            <cell><c>&amp;&amp;</c>, <c>||</c>, <c>!</c></cell>
+            <cell> Logical AND, OR, NOT </cell>
+            <cell><c>x &gt; 1 &amp;&amp; y &lt; 10</c> → <c>True</c> or <c>False</c> </cell>
+        </row>
+    </tabular>
+</table>
+
+<p>
+    <ul>
+        <li>
+            <p>
+                Ternary Operator: Provides a compact, one-line if-else statement. For instance, <c>String result = (score &gt;= 60) ? "Pass" : "Fail";</c> is much shorter than a full if-else block.
+            </p>
+        </li>
+        <li>
+            <p>
+                No Chained Comparisons: Java does not support chained comparisons. Range checks must use logical operators, such as <c>if (age &gt;= 18 &amp;&amp; age &lt; 65)</c>. In Python, this could be written as <c>if 18 &lt;= age &lt; 65:</c>.
+            </p>
+        </li>
+        <li>
+            <p>
+                String Formatting: Java uses methods like <c>String.format()</c> or <c>System.out.printf()</c> for embedding expressions in strings, similar to Python's F-Strings. For example, <c>String message = String.format("Hello, %s!", name);</c> is cleaner than traditional string concatenation.
+            </p>
+        </li>
+        <li>
+            <p>
+                No Tuple or List Unpacking: Java does not have a direct equivalent to Python's tuple and list unpacking. Assignment must be done one variable at a time, such as <c>String name = "Alice"; int age = 30;</c>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Short-Circuiting: The logical operators <c>&amp;&amp;</c> (AND) and <c>||</c> (OR) are efficient. They stop evaluating as soon as the outcome is known. For example, in <c>if (user != null &amp;&amp; user.isAdmin())</c>, the code will not attempt to call <c>.isAdmin()</c> if <c>user</c> is null, preventing an error.
+            </p>
+        </li>
+        <li>
+            <p>
+    Streams API: Java's Stream API is the idiomatic alternative to Python's List Comprehensions. It can be used to filter, map, and reduce data in a sequence of steps. For a simpler example, to generate a basic list of numbers, instead of a multi-line loop, you can write <c>List&lt;Integer&gt; numbers = IntStream.range(0, 5).boxed().toList(); </c> This single line creates a stream of numbers from 0 to 4, prepares them for the list with the `.boxed()` method, and collects them into the final result.
+            </p>
+        </li>
+    </ul>
+</p>
+
+</paragraphs>
+</section>
