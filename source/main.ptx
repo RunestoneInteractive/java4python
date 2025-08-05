@@ -8,11 +8,11 @@
         <subtitle>The PreTeXt Interactive Edition</subtitle>
         <xi:include href="meta_frontmatter.ptx" />
         <xi:include href="ch1_overview.ptx" />
-        <xi:include href="ch3_firstjavaprogram.ptx" />
-        <xi:include href="ch4_javadatatypes.ptx" />
-        <xi:include href="ch5_conditionals.ptx" />
-        <xi:include href="ch6_loopsanditeration.ptx" />
-        <xi:include href="ch7_definingclasses.ptx" />
+        <xi:include href="ch2_firstjavaprogram.ptx" />
+        <xi:include href="ch3_javadatatypes.ptx" />
+        <xi:include href="ch4_conditionals.ptx" />git 
+        <xi:include href="ch5_loopsanditeration.ptx" />
+        <xi:include href="ch6_definingclasses.ptx" />
         <xi:include href="chx_recursion.ptx" />
         <xi:include href="ch8_filehandling.ptx" />
         <xi:include href="ch9_commonmistakes.ptx" />
