@@ -223,4 +223,105 @@ public class DoWhileExample {
             </code>
         </program>
     </section>
+    <section xml:id="chapter5_summary">
+        <title>Summary &amp; Reading Questions</title>
+        <p>
+            <ol label="1">
+            <li>
+                <p>Java’s <c>for</c> loop syntax allows you to control loop initialization, condition, and update in one line using the format <c>for (init; condition; update)</c>.</p>
+            </li>
+            <li>
+                <p>To loop over lists or arrays in Java, the enhanced for-each loop uses the syntax <c>for (type var : collection)</c>, which is similar to Python’s <c>for item in list</c>.</p>
+            </li>
+            <li>
+                <p>Python’s <c>range()</c> function supports start, stop, and step, which directly maps to the three components of a Java <c>for</c> loop.</p>
+            </li>
+            <li>
+                <p>Java also supports the <c>while</c> loop, which executes a block of code while a condition is true, similar to Python’s <c>while</c> loop.</p>
+            </li>
+            <li>
+                <p>Java’s <c>do-while</c> loop guarantees the loop body executes at least once, because the condition is evaluated after the loop body.</p>
+            </li>
+            <li>
+                <p>To iterate through characters in a Java String, use <c>toCharArray()</c> along with a for-each loop.</p>
+            </li>
+            </ol>
+        </p>
+
+        <reading-questions xml:id="rqs-5">
+            
+            <exercise label="summary-for-loop-structure">
+            <statement>
+                <p>Which of the following is the correct format for a definite loop in Java that runs 10 times?</p>
+            </statement>
+            <choices>
+                <choice>
+                <statement><p>for i in range(10):</p></statement>
+                <feedback><p>No, that is Python syntax.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                <statement><p>for (int i = 0; i &lt; 10; i++)</p></statement>
+                <feedback><p>Correct! That’s the proper Java syntax for a definite loop.</p></feedback>
+                </choice>
+                <choice>
+                <statement><p>loop i from 0 to 10</p></statement>
+                <feedback><p>No, this is not valid syntax in Java.</p></feedback>
+                </choice>
+                <choice>
+                <statement><p>for (i &lt; 10; i++)</p></statement>
+                <feedback><p>No, the initialization part is missing in this Java loop.</p></feedback>
+                </choice>
+            </choices>
+            </exercise>
+
+            <exercise label="summary-for-each-array">
+            <statement>
+                <p>Which loop correctly iterates through all elements in a Java array of integers?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                <statement><p>for (int i : array)</p></statement>
+                <feedback><p>Yes! This is Java's enhanced for-each loop for arrays.</p></feedback>
+                </choice>
+                <choice>
+                <statement><p>for (i in array)</p></statement>
+                <feedback><p>No, that's closer to Python syntax.</p></feedback>
+                </choice>
+                <choice>
+                <statement><p>for (int i = 0; i &lt; array; i++)</p></statement>
+                <feedback><p>No, <c>array</c> is not a valid condition; use <c>array.length</c>.</p></feedback>
+                </choice>
+                <choice>
+                <statement><p>foreach i in array:</p></statement>
+                <feedback><p>No, this is not valid Java syntax.</p></feedback>
+                </choice>
+            </choices>
+            </exercise>
+
+            <exercise label="summary-do-while">
+            <statement>
+                <p>What is a unique characteristic of the Java <c>do-while</c> loop compared to the <c>while</c> loop?</p>
+            </statement>
+            <choices>
+                <choice>
+                <statement><p>It checks the condition before the loop body runs.</p></statement>
+                <feedback><p>No, that describes a regular <c>while</c> loop.</p></feedback>
+                </choice>
+                <choice>
+                <statement><p>It always runs infinitely.</p></statement>
+                <feedback><p>No, a <c>do-while</c> loop will stop when its condition becomes false.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                <statement><p>It guarantees the loop body runs at least once.</p></statement>
+                <feedback><p>Correct! The <c>do-while</c> loop checks the condition after running the loop body.</p></feedback>
+                </choice>
+                <choice>
+                <statement><p>It is not supported in Java.</p></statement>
+                <feedback><p>No, Java does support <c>do-while</c> loops.</p></feedback>
+                </choice>
+            </choices>
+            </exercise>
+
+        </reading-questions>
+    </section>
 </chapter>
