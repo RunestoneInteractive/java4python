@@ -226,52 +226,6 @@
         </exercise>
         <exercise label="cm-3">
             <statement>
-                <p>What is the correct way to instantiate a new object of class <c>Scanner</c>?</p>
-            </statement>
-            <choices>
-                <choice correct="yes">
-                    <statement><p><c>new Scanner(...)</c></p></statement>
-                    <feedback><p>Correct! The <c>new</c> keyword must be used to create new objects.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p><c>Scanner(...)</c> without <c>new</c></p></statement>
-                    <feedback><p>No. Omitting <c>new</c> causes errors.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p><c>Scanner.create(...)</c></p></statement>
-                    <feedback><p>No. This method does not exist for object creation.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p><c>Scanner = new Scanner()</c></p></statement>
-                    <feedback><p>No. The syntax is incorrect; the variable name must be assigned the new object.</p></feedback>
-                </choice>
-            </choices>
-        </exercise>
-        <exercise label="cm-4">
-            <statement>
-                <p>What causes a "';' expected" error in Java?</p>
-            </statement>
-            <choices>
-                <choice correct="yes">
-                    <statement><p>A missing semicolon at the end of a statement.</p></statement>
-                    <feedback><p>Correct! Java statements must end with a semicolon.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p>Using too many semicolons in a line.</p></statement>
-                    <feedback><p>No. Extra semicolons do not cause this error.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p>Missing braces <c>{}</c>.</p></statement>
-                    <feedback><p>No. This error specifically refers to missing semicolons.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p>Using single quotes instead of double quotes.</p></statement>
-                    <feedback><p>No. This is unrelated to semicolon errors.</p></feedback>
-                </choice>
-            </choices>
-        </exercise>
-        <exercise label="cm-5">
-            <statement>
                 <p>What warning occurs when you use an <c>ArrayList</c> without specifying a type?</p>
             </statement>
             <choices>
