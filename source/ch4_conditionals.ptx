@@ -311,4 +311,142 @@ Using this operator can make code shorter and more readable in cases where a sim
 
 
     </section>
+        <section xml:id="chapter4_summary">
+        <title>Summary &amp; Reading Questions</title>
+        <p><ol label="1">
+            <li>
+                <p>Java requires parentheses around the condition and curly braces for code blocks in <c>if</c> statements, unlike Python which uses indentation alone.</p>
+            </li>
+            <li>
+                <p>Java uses <c>else if</c> instead of Python's <c>elif</c>, and allows optional curly braces for single-line blocks.</p>
+            </li>
+            <li>
+                <p>Java includes a <c>switch</c> statement for checking equality against constant values, which can replace long <c>if-else</c> chains for specific scenarios.</p>
+            </li>
+            <li>
+                <p>
+                    Java uses the <c>boolean</c> data type to represent logical values <c>true</c> or <c>false</c>, commonly used in conditionals and control flow.
+                </p>
+            </li>
+        </ol></p>
+        <reading-questions xml:id="rqs-summary4">
+            <exercise label="summary-if-parentheses">
+                <statement>
+                    <p>Which is a correct Java <c>if</c> statement syntax?</p>
+                </statement>
+                <choices>
+                    <choice correct="yes">
+                        <statement>
+                            <p>if (x &gt; 0) { System.out.println("Positive"); }</p>
+                        </statement>
+                        <feedback>
+                            <p>Correct! Java requires parentheses and curly braces.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>if x &gt; 0: print("Positive")</p>
+                        </statement>
+                        <feedback>
+                            <p>No, that's Python syntax, not Java.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>if x &gt; 0 { System.out.println("Positive"); }</p>
+                        </statement>
+                        <feedback>
+                            <p>No, Java requires parentheses around the condition.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>if (x &gt; 0) print("Positive");</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>print</c> is not a valid method in Java. Use <c>System.out.println</c>.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+            <exercise label="summary-else-if">
+                <statement>
+                    <p>How do you write Python’s <c>elif</c> equivalent in Java?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement>
+                            <p>elif (score &gt; 90)</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>elif</c> is used in Python, not Java.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>else: if (score &gt; 90)</p>
+                        </statement>
+                        <feedback>
+                            <p>Incorrect syntax; no colon in Java and not the right structure.</p>
+                        </feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement>
+                            <p>else if (score &gt; 90)</p>
+                        </statement>
+                        <feedback>
+                            <p>Right! Java uses <c>else if</c>.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>ifelse (score &gt; 90)</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>ifelse</c> is not a valid construct in Java.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+            <exercise label="summary-switch">
+                <statement>
+                    <p>What is one limitation of Java's <c>switch</c> statement?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement>
+                            <p>It allows complex boolean expressions in case statements.</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>switch</c> does not support complex expressions like <c>if</c> does.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>It can be used with any type of object, including null.</p>
+                        </statement>
+                        <feedback>
+                            <p>No, using <c>null</c> in <c>switch</c> causes a runtime error.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>It supports dynamic pattern matching by default.</p>
+                        </statement>
+                        <feedback>
+                            <p>No, Java <c>switch</c> supports limited pattern matching starting only in later versions.</p>
+                        </feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement>
+                            <p>It can only compare a variable to constant values using equality.</p>
+                        </statement>
+                        <feedback>
+                            <p>Correct! <c>switch</c> is limited to constant comparisons only.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+        </reading-questions>
+    </section>
 </chapter>
