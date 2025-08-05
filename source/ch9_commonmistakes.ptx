@@ -154,4 +154,145 @@
         </p>
 
     </section>
+
+    <section xml:id="common-mistakes-summary">
+    <title>Summary &amp; Reading Questions</title>
+    <p><ol label="1">
+        <li>
+            <p>In Java, every variable must be declared with its type before use; undeclared variables cause compilation errors.</p>
+        </li>
+        <li>
+            <p>Java requires explicit import statements for classes from external packages (e.g., <c>java.util.Scanner</c>); otherwise, you get "cannot find symbol" errors.</p>
+        </li>
+        <li>
+            <p>The <c>new</c> keyword is mandatory when creating new objects; forgetting it leads to errors as Java treats the constructor call incorrectly.</p>
+        </li>
+        <li>
+            <p>Every Java statement must end with a semicolon (<c>;</c>); missing semicolons cause syntax errors.</p>
+        </li>
+        <li>
+            <p>Java uses generics for type safety in containers like <c>ArrayList</c>; forgetting to specify the contained type leads to compiler warnings about unchecked operations.</p>
+        </li>
+        <li>
+            <p>Compiler error messages may sometimes be misleading; understanding common mistakes helps quickly identify the root cause.</p>
+        </li>
+    </ol></p>
+    <reading-questions xml:id="rqs-common-mistakes">
+        <exercise label="cm-1">
+            <statement>
+                <p>What happens if you use a variable in Java without declaring it first?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement><p>The compiler gives an error indicating the variable cannot be found.</p></statement>
+                    <feedback><p>Correct! Java requires all variables to be declared before use.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>The variable is automatically declared as type <c>Object</c>.</p></statement>
+                    <feedback><p>No. Java does not implicitly declare variables.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>The program compiles but throws an error at runtime.</p></statement>
+                    <feedback><p>No. This is a compile-time error.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Java ignores the variable and continues compiling.</p></statement>
+                    <feedback><p>No. Java will stop compiling with an error.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="cm-2">
+            <statement>
+                <p>Why must you include import statements for classes like <c>Scanner</c>?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement><p>Because these classes belong to external packages and are not automatically available.</p></statement>
+                    <feedback><p>Correct! Java requires explicit imports for external classes.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Because Java does not support standard input without imports.</p></statement>
+                    <feedback><p>No. Standard input is supported but needs the <c>Scanner</c> class explicitly imported.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Because the classes are only available in Python, not Java.</p></statement>
+                    <feedback><p>No. This is a Java-specific requirement.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Because the compiler ignores unknown classes without imports.</p></statement>
+                    <feedback><p>No. It causes a compile error instead.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="cm-3">
+            <statement>
+                <p>What is the correct way to instantiate a new object of class <c>Scanner</c>?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement><p><c>new Scanner(...)</c></p></statement>
+                    <feedback><p>Correct! The <c>new</c> keyword must be used to create new objects.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p><c>Scanner(...)</c> without <c>new</c></p></statement>
+                    <feedback><p>No. Omitting <c>new</c> causes errors.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p><c>Scanner.create(...)</c></p></statement>
+                    <feedback><p>No. This method does not exist for object creation.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p><c>Scanner = new Scanner()</c></p></statement>
+                    <feedback><p>No. The syntax is incorrect; the variable name must be assigned the new object.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="cm-4">
+            <statement>
+                <p>What causes a "';' expected" error in Java?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement><p>A missing semicolon at the end of a statement.</p></statement>
+                    <feedback><p>Correct! Java statements must end with a semicolon.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Using too many semicolons in a line.</p></statement>
+                    <feedback><p>No. Extra semicolons do not cause this error.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Missing braces <c>{}</c>.</p></statement>
+                    <feedback><p>No. This error specifically refers to missing semicolons.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Using single quotes instead of double quotes.</p></statement>
+                    <feedback><p>No. This is unrelated to semicolon errors.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="cm-5">
+            <statement>
+                <p>What warning occurs when you use an <c>ArrayList</c> without specifying a type?</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement><p>An "unchecked" warning indicating potential type safety issues.</p></statement>
+                    <feedback><p>Correct! Using raw types disables generic type checks.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>A syntax error.</p></statement>
+                    <feedback><p>No. This is a compiler warning, not an error.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>A runtime exception.</p></statement>
+                    <feedback><p>No. It only warns about possible runtime errors.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>A logical error in the program.</p></statement>
+                    <feedback><p>No. The warning points out type safety concerns.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+    </reading-questions>
+</section>
 </chapter>
