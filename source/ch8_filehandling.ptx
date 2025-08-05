@@ -275,11 +275,21 @@
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner;
-
-            public class ReadFile {
+            import java.util.Scanner;public class Main {
                 public static void main(String[] args) {
-                    
+                    try {
+                        File myFile = new File("myfile.txt");
+                        Scanner fileReader = new Scanner(myFile);            
+                        System.out.println("Reading from file: " + myFile.getName());
+                        while (fileReader.hasNextLine()) {
+                            String data = fileReader.nextLine();
+                            System.out.println(data);
+                        }
+                        fileReader.close(); // Close the scanner to release the file        
+                    } catch (FileNotFoundException e) {
+                        System.out.println("An error occurred: The file was not found.");
+                        e.printStackTrace();
+                    }
                 }
             }
             </code> 
@@ -291,15 +301,30 @@
 
         <program interactive="activecode" language="java">
             <code>
-            File myFile = new File("myfile.txt");
-            Scanner fileReader = new Scanner(myFile);
+            import java.io.File;
+            import java.io.FileNotFoundException;
+            import java.util.Scanner;
+            public class Main {
+                public static void main(String[] args) {        
+                    // This 'try-with-resources' statement handles opening the file
+                    // and guarantees it is closed automatically, which is best practice.
+                    try (Scanner fileReader = new Scanner(new File("myfile.txt"))) {    
 
-            
+                        // If this line is reached, the file was opened successfully.
+                        System.out.println("Success! The file 'myfile.txt' is now open.");
+
+                    } catch (FileNotFoundException e) {     
+
+                        // This block runs only if 'myfile.txt' does not exist.
+                        System.out.println("Error: The file 'myfile.txt' could not be found.");        
+                    }
+                }
+            } 
             </code> 
         </program>
 
         <p>
-            The next lines consists of a Python code examplethat reads each line of the file passed to the Scanner object.:
+            The next lines consists of a Python code example that reads each line of the file passed to the Scanner object.:
         </p>
 
         <program interactive="activecode" language="python">
@@ -318,19 +343,18 @@
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner;
-
-            public class ReadFile {
+            import java.util.Scanner;public class Main {
                 public static void main(String[] args) {
-                    File myFile = new File("myfile.txt");
-                    Scanner fileReader = new Scanner(myFile);
-
-                    while (fileReader.hasNextLine()) {
-                        String data = fileReader.nextLine();
-                        System.out.println(data);
+                    String filename = "myfile.txt";
+                    try (Scanner fileReader = new Scanner(new File(filename))) {
+                        while (fileReader.hasNextLine()) {
+                            String data = fileReader.nextLine();
+                            System.out.println(data);
+                        }
+                    } 
+                    catch (FileNotFoundException e) {
+                        System.out.println("Error: The file '" + filename + "' was not found.");
                     }
-                    fileReader.close();
-                    
                 }
             }
             </code> 
@@ -346,12 +370,23 @@
 
         <program interactive="activecode" language="java">
             <code>
-            String data = "";
-            while (fileReader.hasNextLine()) {
-                data = data + fileReader.nextLine() + System.lineSeparator();    
-            }
-            System.out.println(data);
-            fileReader.close();
+            import java.io.File;
+            import java.io.FileNotFoundException;
+            import java.util.Scanner;public class Main {
+                public static void main(String[] args) {
+                    String filename = "myfile.txt";
+                    try (Scanner fileReader = new Scanner(new File(filename))) {
+                        String data = "";
+                        while (fileReader.hasNextLine()) {
+                            data = data + fileReader.nextLine() + System.lineSeparator();
+                        }
+                        System.out.println(data);
+                    } 
+                    catch (FileNotFoundException e) {
+                        System.out.println("Error: The file '" + filename + "' was not found.");
+                    }
+                }
+            } 
             </code> 
         </program>
 
@@ -389,7 +424,7 @@
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner
+            import java.util.Scanner;
 
             public class ReadFile {
                 public static void main(String[] args) {
