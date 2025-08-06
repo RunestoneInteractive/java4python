@@ -148,7 +148,7 @@
                 You may have noticed the use of another method from the File class; <c>getName()</c>. This method returns a string containing the name of the file. 
             </p>
         </note>
-
+    </section>
         
 
     <section xml:id="file-read">
