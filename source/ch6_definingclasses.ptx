@@ -1012,4 +1012,130 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
             </code> <tests> </tests>
         </program>
     </section>
+    
+<section xml:id="chapter6_summary">
+    <title>Summary &amp; Reading Questions</title>
+    <p><ol>
+        <li>
+            <p>In Java, instance variables (fields) must be declared in the class body before they are used. Unlike Python, you cannot dynamically add new instance variables to an object at runtime.</p>
+        </li>
+        <li>
+            <p>Java uses access modifiers like <c>private</c> to enforce encapsulation, encouraging data hiding and controlled access through getter and setter methods.</p>
+        </li>
+        <li>
+            <p>Java requires a constructor method to initialize objects. A constructor has the same name as the class and defines its parameters explicitly, whereas Python uses the <c>__init__</c> method.</p>
+        </li>
+        <li>
+            <p>Every Java class inherits from the <c>Object</c> class, which provides default methods like <c>toString()</c> and <c>equals()</c>. Overriding <c>toString()</c> gives more meaningful output when printing objects (similar to Python’s <c>__str__</c>).</p>
+        </li>
+        <li>
+            <p>By default, Java’s <c>equals()</c> method checks reference equality, just like <c>==</c> for objects. To compare objects based on content (like <c>Fraction</c> values), you must override <c>equals()</c> and call it explicitly.</p>
+        </li>
+        <li>
+            <p>Java supports inheritance through abstract classes (like <c>Number</c>) and interfaces. Extending an abstract class requires implementing its abstract methods, allowing objects like <c>Fraction</c> to be used where a <c>Number</c> is expected.</p>
+        </li>
+    </ol></p>
+
+    <reading-questions xml:id="rqs-summary6">
+        
+        <exercise label="summary-instance-variables">
+        <statement>
+            <p>How are instance variables declared in Java compared to Python?</p>
+        </statement>
+        <choices>
+            <choice>
+            <statement><p>They can be created dynamically anywhere in the class like Python.</p></statement>
+            <feedback><p>No, Java does not allow dynamic creation of instance variables at runtime.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Instance variables are declared inside methods only.</p></statement>
+            <feedback><p>No, instance variables are declared in the class body, not in methods.</p></feedback>
+            </choice>
+            <choice correct="yes">
+            <statement><p>They must be declared in the class body before use.</p></statement>
+            <feedback><p>Correct! Java requires instance variables (fields) to be declared in the class body.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Java does not use instance variables.</p></statement>
+            <feedback><p>No, instance variables are fundamental in Java classes.</p></feedback>
+            </choice>
+        </choices>
+        </exercise>
+
+        <exercise label="summary-encapsulation">
+        <statement>
+            <p>What Java feature encourages encapsulation and controlled access to instance variables?</p>
+        </statement>
+        <choices>
+            <choice>
+            <statement><p>Declaring all variables as public.</p></statement>
+            <feedback><p>No, that would expose data and reduce encapsulation.</p></feedback>
+            </choice>
+            <choice correct="yes">
+            <statement><p>Using access modifiers like <c>private</c> and providing getter/setter methods.</p></statement>
+            <feedback><p>Right! This is how Java enforces encapsulation.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Using global variables.</p></statement>
+            <feedback><p>No, Java does not support global variables and this reduces encapsulation.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Avoiding the use of classes altogether.</p></statement>
+            <feedback><p>No, encapsulation is a class-based concept in Java.</p></feedback>
+            </choice>
+        </choices>
+        </exercise>
+
+        <exercise label="summary-constructor">
+        <statement>
+            <p>How does Java initialize objects differently than Python?</p>
+        </statement>
+        <choices>
+            <choice correct="yes">
+            <statement><p>Java uses a constructor method named after the class with explicit parameters.</p></statement>
+            <feedback><p>Correct! Unlike Python's <c>__init__</c>, Java constructors share the class name.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Java uses the <c>__init__</c> method like Python.</p></statement>
+            <feedback><p>No, Java does not have <c>__init__</c>.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Java initializes objects automatically without constructors.</p></statement>
+            <feedback><p>No, Java requires constructors for explicit initialization.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Java uses global initialization functions instead of constructors.</p></statement>
+            <feedback><p>No, Java uses constructors, not global functions, for object initialization.</p></feedback>
+            </choice>
+        </choices>
+        </exercise>
+
+        <exercise label="summary-tostring-equals">
+        <statement>
+            <p>What must you do in Java to print objects in a readable way and compare two objects based on their contents rather than their memory references?</p>
+        </statement>
+        <choices>
+            <choice>
+            <statement><p>Use <c>==</c> for content comparison and no need to override <c>toString()</c>.</p></statement>
+            <feedback><p>No, <c>==</c> compares memory references, not content.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Only override <c>toString()</c> and use <c>==</c> for equality.</p></statement>
+            <feedback><p>No, you should override <c>equals()</c> to compare content correctly.</p></feedback>
+            </choice>
+            <choice>
+            <statement><p>Java automatically handles content comparison without overrides.</p></statement>
+            <feedback><p>No, default <c>equals()</c> compares references, not content.</p></feedback>
+            </choice>
+            <choice correct="yes">
+            <statement><p>Override <c>toString()</c> for printing and override <c>equals()</c> to compare object contents.</p></statement>
+            <feedback><p>Yes! This improves output and content-based comparison.</p></feedback>
+            </choice>
+        </choices>
+        </exercise>
+
+    </reading-questions>
+</section>
+
+
 </chapter>
