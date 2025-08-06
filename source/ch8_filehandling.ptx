@@ -37,6 +37,9 @@
             }
             </code> 
         </program>
+        <p>
+            Note the use of <c>import java.lang.Math;</c> in the above to import the Math class. Unlike Python, Java requires explicit imports for most libraries, including the <c>Math</c> class and many different classes for file handling.
+        </p>
 
         <p>
             Java has several libraries included for file handling, though, they must be imported. Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
