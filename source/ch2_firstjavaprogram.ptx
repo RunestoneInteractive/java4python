@@ -8,15 +8,22 @@
     <title>Classes and Objects</title>
 
     <p>
-        Depending on how deep your knowledge of Python and programming in general is, you may or may not be familiar with classes and objects. These two important Object-Oriented Programming (OOP) concepts will briefly be discussed. If you already have a good understanding of classes and objects in Python, this section may be skipped.
+        <idx>Object-Oriented Programming (OOP)</idx>
+        Depending on how deep your knowledge of Python and programming in general is, you may or may not be familiar with classes and objects. These two important <term>Object-Oriented Programming (OOP)</term> concepts will briefly be discussed. If you already have a good understanding of classes and objects in Python, this section may be skipped.
     </p>
 
     <p>
-        Objects in the context of programming are instances of classes. Objects contain attributes, which are data that describe the object or are associated with the object, and methods, which are special functions used by the object. Methods are typically actions the object can perform, or can be used to make changes to the object's attributes.
+        <idx>object</idx>
+        <idx>attribute</idx>
+        <idx>instance variable</idx>
+        <idx>method</idx>
+        <term>Objects</term> in the context of programming are instances of classes. Objects contain <term>attributes</term> (also referred to as <term>instance variables</term>), which are data that describe the object or are associated with the object, and <term>methods</term>, which are special functions used by the object. Methods are typically actions the object can perform, or can be used to make changes to the object's attributes.
     </p>
 
     <p>
-        Classes can be thought of as being similar to blueprints or a recipe; they hold details of how to create an instance of an object. Classes contain a special method called a constructor that is used to create an instance of an object. Once the object is created, it will use the class definition to define its attributes and call methods.
+        <idx>class</idx>
+        <idx>constructor</idx>
+        <term>Classes</term> can be thought of as being similar to blueprints or a recipe; they hold details of how to create an instance of an object. Classes contain a special method called a <term>constructor</term> that is used to create an instance of an object. Once the object is created, it will use the class definition to define its attributes and call methods.
     </p>
 
     <p>
@@ -31,16 +38,16 @@
                 self.breed = breed
                 self.fur_color = fur_color
                 self.trained = False
-                print("Dog named " + self.name + " created!")
+                print(f"Dog named {self.name} created!")
 
             def bark(self):
-                print(self.name + " says woof!")
+                print(f"{self.name} says woof!")
                 
             def sit(self):
                 if self.trained:
-                    print(self.name + " sits.")
+                    print(f"{self.name} sits.")
                 else:
-                    print(self.name + " has not been trained.")
+                    print(f"{self.name} has not been trained.")
                     
             def train(self):
                 self.trained = True
@@ -56,7 +63,8 @@
     </p>
 
     <p>
-        Within each method, and for each attribute, you will notice the use of <c>self</c>. This is required in Python. <c>self</c> simply indicates that an attribute or method is being used for a specific instance of an object created with a class. 
+        <idx><c>self</c></idx>
+        Within each method, and for each attribute, you will notice the use of <term><c>self</c></term>. This is required in Python. <c>self</c> simply indicates that an attribute or method is being used for a specific instance of an object created with a class. 
     </p>
 
     <p>
@@ -71,16 +79,16 @@
                 self.breed = breed
                 self.fur_color = fur_color
                 self.trained = False
-                print("Dog named " + self.name + " created!")
+                print(f"Dog named {self.name} created!")
 
             def bark(self):
-                print(self.name + " says woof!")
+                print(f"{self.name} says woof!")
                 
             def sit(self):
                 if self.trained:
-                    print(self.name + " sits.")
+                    print(f"{self.name} sits.")
                 else:
-                    print(self.name + " has not been trained.")
+                    print(f"{self.name} has not been trained.")
                     
             def train(self):
                 self.trained = True
@@ -106,16 +114,16 @@
                 self.breed = breed
                 self.fur_color = fur_color
                 self.trained = False
-                print("Dog named " + self.name + " created!")
+                print(f"Dog named {self.name} created!")
 
             def bark(self):
-                print(self.name + " says woof!")
+                print(f"{self.name} says woof!")
                 
             def sit(self):
                 if self.trained:
-                    print(self.name + " sits.")
+                    print(f"{self.name} sits.")
                 else:
-                    print(self.name + " has not been trained.")
+                    print(f"{self.name} has not been trained.")
                     
             def train(self):
                 self.trained = True

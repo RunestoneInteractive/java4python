@@ -191,7 +191,6 @@ public void setDenominator(Integer denominator) {
         <title>Writing a constructor</title>
 
         <p>
-            <idx>constructors</idx>
             Once you have identified the instance variables for your class the next thing to consider is the constructor.
             In Java, <term>constructors</term> have the same name as the class and are declared public.
             They are declared without a return type.
@@ -498,7 +497,6 @@ Fraction@6ff3c5b5
             <title>The <c>Object</c> Class</title>
 
             <p>
-                <idx>object class</idx>
                 <idx><c>toString</c></idx>
                 In Java, the equivalent of <c>__str__</c> is the <c>toString</c> method.
                 Every object in Java already has a <c>toString</c> method defined for it because every class in Java automatically inherits from the <c>Object</c> class.
