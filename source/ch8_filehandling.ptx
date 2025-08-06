@@ -13,11 +13,38 @@
 
     <section xml:id="file-class-import">
         <title>Class Imports</title>
+        <p>
+            In Python, most built-in libraries are available without needing  to explicitly import additional packages, but some libraries like <c>math</c> do need to be imported. Consider the following.
+        </p>
+        <p>
+            Python:
+        </p>
+        <program xml:id = "file-class-import-Python-example" interactive="activecode" language="python">
+            <code>
+            import math
+            print(math.sqrt(25))
+            </code> 
+        </program>
+
+        <p>
+            Java:
+        </p>
+        <program xml:id = "file-class-import-Java-example" interactive="activecode" language="java">
+            <code>
+            import java.lang.Math;
+
+            public class Main {
+                public static void main(String[] args) {
+                    System.out.println(Math.sqrt(25));
+                }
+            }
+            </code> 
+        </program>
 
         <p>
             Java has several libraries included for file handling, though, they must be imported. Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
         </p>
-        <program interactive="activecode" language="java">
+        <program xml:id = "file-class-import-example" interactive="activecode" language="java">
             <code>
             import java.io.File;
             import java.io.IOException;public class Main {
@@ -56,10 +83,7 @@
 
         <pre>
             import java.io.IOException;
-        </pre>
-
-        <pre>
-            import java.io.FileNotFoundException 
+            import java.io.FileNotFoundException;
         </pre>
         
     </section>
