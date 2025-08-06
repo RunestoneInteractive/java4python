@@ -8,11 +8,11 @@
     <title>Classes and Objects</title>
 
     <p>
-        Depending on how deep your knowledge is of Python and programming in general, you may or may not be familiar with classes and objects. These two important Object-Oriented Programming (OOP) concepts will briefly be discussed. 
+        Depending on how deep your knowledge of Python and programming in general is, you may or may not be familiar with classes and objects. These two important Object-Oriented Programming (OOP) concepts will briefly be discussed. If you already have a good understanding of classes and objects in Python, this section may be skipped.
     </p>
 
     <p>
-        Objects in the context of programming are instances of classes. Objects contain attributes, which are details that describe the object, and methods, which are things the object can do.
+        Objects in the context of programming are instances of classes. Objects contain attributes, which are data that describe the object or are associated with the object, and methods, which are special functions used by the object. Methods are typically actions the object can perform, or can be used to make changes to the object's attributes.
     </p>
 
     <p>
@@ -48,11 +48,15 @@
     </program>
 
     <p>
-        Let's unpack what is going on in this code. The first line is where we declare the class definition and name it <c>Dog</c>. Next, we have a special method called <c>__init__</c>. This <c>__init__</c> method is the constructor and is required for every Python class definition. Within the <c>__init__</c> method, attributes are defined. As you can see, the attributes <c>name</c>, <c>breed</c>, and <c>fur_color</c> must be defined when creating a Dog object using this class definition, but the <c>trained</c> attribute is not defined and is initialized as <c>False</c>. We can also have the <c>__init__</c> method run any code, such as a print statement informing us that a Dog object was created.
+        Let's unpack what is going on in this code. The first line is where we declare the class definition and name it <c>Dog</c>. Next, we have a special method called <c>__init__</c>. This <c>__init__</c> method is the constructor and is required for every Python class definition. Within the <c>__init__</c> method, attributes are defined. As you can see, the attributes <c>name</c>, <c>breed</c>, and <c>fur_color</c> must be defined when creating a Dog object using this class definition, but the <c>trained</c> attribute is defined within the constructor and is initialized as <c>False</c>. We can also have the <c>__init__</c> method run any code, such as the print statement informing us that a Dog object was created.
     </p>
 
     <p>
         The next three blocks of code are the class's methods. These include <c>bark(self)</c>, <c>sit(self)</c>, and <c>train(self)</c>. As you can see, the class defines attributes (the variables in the <c>__init__</c> method) and methods for instances of the Dog class.
+    </p>
+
+    <p>
+        Within each method, and for each attribute, you will notice the use of <c>self</c>. This is required in Python. <c>self</c> simply indicates that an attribute or method is being used for a specific instance of an object created with a class. 
     </p>
 
     <p>
@@ -82,12 +86,12 @@
                 self.trained = True
 
         
-        my_dog = Dog("Rex", "pug", "tan")
+        my_dog = Dog("Rex", "pug", "brown")
         </input>
     </program>
 
     <p>
-        In the final line of code, we have created an object called <c>my_dog</c>. We have initialized its attributes, setting <c>name</c> to Rex, <c>breed</c> to pug, and <c>fur_color</c> to tan.
+        In the final line of code, we have created an object called <c>my_dog</c>. We have initialized its attributes, setting <c>name</c> to Rex, <c>breed</c> to pug, and <c>fur_color</c> to brown.
     </p>
 
     <p>
@@ -117,7 +121,7 @@
                 self.trained = True
 
         
-        my_dog = Dog("Rex", "pug", "tan")
+        my_dog = Dog("Rex", "pug", "brown")
         my_dog.bark()
         my_dog.sit()
         </input>
@@ -130,7 +134,7 @@
     </note>
 
     <p>
-        Now, we have a full class definition and have utilized its methods. Class definitions in Java will be covered in chapter 6. For now, it is important to know that Python programs can be entirely written without using classes at all. Java, on the other hand, requires all code to reside in a class. This will be discussed in the next section.
+        Now, we have a full class definition and have utilized its methods. Class definitions in Java will be covered thoroughly in chapter 6. For now, it is important to know that Python programs can be written without using classes at all. Java, on the other hand, requires all code to reside in a class. This will be discussed in the next section.
     </p>
 
 
