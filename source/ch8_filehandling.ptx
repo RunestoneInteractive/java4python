@@ -457,12 +457,28 @@
 
         <program interactive="activecode" language="java">
             <code>
+            import java.io.File;
             import java.io.FileWriter;
             import java.io.IOException;
-
-            public class WriteFile {
+            import java.util.Scanner;
+            public class Main {
                 public static void main(String[] args) {
-
+                    String filename = "test_file.txt";        
+                    try (FileWriter writer = new FileWriter(filename)) {
+                        writer.write("This line was written by the program.");
+                        System.out.println("Successfully wrote to the file.");
+                    } 
+                    catch (IOException e) {
+                        System.out.println("An error occurred during writing.");
+                    }        System.out.println("--- Reading file back ---");        
+                    try (Scanner reader = new Scanner(new File(filename))) {
+                        while (reader.hasNextLine()) {
+                            System.out.println(reader.nextLine());
+                        }
+                    } 
+                    catch (IOException e) {
+                        System.out.println("An error occurred during reading.");
+                    }
                 }
             }
             </code> 
@@ -472,22 +488,18 @@
             Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             FileWriter myWriter = new FileWriter("myfile.txt");
-            </code> 
-        </program>
+        </pre>
 
         <p>
             In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             myWriter.write("File successfully updated!");
             myWriter.close();
-            </code> 
-        </program>
+        </pre>
 
         <note>
             <p>
@@ -501,7 +513,7 @@
 
         <program interactive="activecode" language="python">
             <code>
-                with open("filename.txt", "r") as file_reader:
+                with open("myfile.txt", "r") as file_reader:
                 while True:
                     line = file_reader.readline()
                     if not line:  # End of file
@@ -516,14 +528,20 @@
 
         <program interactive="activecode" language="java">
             <code>
-            try {
-                FileWriter myWriter = new FileWriter("myfile.txt");
-                myWriter.write("File successfully updated!");
-                myWriter.close();
-                System.out.println("File successfully written to.");
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
+            import java.io.File;
+            import java.io.IOException;
+            import java.util.Scanner;public class Main {
+                public static void main(String[] args) {
+                    String filename = "myfile.txt";
+                    try (Scanner reader = new Scanner(new File(filename))) {
+                        while (reader.hasNextLine()) {
+                            String line = reader.nextLine();
+                            System.out.println(line.trim());
+                        }
+                    } catch (IOException e) {
+                        System.out.println("An error occurred.");
+                    }
+                }
             }
             </code> 
         </program>
