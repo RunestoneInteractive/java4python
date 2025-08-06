@@ -17,10 +17,20 @@
         <p>
             Java has several libraries included for file handling, though, they must be imported. Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
         </p>
-
         <program interactive="activecode" language="java">
             <code>
             import java.io.File;
+            import java.io.IOException;public class Main {
+                public static void main(String[] args) {
+                    try {
+                        File myFile = new File("newfile.txt");
+                        myFile.createNewFile();
+                        System.out.println("File Made.");
+                    } catch (IOException e) {
+                        System.out.println("An error occurred.");
+                    }
+                }
+            }
             </code> 
         </program>
 
@@ -28,37 +38,29 @@
             The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
-            import java.util.Scanner;
-            </code> 
-        </program>
+        <pre>
+            import java.util.Scanner; 
+        </pre>
 
         <p>
             The <c>FileWriter</c> class can be used to write to files. In the same way that the <c>Scanner</c> class isn't needed unless the program will read from a file, the <c>FileWriter</c> class isn't needed unless the program will write to a file.
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             import java.io.FileWriter;
-            </code> 
-        </program>
+        </pre>
 
         <p>
             Finally, these last two classes provide error handling and must be used in tandem with the <c>File</c> class when reading from or writing to files. <c>IOException</c> handles file creation and writing errors, while <c>FileNotFoundException</c> handles errors when trying to read files. 
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             import java.io.IOException;
-            </code> 
-        </program>
+        </pre>
 
-        <program interactive="activecode" language="java">
-            <code>
-            import java.io.FileNotFoundException
-            </code> 
-        </program>
+        <pre>
+            import java.io.FileNotFoundException 
+        </pre>
         
     </section>
 
@@ -68,10 +70,19 @@
         <p>
             We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
         </p>
-
+        <datafile label="my-file-8-2-1" filename="myfile.txt" xml:id= "my-file-8-2-1" editable="no" include-source="yes">
+                <pre>
+                    empty file
+                </pre>
+            </datafile>
         <program interactive="activecode" language="java">
             <code>
-            File myFile = new File("myfile.txt");
+            import java.io.File;public class Main {
+                public static void main(String[] args) {
+                    File myFile = new File("myfile.txt");
+                    System.out.println(myFile);
+                }
+            }
             </code> 
         </program>
 
@@ -88,26 +99,33 @@
         <p>
             First, lets look at the equivalent Python code:
         </p>
-
+        <datafile label="my-file-8-2-2" filename="myfile.txt" xml:id= "my-file-8-2-2" editable="no" include-source="yes">
+                <pre>
+                    empty file
+                </pre>
+            </datafile>
         <program interactive="activecode" language="python">
             <code>
-            import os
-
-            filename = "myfile.txt"
-
-            if not os.path.exists(filename):
-                with open(filename, 'x') as f:
-                    pass 
-                print(f"The file {filename} was created successfully.")
-            else:
-                print(f"The file {filename} already exists.")
+            filename = "newfile.txt"
+            print(f"Attempting to write to '{filename}' using 'w' mode...")
+            try:
+                with open(filename, 'w') as f:
+                    f.write("This file was created using 'w' mode.")    
+                    print(f"SUCCESS: The file '{filename}' was created or overwritten.")
+            except Exception as e:
+                # This would only catch other unexpected errors
+                print(f"An unexpected error occurred during write: {e}")
             </code> 
         </program>
 
         <p>
             Now, let's look at Java code that accomplishes the same task:
         </p>
-
+        <datafile label="my-file-8-2-3" filename="myfile.txt" xml:id= "my-file-8-2-3" editable="no" include-source="yes">
+                <pre>
+                    empty file
+                </pre>
+            </datafile>
         <program interactive="activecode" language="java">
             <code>
             import java.io.File;
@@ -130,126 +148,8 @@
                 You may have noticed the use of another method from the File class; <c>getName()</c>. This method returns a string containing the name of the file. 
             </p>
         </note>
-
-        <p>
-            The code may seem complete at this point, but if you remember from the previous section, error handling using the <c>IOException</c> is required for program to compile. Let's utilize best practices and add in try/catch blocks to handle exceptions thrown by the <c>IOException</c> class.
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            try {
-                if (myFile.createNewFile()) { // If the file was created successfully
-                    System.out.println("The file " + myFile.getName() + " was created sucessfully.");
-                } else { // If a file with the file name chosen already exists
-                    System.out.println("The file " + myFile.getName() + " already exists.");
-                }
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-            </code> 
-        </program>
-
-        <note>
-            <p>
-                The <c>IOException e</c> part in the parenthesis next to the catch. This creates a variable called <c>e</c> that refers to an IOException object. In other words, <c>e</c> refers to the error created if the try block fails. The line <c>e.printStackTrace();</c> prints the stack trace to the console. This is what the console may output if the program tries to create a file, but is blocked by the operating system due to insufficient permissions:
-            </p>
-        </note>
-
-        <program language="$">
-            <code>
-            An error occurred.
-            java.io.IOException: Permission denied
-                at java.base/java.io.File.createNewFile(File.java:1040)
-                at CreateFile.main(CreateFile.java:7)
-
-            </code>
-        </program>
-
-        <p>
-            At this point, the program will function correctly. Let's add the try/catch blocks to the foundational code written before to get a complete program.
-        </p>
-
-        <p>
-            First, the equivalent Python code:
-        </p>
-
-        <program interactive="activecode" language="python">
-            <code>
-            import os
-
-            filename = "myfile.txt"
-
-            try:
-                if not os.path.exists(filename):
-                    with open(filename, 'x') as f:
-                        pass  # Create the file without writing anything
-                    print(f"The file {filename} was created successfully.")
-                else:
-                    print(f"The file {filename} already exists.")
-            except OSError as e:
-                print("An error occurred.")
-                import traceback
-                traceback.print_exc()
-            </code> 
-        </program>
-
-        <p>
-            Now, the completed Java code:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            import java.io.File;
-            import java.io.IOException;
-
-            public class CreateFile {
-                public static void main(String[] args) {
-                    try {
-                        File myFile = new File("myfile.txt");
-                        if (myFile.createNewFile()) { // If the file was created successfully
-                            System.out.println("The file " + myFile.getName() + " was created sucessfully.");
-                        } else { // If a file with the file name chosen already exists
-                            System.out.println("The file " + myFile.getName() + " already exists.");
-                        }
-                    } catch (IOException e) {
-                        System.out.println("An error occurred.");
-                        e.printStackTrace();
-                    }
-
-                }
-            }
-            </code> 
-        </program>
-
-        <p>
-            You may be wondering: "What if I don't want to create a file in the current working directory?" Good question! In Windows environments, you can specify the file path using two back slashes for each back slash in the file path. For each pair of back slashes, the first back slash acts as an escape character. So, if you want to save a file to this directory:
-        </p>
-
-        <pre>
-            C:\Users\UserName\Documents
-        </pre>
-
-        <p>
-            The line of code that creates a File object will look like this:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            File myFile = new File("C:\\Users\\UserName\\Documents\\myfile.txt");
-            </code> 
-        </program>
-
-        <p>
-            If you are working in a Linux or Apple environment, you can simply use the file path with single forward slashes:
-        </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            File myFile = new File("/home/UserName/Documents/myfile.txt");
-            </code> 
-        </program>
     </section>
+        
 
     <section xml:id="file-read">
         <title>Reading Files</title>
@@ -445,7 +345,6 @@
             }
             </code> 
         </program>
-
         <p>
             In this code, we simply print the contents of the file to the console, but it is easy to imagine how the <c>data</c> variable could be used in conjunction with the write class created in the previous section to create a copy of myfile.txt.
         </p>
@@ -461,15 +360,31 @@
         <p>
             Let us create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
         </p>
-
+        
         <program interactive="activecode" language="java">
             <code>
+            import java.io.File;
             import java.io.FileWriter;
             import java.io.IOException;
-
-            public class WriteFile {
+            import java.util.Scanner;
+            public class Main {
                 public static void main(String[] args) {
-
+                    String filename = "test_file.txt";        
+                    try (FileWriter writer = new FileWriter(filename)) {
+                        writer.write("This line was written by the program.");
+                        System.out.println("Successfully wrote to the file.");
+                    } 
+                    catch (IOException e) {
+                        System.out.println("An error occurred during writing.");
+                    }        System.out.println("--- Reading file back ---");        
+                    try (Scanner reader = new Scanner(new File(filename))) {
+                        while (reader.hasNextLine()) {
+                            System.out.println(reader.nextLine());
+                        }
+                    } 
+                    catch (IOException e) {
+                        System.out.println("An error occurred during reading.");
+                    }
                 }
             }
             </code> 
@@ -479,22 +394,18 @@
             Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             FileWriter myWriter = new FileWriter("myfile.txt");
-            </code> 
-        </program>
+        </pre>
 
         <p>
             In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             myWriter.write("File successfully updated!");
             myWriter.close();
-            </code> 
-        </program>
+        </pre>
 
         <note>
             <p>
@@ -505,32 +416,48 @@
         <p>
             Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
         </p>
-
-        <program interactive="activecode" language="python">
+        <datafile label="my-file-8-4-2" filename="myfile8-4-2.txt" xml:id= "my-file-8-4-2" editable="yes" include-source="yes">
+                <pre>
+                    1
+                    2
+                    3
+                </pre>
+            </datafile>
+        <program interactive="activecode" language="python" add-files = "my-file-8-4-2">
             <code>
-                with open("filename.txt", "r") as file_reader:
-                while True:
-                    line = file_reader.readline()
-                    if not line:  # End of file
-                        break
-                    print(line.strip())
+                with open("myfile8-4-2.txt", "r") as file_reader:
+                    while True:
+                        line = file_reader.readline()
+                        if not line:  # End of file
+                            break
+                        print(line.strip())
             </code>
         </program>
 
         <p>
             And the equivalent Java code:
         </p>
-
-        <program interactive="activecode" language="java">
+        <datafile label="my-file-8-4-3" filename="myfile8-4-3.txt" xml:id= "my-file-8-4-3" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
+        <program interactive="activecode" language="java" add-files = "my-file-8-4-3">
             <code>
-            try {
-                FileWriter myWriter = new FileWriter("myfile.txt");
-                myWriter.write("File successfully updated!");
-                myWriter.close();
-                System.out.println("File successfully written to.");
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
+            import java.io.File;
+            import java.io.IOException;
+            import java.util.Scanner;public class Main {
+                public static void main(String[] args) {
+                    String filename = "myfile8-4-3.txt";
+                    try (Scanner reader = new Scanner(new File(filename))) {
+                        while (reader.hasNextLine()) {
+                            String line = reader.nextLine();
+                            System.out.println(line.trim());
+                        }
+                    } catch (IOException e) {
+                        System.out.println("An error occurred.");
+                    }
+                }
             }
             </code> 
         </program>
@@ -538,8 +465,12 @@
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
         </p>
-
-        <program interactive="activecode" language="python">
+        <datafile label="my-file-8-4-4" filename="myfile.txt" xml:id= "my-file-8-4-4" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
+        <program interactive="activecode" language="python" add-files = "my-file-8-4-4">
             <code>
             try:
                 with open("myfile.txt", "w") as my_writer:
@@ -555,8 +486,12 @@
         <p>
             The completed Java code:
         </p>
-
-        <program interactive="activecode" language="java">
+        <datafile label="my-file-8-4-5" filename="myfile.txt" xml:id= "my-file-8-4-5" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
+        <program interactive="activecode" language="java" add-files = "my-file-8-4-5">
             <code>
             import java.io.FileWriter;
             import java.io.IOException;
@@ -591,17 +526,19 @@
             Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a boolean argument along with the file name when creating a new data argument:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
-            </code> 
-        </program>
+        </pre>
 
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the boolean argument:
         </p>
-
-        <program interactive="activecode" language="java">
+        <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
+        <program interactive="activecode" language="java" add-files = "my-file-8-4-6">
             <code>
             import java.io.FileWriter;
             import java.io.IOException;
@@ -626,44 +563,36 @@
             Then if we run the program twice, the contents of <c>myfile.txt</c> would be:
         </p>
 
-        <program language="$">
-            <code>
+        <pre>
             File successfully updated!File successfully updated!
-            </code> 
-        </program>
+        </pre>
 
         <p>
             This doesn't look very good! If we want each additional write to appear on a new line? The first solution may be to use the <c>\n</c> newline character:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             myWriter.write("File successfully updated!\n"); // Added newline character 
-            myWriter.close();
-            </code> 
-        </program>
+            myWriter.close(); 
+        </pre>
 
         <p>
             The System.lineseseparator() method is a better solution. This method returns the system's default line separator, which is platform-dependent. For example, on Windows, it returns <c>\n</c>, while on Linux and macOS, it returns <c>\n</c>. Using this method ensures that your code works correctly across different operating systems:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             myWriter.write("File successfully updated!" + System.lineseparator()); // Added newline character 
             myWriter.close();
-            </code> 
-        </program>
+        </pre>
 
         <p>
             Running it twice will result in the following contents in myfile.txt:
         </p>
 
-        <program language="$">
-            <code>
+        <pre>
             File successfully updated!
             File successfully updated!
-            </code> 
-        </program>
+        </pre>
     </section>
 
     <section xml:id="file-delete">
