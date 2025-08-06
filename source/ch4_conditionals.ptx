@@ -415,26 +415,26 @@ Using this operator can make code shorter and more readable in cases where a sim
                 <choices>
                     <choice>
                         <statement>
-                            <p>It allows complex boolean expressions in case statements.</p>
+                            <p>It cannot evaluate relational expressions like greater than or less than.</p>
                         </statement>
                         <feedback>
-                            <p>No, <c>switch</c> does not support complex expressions like <c>if</c> does.</p>
+                            <p>No, while <c>switch</c> can compare values, it does not support relational expressions like <c>&gt;</c> or <c>&lt;</c>.</p>
                         </feedback>
                     </choice>
                     <choice>
                         <statement>
-                            <p>It can be used with any type of object, including null.</p>
+                            <p>It cannot handle more than five case labels.</p>
                         </statement>
                         <feedback>
-                            <p>No, using <c>null</c> in <c>switch</c> causes a runtime error.</p>
+                            <p>No, there is no such limit. You can have many case labels in a <c>switch</c> statement.</p>
                         </feedback>
                     </choice>
                     <choice>
                         <statement>
-                            <p>It supports dynamic pattern matching by default.</p>
+                            <p>It allows fall-through behavior when <c>break</c> is omitted.</p>
                         </statement>
                         <feedback>
-                            <p>No, Java <c>switch</c> supports limited pattern matching starting only in later versions.</p>
+                            <p>Incorrect. This is actually a feature of <c>switch</c>, not a limitation.</p>
                         </feedback>
                     </choice>
                     <choice correct="yes">
@@ -442,7 +442,7 @@ Using this operator can make code shorter and more readable in cases where a sim
                             <p>It can only compare a variable to constant values using equality.</p>
                         </statement>
                         <feedback>
-                            <p>Correct! <c>switch</c> is limited to constant comparisons only.</p>
+                            <p>Correct! Java's <c>switch</c> is limited to constant comparisons using equality.</p>
                         </feedback>
                     </choice>
                 </choices>
