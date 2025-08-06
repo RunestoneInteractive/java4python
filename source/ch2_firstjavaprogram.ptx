@@ -23,31 +23,32 @@
         The best way to understand classes and objects is to see them in action. Let's define a <c>Dog</c> class in Python:
     </p>
 
-    <program language="Python">
+    <program language="python">
         <input>
         class Dog:
-        def __init__(self, name, breed, fur_color):
-            self.name = name
-            self.breed = breed
-            self.fur_color = fur_color
-            self.trained = False
+            def __init__(self, name, breed, fur_color):
+                self.name = name
+                self.breed = breed
+                self.fur_color = fur_color
+                self.trained = False
+                print("Dog named " + self.name + " created!")
 
-        def bark(self):
-            print(f"{self.name} says woof!")
-            
-        def sit(self):
-            if self.trained:
-                print(f"{self.name} sits")
-            else:
-                print(f"{self.name} has not been trained.")
+            def bark(self):
+                print(self.name + " says woof!")
                 
-        def train(self):
-            self.trained = True
+            def sit(self):
+                if self.trained:
+                    print(self.name + " sits.")
+                else:
+                    print(self.name + " has not been trained.")
+                    
+            def train(self):
+                self.trained = True
         </input>
     </program>
 
     <p>
-        Let's unpack what is going on in this code. The first line is where we declare the class definition and name it <c>Dog</c>. Next, we have a special method called <c>__init__</c>. This <c>__init__</c> method is the constructor and is required for every Python class definition. Within the <c>__init__</c> method, attributes are defined. As you can see, the attributes <c>name</c>, <c>breed</c>, and <c>fur_color</c> must be defined when creating a Dog object using this class definition, but the <c>trained</c> attribute is not defined and is initialized as <c>False</c>.
+        Let's unpack what is going on in this code. The first line is where we declare the class definition and name it <c>Dog</c>. Next, we have a special method called <c>__init__</c>. This <c>__init__</c> method is the constructor and is required for every Python class definition. Within the <c>__init__</c> method, attributes are defined. As you can see, the attributes <c>name</c>, <c>breed</c>, and <c>fur_color</c> must be defined when creating a Dog object using this class definition, but the <c>trained</c> attribute is not defined and is initialized as <c>False</c>. We can also have the <c>__init__</c> method run any code, such as a print statement informing us that a Dog object was created.
     </p>
 
     <p>
@@ -58,11 +59,81 @@
         Next, we will use this class to create a new <c>Dog</c> object. We will call this new Dog object <c>my_dog</c>:
     </p>
 
-    <program language="Python">
+    <program interactive="activecode" language="python">
         <input>
-            
+        class Dog:
+            def __init__(self, name, breed, fur_color):
+                self.name = name
+                self.breed = breed
+                self.fur_color = fur_color
+                self.trained = False
+                print("Dog named " + self.name + " created!")
+
+            def bark(self):
+                print(self.name + " says woof!")
+                
+            def sit(self):
+                if self.trained:
+                    print(self.name + " sits.")
+                else:
+                    print(self.name + " has not been trained.")
+                    
+            def train(self):
+                self.trained = True
+
+        
+        my_dog = Dog("Rex", "pug", "tan")
         </input>
     </program>
+
+    <p>
+        In the final line of code, we have created an object called <c>my_dog</c>. We have initialized its attributes, setting <c>name</c> to Rex, <c>breed</c> to pug, and <c>fur_color</c> to tan.
+    </p>
+
+    <p>
+        Now that we have created a <c>Dog</c> object using the class we defined, we can utilize the class's methods: 
+    </p>
+
+    <program interactive="activecode" language="python">
+        <input>
+        class Dog:
+            def __init__(self, name, breed, fur_color):
+                self.name = name
+                self.breed = breed
+                self.fur_color = fur_color
+                self.trained = False
+                print("Dog named " + self.name + " created!")
+
+            def bark(self):
+                print(self.name + " says woof!")
+                
+            def sit(self):
+                if self.trained:
+                    print(self.name + " sits.")
+                else:
+                    print(self.name + " has not been trained.")
+                    
+            def train(self):
+                self.trained = True
+
+        
+        my_dog = Dog("Rex", "pug", "tan")
+        my_dog.bark()
+        my_dog.sit()
+        </input>
+    </program>
+
+    <note>
+        <p>
+            When running the code above, the line <c>Rex has not ben trained.</c> will appear in the output when calling the <c>sit()</c> method. Try adding a one or more lines of code so that <c>Rex sits.</c> appears in the output!
+        </p>
+    </note>
+
+    <p>
+        Now, we have a full class definition and have utilized its methods. Class definitions in Java will be covered in chapter 6. For now, it is important to know that Python programs can be entirely written without using classes at all. Java, on the other hand, requires all code to reside in a class. This will be discussed in the next section.
+    </p>
+
+
     
 </section>
 <section xml:id="sec-lets-look-at-a-java-program">
