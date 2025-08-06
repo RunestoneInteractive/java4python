@@ -17,10 +17,20 @@
         <p>
             Java has several libraries included for file handling, though, they must be imported. Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
         </p>
-
         <program interactive="activecode" language="java">
             <code>
             import java.io.File;
+            import java.io.IOException;public class Main {
+                public static void main(String[] args) {
+                    try {
+                        File myFile = new File("newfile.txt");
+                        myFile.createNewFile();
+                        System.out.println("File Made.");
+                    } catch (IOException e) {
+                        System.out.println("An error occurred.");
+                    }
+                }
+            }
             </code> 
         </program>
 
@@ -28,37 +38,29 @@
             The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
-            import java.util.Scanner;
-            </code> 
-        </program>
+        <pre>
+            import java.util.Scanner; 
+        </pre>
 
         <p>
             The <c>FileWriter</c> class can be used to write to files. In the same way that the <c>Scanner</c> class isn't needed unless the program will read from a file, the <c>FileWriter</c> class isn't needed unless the program will write to a file.
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             import java.io.FileWriter;
-            </code> 
-        </program>
+        </pre>
 
         <p>
             Finally, these last two classes provide error handling and must be used in tandem with the <c>File</c> class when reading from or writing to files. <c>IOException</c> handles file creation and writing errors, while <c>FileNotFoundException</c> handles errors when trying to read files. 
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             import java.io.IOException;
-            </code> 
-        </program>
+        </pre>
 
-        <program interactive="activecode" language="java">
-            <code>
-            import java.io.FileNotFoundException
-            </code> 
-        </program>
+        <pre>
+            import java.io.FileNotFoundException 
+        </pre>
         
     </section>
 
@@ -68,10 +70,19 @@
         <p>
             We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
         </p>
-
+        <datafile label="my-file-8-2-1" filename="myfile.txt" xml:id= "my-file-8-2-1" editable="no" include-source="yes">
+                <pre>
+                    empty file
+                </pre>
+            </datafile>
         <program interactive="activecode" language="java">
             <code>
-            File myFile = new File("myfile.txt");
+            import java.io.File;public class Main {
+                public static void main(String[] args) {
+                    File myFile = new File("myfile.txt");
+                    System.out.println(myFile);
+                }
+            }
             </code> 
         </program>
 
@@ -88,19 +99,22 @@
         <p>
             First, lets look at the equivalent Python code:
         </p>
-
+        <datafile label="my-file-8-2-2" filename="myfile.txt" xml:id= "my-file-8-2-2" editable="no" include-source="yes">
+                <pre>
+                    empty file
+                </pre>
+            </datafile>
         <program interactive="activecode" language="python">
             <code>
-            import os
-
-            filename = "myfile.txt"
-
-            if not os.path.exists(filename):
-                with open(filename, 'x') as f:
-                    pass 
-                print(f"The file {filename} was created successfully.")
-            else:
-                print(f"The file {filename} already exists.")
+            filename = "newfile.txt"
+            print(f"Attempting to write to '{filename}' using 'w' mode...")
+            try:
+                with open(filename, 'w') as f:
+                    f.write("This file was created using 'w' mode.")    
+                    print(f"SUCCESS: The file '{filename}' was created or overwritten.")
+            except Exception as e:
+                # This would only catch other unexpected errors
+                print(f"An unexpected error occurred during write: {e}")
             </code> 
         </program>
 
@@ -134,27 +148,6 @@
         <p>
             The code may seem complete at this point, but if you remember from the previous section, error handling using the <c>IOException</c> is required for program to compile. Let's utilize best practices and add in try/catch blocks to handle exceptions thrown by the <c>IOException</c> class.
         </p>
-
-        <program interactive="activecode" language="java">
-            <code>
-            try {
-                if (myFile.createNewFile()) { // If the file was created successfully
-                    System.out.println("The file " + myFile.getName() + " was created sucessfully.");
-                } else { // If a file with the file name chosen already exists
-                    System.out.println("The file " + myFile.getName() + " already exists.");
-                }
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-            </code> 
-        </program>
-
-        <note>
-            <p>
-                The <c>IOException e</c> part in the parenthesis next to the catch. This creates a variable called <c>e</c> that refers to an IOException object. In other words, <c>e</c> refers to the error created if the try block fails. The line <c>e.printStackTrace();</c> prints the stack trace to the console. This is what the console may output if the program tries to create a file, but is blocked by the operating system due to insufficient permissions:
-            </p>
-        </note>
 
         <program language="$">
             <code>
