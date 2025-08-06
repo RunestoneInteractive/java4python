@@ -44,7 +44,7 @@
         <p>
              Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
         </p>
-        <program xml:id = "file-class-import-example" interactive="activecode" language="java">
+        <program xml:id = "file-class-import-io-example" interactive="activecode" language="java">
             <code>
             import java.io.File;
             import java.io.IOException;public class Main {
@@ -94,14 +94,15 @@
         <p>
             We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
         </p>
-        <datafile label="my-file-8-2-1" filename="myfile.txt" xml:id= "my-file-8-2-1" editable="no" include-source="yes">
+        <datafile label="my-file-8-2-1" filename="myfile.txt" xml:id= "my-file-8-2-1" editable="yes">
                 <pre>
                     empty file
                 </pre>
             </datafile>
-        <program interactive="activecode" language="java">
+        <program xml:id="create-file-exp-1" interactive="activecode" language="java" add-files="my-file-8-2-1">
             <code>
-            import java.io.File;public class Main {
+            import java.io.File;
+            public class Main {
                 public static void main(String[] args) {
                     File myFile = new File("myfile.txt");
                     System.out.println(myFile);
@@ -123,12 +124,12 @@
         <p>
             First, lets look at the equivalent Python code:
         </p>
-        <datafile label="my-file-8-2-2" filename="myfile.txt" xml:id= "my-file-8-2-2" editable="no" include-source="yes">
+        <datafile label="my-file-8-2-2" filename="myfile.txt" xml:id= "my-file-8-2-2" editable="yes">
                 <pre>
                     empty file
                 </pre>
             </datafile>
-        <program interactive="activecode" language="python">
+        <program xml:id="creat-file-exp-2" interactive="activecode" language="python" add-files="my-file-8-2-2">
             <code>
             filename = "newfile.txt"
             print(f"Attempting to write to '{filename}' using 'w' mode...")
@@ -145,12 +146,12 @@
         <p>
             Now, let's look at Java code that accomplishes the same task:
         </p>
-        <datafile label="my-file-8-2-3" filename="myfile.txt" xml:id= "my-file-8-2-3" editable="no" include-source="yes">
+        <datafile label="my-file-8-2-3" filename="myfile.txt" xml:id= "my-file-8-2-3" editable="yes">
                 <pre>
                     empty file
                 </pre>
             </datafile>
-        <program interactive="activecode" language="java">
+        <program xml:id="create-file-exp3" interactive="activecode" language="java" add-files="my-file-8-2-3">
             <code>
             import java.io.File;
             import java.io.IOException;
@@ -181,7 +182,7 @@
         <p>
             Let's take a look at how we can use Java to read file contents. We'll start again with library imports and building a class, this time importing the Scanner and FileNotFoundException classes. We will call this class ReadFile:
         </p>   
-            <datafile label="my-file" filename="myfile.txt" xml:id= "my-file" editable="no" include-source="yes">
+            <datafile label="my-file" filename="myfile.txt" xml:id= "my-file" editable="no">
                 <pre>
                     1
                     2
