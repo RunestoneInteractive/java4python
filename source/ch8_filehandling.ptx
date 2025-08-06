@@ -624,4 +624,144 @@
         </p>
     </section>
 
+    <section xml:id="chapter8_summary">
+        <title>Summary &amp; Reading Questions</title>
+        <p><ol label="1">
+            <li>
+                <p>To work with files in Java, you must import specific classes like <c>java.io.File</c>, <c>java.io.FileWriter</c>, and handle exceptions such as <c>IOException</c>.</p>
+            </li>
+            <li>
+                <p>You can create a new file using <c>File.createNewFile()</c>, which returns <c>true</c> if the file is created and <c>false</c> if it already exists.</p>
+            </li>
+            <li>
+                <p>Reading from files is done using a <c>Scanner</c> attached to a <c>File</c>, often with a loop using <c>hasNextLine()</c> and <c>nextLine()</c>.</p>
+            </li>
+            <li>
+                <p>To write to a file, use a <c>FileWriter</c> object and call methods like <c>write()</c> and <c>close()</c> to save and finish the output.</p>
+            </li>
+            <li>
+                <p>You can delete a file using the <c>delete()</c> method on a <c>File</c> object, which returns <c>true</c> if successful.</p>
+            </li>
+        </ol></p>
+        <reading-questions xml:id="rqs-summary8">
+            <exercise label="summary-imports">
+                <statement>
+                    <p>Which import is needed to create and manipulate files in Java?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement>
+                            <p>import java.util.File;</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>File</c> is part of the <c>java.io</c> package, not <c>java.util</c>.</p>
+                        </feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement>
+                            <p>import java.io.File;</p>
+                        </statement>
+                        <feedback>
+                            <p>Correct! <c>File</c> is found in the <c>java.io</c> package.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>import java.file.Input;</p>
+                        </statement>
+                        <feedback>
+                            <p>No, this is not a valid import for file operations.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>import java.system.io.*;</p>
+                        </statement>
+                        <feedback>
+                            <p>No, there is no such package in Java.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+            <exercise label="summary-createfile">
+                <statement>
+                    <p>What does <c>myFile.createNewFile()</c> return if the file already exists?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement>
+                            <p>It throws an exception.</p>
+                        </statement>
+                        <feedback>
+                            <p>No, it only throws an exception for access errors, not for existing files.</p>
+                        </feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement>
+                            <p>false</p>
+                        </statement>
+                        <feedback>
+                            <p>Correct! It returns <c>false</c> if the file already exists.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>true</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>true</c> is returned only when the file is successfully created.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>null</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>null</c> is not a valid return value for this method.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+            <exercise label="summary-readscanner">
+                <statement>
+                    <p>Which method checks if a file has more lines to read using a Scanner?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement>
+                            <p>nextLine()</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>nextLine()</c> retrieves the next line, but does not check for availability.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>hasMore()</p>
+                        </statement>
+                        <feedback>
+                            <p>No, this is not a method of <c>Scanner</c>.</p>
+                        </feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement>
+                            <p>hasNextLine()</p>
+                        </statement>
+                        <feedback>
+                            <p>Correct! This checks if there is another line available to read.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>canReadLine()</p>
+                        </statement>
+                        <feedback>
+                            <p>No, this is not a standard method in the Scanner class.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+        </reading-questions>
+    </section>
+
 </chapter>
