@@ -30,7 +30,7 @@
         The best way to understand classes and objects is to see them in action. Let's define a <c>Dog</c> class in Python:
     </p>
 
-    <program language="python">
+    <program language="python" xml:id="python-class-example">
         <input>
         class Dog:
             def __init__(self, name, breed, fur_color):
@@ -71,7 +71,7 @@
         Next, we will use this class to create a new <c>Dog</c> object. We will call this new Dog object <c>my_dog</c>:
     </p>
 
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python" xml:id="python-class-create-object">
         <input>
         class Dog:
             def __init__(self, name, breed, fur_color):
@@ -106,7 +106,7 @@
         Now that we have created a <c>Dog</c> object using the class we defined, we can utilize the class's methods: 
     </p>
 
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python" xml:id="python-class-full">
         <input>
         class Dog:
             def __init__(self, name, breed, fur_color):
