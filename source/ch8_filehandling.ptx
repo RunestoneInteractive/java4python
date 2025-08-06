@@ -345,7 +345,6 @@
             }
             </code> 
         </program>
-
         <p>
             In this code, we simply print the contents of the file to the console, but it is easy to imagine how the <c>data</c> variable could be used in conjunction with the write class created in the previous section to create a copy of myfile.txt.
         </p>
