@@ -467,7 +467,11 @@
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
         </p>
-
+        <datafile label="my-file-8-4-4" filename="myfile.txt" xml:id= "my-file-8-4-4" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
         <program interactive="activecode" language="python">
             <code>
             try:
@@ -484,7 +488,11 @@
         <p>
             The completed Java code:
         </p>
-
+        <datafile label="my-file-8-4-5" filename="myfile.txt" xml:id= "my-file-8-4-5" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
         <program interactive="activecode" language="java">
             <code>
             import java.io.FileWriter;
@@ -520,16 +528,18 @@
             Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a boolean argument along with the file name when creating a new data argument:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
-            </code> 
-        </program>
+        </pre>
 
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the boolean argument:
         </p>
-
+        <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
         <program interactive="activecode" language="java">
             <code>
             import java.io.FileWriter;
@@ -555,44 +565,36 @@
             Then if we run the program twice, the contents of <c>myfile.txt</c> would be:
         </p>
 
-        <program language="$">
-            <code>
+        <pre>
             File successfully updated!File successfully updated!
-            </code> 
-        </program>
+        </pre>
 
         <p>
             This doesn't look very good! If we want each additional write to appear on a new line? The first solution may be to use the <c>\n</c> newline character:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             myWriter.write("File successfully updated!\n"); // Added newline character 
-            myWriter.close();
-            </code> 
-        </program>
+            myWriter.close(); 
+        </pre>
 
         <p>
             The System.lineseseparator() method is a better solution. This method returns the system's default line separator, which is platform-dependent. For example, on Windows, it returns <c>\n</c>, while on Linux and macOS, it returns <c>\n</c>. Using this method ensures that your code works correctly across different operating systems:
         </p>
 
-        <program interactive="activecode" language="java">
-            <code>
+        <pre>
             myWriter.write("File successfully updated!" + System.lineseparator()); // Added newline character 
             myWriter.close();
-            </code> 
-        </program>
+        </pre>
 
         <p>
             Running it twice will result in the following contents in myfile.txt:
         </p>
 
-        <program language="$">
-            <code>
+        <pre>
             File successfully updated!
             File successfully updated!
-            </code> 
-        </program>
+        </pre>
     </section>
 
     <section xml:id="file-delete">
