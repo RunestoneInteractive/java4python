@@ -31,7 +31,7 @@
     </p>
 
     <program language="python" xml:id="python-class-example">
-        <input>
+        <code>
         class Dog:
             def __init__(self, name, breed, fur_color):
                 self.name = name
@@ -51,7 +51,7 @@
                     
             def train(self):
                 self.trained = True
-        </input>
+        </code>
     </program>
 
     <p>
@@ -72,7 +72,7 @@
     </p>
 
     <program interactive="activecode" language="python" xml:id="python-class-create-object">
-        <input>
+        <code>
         class Dog:
             def __init__(self, name, breed, fur_color):
                 self.name = name
@@ -95,7 +95,7 @@
 
         
         my_dog = Dog("Rex", "pug", "brown")
-        </input>
+        </code>
     </program>
 
     <p>
@@ -107,7 +107,7 @@
     </p>
 
     <program interactive="activecode" language="python" xml:id="python-class-full">
-        <input>
+        <code>
         class Dog:
             def __init__(self, name, breed, fur_color):
                 self.name = name
@@ -132,7 +132,7 @@
         my_dog = Dog("Rex", "pug", "brown")
         my_dog.bark()
         my_dog.sit()
-        </input>
+        </code>
     </program>
 
     <note>
