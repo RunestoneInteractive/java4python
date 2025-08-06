@@ -42,7 +42,7 @@
         </p>
 
         <p>
-            Java has several libraries included for file handling, though, they must be imported. Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
+             Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
         </p>
         <program xml:id = "file-class-import-example" interactive="activecode" language="java">
             <code>
