@@ -788,7 +788,7 @@ public class HistoMap {
  Improve the program above to remove the punctuation. 
         </p>
     </section>
-<section xml:id="chapter4_summary">
+<section xml:id="chapter3_summary">
   <title>Summary &amp; Reading Questions</title>
     <p><ol label="1">
         <li>
@@ -813,7 +813,7 @@ public class HistoMap {
             <p>Maps (<c>HashMap</c> and <c>TreeMap</c>) are Java's equivalent to Python dictionaries for storing key-value pairs.</p>
         </li>
     </ol></p>
-    <reading-questions xml:id="rqs-summary4">
+    <reading-questions xml:id="rqs-summary3">
         <exercise label = "summary-arraylist">
             <statement>
                 <p>What is the correct way to declare an ArrayList that will hold String objects in Java?</p>
