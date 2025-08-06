@@ -16,9 +16,6 @@
         <p>
             In Python, most built-in libraries are available without needing  to explicitly import additional packages, but some libraries like <c>math</c> do need to be imported. Consider the following.
         </p>
-        <p>
-            Python:
-        </p>
         <program xml:id = "file-class-import-Python-example" interactive="activecode" language="python">
             <code>
             import math
@@ -27,7 +24,7 @@
         </program>
 
         <p>
-            Java:
+            The same program in Java would look like this:
         </p>
         <program xml:id = "file-class-import-Java-example" interactive="activecode" language="java">
             <code>
