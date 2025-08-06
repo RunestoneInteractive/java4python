@@ -1112,7 +1112,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
 
         <exercise label="summary-tostring-equals">
         <statement>
-            <p>What must you do to get meaningful printed output and proper equality comparison for Java objects?</p>
+            <p>What must you do in Java to print objects in a readable way and compare two objects based on their contents rather than their memory references?</p>
         </statement>
         <choices>
             <choice>
