@@ -360,7 +360,11 @@
         <p>
             Let us create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
         </p>
-
+        <datafile label="my-file-8-4-1" filename="myfile.txt" xml:id= "my-file-8-4-1" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
         <program interactive="activecode" language="java">
             <code>
             import java.io.File;
@@ -416,7 +420,11 @@
         <p>
             Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
         </p>
-
+        <datafile label="my-file-8-4-2" filename="myfile.txt" xml:id= "my-file-8-4-2" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
         <program interactive="activecode" language="python">
             <code>
                 with open("myfile.txt", "r") as file_reader:
@@ -431,7 +439,11 @@
         <p>
             And the equivalent Java code:
         </p>
-
+        <datafile label="my-file-8-4-3" filename="myfile.txt" xml:id= "my-file-8-4-3" editable="yes" include-source="yes">
+                <pre>
+                    
+                </pre>
+            </datafile>
         <program interactive="activecode" language="java">
             <code>
             import java.io.File;
