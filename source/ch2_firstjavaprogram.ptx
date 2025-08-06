@@ -38,16 +38,16 @@
                 self.breed = breed
                 self.fur_color = fur_color
                 self.trained = False
-                print(f"Dog named {self.name} created!")
+                print("Dog named " + self.name + " created!")
 
             def bark(self):
-                print(f"{self.name} says woof!")
+                print(self.name + " says woof!")
                 
             def sit(self):
                 if self.trained:
-                    print(f"{self.name} sits.")
+                    print(self.name + " sits.")
                 else:
-                    print(f"{self.name} has not been trained.")
+                    print(self.name + " has not been trained.")
                     
             def train(self):
                 self.trained = True
@@ -79,16 +79,16 @@
                 self.breed = breed
                 self.fur_color = fur_color
                 self.trained = False
-                print(f"Dog named {self.name} created!")
+                print("Dog named " + self.name + " created!")
 
             def bark(self):
-                print(f"{self.name} says woof!")
+                print(self.name + " says woof!")
                 
             def sit(self):
                 if self.trained:
-                    print(f"{self.name} sits.")
+                    print(self.name + " sits.")
                 else:
-                    print(f"{self.name} has not been trained.")
+                    print(self.name + " has not been trained.")
                     
             def train(self):
                 self.trained = True
@@ -114,16 +114,16 @@
                 self.breed = breed
                 self.fur_color = fur_color
                 self.trained = False
-                print(f"Dog named {self.name} created!")
+                print("Dog named " + self.name + " created!")
 
             def bark(self):
-                print(f"{self.name} says woof!")
+                print(self.name + " says woof!")
                 
             def sit(self):
                 if self.trained:
-                    print(f"{self.name} sits.")
+                    print(self.name + " sits.")
                 else:
-                    print(f"{self.name} has not been trained.")
+                    print(self.name + " has not been trained.")
                     
             def train(self):
                 self.trained = True
