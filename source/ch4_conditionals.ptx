@@ -237,6 +237,10 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
     <section xml:id="exception-handling">
         <title>Exception Handling</title>
         
+        <p>
+            
+        </p>
+        
     </section>
 
     <section xml:id="boolean-operators">
