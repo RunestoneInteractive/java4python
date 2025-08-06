@@ -318,10 +318,13 @@ Using this operator can make code shorter and more readable in cases where a sim
                 <p>Java requires parentheses around the condition and curly braces for code blocks in <c>if</c> statements, unlike Python which uses indentation alone.</p>
             </li>
             <li>
-                <p>Java uses <c>else if</c> instead of Python's <c>elif</c>, and allows optional curly braces for single-line blocks.</p>
+                <p>Java uses <c>else if</c> instead of Python's <c>elif</c>, and allows optional curly braces for single-line blocks. However, it is considered good practice to use curly braces even for single-line blocks to improve readability.</p>
             </li>
             <li>
-                <p>Java includes a <c>switch</c> statement for checking equality against constant values, which can replace long <c>if-else</c> chains for specific scenarios.</p>
+                <p>
+                    Java's <c>switch</c> statement is similar to Python's <c>match</c> statement, but it only supports equality checks against constant values and does not evaluate relational expressions like greater than or less than.
+                </p>
+            
             </li>
             <li>
                 <p>
@@ -408,9 +411,9 @@ Using this operator can make code shorter and more readable in cases where a sim
                     </choice>
                 </choices>
             </exercise>
-            <exercise label="summary-switch">
+            <exercise label="summary-switch-limitation">
                 <statement>
-                    <p>What is one limitation of Java's <c>switch</c> statement?</p>
+                    <p>What is one limitation of Java's <c>switch</c> statement, including in its modern versions?</p>
                 </statement>
                 <choices>
                     <choice>
@@ -418,7 +421,7 @@ Using this operator can make code shorter and more readable in cases where a sim
                             <p>It cannot evaluate relational expressions like greater than or less than.</p>
                         </statement>
                         <feedback>
-                            <p>No, while <c>switch</c> can compare values, it does not support relational expressions like <c>&gt;</c> or <c>&lt;</c>.</p>
+                            <p>No, while <c>switch</c> can compare values, it does not support relational expressions like <c>&gt;</c> or <c>&lt;</c>, even with modern enhancements of Java 14+</p>
                         </feedback>
                     </choice>
                     <choice>
@@ -431,10 +434,10 @@ Using this operator can make code shorter and more readable in cases where a sim
                     </choice>
                     <choice>
                         <statement>
-                            <p>It allows fall-through behavior when <c>break</c> is omitted.</p>
+                            <p>It always requires a <c>break</c> statement.</p>
                         </statement>
                         <feedback>
-                            <p>Incorrect. This is actually a feature of <c>switch</c>, not a limitation.</p>
+                            <p>Incorrect. The <c>break</c> statement is actually an optional feature of <c>switch</c>, not a limitation.</p>
                         </feedback>
                     </choice>
                     <choice correct="yes">
