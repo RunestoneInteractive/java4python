@@ -7,6 +7,45 @@
     <introduction>
     </introduction>
 
+    <section xml:id="how-to-avoid-mistakes">
+        <title>How to Avoid Making Mistakes</title>
+        <p>
+          Making mistakes is a natural part of learning Java—or any programming language. The good news is that most errors happen for just a few common reasons, and once you recognize the patterns, they become much easier to fix. This chapter focuses on those typical mistakes and how to understand and correct them.
+        </p>
+        <p>
+          One of the best ways to avoid these errors is to slow down and test your code in small pieces. Write a few lines, compile, and check the output before moving on. If something goes wrong, read the error message carefully and focus on fixing one problem at a time. Often, solving the first error helps fix others that follow.
+        </p>
+        <p>
+          A simple debugging technique is to use <c>System.out.println()</c> to print out variable values and program flow. If you're not sure whether a part of your code is running or what a variable contains, print it out. This helps you check your assumptions and narrow down where something is going wrong.
+        </p>
+        <program language="java" interactive="activecode" line-numbers="yes">
+            <code>
+            // DebugExample.java
+            public class DebugExample {   
+
+                public static void main(String[] args) {
+                    int number = 10;
+                    int result = multiplyByTwo(number);
+                    // Debugging: print the result to verify the method worked
+                    System.out.println("Result after multiplying: " + result);
+                }
+
+                public static int multiplyByTwo(int value) {
+                    // Debugging: print the input value to check it's being passed correctly
+                    System.out.println("multiplyByTwo received: " + value);
+                    return value * 2;
+                }
+            }//End of class
+            </code>
+        </program>
+        <p>
+          In the example above, <c>System.out.println()</c> is used inside both <c>main</c> and <c>multiplyByTwo()</c> to trace what values are being passed and returned. This kind of print-based debugging can quickly reveal logic errors, unexpected behavior, or whether a method is even being called.
+        </p>
+        <p>
+          Above all, be patient with yourself. Every mistake you make is an opportunity to understand Java more deeply.
+        </p>
+    </section>
+
         <section xml:id="forgetting-a-semicolon">
         <title>Forgetting a Semicolon</title>
         <p>
