@@ -118,7 +118,7 @@
         </note>
 
         <p>
-            Now that we have created a new <c>File</c> object, we can create a file using the <c>createNewFile()</c> method from the <c>File</c> class. While the previous line of code creates an object within the program for the file, this method actually does the work of creating a file and saving it in the current working directory. This method returns a boolean value. If the method returns <c>true</c>, the file was successfully created. If the method returns <c>false</c>, there is already a file using the chosen file name. We can use this method's possible return values in tandem with an if/else selection to determine if the file was created, or if a file with that file name already exists in the directory.
+            Now that we have created a new <c>File</c> object, we can create a file using the <c>createNewFile()</c> method from the <c>File</c> class. While the previous line of code creates an object within the program for the file, this method actually does the work of creating a file and saving it in the current working directory. This method returns a boolean value. If the method returns <c>true</c>, the file was successfully created. If the method returns <c>false</c>, there is already a file using the chosen file name. We can use this method's possible return values in tandem with an try/catch structure to determine if the file was created, or catch the error if a file with that file name already exists in the directory.
         </p>
 
         <p>
@@ -142,22 +142,25 @@
         <p>
             Now, let's look at Java code that accomplishes the same task:
         </p>
-        <datafile label="my-file-8-2-3" filename="myfile.txt" xml:id= "my-file-8-2-3" editable="yes">
-                <pre>
-                    empty file
-                </pre>
-            </datafile>
-        <program xml:id="create-file-exp3" interactive="activecode" language="java" add-files="my-file-8-2-3">
+        
+        <program xml:id="create-file-exp3" interactive="activecode" language="java">
             <code>
             import java.io.File;
             import java.io.IOException;
 
             public class CreateFile {
                 public static void main(String[] args) {
-                    if (myFile.createNewFile()) { // If the file was created successfully
-                        System.out.println("The file " + myFile.getName() + " was created sucessfully.");
-                    } else { // If a file with the file name chosen already exists
-                        System.out.println("The file " + myFile.getName() + " already exists.");
+                    File myFile = new File("newfile.txt");
+                    try {
+                        if (myFile.createNewFile()) {
+                            System.out.println("The file " + myFile.getName() + " was created successfully.");
+                        } else {
+                            System.out.println("The file " + myFile.getName() + " already exists.");
+                        }
+                    } catch (IOException e) {
+                        // This code runs if an IOException occurs
+                        System.out.println("An error occurred while creating the file.");
+                        e.printStackTrace(); // This prints the stack trace for more detailed error info
                     }
                 }
             }
@@ -220,7 +223,7 @@
             We will then create a new File object exactly the same as the one from the section on creating files. Additionally, we will create a Scanner object. The Scanner object is the object that does the file reading. We will call this scanner fileReader:
         </p>
 
-        <program xml:id="file-read-exp2" interactive="activecode" language="java">
+        <program xml:id="file-read-exp2" interactive="activecode" language="java" add-files="my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -329,7 +332,7 @@
                         for line in file_reader:
                             data += line  # line already includes the newline character
                     print(data)
-                except FileNotFoundError as e:
+                except FileNotFoundError:
                     print("An error occurred.")
                     import traceback
                     traceback.print_exc()
@@ -341,7 +344,7 @@
             And the Java equivalent:
         </p>
 
-        <program xml:id="file-read-exp7" interactive="activecode" language="java" add-files="my-file">
+        <program xml:id="file-read-exp" interactive="activecode" language="java" add-files="my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -437,7 +440,7 @@
         <p>
             Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
         </p>
-        <datafile label="my-file-8-4-2" filename="myfile8-4-2.txt" xml:id= "my-file-8-4-2" editable="yes" include-source="yes">
+        <datafile label="my-file-8-4-2" filename="myfile8-4-2.txt" xml:id= "my-file-8-4-2" editable="yes">
                 <pre>
                     1
                     2
@@ -458,7 +461,7 @@
         <p>
             And the equivalent Java code:
         </p>
-        <datafile label="my-file-8-4-3" filename="myfile8-4-3.txt" xml:id= "my-file-8-4-3" editable="yes" include-source="yes">
+        <datafile label="my-file-8-4-3" filename="myfile8-4-3.txt" xml:id= "my-file-8-4-3" editable="yes">
                 <pre>
                     
                 </pre>
@@ -486,7 +489,7 @@
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
         </p>
-        <datafile label="my-file-8-4-4" filename="myfile.txt" xml:id= "my-file-8-4-4" editable="yes" include-source="yes">
+        <datafile label="my-file-8-4-4" filename="myfile.txt" xml:id= "my-file-8-4-4" editable="yes">
                 <pre>
                     
                 </pre>
@@ -507,7 +510,7 @@
         <p>
             The completed Java code:
         </p>
-        <datafile label="my-file-8-4-5" filename="myfile.txt" xml:id= "my-file-8-4-5" editable="yes" include-source="yes">
+        <datafile label="my-file-8-4-5" filename="myfile.txt" xml:id= "my-file-8-4-5" editable="yes">
                 <pre>
                     
                 </pre>
@@ -554,7 +557,7 @@
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the boolean argument:
         </p>
-        <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes" include-source="yes">
+        <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes">
                 <pre>
                     
                 </pre>
