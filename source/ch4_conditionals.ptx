@@ -163,7 +163,17 @@ public class ElseIf {
 
         <p>
 Java also supports a <c>switch</c> statement that acts something like the <c>elif</c> statement of Python under certain conditions. To write the grade program using a <c>switch</c> statement we would use the following:
-        </p>
+        </p>while True:
+        
+            try:
+        
+                x = int(input("Please enter a whole number: "))
+        
+                break
+        
+            except ValueError:
+        
+                print("Oops!  That was no valid number.  Try again...")
 
         <note>
             <p>
@@ -234,48 +244,85 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         </p>
     </section>
 
-                                                             <section xml:id="exception-handling">
+    <section xml:id="exception-handling">
         <title>Exception Handling</title>
         
         <p>
-            Errors and bugs when writing programs are nearly impossible to avoid. As a programmer, you may have spent a considerable amount of time debugging code. Sometimes, even when we have done everything right and ensured a program will function as it is intended to, errors are still unavoidable especially when user input is necessary. 
+            In Python, if you want a program to continue running when an error has occurred, you can use try/except blocks to handle exceptions. If you wanted to write a program that asks the user to enter a whole number and then squares that number, you could use the following code to do so:
         </p>
+
+        <program interactive="activecode" language="python" xml:id="square-input-python">
+            <code>
+            number = int(input("Please enter a whole number: "))
+            squared = number ** 2
+            print("Your number squared is " + str(squared))            
+            </code>
+        </program>
 
         <p>
-            Let's look at an example of code that may lead to user error. This Java program will ask the user to input the year they were born. It will then tell them how old they will be in the year 2050. We will use the <c>Scanner</c> class from the <c>util</c> library to ask the user for input.
+            The Java code that would perform the same task is a little more complex and utilizes the <c>Scanner</c> class for input.
         </p>
 
-        <program interactive="activecode" language="java" xml:id="age-2050-calculator">
+        <program interactive="activecode" language="java" xml:id="square-input-java">
             <code>
             import java.util.Scanner;
 
-            public class Main
-            {
+            public class SquareNumber {
                 public static void main(String[] args) {
+                    Scanner user_input = new Scanner(System.in);
                     
-                    // Update to current year if needed
-                    int current_year = 2025; 
+                    System.out.print("Please enter a whole number: ");
+                    int number = user_input.nextInt();
+                    int squared = number * number;
                     
-                    // Scanner object is created to get input
-                    Scanner userInput = new Scanner(System.in);  
-                    System.out.println("Enter your age: ");
-                
-                    // Reads user input
-                    int age = Integer.parseInt(userInput.nextLine());
-                    
-                    // Arithmatic to find age in 2050
-                    int birth_year = current_year - age;
-                    int age_in_2050 = 2050 - birth_year;
-                    
-                    System.out.println("Your age in 2050 will be " + age_in_2050);
+                    System.out.println("Your number squared is " + squared);
                 }
             }
             </code>
         </program>
 
         <p>
-            This program seems to work pretty well. The user can enter their age and get the desired result. Large numbers such as 10,000 and negative numbers such as -75 work fine with this program, meaning we have accommodated both vampires and time travelers! Despite this, our program can still run into issues. You may have noticed that the <c>age</c> variable is an integer. What happens if a user takes into account that their birthday was six months ago and types <c>20.5</c> into the console? What happens if the user spells out their age and types <c>twelve</c> instead of <c>12</c>? Try these two inputs and see what happens!
+            This code works well, but will end with an exception if the user types anything other than a whole number (such as 12.5 or two). If we wanted to ensure the code will continue to run until the user enters the correct format, we could add try/except (Python) or try/catch (Java) blocks within a <c>while</c> loop that iterates until the user enter the correct code. Adding try/except blocks and a <c>while</c> loop will look something like this:
         </p>
+
+        <program interactive="activecode" language="python" xml:id="square-input-exception-python">
+            <code>
+            while True:
+                try:
+                    number = int(input("Please enter a whole number: "))
+                    squared = number ** 2
+                    print("Your number squared is " + str(squared))
+                    break
+                except ValueError:
+                    print("That was not a valid number. Please try again: ")   
+            </code>
+        </program>
+
+        <program interactive="activecode" language="java" xml:id="square-input-exception-java">
+            <code>
+            import java.util.Scanner;
+            import java.util.InputMismatchException;
+
+            public class SquareNumberWithValidation {
+                public static void main(String[] args) {
+                    Scanner scanner = new Scanner(System.in);
+                    
+                    while (true) {
+                        try {
+                            System.out.print("Please enter a whole number: ");
+                            int number = scanner.nextInt();
+                            int squared = number * number;
+                            System.out.println("Your number squared is " + squared);
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("That was not a valid number. Please try again: ");
+                            scanner.nextLine(); // Clear the invalid input
+                        }
+                    }
+                }
+            }
+            </code>
+        </program>
         
     </section>
 
