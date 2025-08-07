@@ -489,7 +489,11 @@
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
         </p>
+<<<<<<< HEAD
         <datafile label="my-file-8-4-4" filename="myfile.txt" xml:id= "my-file-8-4-4" editable="yes">
+=======
+        <datafile label="my-file-8-4-4" filename="newfile.txt" xml:id= "my-file-8-4-4" editable="yes" include-source="yes">
+>>>>>>> 0633649 (fixes file not found errors in 8.4)
                 <pre>
                     
                 </pre>
@@ -500,7 +504,7 @@
                 with open("myfile.txt", "w") as my_writer:
                     my_writer.write("File successfully updated!")
                 print("File successfully written to.")
-            except OSError as e:
+            except OSError:
                 print("An error occurred.")
                 import traceback
                 traceback.print_exc()
@@ -510,12 +514,16 @@
         <p>
             The completed Java code:
         </p>
+<<<<<<< HEAD
         <datafile label="my-file-8-4-5" filename="myfile.txt" xml:id= "my-file-8-4-5" editable="yes">
                 <pre>
                     
                 </pre>
             </datafile>
         <program xml:id="file-write-exp5" interactive="activecode" language="java" add-files = "my-file-8-4-5">
+=======
+        <program interactive="activecode" language="java">
+>>>>>>> 0633649 (fixes file not found errors in 8.4)
             <code>
             import java.io.FileWriter;
             import java.io.IOException;
@@ -523,7 +531,7 @@
             public class WriteFile {
                 public static void main(String[] args) {
                     try {
-                        FileWriter myWriter = new FileWriter("myfile.txt");
+                        FileWriter myWriter = new FileWriter("newfile.txt");
                         myWriter.write("File successfully updated!");
                         myWriter.close();
                         System.out.println("File successfully written to.");
@@ -557,12 +565,17 @@
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the boolean argument:
         </p>
+<<<<<<< HEAD
         <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes">
                 <pre>
                     
                 </pre>
             </datafile>
         <program xml:id="file-write-exp6" interactive="activecode" language="java" add-files = "my-file-8-4-6">
+=======
+        
+        <program interactive="activecode" language="java">
+>>>>>>> 0633649 (fixes file not found errors in 8.4)
             <code>
             import java.io.FileWriter;
             import java.io.IOException;
@@ -570,7 +583,7 @@
             public class WriteFile {
                 public static void main(String[] args) {
                     try {
-                        FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
+                        FileWriter myWriter = new FileWriter("newfile.txt", true); // true enables append mode
                         myWriter.write("File successfully updated!");
                         myWriter.close();
                         System.out.println("File successfully written to.");
