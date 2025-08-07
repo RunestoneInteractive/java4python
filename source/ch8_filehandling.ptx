@@ -44,7 +44,7 @@
         <p>
              Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
         </p>
-        <program xml:id = "file-class-import-example" interactive="activecode" language="java">
+        <program xml:id = "file-class-import-io-example" interactive="activecode" language="java">
             <code>
             import java.io.File;
             import java.io.IOException;public class Main {
@@ -94,14 +94,15 @@
         <p>
             We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
         </p>
-        <datafile label="my-file-8-2-1" filename="myfile.txt" xml:id= "my-file-8-2-1" editable="no" include-source="yes">
+        <datafile label="my-file-8-2-1" filename="myfile.txt" xml:id= "my-file-8-2-1" editable="yes">
                 <pre>
                     empty file
                 </pre>
             </datafile>
-        <program interactive="activecode" language="java">
+        <program xml:id="create-file-exp-1" interactive="activecode" language="java" add-files="my-file-8-2-1">
             <code>
-            import java.io.File;public class Main {
+            import java.io.File;
+            public class Main {
                 public static void main(String[] args) {
                     File myFile = new File("myfile.txt");
                     System.out.println(myFile);
@@ -123,12 +124,8 @@
         <p>
             First, lets look at the equivalent Python code:
         </p>
-        <datafile label="my-file-8-2-2" filename="myfile.txt" xml:id= "my-file-8-2-2" editable="no" include-source="yes">
-                <pre>
-                    empty file
-                </pre>
-            </datafile>
-        <program interactive="activecode" language="python">
+        
+        <program xml:id="creat-file-exp-2" interactive="activecode" language="python">
             <code>
             filename = "newfile.txt"
             print(f"Attempting to write to '{filename}' using 'w' mode...")
@@ -145,12 +142,12 @@
         <p>
             Now, let's look at Java code that accomplishes the same task:
         </p>
-        <datafile label="my-file-8-2-3" filename="myfile.txt" xml:id= "my-file-8-2-3" editable="no" include-source="yes">
+        <datafile label="my-file-8-2-3" filename="myfile.txt" xml:id= "my-file-8-2-3" editable="yes">
                 <pre>
                     empty file
                 </pre>
             </datafile>
-        <program interactive="activecode" language="java">
+        <program xml:id="create-file-exp3" interactive="activecode" language="java" add-files="my-file-8-2-3">
             <code>
             import java.io.File;
             import java.io.IOException;
@@ -181,7 +178,7 @@
         <p>
             Let's take a look at how we can use Java to read file contents. We'll start again with library imports and building a class, this time importing the Scanner and FileNotFoundException classes. We will call this class ReadFile:
         </p>   
-            <datafile label="my-file" filename="myfile.txt" xml:id= "my-file" editable="no" include-source="yes">
+            <datafile label="my-file" filename="myfile.txt" xml:id= "my-file" editable="no">
                 <pre>
                     1
                     2
@@ -195,7 +192,7 @@
             </datafile>
             
         
-        <program interactive="activecode"  language="java" add-files= "my-file">
+        <program xml:id="file-read-exp1" interactive="activecode"  language="java" add-files= "my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -223,7 +220,7 @@
             We will then create a new File object exactly the same as the one from the section on creating files. Additionally, we will create a Scanner object. The Scanner object is the object that does the file reading. We will call this scanner fileReader:
         </p>
 
-        <program interactive="activecode" language="java">
+        <program xml:id="file-read-exp2" interactive="activecode" language="java">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -251,9 +248,9 @@
             The next lines consists of a Python code example that reads each line of the file passed to the Scanner object.:
         </p>
 
-        <program interactive="activecode" language="python">
+        <program xml:id="file-read-exp3" interactive="activecode" language="python" add-files="my-file">
             <code>
-                with open("filename.txt", "r") as file_reader:
+                with open("myfile.txt", "r") as file_reader:
                     for line in file_reader:
                         print(line.strip())
             </code>
@@ -263,7 +260,7 @@
             The equivalent Java code:
         </p>
 
-        <program interactive="activecode"  language="java" add-files= "my-file">
+        <program xml:id="file-read-exp4" interactive="activecode"  language="java" add-files= "my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -292,7 +289,7 @@
             Alternatively, the following code can be used to store the all lines of myfile.txt to one variable:
         </p>
 
-        <program interactive="activecode" language="java">
+        <program xml:id="file-read-exp5" interactive="activecode" language="java" add-files="my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -324,7 +321,7 @@
             Using the second method of storing all file contents to one file, the resulting full code including try/catch blocks (this time using FileNotFoundException instead of IOException) will look something like this. First, the Python code:
         </p>
 
-        <program interactive="activecode" language="python">
+        <program xml:id="file-read-exp6" interactive="activecode" language="python">
             <code>
                 try:
                     with open("myfile.txt", "r") as file_reader:
@@ -344,7 +341,7 @@
             And the Java equivalent:
         </p>
 
-        <program interactive="activecode" language="java">
+        <program xml:id="file-read-exp7" interactive="activecode" language="java" add-files="my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -385,7 +382,7 @@
             Let us create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
         </p>
         
-        <program interactive="activecode" language="java">
+        <program xml:id="file-write-exp1" interactive="activecode" language="java">
             <code>
             import java.io.File;
             import java.io.FileWriter;
@@ -447,7 +444,7 @@
                     3
                 </pre>
             </datafile>
-        <program interactive="activecode" language="python" add-files = "my-file-8-4-2">
+        <program xml:id="file-write-exp2" interactive="activecode" language="python" add-files = "my-file-8-4-2">
             <code>
                 with open("myfile8-4-2.txt", "r") as file_reader:
                     while True:
@@ -466,7 +463,7 @@
                     
                 </pre>
             </datafile>
-        <program interactive="activecode" language="java" add-files = "my-file-8-4-3">
+        <program xml:id="file-write-exp3" interactive="activecode" language="java" add-files = "my-file-8-4-3">
             <code>
             import java.io.File;
             import java.io.IOException;
@@ -494,7 +491,7 @@
                     
                 </pre>
             </datafile>
-        <program interactive="activecode" language="python" add-files = "my-file-8-4-4">
+        <program xml:id="file-write-exp4" interactive="activecode" language="python" add-files = "my-file-8-4-4">
             <code>
             try:
                 with open("myfile.txt", "w") as my_writer:
@@ -515,7 +512,7 @@
                     
                 </pre>
             </datafile>
-        <program interactive="activecode" language="java" add-files = "my-file-8-4-5">
+        <program xml:id="file-write-exp5" interactive="activecode" language="java" add-files = "my-file-8-4-5">
             <code>
             import java.io.FileWriter;
             import java.io.IOException;
@@ -562,7 +559,7 @@
                     
                 </pre>
             </datafile>
-        <program interactive="activecode" language="java" add-files = "my-file-8-4-6">
+        <program xml:id="file-write-exp6" interactive="activecode" language="java" add-files = "my-file-8-4-6">
             <code>
             import java.io.FileWriter;
             import java.io.IOException;
