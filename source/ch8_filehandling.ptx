@@ -124,11 +124,7 @@
         <p>
             First, lets look at the equivalent Python code:
         </p>
-        <datafile label="my-file-8-2-2" filename="myfile.txt" xml:id= "my-file-8-2-2" editable="yes">
-                <pre>
-                    empty file
-                </pre>
-            </datafile>
+        
         <program xml:id="creat-file-exp-2" interactive="activecode" language="python" add-files="my-file-8-2-2">
             <code>
             filename = "newfile.txt"
@@ -293,7 +289,7 @@
             Alternatively, the following code can be used to store the all lines of myfile.txt to one variable:
         </p>
 
-        <program interactive="activecode" language="java">
+        <program interactive="activecode" language="java" add-files="my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -345,7 +341,7 @@
             And the Java equivalent:
         </p>
 
-        <program interactive="activecode" language="java">
+        <program interactive="activecode" language="java" add-files="my-file">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
