@@ -3,9 +3,9 @@
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
     <xi:include href="./meta_bookinfo.ptx"/>
     <book xml:id= "java4py2">
-        <title>Java For Python Programmer</title>
+        <title>Java For Python Programmers</title>
 
-        <subtitle>The PreTeXt Interactive Edition</subtitle>
+        <subtitle>Edition 2</subtitle>
         <xi:include href="meta_frontmatter.ptx" />
         <xi:include href="ch1_overview.ptx" />
         <xi:include href="ch2_firstjavaprogram.ptx" />
