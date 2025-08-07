@@ -234,11 +234,47 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         </p>
     </section>
 
-    <section xml:id="exception-handling">
+                                                             <section xml:id="exception-handling">
         <title>Exception Handling</title>
         
         <p>
-            
+            Errors and bugs when writing programs are nearly impossible to avoid. As a programmer, you may have spent a considerable amount of time debugging code. Sometimes, even when we have done everything right and ensured a program will function as it is intended to, errors are still unavoidable especially when user input is necessary. 
+        </p>
+
+        <p>
+            Let's look at an example of code that may lead to user error. This Java program will ask the user to input the year they were born. It will then tell them how old they will be in the year 2050. We will use the <c>Scanner</c> class from the <c>util</c> library to ask the user for input.
+        </p>
+
+        <program interactive="activecode" language="java" xml:id="age-2050-calculator">
+            <code>
+            import java.util.Scanner;
+
+            public class Main
+            {
+                public static void main(String[] args) {
+                    
+                    // Update to current year if needed
+                    int current_year = 2025; 
+                    
+                    // Scanner object is created to get input
+                    Scanner userInput = new Scanner(System.in);  
+                    System.out.println("Enter your age: ");
+                
+                    // Reads user input
+                    int age = Integer.parseInt(userInput.nextLine());
+                    
+                    // Arithmatic to find age in 2050
+                    int birth_year = current_year - age;
+                    int age_in_2050 = 2050 - birth_year;
+                    
+                    System.out.println("Your age in 2050 will be " + age_in_2050);
+                }
+            }
+            </code>
+        </program>
+
+        <p>
+            This program seems to work pretty well. The user can enter their age and get the desired result. Large numbers such as 10,000 and negative numbers such as -75 work fine with this program, meaning we have accommodated both vampires and time travelers! Despite this, our program can still run into issues. You may have noticed that the <c>age</c> variable is an integer. What happens if a user takes into account that their birthday was six months ago and types <c>20.5</c> into the console? What happens if the user spells out their age and types <c>twelve</c> instead of <c>12</c>? Try these two inputs and see what happens!
         </p>
         
     </section>
@@ -319,5 +355,146 @@ Using this operator can make code shorter and more readable in cases where a sim
         </p>
 
 
+    </section>
+        <section xml:id="chapter4_summary">
+        <title>Summary &amp; Reading Questions</title>
+        <p><ol label="1">
+            <li>
+                <p>Java requires parentheses around the condition and curly braces for code blocks in <c>if</c> statements, unlike Python which uses indentation alone.</p>
+            </li>
+            <li>
+                <p>Java uses <c>else if</c> instead of Python's <c>elif</c>, and allows optional curly braces for single-line blocks. However, it is considered good practice to use curly braces even for single-line blocks to improve readability.</p>
+            </li>
+            <li>
+                <p>
+                    Java's <c>switch</c> statement is similar to Python's <c>match</c> statement, but it only supports equality checks against constant values and does not evaluate relational expressions like greater than or less than.
+                </p>
+            
+            </li>
+            <li>
+                <p>
+                    Java uses the <c>boolean</c> data type to represent logical values <c>true</c> or <c>false</c>, commonly used in conditionals and control flow.
+                </p>
+            </li>
+        </ol></p>
+        <reading-questions xml:id="rqs-summary4">
+            <exercise label="summary-if-parentheses">
+                <statement>
+                    <p>Which is a correct Java <c>if</c> statement syntax?</p>
+                </statement>
+                <choices>
+                    <choice correct="yes">
+                        <statement>
+                            <p>if (x &gt; 0) { System.out.println("Positive"); }</p>
+                        </statement>
+                        <feedback>
+                            <p>Correct! Java requires parentheses and curly braces.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>if x &gt; 0: print("Positive")</p>
+                        </statement>
+                        <feedback>
+                            <p>No, that's Python syntax, not Java.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>if x &gt; 0 { System.out.println("Positive"); }</p>
+                        </statement>
+                        <feedback>
+                            <p>No, Java requires parentheses around the condition.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>if (x &gt; 0) print("Positive");</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>print</c> is not a valid method in Java. Use <c>System.out.println</c>.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+            <exercise label="summary-else-if">
+                <statement>
+                    <p>How do you write Python’s <c>elif</c> equivalent in Java?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement>
+                            <p>elif (score &gt; 90)</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>elif</c> is used in Python, not Java.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>else: if (score &gt; 90)</p>
+                        </statement>
+                        <feedback>
+                            <p>Incorrect syntax; no colon in Java and not the right structure.</p>
+                        </feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement>
+                            <p>else if (score &gt; 90)</p>
+                        </statement>
+                        <feedback>
+                            <p>Right! Java uses <c>else if</c>.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>ifelse (score &gt; 90)</p>
+                        </statement>
+                        <feedback>
+                            <p>No, <c>ifelse</c> is not a valid construct in Java.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+            <exercise label="summary-switch-limitation">
+                <statement>
+                    <p>What is one limitation of Java's <c>switch</c> statement, including in its modern versions?</p>
+                </statement>
+                <choices>
+                    <choice>
+                        <statement>
+                            <p>It cannot evaluate relational expressions like greater than or less than.</p>
+                        </statement>
+                        <feedback>
+                            <p>No, while <c>switch</c> can compare values, it does not support relational expressions like <c>&gt;</c> or <c>&lt;</c>, even with modern enhancements of Java 14+</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>It cannot handle more than five case labels.</p>
+                        </statement>
+                        <feedback>
+                            <p>No, there is no such limit. You can have many case labels in a <c>switch</c> statement.</p>
+                        </feedback>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>It always requires a <c>break</c> statement.</p>
+                        </statement>
+                        <feedback>
+                            <p>Incorrect. The <c>break</c> statement is actually an optional feature of <c>switch</c>, not a limitation.</p>
+                        </feedback>
+                    </choice>
+                    <choice correct="yes">
+                        <statement>
+                            <p>It can only compare a variable to constant values using equality.</p>
+                        </statement>
+                        <feedback>
+                            <p>Correct! Java's <c>switch</c> is limited to constant comparisons using equality.</p>
+                        </feedback>
+                    </choice>
+                </choices>
+            </exercise>
+        </reading-questions>
     </section>
 </chapter>
