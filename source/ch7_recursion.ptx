@@ -12,13 +12,31 @@
         <p><idx>recursion</idx>
             As you may know from Python, <term>recursion</term> is a powerful problem-solving technique involving base cases and recursive steps in which a function or method calls itself. When moving to Java, the core logic you've learned remains identical. The challenge is adapting that logic to Java's statically-typed, class-based syntax.
         </p>
+
+<p>
+    Let's take the familiar factorial function, which calculates <m>n!</m> (read as "n factorial"), so for example 5! = 5 × 4 × 3 × 2 × 1 = 120. Factorial is a classic example of recursion, where the function calls itself with a smaller value until it reaches a base case. 
+    In general, <m>n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1</m>, 
+    or recursively defined as <m>n! = n \times (n-1)!</m> with base cases <m>0! = 1</m> and <m>1! = 1</m>.
+</p>
+<p>
+    You may recall mathematical notation using the symbol <m>\sum</m> (Greek letter sigma) 
+    to represent "sum." For example, when we sum all elements in an array, we write 
+    <m>\sum_{i=0}^{n-1} a_i</m>, where <m>i=0</m> below the symbol indicates we start at index 0, 
+    <m>n-1</m> above it means we end at index <m>n-1</m>, and <m>a_i</m> represents the array 
+    element at each index <m>i</m>. Similarly, <m>\sum_{i=1}^{n} i</m> means "sum all integers 
+    <m>i</m> from 1 to <m>n</m>."
+</p>
+<p>
+    Factorial involves multiplication rather than addition, so we use the product symbol 
+    <m>\prod</m> (Greek letter pi): <m>n! = \prod_{i=1}^{n} i</m>, which means "multiply 
+    all integers <m>i</m> from 1 to <m>n</m>." Both summation and factorial can be expressed 
+    recursively—summation as the first element plus the sum of remaining elements, and factorial 
+    as <m>n \times (n-1)!</m>.
+</p>
         <p>
-            Let's take the familiar factorial function (which calculates the factorial of a number, namely the product of all positive integers from 1 to n). The logical steps in the code are the same, but the implementation details change.
+            Here is a Python implementation of factorial using functions:
         </p>
-        <p>
-            Here is a Python implementation using functions:
-        </p>
-        <program interactive="activecode" language="python">
+        <program xml:id="factorial-python-function" interactive="activecode" language="python">
             <code>
 def factorial(n):
     # Check for negative numbers
@@ -42,7 +60,7 @@ main()
         <p>
             Many Python programs organize related functions into classes. The same factorial function can be placed inside a class as a method. Then you need to create an instance of the class to call the method. There we create the class <c>MathTools</c> with a method <c>factorial</c>, and we call it from the <c>main</c> function.
         </p>
-        <program interactive="activecode" language="python">
+        <program xml:id="factorial-python-class" interactive="activecode" language="python">
             <code>
 class MathTools:
     def factorial(self, n):
@@ -72,7 +90,7 @@ main()
         <p>
             Here is the equivalent Java code:
         </p>
-        <program interactive="activecode" language="java">
+        <program xml:id="factorial-java-class" interactive="activecode" language="java">
             <code>
 public class MathTools {
     public static int factorial(int n) {
@@ -105,19 +123,17 @@ public class MathTools {
     <title>Using Helper Methods</title>
 
     <p>
-        In many recursive algorithms, the recursive calls need extra information that the original caller shouldn't have to provide. For example, to recursively process an array, you need to keep track of the current position (index). This extra information clutters the public-facing method signature and forces users to provide implementation details they shouldn't need to know about.
+        In many recursive algorithms, the recursive calls need extra information that the original caller shouldn't have to provide. For example, to recursively process an array, you need to keep track of the index of the current position. This extra information clutters the public-facing signature by forcing users to provide implementation details they shouldn't actually need to know about.
     </p>
     <p><idx>helper method pattern in recursion</idx>
-        A common pattern to solve this is using a <term>helper method</term>. This pattern lets you create a clean, simple public method that users will call, while the private helper method handles the complex details of the recursion. The public method typically makes the initial call to the private helper, providing the necessary starting values for the extra parameters.
+        A common pattern to solve this problem is by using a <term>helper method</term>. This pattern lets you create a clean, simple function or public method that users can call, while the private helper function or method handles the complex details of the recursion. The function or public method typically makes an initial call to the private helper method or function, providing the necessary starting values for the extra parameters.
     </p>
-    <p>
-        Let's see this pattern in action with an example that calculates the sum of all elements in an integer array. Notice how the public method only requires the array, but the recursive logic needs to track the current index position.
-    </p>
+
     
     <p>
         First, let's see what happens if we try to write a recursive array sum function <em>without</em> using a helper method. In this approach, the user must provide the starting index, which is awkward and exposes implementation details:
     </p>
-    <program interactive="activecode" language="python">
+    <program xml:id="array-sum-python-no-helper" interactive="activecode" language="python">
         <code>
 class ArrayProcessor:
     def sum_array(self, arr, index):
@@ -144,9 +160,9 @@ main()
     </program>
     
     <p>
-        This approach has several problems: users must remember to start with index 0, the method signature is cluttered with implementation details, and it's easy to make mistakes by passing the wrong starting index. The same awkward pattern appears in Java:
+        This approach has a significant problem, namely that users must remember to start with index 0. Hence, the method signature is cluttered with an implementation detail, and it's easy to make a mistake by passing the wrong starting index. The same awkward pattern appears in Java:
     </p>
-    <program interactive="activecode" language="java">
+    <program xml:id="array-sum-java-no-helper" interactive="activecode" language="java">
         <code>
 public class ArrayProcessor {
     public static int sumArray(int[] arr, int index) {
@@ -170,13 +186,12 @@ public class ArrayProcessor {
     </program>
     
     <p>
-        Both versions force users to understand and provide implementation details they shouldn't need to know about. Now let's see how helper methods solve this problem by providing a clean, user-friendly interface.
+        Both versions force users to understand and provide implementation details they shouldn't need to know about. Now let's see how helper methods solve this problem by providing a clean, user-friendly interface. Notice how the public method only requires the array itself, and the hidden recursive logic tracks the current index position.
     </p>
-    
     <p>
         Here's the improved Python version using a helper method:
     </p>
-    <program interactive="activecode" language="python">
+    <program xml:id="array-sum-python-with-helper" interactive="activecode" language="python">
         <code>
 class ArrayProcessor:
     def sum_array(self, arr):
@@ -212,13 +227,13 @@ main()
     </program>
     
     <p><idx>separation of concerns</idx>
-        The key insight here is called the <term>separation of concerns</term>. The public <c>sum_array</c> method provides a user-friendly interface—callers just pass an array and get the sum. They don't need to know about indexes or how the recursion works internally. The private <c>_sum_helper</c> method handles the recursive logic with the extra parameter needed to track progress through the array.
+        The key insight here is called the <term>separation of concerns</term>. The public <c>sum_array</c> method provides a user-friendly interface—callers just pass an array and get the sum. Users don't need to know about indexes or how the recursion works internally. The private <c>_sum_helper</c> method handles the recursive logic with the extra parameter needed to track progress through the array.
     </p>
     
     <p>
         Now let's see the improved Java version using a helper method:
     </p>
-    <program interactive="activecode" language="java">
+    <program xml:id="array-sum-java-with-helper" interactive="activecode" language="java">
         <code>
 public class ArrayProcessor {
     public static int sumArray(int[] arr) {
@@ -254,7 +269,7 @@ public class ArrayProcessor {
     </p>
     
     <p>
-        This helper method pattern is essential when your recursive algorithm needs to track additional state (like array positions, accumulated values, or depth counters) that the original caller shouldn't need to provide. It's a fundamental technique you'll use frequently in recursive problem solving.
+        This helper method pattern is essential when your recursive algorithm needs to track additional state (like array positions, accumulated values, or depth counters) that the original caller shouldn't need to provide or care about. It's a fundamental pattern and technique you'll likely use frequently in recursive problem solving.
     </p>
 </section>
 
@@ -276,7 +291,7 @@ public class ArrayProcessor {
         <p>
             The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to aRecursionError.
         </p>
-        <program interactive="activecode" language="python">
+        <program xml:id="python-recursion-error" interactive="activecode" language="python">
             <code>
                 def cause_recursion_error():
                     """
@@ -297,7 +312,7 @@ public class ArrayProcessor {
         <p>
             The following Java code demonstrates a similar situation, where a method calls itself indefinitely without a base case, leading to a StackOverflowError.
         </p>
-        <program interactive="activecode" language="java">
+        <program xml:id="java-stack-overflow" interactive="activecode" language="java">
             <code>
                 public class Crash {
                     public static void causeStackOverflow() {
