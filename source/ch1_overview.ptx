@@ -5,8 +5,8 @@
     <title>Overview</title>
 
 
-<section xml:id="sec-introduction">
-    <title>Introduction to Java for Python Programmers</title>
+<section xml:id="sec-prerequisites">
+    <title>Prerequisites</title>
 
         <p>
             This book assumes that you are already familiar with the <url href="http://www.python.org" visual="http://www.python.org">Python</url> programming language.
@@ -87,7 +87,7 @@
 </section>
 
 
-<section xml:id="sec-Java_Development_Environment">
+<section xml:id="sec-java-development-environment">
     <title>Java Development Environment</title>
 
     <introduction>
@@ -306,8 +306,8 @@
   </subsection>
 </section>
 
-    <section xml:id="why-learn-another-programming-language">
-        <title>Why Learn another programming Language?</title>
+    <section xml:id="why-another-programming-language">
+        <title>Why Another Programming Language?</title>
 
         <p>
             Python is a nice language for beginning programming for several reasons.
@@ -357,7 +357,7 @@
 
 </section>
 
-    <section xml:id="why-learn-java-why-not-c-or-c">
+    <section xml:id="sec-why-java-why-not-c-or-c">
         <title>Why Learn Java? Why not C or C++?</title>
 
         <p>
@@ -399,9 +399,9 @@
         
 
     </section>
-    <section xml:id="learn_languages_summary">
+    <section xml:id="overview_summary">
     <title>Summary &amp; Reading Questions</title>
-    <p><ol label="1">
+    <p><ol>
         <li>
             <p>Learning multiple programming languages helps programmers adapt to different styles and environments.</p>
         </li>
