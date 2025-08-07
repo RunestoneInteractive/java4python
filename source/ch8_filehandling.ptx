@@ -125,7 +125,7 @@
             First, lets look at the equivalent Python code:
         </p>
         
-        <program xml:id="creat-file-exp-2" interactive="activecode" language="python" add-files="my-file-8-2-2">
+        <program xml:id="creat-file-exp-2" interactive="activecode" language="python">
             <code>
             filename = "newfile.txt"
             print(f"Attempting to write to '{filename}' using 'w' mode...")
@@ -248,9 +248,9 @@
             The next lines consists of a Python code example that reads each line of the file passed to the Scanner object.:
         </p>
 
-        <program interactive="activecode" language="python">
+        <program interactive="activecode" language="python" add-files="my-file">
             <code>
-                with open("filename.txt", "r") as file_reader:
+                with open("myfile.txt", "r") as file_reader:
                     for line in file_reader:
                         print(line.strip())
             </code>
