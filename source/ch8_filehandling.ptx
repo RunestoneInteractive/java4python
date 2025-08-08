@@ -85,7 +85,7 @@
     <section xml:id="create-file">
         <title>Creating Files</title>
         <p>
-            Now lets learn how to make a file in Java. In Python files can be made using the <c>open()</c> function on a file path that doesn't exist yet. Similarly, in Java you create a file by using the <c>createNewFile()</c> method on a <c>File</c> object. This method actually does the work of creating a file and saving it in the current working directory, and returns a boolean value of either true or false if the file is successfully created. We can use this method's possible return values in tandem with an try/catch structure to determine if the file was created, or catch the error if a file with that file name already exists in the directory.
+            Now let's learn how to make a file in Java. In Python. files can be made using the <c>open()</c> function on a file path that doesn't exist yet. Similarly, in Java you create a file by using the <c>createNewFile()</c> method on a <c>File</c> object. This method actually does the work of creating a file and saving it in the current working directory, and returns a boolean value of either true or false if the file is successfully created. We can use this method's possible return values in tandem with an try/catch structure to determine if the file was created, or catch the error if a file with that file name already exists in the directory.
         </p>
 
         <p>
@@ -515,7 +515,7 @@
         </note>
 
         <p>
-            Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a boolean argument along with the file name when creating a new data argument:
+            Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a <c>boolean</c> argument along with the file name when creating a new data argument:
         </p>
 
         <pre>
@@ -523,7 +523,7 @@
         </pre>
 
         <p>
-            Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the boolean argument:
+            Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the <c>boolean</c> argument:
         </p>
         <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes">
                 <pre>
