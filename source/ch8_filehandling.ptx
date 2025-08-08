@@ -500,7 +500,7 @@
                 with open("myfile.txt", "w") as my_writer:
                     my_writer.write("File successfully updated!")
                 print("File successfully written to.")
-            except OSError as e:
+            except OSError:
                 print("An error occurred.")
                 import traceback
                 traceback.print_exc()
@@ -523,7 +523,7 @@
             public class WriteFile {
                 public static void main(String[] args) {
                     try {
-                        FileWriter myWriter = new FileWriter("myfile.txt");
+                        FileWriter myWriter = new FileWriter("newfile.txt");
                         myWriter.write("File successfully updated!");
                         myWriter.close();
                         System.out.println("File successfully written to.");
@@ -570,7 +570,7 @@
             public class WriteFile {
                 public static void main(String[] args) {
                     try {
-                        FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
+                        FileWriter myWriter = new FileWriter("newfile.txt", true); // true enables append mode
                         myWriter.write("File successfully updated!");
                         myWriter.close();
                         System.out.println("File successfully written to.");
