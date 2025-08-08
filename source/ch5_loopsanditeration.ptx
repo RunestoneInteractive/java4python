@@ -173,7 +173,7 @@ public class StringIterationExample {
         <title>Indefinite Loops</title>
 
         <p><idx><c>while</c> loop</idx>
-            Both Python and Java support the <idx><c>while</c></idx> loop, which continues to execute as long as a condition is true.
+            Both Python and Java support the <c>while</c> loop, which continues to execute as long as a condition is true.
             Here is a simple example in Python that counts down from 5:
         </p>
         <program interactive="activecode" language="python">

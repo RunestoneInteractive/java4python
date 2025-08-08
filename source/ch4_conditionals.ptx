@@ -389,8 +389,8 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
     <section xml:id="boolean-operators">
         <title>Boolean Operators</title>
 
-        <p><idx>boolean operators</idx> <idx>simple comparisons</idx> <idx>compound boolean expressions</idx>
-The conditionals used in the if statement can be <term>boolean variables</term>, <term>simple comparisons</term>, and <term>compound boolean expressions</term>.
+        <p><idx>Boolean operators</idx> <idx>simple comparisons</idx> <idx>compound Boolean expressions</idx>
+The conditionals used in the if statement can be <term>Boolean variables</term>, <term>simple comparisons</term>, and <term>compound Boolean expressions</term>.
         </p>
 
 <p><idx>ternary operator</idx>
@@ -408,7 +408,7 @@ of an assignment statement. The following table summarizes how this works:
     </row>
     <row>
       <cell><c>condition</c></cell>
-      <cell>The Boolean expression that is evaluated (e.g., <c>a % 2 == 0</c>).</cell>
+      <cell>The <c>boolean</c> expression that is evaluated (e.g., <c>a % 2 == 0</c>).</cell>
     </row>
     <row>
         <cell><c>?</c></cell>
