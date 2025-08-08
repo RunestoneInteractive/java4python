@@ -167,16 +167,18 @@
                 You may have noticed the use of another method from the File class; <c>getName()</c>. This method returns a string containing the name of the file. 
             </p>
         </note>
-    </section>
-        
+    </section>    
 
     <section xml:id="file-read">
         <title>Reading Files</title>
 
         <p>
-            Let's take a look at how we can use Java to read file contents. We'll start again with library imports and building a class, this time importing the Scanner and FileNotFoundException classes. We will call this class ReadFile:
-        </p>   
-            <datafile label="my-file" filename="myfile.txt" xml:id= "my-file" editable="no">
+            Let’s take a look at how we can use Python to understand how read file contents in Java.In order to read files generally you iterate through each line in the file and read its content. In Java you read files in a very similar way, however in java we will use a <c>Scanner</c> object in order to iterate through lines.
+        </p>
+        <p>
+            The next lines consists of a Python code example that reads each line of the file and prints it to the console.
+        </p>
+        <datafile label="my-file-8-3" filename="myfile.txt" xml:id= "my-file-8-3" editable="no">
                 <pre>
                     1
                     2
@@ -188,184 +190,48 @@
                     8
                 </pre>
             </datafile>
-            
-        
-        <program xml:id="file-read-exp1" interactive="activecode"  language="java" add-files= "my-file">
+
+        <program xml:id="file-read-exp1" interactive="activecode" language="python" add-files="my-file-8-3">
             <code>
-            import java.io.File;
-            import java.io.FileNotFoundException;
-            import java.util.Scanner;public class Main {
-                public static void main(String[] args) {
-                    try {
-                        File myFile = new File("myfile.txt");
-                        Scanner fileReader = new Scanner(myFile);            
-                        System.out.println("Reading from file: " + myFile.getName());
-                        while (fileReader.hasNextLine()) {
-                            String data = fileReader.nextLine();
-                            System.out.println(data);
-                        }
-                        fileReader.close(); // Close the scanner to release the file        
-                    } catch (FileNotFoundException e) {
-                        System.out.println("An error occurred: The file was not found.");
-                        e.printStackTrace();
-                    }
-                }
-            }
-            </code> 
-        </program>
-
-        <p>
-            We will then create a new File object exactly the same as the one from the section on creating files. Additionally, we will create a Scanner object. The Scanner object is the object that does the file reading. We will call this scanner fileReader:
-        </p>
-
-        <program xml:id="file-read-exp2" interactive="activecode" language="java" add-files="my-file">
-            <code>
-            import java.io.File;
-            import java.io.FileNotFoundException;
-            import java.util.Scanner;
-            public class Main {
-                public static void main(String[] args) {        
-                    // This 'try-with-resources' statement handles opening the file
-                    // and guarantees it is closed automatically, which is best practice.
-                    try (Scanner fileReader = new Scanner(new File("myfile.txt"))) {    
-
-                        // If this line is reached, the file was opened successfully.
-                        System.out.println("Success! The file 'myfile.txt' is now open.");
-
-                    } catch (FileNotFoundException e) {     
-
-                        // This block runs only if 'myfile.txt' does not exist.
-                        System.out.println("Error: The file 'myfile.txt' could not be found.");        
-                    }
-                }
-            } 
-            </code> 
-        </program>
-
-        <p>
-            The next lines consists of a Python code example that reads each line of the file passed to the Scanner object.:
-        </p>
-
-        <program xml:id="file-read-exp3" interactive="activecode" language="python" add-files="my-file">
-            <code>
-                with open("myfile.txt", "r") as file_reader:
-                    for line in file_reader:
-                        print(line.strip())
-            </code>
-        </program>
-
-        <p>
-            The equivalent Java code:
-        </p>
-
-        <program xml:id="file-read-exp4" interactive="activecode"  language="java" add-files= "my-file">
-            <code>
-            import java.io.File;
-            import java.io.FileNotFoundException;
-            import java.util.Scanner;public class Main {
-                public static void main(String[] args) {
-                    String filename = "myfile.txt";
-                    try (Scanner fileReader = new Scanner(new File(filename))) {
-                        while (fileReader.hasNextLine()) {
-                            String data = fileReader.nextLine();
-                            System.out.println(data);
-                        }
-                    } 
-                    catch (FileNotFoundException e) {
-                        System.out.println("Error: The file '" + filename + "' was not found.");
-                    }
-                }
-            }
-            </code> 
-        </program>
-
-        <p>
-            The <c>hasNextLine()</c> method checks checks if the line below the current line has any data. This will evaluate to true even if the next line only contains blank spaces. Within the while loop, a string variable called <c>data</c> is used to store the current line that the Scanner object is pointing to. The <c>nextLine()</c> method does two things. Firstly, it returns the current line when called. Secondly, it moves the Scanner's position to the next line. In other words, for each iteration of the while loop, each line in the text is read, stored temporarily in the data variable, and printed to the console. Finally, the <c>close()</c> method accomplishes and holds the same importance as in the section on writing to files.
-        </p>
-        
-        <p>
-            Alternatively, the following code can be used to store the all lines of myfile.txt to one variable:
-        </p>
-
-        <program xml:id="file-read-exp5" interactive="activecode" language="java" add-files="my-file">
-            <code>
-            import java.io.File;
-            import java.io.FileNotFoundException;
-            import java.util.Scanner;public class Main {
-                public static void main(String[] args) {
-                    String filename = "myfile.txt";
-                    try (Scanner fileReader = new Scanner(new File(filename))) {
-                        String data = "";
-                        while (fileReader.hasNextLine()) {
-                            data = data + fileReader.nextLine() + System.lineSeparator();
-                        }
-                        System.out.println(data);
-                    } 
-                    catch (FileNotFoundException e) {
-                        System.out.println("Error: The file '" + filename + "' was not found.");
-                    }
-                }
-            } 
-            </code> 
-        </program>
-
-        <note>
-            <p>
-                Pay close attention to the details of this code. <c>data</c> must be declared using an empty string or it may not work correctly within the while loop. Additionally, care must be given to reassigning <c>data</c> in the while loop. <c>data</c> is concatinated (to ensure all lines are included) with <c>fileReader.nextLine()</c> and a new line operator. Each step of this process ensures what is stored in data matches exactly what is in myfile.txt.
-            </p>
-        </note>
-
-        <p>
-            Using the second method of storing all file contents to one file, the resulting full code including try/catch blocks (this time using FileNotFoundException instead of IOException) will look something like this. First, the Python code:
-        </p>
-
-        <program xml:id="file-read-exp6" interactive="activecode" language="python">
-            <code>
+                filename = "myfile.txt"
                 try:
-                    with open("myfile.txt", "r") as file_reader:
-                        data = ""
+                # Attempt to open the file in read mode ('r')
+                    with open(filename, "r") as file_reader:
+                        # Iterate over each line in the file
                         for line in file_reader:
-                            data += line  # line already includes the newline character
-                    print(data)
-                except FileNotFoundError:
-                    print("An error occurred.")
-                    import traceback
-                    traceback.print_exc()
-
+                            print(line.strip())
+                except:
+                #catches if the file doesn't exist or can't be written to
+                    print("file could not be opened")
             </code>
         </program>
 
         <p>
-            And the Java equivalent:
+            The following Java code functions very similarly to the previous Python. The main difference here is that unlike Python, In Java we use the <c>Scanner</c> object to iterate through and read lines in the file. You will notice that the structure of the Java code is still similar to the Python; Both use a try and catch statement to read the file and catch any errors.
         </p>
 
-        <program xml:id="file-read-exp" interactive="activecode" language="java" add-files="my-file">
+        <program xml:id="file-read-exp2" interactive="activecode"  language="java" add-files= "my-file-8-3">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner;
-
-            public class ReadFile {
+            import java.util.Scanner;public class Main {
                 public static void main(String[] args) {
-                    try {
-                        File myFile = new File("myfile.txt");
-                        Scanner fileReader = new Scanner(myFile);
-                        String data = "";
+                    String filename = "myfile.txt";
+                    try (Scanner fileReader = new Scanner(new File(filename))) {
                         while (fileReader.hasNextLine()) {
-                            data = data + fileReader.nextLine() + System.lineSeparator();    
+                            String data = fileReader.nextLine();
+                            System.out.println(data);
                         }
-                        System.out.println(data);
-                        fileReader.close();
-                    } catch (FileNotFoundException e) {
-                        System.out.println("An error occurred.");
-                        e.printStackTrace();
+                    } 
+                    catch (FileNotFoundException e) {
+                        System.out.println("Error: The file '" + filename + "' was not found.");
                     }
                 }
             }
             </code> 
         </program>
         <p>
-            In this code, we simply print the contents of the file to the console, but it is easy to imagine how the <c>data</c> variable could be used in conjunction with the write class created in the previous section to create a copy of myfile.txt.
+            You may have noticed that there are some new methods you haven't seen yet. The <c>hasNextLine()</c> method checks if there is a next line in the file, and returns false if there isn't. This method allows us to iterate over every line till there is no next line. The <c>nextLine()</c> method of the Scanner object returns the next line in the file as a string.
         </p>
     </section>
 
