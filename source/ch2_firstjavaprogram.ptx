@@ -8,8 +8,8 @@
     <title>Classes and Objects</title>
 
     <p>
-        <idx>Object-Oriented Programming (OOP)</idx>
-        Depending on how deep your knowledge of Python and programming in general is, you may or may not be familiar with classes and objects. These two important <term>Object-Oriented Programming (OOP)</term> concepts will briefly be discussed. If you already have a good understanding of classes and objects in Python, this section may be skipped.
+        <idx>object-oriented programming</idx> <idx>OOP</idx>
+        Depending on how deep your knowledge of Python and programming in general is, you may or may not be familiar with classes and objects. These two important <term>Object-Oriented Programming</term> (<term>OOP</term>) concepts will briefly be discussed. If you already have a good understanding of classes and objects in Python, this section may be skipped.
     </p>
 
     <p>

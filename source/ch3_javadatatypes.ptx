@@ -728,18 +728,28 @@ main()
     This program reads the file <c>alice30.txt</c> (which follows), and it then splits it into a list of words. Next it creates a dictionary called <c>count</c> which maps each word to the number of times that word occurs in the text. Finally, it prints out the words in alphabetical order along with their frequency.
         </p>
 
-        <datafile label="datafile-alice1" filename="alice30.txt" editable="no" cols="30" rows="15"><pre> 
-            Down, down, down.  Would the fall NEVER come to an end! 
-             'I wonder how many miles I've fallen by this time?' she said aloud. 'I must 
-             be getting somewhere near the centre of the earth.  
-             Let me see:  that would be four thousand miles down, I think--' 
-             (for, you see, Alice had learnt several things of this sort in her lessons 
-             in the schoolroom, and though this was not a VERY good opportunity for 
-             showing off her knowledge, as there was no one to listen to her, still it 
-             was good practice to say it over) '--yes, that's about the right distance
-             --but then I wonder what Latitude or Longitude I've got to?'  
-             (Alice had no idea what Latitude was, or Longitude either, 
-             but thought they were nice grand words to say.) </pre></datafile>
+        <datafile label="datafile-alice1" filename="alice30.txt" editable="no" cols="30" rows="15">
+            <pre> 
+            Down, down, down. Would the fall NEVER
+            come to an end! 'I wonder how many
+            miles I've fallen by this time?' she
+            said aloud. 'I must be getting somewhere
+            near the centre of the earth. Let me see:
+            that would be four thousand miles down,
+            I think--' (for, you see, Alice had
+            learnt several things of this sort in
+            her lessons in the schoolroom, and though
+            this was not a VERY good opportunity for
+            showing off her knowledge, as there was no
+            one to listen to her, still it was good
+            practice to say it over) '--yes, that's
+            about the right distance--but then I
+            wonder what Latitude or Longitude I've got
+            to?' (Alice had no idea what Latitude was,
+            or Longitude either, but thought they were
+            nice grand words to say.)
+            </pre>
+        </datafile>
         <p>
  Notice that the structure of the program is very similar to the numeric histogram program. 
         </p>
