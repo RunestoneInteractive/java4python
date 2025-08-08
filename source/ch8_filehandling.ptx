@@ -122,14 +122,15 @@
         <program xml:id="creat-file-exp-2" interactive="activecode" language="python">
             <code>
             filename = "newfile.txt"
-            print(f"Attempting to write to '{filename}' using 'w' mode...")
+            print("Attempting to write to '" + filename + "' using 'w' mode...")
             try:
                 with open(filename, 'w') as f:
                     f.write("This file was created using 'w' mode.")    
-                    print(f"SUCCESS: The file '{filename}' was created or overwritten.")
+                    print("SUCCESS: The file '" + filename + "' was created or overwritten.")
             except Exception as e:
                 # This would only catch other unexpected errors
-                print(f"An unexpected error occurred during write: {e}")
+                print("An unexpected error occurred during write: " + str(e))
+
             </code> 
         </program>
 
