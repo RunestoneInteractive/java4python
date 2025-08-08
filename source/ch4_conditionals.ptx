@@ -389,8 +389,8 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
     <section xml:id="boolean-operators">
         <title>Boolean Operators</title>
 
-        <p><idx>Boolean operators</idx>
-The conditionals used in the if statement can be Boolean variables, simple comparisons, and compound Boolean expressions.
+        <p><idx>boolean operators</idx> <idx>simple comparisons</idx> <idx>compound boolean expressions</idx>
+The conditionals used in the if statement can be <term>boolean variables</term>, <term>simple comparisons</term>, and <term>compound boolean expressions</term>.
         </p>
 
 <p><idx>ternary operator</idx>
