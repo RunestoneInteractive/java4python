@@ -84,35 +84,8 @@
 
     <section xml:id="create-file">
         <title>Creating Files</title>
-
         <p>
-            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
-        </p>
-        <datafile label="my-file-8-2-1" filename="myfile.txt" xml:id= "my-file-8-2-1" editable="yes">
-                <pre>
-                    empty file
-                </pre>
-            </datafile>
-        <program xml:id="create-file-exp-1" interactive="activecode" language="java" add-files="my-file-8-2-1">
-            <code>
-            import java.io.File;
-            public class Main {
-                public static void main(String[] args) {
-                    File myFile = new File("myfile.txt");
-                    System.out.println(myFile);
-                }
-            }
-            </code> 
-        </program>
-
-        <note>
-            <p>
-                <c>myFile</c> is the name of the object within the program, while <c>myfile.txt</c> is the name of the file itself and will be the file name if the operation that creates the file is successful.
-            </p>
-        </note>
-
-        <p>
-            Now that we have created a new <c>File</c> object, we can create a file using the <c>createNewFile()</c> method from the <c>File</c> class. While the previous line of code creates an object within the program for the file, this method actually does the work of creating a file and saving it in the current working directory. This method returns a boolean value. If the method returns <c>true</c>, the file was successfully created. If the method returns <c>false</c>, there is already a file using the chosen file name. We can use this method's possible return values in tandem with an try/catch structure to determine if the file was created, or catch the error if a file with that file name already exists in the directory.
+            Now lets learn how to make a file in Java. In Python files can be made using the <c>open()</c> function on a file path that doesn't exist yet. Similarly, in Java you create a file by using the <c>createNewFile()</c> method on a <c>File</c> object. This method actually does the work of creating a file and saving it in the current working directory, and returns a boolean value of either true or false if the file is successfully created. We can use this method's possible return values in tandem with an try/catch structure to determine if the file was created, or catch the error if a file with that file name already exists in the directory.
         </p>
 
         <p>
