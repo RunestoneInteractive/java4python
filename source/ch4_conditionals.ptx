@@ -381,7 +381,7 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         </table>
 
         <p>
-            Next, we will look into the <c>try-catch</c> blocks themselves. As with most other structures in Java, the blocks must be encased with braces <c>{}</c>. The most important part of this code is, after <c>catch</c>, there is a set of parenthesis with an exception type and a variable name <c>catch (InputMismatchException e)</c>. This is where we declare a <c>InputMismatchException</c> exception and name it with the variable name <c>e</c>. It is common practice to name exception variables <c>e</c> in this manner.
+            Note that as with other structures in Java, <c>try-catch</c> blocks blocks must be encased with braces <c>{}</c>. The most important part of this code is, after <c>catch</c>, there is a set of parenthesis with an exception type and a variable name <c>catch (InputMismatchException e)</c>. This is where we declare a <c>InputMismatchException</c> exception and name it with the variable name <c>e</c>. It is common practice, though not a requirement, to name exception variables <c>e</c> in this manner.
         </p>
 
     </section>
