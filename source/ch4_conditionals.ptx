@@ -163,27 +163,18 @@ public class ElseIf {
 
         <p>
 Java also supports a <c>switch</c> statement that acts something like the <c>elif</c> statement of Python under certain conditions. To write the grade program using a <c>switch</c> statement we would use the following:
-        </p>while True:
-        
-            try:
-        
-                x = int(input("Please enter a whole number: "))
-        
-                break
-        
-            except ValueError:
-        
-                print("Oops!  That was no valid number.  Try again...")
+</p>
 
         <note>
             <p>
-                Depending on your knowledge and experience with Python you may already be familiar and questioning why we are not using the <c>match</c> statement in our Python examples. The answer is that this book currently runs its active code examples on Python 3.7, which does not support the <c>match</c> statement. The <c>match</c> statement was introduced in Python 3.10. Below is an example of the <c>match</c> statement similar to our grade method.
+                Depending on your knowledge and experience with Python you may already be familiar and questioning why we are not using the <c>match</c> statement in our Python examples. The answer is that this book currently runs its active code examples using Python 3.7, which does not support the <c>match</c> statement which was introduced in Python 3.10. Below is an example of the <c>match</c> statement similar to our grade method.
             </p>
                     <program language="python">
             <title>Match Case Example</title>
             <code>
-                grade = 100 // 10
-                def grading(grade):
+                grade = 85
+                tempgrade = grade // 10
+                def grading(tempgrade):
                     match grade:
                         case 10 | 9:
                             return 'A'
@@ -195,7 +186,7 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
                             return 'D'
                         case _:
                             return 'F'
-                print(grading(grade))
+                print(grading(tempgrade))
             </code>
         </program>
         </note>
@@ -248,7 +239,7 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         <title>Exception Handling</title>
         
         <p>
-            In Python, if you want a program to continue running when an error has occurred, you can use try/except blocks to handle exceptions. If you wanted to write a program that asks the user to enter a whole number and then squares that number, you could use the following code to do so:
+            In Python, if you want a program to continue running when an error has occurred, you can use <c>try-except</c> blocks to handle exceptions. If you wanted to write a program that asks the user to enter a whole number and then squares that number, you could use the following code to do so:
         </p>
 
         <program interactive="activecode" language="python" xml:id="square-input-python">
@@ -282,7 +273,7 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         </program>
 
         <p>
-            This code works well, but will end with an exception if the user types anything other than a whole number (such as 12.5 or two). If we wanted to ensure the code will continue to run until the user enters the correct format, we could add try/except (Python) or try/catch (Java) blocks within a <c>while</c> loop that iterates until the user enter the correct code. Adding try/except blocks and a <c>while</c> loop to the Python code will look something like this:
+            This code works well, but will end with an exception if the user types anything other than a whole number (such as 12.5 or two). If we wanted to ensure the code will continue to run until the user enters the correct format, we could add <c>try-except</c> (Python) or <c>try-catch</c> (Java) blocks within a <c>while</c> loop that iterates until the user enter the correct code. Adding <c>try-except</c> blocks and a <c>while</c> loop to the Python code will look something like this:
         </p>
 
         <program interactive="activecode" language="python" xml:id="square-input-exception-python">
@@ -320,7 +311,7 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
                             break;
                         } catch (InputMismatchException e) {
                             System.out.println("That was not a valid number. Please try again: ");
-                            scanner.nextLine(); 
+                            scanner.nextLine(); // Clear the invalid input from the scanner
                         }
                     }
                 }
@@ -329,13 +320,13 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         </program>
 
         <p>
-            Firstly, let's talk about the extra import alongside the <c>Scanner</c> import. In Java, any exception that isn't part of the <c>java.lang</c> class or is a checked exception must be explicitly imported to be used with try/catch blocks. If you ran the previous Java codeblock without try/catch blocks and entered an erroneous input, you would have got an <c>InputMismatchException</c> exception despite not having imported this class. That being said, removing the explicit import of this library for the try/catch code block above will lead to compilation errors. 
+            Firstly, let's talk about the extra import alongside the <c>Scanner</c> import. In Java, we need to import <c>InputMismatchException</c> because it's not automatically available like basic exceptions. This is different from Python where most exceptions are readily accessible. If you ran the previous Java codeblock without <c>try-catch</c> blocks and entered an erroneous input, you would have got an <c>InputMismatchException</c> exception despite not having imported this class. That being said, removing the explicit import of this library for the <c>try-catch</c> code block above will lead to compilation errors. 
         </p>
 
         <p>
             <idx>checked exception</idx>
             <idx>unchecked exception</idx>
-            Exceptions in Java fall under two categories: checked and unchecked. <term>Checked exceptions</term> must be explicitly imported and declared along with try/catch blocks for a program to compile. <term>Unchecked exceptions</term> do not need to be imported unless try/catch blocks are implemented for them (except for <c>java.lang</c> exceptions). <c>InputMismatchException</c> is an unchecked exception that is not part of the <c>java.lang</c> library, so it is only included if try/catch blocks declare it. Here are some common exceptions used with try/catch blocks:
+            Exceptions in Java fall under two categories: checked and unchecked. <term>Checked exceptions</term> must be explicitly imported and declared along with <c>try-catch</c> blocks for a program to compile. <term>Unchecked exceptions</term> do not need to be imported unless <c>try-catch</c> blocks are implemented for them (except for <c>java.lang</c> exceptions). <c>InputMismatchException</c> is an unchecked exception that is not part of the <c>java.lang</c> library, so it is only included if <c>try-catch</c> blocks declare it. Here are some common exceptions used with <c>try-catch</c> blocks:
         </p>
 
         <table>
@@ -390,7 +381,7 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         </table>
 
         <p>
-            Next, we will look into the try/catch blocks themselves. As with most other structures in Java, the blocks must be encased with braces <c>{}</c>. The most important part of this code is, after <c>catch</c>, there is a set of parenthesis with an exception type and a variable name <c>catch (InputMismatchException e)</c>. This is where we declare a <c>InputMismatchException</c> exception and name it with the variable name <c>e</c>. It is common practice to name exception variables <c>e</c> in this manner.
+            Next, we will look into the <c>try-catch</c> blocks themselves. As with most other structures in Java, the blocks must be encased with braces <c>{}</c>. The most important part of this code is, after <c>catch</c>, there is a set of parenthesis with an exception type and a variable name <c>catch (InputMismatchException e)</c>. This is where we declare a <c>InputMismatchException</c> exception and name it with the variable name <c>e</c>. It is common practice to name exception variables <c>e</c> in this manner.
         </p>
 
     </section>
