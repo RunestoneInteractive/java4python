@@ -163,17 +163,18 @@ public class ElseIf {
 
         <p>
 Java also supports a <c>switch</c> statement that acts something like the <c>elif</c> statement of Python under certain conditions. To write the grade program using a <c>switch</c> statement we would use the following:
-        </p>
+</p>
 
         <note>
             <p>
-                Depending on your knowledge and experience with Python you may already be familiar and questioning why we are not using the <c>match</c> statement in our Python examples. The answer is that this book currently runs its active code examples on Python 3.7, which does not support the <c>match</c> statement. The <c>match</c> statement was introduced in Python 3.10. Below is an example of the <c>match</c> statement similar to our grade method.
+                Depending on your knowledge and experience with Python you may already be familiar and questioning why we are not using the <c>match</c> statement in our Python examples. The answer is that this book currently runs its active code examples using Python 3.7, which does not support the <c>match</c> statement which was introduced in Python 3.10. Below is an example of the <c>match</c> statement similar to our grade method.
             </p>
                     <program language="python">
             <title>Match Case Example</title>
             <code>
-                grade = 100 // 10
-                def grading(grade):
+                grade = 85
+                tempgrade = grade // 10
+                def grading(tempgrade):
                     match grade:
                         case 10 | 9:
                             return 'A'
@@ -185,7 +186,7 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
                             return 'D'
                         case _:
                             return 'F'
-                print(grading(grade))
+                print(grading(tempgrade))
             </code>
         </program>
         </note>
@@ -232,6 +233,157 @@ public class SwitchUp {
         <p>
 The <c>switch</c> statement is not used very often, and we recommend you do not use it. First, it is not as powerful as the <c>else if</c> model because the switch variable can only be compared for equality with an integer or enumerated constant. Second, it is very easy to forget to put in the <c>break</c> statement, so it is more error-prone. If the break statement is left out then then the next alternative will be automatically executed. For example, if the grade was 95 and the <c>break</c> was omitted from the <c>case 9:</c> alternative then the program would print(out both A and B.)
         </p>
+    </section>
+
+    <section xml:id="exception-handling">
+        <title>Exception Handling</title>
+        
+        <p>
+            In Python, if you want a program to continue running when an error has occurred, you can use <c>try-except</c> blocks to handle exceptions. If you wanted to write a program that asks the user to enter a whole number and then squares that number, you could use the following code to do so:
+        </p>
+
+        <program interactive="activecode" language="python" xml:id="square-input-python">
+            <code>
+            number = int(input("Please enter a whole number: "))
+            squared = number ** 2
+            print("Your number squared is " + str(squared))            
+            </code>
+        </program>
+
+        <p>
+            The Java code that would perform the same task is a little more complex and utilizes the <c>Scanner</c> class for input.
+        </p>
+
+        <program interactive="activecode" language="java" xml:id="square-input-java">
+            <code>
+            import java.util.Scanner;
+
+            public class SquareNumber {
+                public static void main(String[] args) {
+                    Scanner user_input = new Scanner(System.in);
+                    
+                    System.out.print("Please enter a whole number: ");
+                    int number = user_input.nextInt();
+                    int squared = number * number;
+                    
+                    System.out.println("Your number squared is " + squared);
+                }
+            }
+            </code>
+        </program>
+
+        <p>
+            This code works well, but will end with an exception if the user types anything other than a whole number (such as 12.5 or two). If we wanted to ensure the code will continue to run until the user enters the correct format, we could add <c>try-except</c> (Python) or <c>try-catch</c> (Java) blocks within a <c>while</c> loop that iterates until the user enter the correct code. Adding <c>try-except</c> blocks and a <c>while</c> loop to the Python code will look something like this:
+        </p>
+
+        <program interactive="activecode" language="python" xml:id="square-input-exception-python">
+            <code>
+            while True:
+                try:
+                    number = int(input("Please enter a whole number: "))
+                    squared = number ** 2
+                    print("Your number squared is " + str(squared))
+                    break
+                except ValueError:
+                    print("That was not a valid number. Please try again: ")   
+            </code>
+        </program>
+
+        <p>
+            Now that we have Python code that will continuously prompt the user until they enter a whole number, let's look at Java code that accomplishes the same task. Like most other equivalent Java code blocks, this code has a lot of extra bits that are necessary to get working code. 
+        </p>
+
+        <program interactive="activecode" language="java" xml:id="square-input-exception-java">
+            <code>
+            import java.util.Scanner;
+            import java.util.InputMismatchException;
+
+            public class SquareNumberWithValidation {
+                public static void main(String[] args) {
+                    Scanner scanner = new Scanner(System.in);
+                    
+                    while (true) {
+                        try {
+                            System.out.print("Please enter a whole number: ");
+                            int number = scanner.nextInt();
+                            int squared = number * number;
+                            System.out.println("Your number squared is " + squared);
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("That was not a valid number. Please try again: ");
+                            scanner.nextLine(); // Clear the invalid input from the scanner
+                        }
+                    }
+                }
+            }
+            </code>
+        </program>
+
+        <p>
+            Firstly, let's talk about the extra import alongside the <c>Scanner</c> import. In Java, we need to import <c>InputMismatchException</c> because it's not automatically available like basic exceptions. This is different from Python where most exceptions are readily accessible. If you ran the previous Java codeblock without <c>try-catch</c> blocks and entered an erroneous input, you would have got an <c>InputMismatchException</c> exception despite not having imported this class. That being said, removing the explicit import of this library for the <c>try-catch</c> code block above will lead to compilation errors. 
+        </p>
+
+        <p>
+            <idx>checked exception</idx>
+            <idx>unchecked exception</idx>
+            Exceptions in Java fall under two categories: checked and unchecked. <term>Checked exceptions</term> must be explicitly imported and declared along with <c>try-catch</c> blocks for a program to compile. <term>Unchecked exceptions</term> do not need to be imported unless <c>try-catch</c> blocks are implemented for them (except for <c>java.lang</c> exceptions). <c>InputMismatchException</c> is an unchecked exception that is not part of the <c>java.lang</c> library, so it is only included if <c>try-catch</c> blocks declare it. Here are some common exceptions used with <c>try-catch</c> blocks:
+        </p>
+
+        <table>
+            <title>Exceptions</title>
+            <tabular>
+                <row>
+                    <cell><term>Exception</term></cell>
+                    <cell><term>Package</term></cell>
+                    <cell><term>Description</term></cell>
+                </row>
+                <row>
+                    <cell><c>IOException</c></cell>
+                    <cell><c>java.io</c></cell>
+                    <cell>Thrown when an I/O operation fails (e.g., reading or writing a file).</cell>
+                </row>
+                <row>
+                    <cell><c>FileNotFoundException</c></cell>
+                    <cell><c>java.io</c></cell>
+                    <cell>Thrown when an attempt to open a file denoted by a pathname has failed.</cell>
+                </row>
+                <row>
+                    <cell><c>ParseException</c></cell>
+                    <cell><c>java.text</c></cell>
+                    <cell>Thrown when parsing a string into a date, number, etc. fails (e.g., wrong format).</cell>
+                </row>
+                <row>
+                    <cell><c>NoSuchMethodException</c></cell>
+                    <cell><c>java.lang</c></cell>
+                    <cell>Thrown when a particular method cannot be found via reflection.</cell>
+                </row>
+                <row>
+                    <cell><c>InputMismatchException</c></cell>
+                    <cell><c>java.util</c></cell>
+                    <cell>Thrown when <c>Scanner</c> input doesn’t match the expected data type.</cell>
+                </row>
+                <row>
+                    <cell><c>SQLException</c></cell>
+                    <cell><c>java.sql</c></cell>
+                    <cell>Thrown when a database access error occurs (e.g., invalid SQL query, bad connection).</cell>
+                </row>
+                <row>
+                    <cell><c>InstantiationException</c></cell>
+                    <cell><c>java.lang</c></cell>
+                    <cell>Thrown when trying to create an instance of an abstract class or interface.</cell>
+                </row>
+                <row>
+                    <cell><c>IllegalAccessException</c></cell>
+                    <cell><c>java.lang</c></cell>
+                    <cell>Thrown when a reflection operation tries to access a field or method it doesn't have permission for.</cell>
+                </row>
+            </tabular>
+        </table>
+
+        <p>
+            Note that as with other structures in Java, <c>try-catch</c> blocks blocks must be encased with braces <c>{}</c>. The most important part of this code is, after <c>catch</c>, there is a set of parenthesis with an exception type and a variable name <c>catch (InputMismatchException e)</c>. This is where we declare a <c>InputMismatchException</c> exception and name it with the variable name <c>e</c>. It is common practice, though not a requirement, to name exception variables <c>e</c> in this manner.
+        </p>
+
     </section>
 
     <section xml:id="boolean-operators">

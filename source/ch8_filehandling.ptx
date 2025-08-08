@@ -4,17 +4,10 @@
 <chapter xml:id="filemmanipulation">
     <title>File Handling</title>
 
-    <introduction>
-        <p>
-            File handling is an integral part of programming. Most programming languages have the ability to read from, write to, create, delete, move, and copy files.
-        </p>
-    </introduction>
-    
-
     <section xml:id="file-class-import">
         <title>Class Imports</title>
         <p>
-            In Python, most built-in libraries are available without needing  to explicitly import additional packages, but some libraries like <c>math</c> do need to be imported. Consider the following.
+            File handling is an integral part of programming. Most programming languages have the ability to read from, write to, create, delete, move, and copy files. In Python, most built-in libraries are available without needing  to explicitly import additional packages, but some libraries like <c>math</c> do need to be imported. Consider the following.
         </p>
         <program xml:id = "file-class-import-Python-example" interactive="activecode" language="python">
             <code>
@@ -42,12 +35,13 @@
         </p>
 
         <p>
-             Java includes a class called <c>File</c> in the <c>io</c> library. The class can be imported with the following line. Be sure to capitalize <c>File</c>.
+            Much like the Math class, in order for your program to work with files you need to import classes from libraries. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create File objects, and use its public methods. the following code imports the <c>File</c> class and creates a <c>File</c> object called myFile. for now focus on how the class is imported and used in the program; We will cover the <c>IOException</c> class and <c>createNewFile</c> method later.
         </p>
         <program xml:id = "file-class-import-io-example" interactive="activecode" language="java">
             <code>
             import java.io.File;
-            import java.io.IOException;public class Main {
+            import java.io.IOException;
+            public class Main {
                 public static void main(String[] args) {
                     try {
                         File myFile = new File("newfile.txt");
