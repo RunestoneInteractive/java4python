@@ -5,17 +5,17 @@
     <title>Overview</title>
 
 
-<section xml:id="sec-prerequisites">
-    <title>Prerequisites</title>
+<section xml:id="prerequisites-and-trajectory">
+    <title>Prerequisites and Trajectory</title>
 
         <p>
             This book assumes that you are already familiar with the <url href="http://www.python.org" visual="http://www.python.org">Python</url> programming language.
-            We will use Python as a starting point for our journey into <url href="http://java.sun.com" visual="http://java.sun.com">Java</url>.
+            We will use Python as a starting point for our journey into <url href="http://java.com" visual="http://java.com">Java</url>.
             We will begin by looking at a very simple Java program, just to see what the language looks like and how we get a program to run.
             Next, we will look at the main constructs that are common to most programming languages:
         </p>
 
-        <blockquote>
+        
             <p>
                 <ul>
                     <li>
@@ -26,313 +26,311 @@
 
                     <li>
                         <p>
-                            Loops
+                            User input and output
                         </p>
                     </li>
 
                     <li>
                         <p>
-                            Reading user input
+                            Conditionals and Exception Handling
                         </p>
                     </li>
-
                     <li>
                         <p>
-                            Conditionals
+                            Loops and Iteration
                         </p>
                     </li>
                 </ul>
             </p>
-        </blockquote>
 
         <p>
-            Once we have the basics of Java behind us we will move on to look at the features of Java that are both unique and powerful.
+            Once we have the basics of Java behind us we will move on to look at more powerful features of the language.
         </p>
 
-        <blockquote>
+        
             <p>
                 <ul>
                     <li>
                         <p>
-                            Classes
+                            Classes and Interfaces
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Recursion
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            File Handling
                         </p>
                     </li>
 
-                    <li>
-                        <p>
-                            Interfaces
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                            Collections
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                            Graphical User Interface Programming
-                        </p>
-                    </li>
-                                    <li>
-                        <p>
-                            Generic Programming
-                        </p>
-                    </li>
                 </ul>
             </p>
-        </blockquote>
+        <p>
+            Finally, we will look at common errors and how to find the help you need.
+        </p>
 
 </section>
 
 
-<section xml:id="sec-java-development-environment">
+<section xml:id="java-development-environment">
     <title>Java Development Environment</title>
 
     <introduction>
-        <note>
-          <p>
-            Thank you to Beryl Hoffman for contributing to this section from her CSAwesome: AP Java Programming book.
-          </p>
-        </note>
-      
-        <p>
+        <p><idx>compiler</idx><idx>integrated development environment</idx><idx>IDE</idx>
             The tool that we use to compile a Java source file into a Java class file
             is called a <term>compiler</term>. Most programmers use an
-            <term>Integrated Development Environment</term> (IDE) that has the
+            <term>integrated development environment</term> (<term>IDE</term>) that has the
             compiler built in and helps you write, compile, run, and debug programs.
         </p>
 
-        <p>
+        <p><idx>Active Code</idx><idx>load history</idx>
             You can learn Java by just using the interactive coding panels called
             <term>Active Code</term> in this e-book. If you are logged in, the Active
             Code will remember your changes and even show you a history of your
-            changes to the code if you click on Load History.
+            changes to the code if you click on <term>Load History</term>.
         </p>
 
         <p>
-            However, it’s a good idea to also try a Java IDE to build code outside of
-            this e-book, especially to try coding with user input which Active Code
-            cannot do. There are many Java IDEs available.
+            However, it's a good idea to also try a Java IDE to build code outside of
+            this online book. There are many Java IDEs available. If you are enrolled in a course, your instructor will likely recommend one, so you should learn to use that one.
         </p>
     </introduction>
 
-    <subsection xml:id="subsec-java-ide-options">
-        <title>Java IDE Options</title>
-        <p>
-      There are a lot of online cloud IDEs where you can code online in many
-      programming languages. Most are free to start, but offer different
-      features for a price. These are great options if you are using a
-      Chromebook or you cannot install software on your computer or you want an
-      easy no-installation option. Some of the Active Code samples in this
-      e-book also include a link to online IDEs. These projects can be copied to
-      make your own copy.
-    </p>
-
-    <p>Here are some popular online IDEs:</p>
-    <p>
-      <ul>
-        <li>
-          <p>
-            CodeHS (<url href="https://codehs.com/"
-            >https://codehs.com/</url>) has a free Sandbox online IDE 
-            (<url href="https://codehs.com/app/sandbox">https://codehs.com/app/sandbox</url>) 
-            where you can run Java and Java Swing programs. Students can share the links 
-            to their code and the history of their code is saved. CodeHS has free and paid features.
-            Grading features are in the paid version.
-          </p>
-        </li>
-        <li>
-          <p>
-            PickCode (<url href="https://pickcode.io/"
-            visual="https://pickcode.io/">https://pickcode.io/</url>) is another
-            online IDE that offers many free and paid features for setting up
-            classrooms. In the free version, tudents can share links to their code and 
-            the history of their code is saved. Classroom features are in the paid version.
-          </p>
-        </li>
-        <li>
-          <p>
-            Replit (<url href="https://replit.com/"
-            visual="https://replit.com/">https://replit.com/</url>) an online
-            IDE which recently switched to only allowing 3 projects at a time
-            for free. Be aware that Replit has turned on its AI feature for code
-            completion for all accounts (<url href="https://replit.com/ai"
-            visual="https://replit.com/ai">https://replit.com/ai</url>). Each
-            user can turn the AI on and off at the bottom of the code window,
-            and use an AI chat window to ask questions of the AI.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            JuiceMind (<url href="https://juicemind.com/"
-            visual="https://juicemind.com/">https://juicemind.com/</url>) is an
-            online IDE that offers many free and paid features for teachers to
-            set up classrooms like Coding Rooms. It has a built-in version of
-            CSAwesome.
-          </p>
-        </li>
-      </ul>
-    </p>
-  </subsection>
-
-  <subsection>
-    <title>Github Classroom and Codespaces</title>
-    <p>
-      Github provides many free opportunities for students and teachers (<url
-      href="https://docs.github.com/en/education/quickstart"
-      visual="https://docs.github.com/en/education/quickstart">https://docs.github.com/en/education/quickstart</url>).
-      Github Classroom (<url href="https://classroom.github.com/"
-      visual="https://classroom.github.com/">https://classroom.github.com/</url>)
-      allows teachers to set up a classroom based on github repositories. Github
-      and git are both widely used in the computer industry, so learning to use
-      them is great experience for students. Github now has a cloud IDE called
-      Codespaces (<url href="https://github.com/features/codespaces"
-      visual="https://github.com/features/codespaces">https://github.com/features/codespaces</url>)
-      which you can use for 60 hours a month for free or completely free if you
-      join as a school or get approved as a teacher or student. In Codespaces,
-      you can start from a blank template or a repo, open a .java file in the
-      VSCode editor, follow prompts to install the Extension Pack for Java,
-      click on the Run and Debug (play button), follow the prompts to install
-      the Java debugger, and see the output of your code in the terminal. You
-      can also use Copilot (<url href="https://github.com/features/copilot"
-      visual="https://github.com/features/copilot">https://github.com/features/copilot</url>),
-      which is a coding AI based on GPT, for free if you are approved for
-      educational use.
-    </p>
-
-    <p>
-      Students will need to sign up for a free Github account (<url
-      href="https://github.com/signup"
-      visual="https://github.com/signup">https://github.com/signup</url>) if
-      they don’t already have one in order to use Codespaces.
-    </p>
-  </subsection>
-
-  <subsection>
-    <title>VSCode</title>
-    <p>
-      VSCode (<url href="https://code.visualstudio.com"
-      visual="https://code.visualstudio.com">https://code.visualstudio.com</url>)
-      is a widely used coding editor which you can download on your local
-      computers. It has many useful extensions. The code can be run in a
-      terminal window in the editor. See <url
-      href="https://code.visualstudio.com/docs/languages/java"
-      visual="https://code.visualstudio.com/docs/languages/java">https://code.visualstudio.com/docs/languages/java</url>
-      for Java support. This editor is different than Microsoft Visual Studio
-      which is a very large IDE.
-    </p>
+    <subsection xml:id="installing-java">
+        <title>Installing Java</title>
+        <p><idx>JDK</idx><idx>Java development kit</idx><idx>Oracle</idx><idx>OpenJDK</idx>
+            Before you can use any Java IDE or compile Java programs, you need to install the <term>Java development kit</term> (<term>JDK</term>) on your computer. The JDK includes the Java compiler, the Java runtime environment, and many essential tools for Java development. You can either download the latest version of the JDK from Oracle's website (<url href="https://www.oracle.com/java/technologies/downloads/" visual="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</url>) or use OpenJDK, which is a free and open-source implementation available at <url href="https://openjdk.org/" visual="https://openjdk.org/">https://openjdk.org/</url>. Most IDEs will help you configure the JDK once it's installed, but you'll need to have it on your system first. To verify your installation works, you can open a command prompt or terminal and type <c>java -version</c> - you should see version information displayed.
+        </p>
     </subsection>
 
-    <subsection>
-    <title>Dr. Java</title>
-    <p>
-      DrJava (from <url href="http://DrJava.org"
-      visual="http://DrJava.org">http://DrJava.org</url>) is a free, simple,
-      easy to install and use development environment. One nice feature is the
-      interactions pane at the bottom which lets you try out Java code without
-      having to create a class first.
-    </p>
-  </subsection>
+    <subsection xml:id="github-classroom-codespaces">
+        <title>Github Classroom and Codespaces</title>
+        <p><idx>GitHub</idx><idx>version control</idx><idx>Codespaces</idx>
+            GitHub is the largest source code repository host in the world, with over 300 million repositories and a global community of more than 100 million developers. Github is widely used for both open-source and private projects, making it a versatile platform for various development needs, and a great place to learn about version control and collaboration in software development.
+            Github provides many free opportunities for both students and teachers (<url
+            href="https://docs.github.com/en/education/quickstart"
+            visual="https://docs.github.com/en/education/quickstart">https://docs.github.com/en/education/quickstart</url>).
+            Github Classroom (<url href="https://classroom.github.com/"
+            visual="https://classroom.github.com/">https://classroom.github.com/</url>)
+            allows teachers to set up a classroom based on Github repositories. Github
+            and git are both very widely used in the computer industry, so learning to use
+            them is great experience for students who want to showcase their skills. Github now has a cloud IDE called
+            Codespaces (<url href="https://github.com/features/codespaces"
+            visual="https://github.com/features/codespaces">https://github.com/features/codespaces</url>)
+            which you can use for 60 hours a month for free or completely free if you
+            join as a school or get approved as a teacher or student. In Codespaces,
+            you can start from a blank template or repository, open a .java file in the
+            VSCode editor, follow prompts to install the Extension Pack for Java,
+            click on the Run and Debug (play button), follow the prompts to install
+            the Java debugger, and see the output of your code in the terminal. You
+            can also use Copilot (<url href="https://github.com/features/copilot"
+            visual="https://github.com/features/copilot">https://github.com/features/copilot</url>),
+            which is a coding AI based on GPT, for free if you are approved for
+            educational use.
+        </p>
 
-  <subsection>
-    <title>BlueJ</title>
-    <p>
-      BlueJ (<url href="https://www.bluej.org/"
-      visual="https://www.bluej.org/">https://www.bluej.org/</url>) is a free
-      Java IDE designed for beginners. It is built to explore objects and
-      object-oriented programming and has a teachers’ community as well as a
-      playlist of videos online <url
-      href="https://www.youtube.com/playlist?list=PLYPWr4ErjcnzWB95MVvlKArO6PIfv1fHd"
-      visual="https://www.youtube.com/playlist?list=PLYPWr4ErjcnzWB95MVvlKArO6PIfv1fHd">https://www.youtube.com/playlist?list=PLYPWr4ErjcnzWB95MVvlKArO6PIfv1fHd</url>
-      to go with the BlueJ Object-First Java book.
-    </p>
-  </subsection>
+        <p>
+            To use Github classroom, students need to sign up for a free Github account (<url
+            href="https://github.com/signup"
+            visual="https://github.com/signup">https://github.com/signup</url>) if
+            they don't already have one in order to use Codespaces.
+        </p>
+    </subsection>
 
-  <subsection>
-    <title>jGRASP</title>
-    <p>
-      jGRASP (<url href="https://www.jgrasp.org/"
-      visual="https://www.jgrasp.org/">https://www.jgrasp.org/</url>) is a free
-      lightweight development environment, created specifically to provide
-      automatic generation of software visualizations. jGRASP is implemented in
-      Java, and runs on all platforms with a Java Virtual Machine (Java version
-      1.5 or higher). jGRASP produces Control Structure Diagrams (CSDs) for
-      Java, C, C++, Objective-C, Python, Ada, and VHDL; Complexity Profile
-      Graphs (CPGs) for Java and Ada; UML class diagrams for Java; and has
-      dynamic object viewers and a viewer canvas that work in conjunction with
-      an integrated debugger and workbench for Java. The site includes both
-      intro video and PDF tutorials.
-    </p>
-  </subsection>
+    <subsection xml:id="desktop-ide-options">
+        <title>Desktop IDE Options</title>
+        <p>
+            To install Java software on your local computer, below are several popular Java IDEs and editors that you can download and install. Please be sure to use the one that is recommended by your instructor if you are enrolled in a course, as they may have specific preferences or requirements.
+        </p>
 
-  <subsection>
-    <title>IntelliJ</title>
-    <p>
-      IntelliJ (<url href="https://www.jetbrains.com/idea/"
-      visual="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</url>)
-      is a free Java IDE from JetBrains which many professionals use. It is a
-      little easier to configure than Eclipse below. Here is a guide on how to
-      set up IntelliJ: <url
-      href="https://www.jetbrains.com/help/idea/install-and-set-up-product.html"
-      visual="https://www.jetbrains.com/help/idea/install-and-set-up-product.html">https://www.jetbrains.com/help/idea/install-and-set-up-product.html</url>.
-    </p>
-  </subsection>
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        <term>VSCode</term> (<url href="https://code.visualstudio.com"
+                        visual="https://code.visualstudio.com">https://code.visualstudio.com</url>) is not an IDE per se, but it
+                        is a widely used coding editor which you can download on your local
+                        computer with many useful extensions like debugging tools that for all practical purposes make it behave like an IDE. It is frequently used in combination with Github Classroom. See <url
+                        href="https://code.visualstudio.com/docs/languages/java"
+                        visual="https://code.visualstudio.com/docs/languages/java">https://code.visualstudio.com/docs/languages/java</url>
+                        for Java support. Note that the VSCode editor is not the same as the Microsoft Visual Studio IDE which is a very large IDE that is not widely used for Java.
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        <term>IntelliJ IDEA</term> (<url href="https://www.jetbrains.com/idea/"
+                        visual="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</url>)
+                        is a free Java IDE from JetBrains which many professionals use. It is a
+                        little easier to configure than Eclipse. Here is a guide on how to
+                        set up IntelliJ: <url
+                        href="https://www.jetbrains.com/help/idea/install-and-set-up-product.html"
+                        visual="https://www.jetbrains.com/help/idea/install-and-set-up-product.html">https://www.jetbrains.com/help/idea/install-and-set-up-product.html</url>.
+                    </p>
+                </li>
 
-  <subsection>
-    <title>Netbeans</title>
-    <p>
-      Netbeans (<url href="https://netbeans.org/"
-      visual="https://netbeans.org/">https://netbeans.org/</url>) is one of the
-      original Java IDEs. Here is a tutorial on how to set it up: <url
-      href="https://netbeans.org/kb/docs/java/quickstart"
-      visual="https://netbeans.org/kb/docs/java/quickstart">https://netbeans.org/kb/docs/java/quickstart</url>.
-    </p>
-  </subsection>
+                <li>
+                    <p>
+                        <term>Eclipse</term> (<url href="https://www.eclipse.org/downloads/packages/installer"
+                        visual="https://www.eclipse.org/downloads/packages/installer">https://www.eclipse.org/downloads/packages/installer</url>)
+                        is what many professional Java programmers use. It may be a little complex
+                        for beginners. Here are some installation and configuration instructions
+                        for Eclipse for Java beginners: <url
+                        href="http://skylit.com/javamethods/faqs/Eclipse.pdf"
+                        visual="http://skylit.com/javamethods/faqs/Eclipse.pdf">http://skylit.com/javamethods/faqs/Eclipse.pdf</url>.
+                    </p>
+                </li>
 
-  <subsection>
-    <title>Eclipse</title>
-    <p>
-      Eclipse (<url href="https://www.eclipse.org/downloads/packages/installer"
-      visual="https://www.eclipse.org/downloads/packages/installer">https://www.eclipse.org/downloads/packages/installer</url>)
-      is what many professional Java programmers use. It may be a little complex
-      for beginners. Here are some installation and configuration instructions
-      for Eclipse for Java beginners: <url
-      href="http://skylit.com/javamethods/faqs/Eclipse.pdf"
-      visual="http://skylit.com/javamethods/faqs/Eclipse.pdf">http://skylit.com/javamethods/faqs/Eclipse.pdf</url>.
-    </p>
-  </subsection>
+                <li>
+                    <p>
+                        <term>DrJava</term> (<url href="http://DrJava.org"
+                        visual="http://DrJava.org">http://DrJava.org</url>) is a free, simple,
+                        easy to install and use development environment. One nice feature is the
+                        interactions pane at the bottom which lets you try out Java code without
+                        having to create a class first.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <term>BlueJ</term> (<url href="https://www.bluej.org/"
+                        visual="https://www.bluej.org/">https://www.bluej.org/</url>) is a free
+                        Java IDE designed for beginners. It is built to explore objects and
+                        object-oriented programming and has a teachers' community as well as a
+                        playlist of videos online <url
+                        href="https://www.youtube.com/playlist?list=PLYPWr4ErjcnzWB95MVvlKArO6PIfv1fHd"
+                        visual="https://www.youtube.com/playlist?list=PLYPWr4ErjcnzWB95MVvlKArO6PIfv1fHd">https://www.youtube.com/playlist?list=PLYPWr4ErjcnzWB95MVvlKArO6PIfv1fHd</url>
+                        to go with the BlueJ Object-First Java book.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <term>jGRASP</term> (<url href="https://www.jgrasp.org/"
+                        visual="https://www.jgrasp.org/">https://www.jgrasp.org/</url>) is a free
+                        lightweight development environment, created specifically to provide
+                        automatic generation of software visualizations. jGRASP is implemented in
+                        Java, and runs on all platforms with a Java Virtual Machine (Java version
+                        1.5 or higher). jGRASP produces Control Structure Diagrams (CSDs) for
+                        Java, C, C++, Objective-C, Python, Ada, and VHDL; Complexity Profile
+                        Graphs (CPGs) for Java and Ada; UML class diagrams for Java; and has
+                        dynamic object viewers and a viewer canvas that work in conjunction with
+                        an integrated debugger and workbench for Java. The site includes both
+                        intro video and PDF tutorials.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <term>NetBeans</term> (<url href="https://netbeans.org/"
+                        visual="https://netbeans.org/">https://netbeans.org/</url>) is one of the
+                        original Java IDEs. Here is a tutorial on how to set it up: <url
+                        href="https://netbeans.org/kb/docs/java/quickstart"
+                        visual="https://netbeans.org/kb/docs/java/quickstart">https://netbeans.org/kb/docs/java/quickstart</url>.
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </subsection>
+
+        <subsection xml:id="java-online-ide-options">
+        <title>Java Online IDE Options</title>
+        <p>
+            There are also a lot of online cloud IDEs where you can code online in many
+            programming languages. Most are free to start, but offer different
+            features for a price. These are great options if you are using a
+            Chromebook or you cannot install software on your computer or you want an
+            easy no-installation option.
+        </p>
+
+        <p>Here are some popular online IDEs:</p>
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        CodeHS (<url href="https://codehs.com/"
+                        >https://codehs.com/</url>) has a free Sandbox online IDE 
+                        (<url href="https://codehs.com/app/sandbox">https://codehs.com/app/sandbox</url>) 
+                        where you can run Java and Java Swing programs. Students can share the links 
+                        to their code and the history of their code is saved. CodeHS has free and paid features.
+                        Grading features are in the paid version.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        PickCode (<url href="https://pickcode.io/"
+                        visual="https://pickcode.io/">https://pickcode.io/</url>) is another
+                        online IDE that offers many free and paid features for setting up
+                        classrooms. In the free version, students can share links to their code and 
+                        the history of their code is saved. Classroom features are in the paid version.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Replit (<url href="https://replit.com/"
+                        visual="https://replit.com/">https://replit.com/</url>) an online
+                        IDE which recently switched to only allowing 3 projects at a time
+                        for free. Be aware that Replit has turned on its AI feature for code
+                        completion for all accounts (<url href="https://replit.com/ai"
+                        visual="https://replit.com/ai">https://replit.com/ai</url>). Each
+                        user can turn the AI on and off at the bottom of the code window,
+                        and use an AI chat window to ask questions of the AI.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        JuiceMind (<url href="https://juicemind.com/"
+                        visual="https://juicemind.com/">https://juicemind.com/</url>) is an
+                        online IDE that offers many free and paid features for teachers to
+                        set up classrooms like Coding Rooms. It has a built-in version of
+                        CSAwesome.
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </subsection>
+
+    <note>
+        <p>
+            Thank you to Beryl Hoffman for contributing to this section from her CSAwesome: AP Java Programming book.
+        </p>
+    </note>
 </section>
 
     <section xml:id="why-another-programming-language">
         <title>Why Another Programming Language?</title>
 
-        <p>
+        <p><idx>dynamic language</idx><idx>static languages</idx>
+            <idx>Python</idx> <idx>Java</idx>
             Python is a nice language for beginning programming for several reasons.
             First the syntax is sparse, and clear.
             Second, the underlying model of how objects and variables work is very consistent.
             Third, you can write powerful and interesting programs without a lot of work.
-            However, Python is representative of one kind of language, called a dynamic language.
-            You might think of Python as being fairly informal.
-            There are other languages, like Java and C++ that are more formal.
+            However, Python is representative of one kind of language, called a <term>dynamic language</term>. In dynamic languages like Python, the type of a variable (whether it's a number, string, list, etc.) is determined while the program is running, not when you write the code. 
+        </p>
+            
+            <p>In <term>static languages</term>, all variable types need to be declared upfront.
+            You might think of Python as being fairly informal about data types.
+            Java and C++ are more formal about types.
         </p>
 
-        <p>
+        <p><idx>performance</idx>
             These languages have some advantages of their own.
-            First, is speed: Java and C++ code will generally give better performance than Python code. (See <xref ref="note-python-performance"/>.)
-            Second is their maintainability.
+            First, is speed: Java and C++ code will generally give better <term>performance</term> than Python code. (See <xref ref="note-python-performance"/>.)
+            Second is their <term>maintainability</term> over time. Maintainability is the ease with which a program can be modified to correct faults, improve performance, or adapt to a changed environment.
             A lot of what makes Python easy to use is that you must remember certain things.
-            For example if you set variable <c>x</c> to reference a turtle, and forget later that <c>x</c> is a turtle but try to invoke a string method on it, you will get an error.
+            For example, if you set Python variable <c>x</c> to reference a turtle, and forget later that <c>x</c> is a turtle but try to invoke a string method on it, you will get an error.
             Java and C++ protect you by forcing you to be upfront and formal about the kind of object each variable is going to refer to.
         </p>
 
-            <p>
-                In one sense Python is representative of a whole class of languages, sometimes referred to as &#x201C;scripting languages.&#x201D; Other languages in the same category as Python are Ruby and Perl.
-                Java is representative of what I will call industrial strength languages.
-                Industrial strength languages are good for projects with several people working on the project where being formal and careful about what you do may impact lots of other people.
-                Languages in this category include Rust, C++, C#, and Ada.
+            <p><idx>scripting language</idx> <idx>industrial strength languages</idx>
+                In one sense Python is representative of a whole class of languages, sometimes referred to as <term>scripting languages</term>. Other languages in the same category as Python are JavaScript, Ruby, and Perl.
+                Java is representative of what we might call <term>industrial strength languages</term>.
+        Industrial strength languages are good for large projects with multiple programmers, where being formal and careful about code structure is important because changes made by one person can impact many others.
+               Other industrial strength languages include Rust, C++, C#, and Ada.
             </p>
 
         <p>
@@ -349,7 +347,7 @@
                     
             <p>
   
-            Although Python code is generally slower than Java and C++ code, in practice Python programs can achieve equivalent performance.
+            Although Python code is generally slower than Java and C++ code, in practice Python programs can achieve equivalent performance. Performance can be defined as how efficiently software can accomplish its tasks. 
             This can be done by compiling Python code to C code (see: <url href="https://cython.org" visual="https://cython.org">Cython</url>) or by calling high-performance libraries from Python (e.g., <url href="https://numpy.org" visual="https://numpy.org">NumPy</url>, <url href="https://scikit-learn.org/stable/" visual="https://scikit-learn.org/stable/">scikit-learn</url>, etc.).
             So native language performance is just one criteria to consider when deciding which language to use for a program.
             </p>
@@ -357,7 +355,7 @@
 
 </section>
 
-    <section xml:id="sec-why-java-why-not-c-or-c">
+    <section xml:id="sec-why-java-why-not-c-or-cpp">
         <title>Why Learn Java? Why not C or C++?</title>
 
         <p>
@@ -367,16 +365,17 @@
         <p>
             <ul>
                 <li>
-                    <p>
-                        Java includes a larger standard library than C or C++, which means that sophisticated programs can be created in Java without including external dependencies.
+                    <p><idx>standard library</idx>
+                        Java includes a larger <term>standard library</term> than C or C++, which means that sophisticated programs can be created in Java without including external dependencies.
                         The Java Standard Edition contains thousands of built-in classes that support tasks like file input/output, networking, data structures, and graphical interfaces.
-                        We could not begin to scratch the surface of these classes even if we devoted all of class time! However, we will cover many useful and powerful features of the Java standard library this semester.
+                        We could not begin to scratch the surface of these classes even if we devoted many more chapters! However, we will cover many useful and powerful features of the Java standard library.
                     </p>
                 </li>
 
                 <li>
-                    <p>
-                        Java incorporates automatic garbage collection of memory, whereas C and C++ programs typically include some degree of manual memory management.
+                    <p><idx>garbage collection</idx> 
+                        Java incorporates automatic <term>garbage collection</term> of memory, which is an automatic memory management process that identifies and removes unused objects from memory, helping to free up space and improve program efficiency. 
+                        C and C++ programs typically include some degree of manual memory management.
                         This makes programming in those languages more challenging.
                     </p>
                 </li>
