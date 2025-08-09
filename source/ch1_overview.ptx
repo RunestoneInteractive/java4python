@@ -5,17 +5,17 @@
     <title>Overview</title>
 
 
-<section xml:id="sec-prerequisites">
-    <title>Prerequisites</title>
+<section xml:id="prerequisites-and-trajectory">
+    <title>Prerequisites and Trajectory</title>
 
         <p>
             This book assumes that you are already familiar with the <url href="http://www.python.org" visual="http://www.python.org">Python</url> programming language.
-            We will use Python as a starting point for our journey into <url href="http://java.sun.com" visual="http://java.sun.com">Java</url>.
+            We will use Python as a starting point for our journey into <url href="http://java.com" visual="http://java.com">Java</url>.
             We will begin by looking at a very simple Java program, just to see what the language looks like and how we get a program to run.
             Next, we will look at the main constructs that are common to most programming languages:
         </p>
 
-        <blockquote>
+        
             <p>
                 <ul>
                     <li>
@@ -26,63 +26,51 @@
 
                     <li>
                         <p>
-                            Loops
+                            User input and output
                         </p>
                     </li>
 
                     <li>
                         <p>
-                            Reading user input
+                            Conditionals and Exception Handling
                         </p>
                     </li>
-
                     <li>
                         <p>
-                            Conditionals
+                            Loops and Iteration
                         </p>
                     </li>
                 </ul>
             </p>
-        </blockquote>
 
         <p>
-            Once we have the basics of Java behind us we will move on to look at the features of Java that are both unique and powerful.
+            Once we have the basics of Java behind us we will move on to look at more powerful features of the language.
         </p>
 
-        <blockquote>
+        
             <p>
                 <ul>
                     <li>
                         <p>
-                            Classes
+                            Classes and Interfaces
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Recursion
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            File Handling
                         </p>
                     </li>
 
-                    <li>
-                        <p>
-                            Interfaces
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                            Collections
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                            Graphical User Interface Programming
-                        </p>
-                    </li>
-                                    <li>
-                        <p>
-                            Generic Programming
-                        </p>
-                    </li>
                 </ul>
             </p>
-        </blockquote>
+        <p>
+            Finally, we will look at common errors and how to find the help you need.
+        </p>
 
 </section>
 
@@ -91,11 +79,7 @@
     <title>Java Development Environment</title>
 
     <introduction>
-        <note>
-          <p>
-            Thank you to Beryl Hoffman for contributing to this section from her CSAwesome: AP Java Programming book.
-          </p>
-        </note>
+
       
         <p>
             The tool that we use to compile a Java source file into a Java class file
@@ -304,6 +288,11 @@
       visual="http://skylit.com/javamethods/faqs/Eclipse.pdf">http://skylit.com/javamethods/faqs/Eclipse.pdf</url>.
     </p>
   </subsection>
+          <note>
+          <p>
+            Thank you to Beryl Hoffman for contributing to this section from her CSAwesome: AP Java Programming book.
+          </p>
+        </note>
 </section>
 
     <section xml:id="why-another-programming-language">
