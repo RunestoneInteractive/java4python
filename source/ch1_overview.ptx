@@ -102,7 +102,7 @@
     <subsection xml:id="installing-java">
         <title>Installing Java</title>
         <p><idx>JDK</idx><idx>Java development kit</idx><idx>Oracle</idx><idx>OpenJDK</idx>
-            Before you can use any Java IDE or compile Java programs, you need to install the <term>Java development kit</term> (<term>JDK</term>) on your computer. The JDK includes the Java compiler, the runtime environment, and essential tools for Java development. You can either download the latest version of the JDK from Oracle's website (<url href="https://www.oracle.com/java/technologies/downloads/" visual="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</url>) or use OpenJDK, which is a free and open-source implementation available at <url href="https://openjdk.org/" visual="https://openjdk.org/">https://openjdk.org/</url>. Most IDEs will help you configure the JDK once it's installed, but you'll need to have it on your system first. To verify your installation works, open a command prompt or terminal and type <c>java -version</c> - you should see version information displayed.
+            Before you can use any Java IDE or compile Java programs, you need to install the <term>Java development kit</term> (<term>JDK</term>) on your computer. The JDK includes the Java compiler, the Java runtime environment, and many essential tools for Java development. You can either download the latest version of the JDK from Oracle's website (<url href="https://www.oracle.com/java/technologies/downloads/" visual="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</url>) or use OpenJDK, which is a free and open-source implementation available at <url href="https://openjdk.org/" visual="https://openjdk.org/">https://openjdk.org/</url>. Most IDEs will help you configure the JDK once it's installed, but you'll need to have it on your system first. To verify your installation works, you can open a command prompt or terminal and type <c>java -version</c> - you should see version information displayed.
         </p>
     </subsection>
 
@@ -303,30 +303,34 @@
     <section xml:id="why-another-programming-language">
         <title>Why Another Programming Language?</title>
 
-        <p>
+        <p><idx>dynamic language</idx><idx>static languages</idx>
+            <idx>Python</idx> <idx>Java</idx>
             Python is a nice language for beginning programming for several reasons.
             First the syntax is sparse, and clear.
             Second, the underlying model of how objects and variables work is very consistent.
             Third, you can write powerful and interesting programs without a lot of work.
-            However, Python is representative of one kind of language, called a dynamic language.
-            You might think of Python as being fairly informal.
-            There are other languages, like Java and C++ that are more formal.
+            However, Python is representative of one kind of language, called a <term>dynamic language</term>. In dynamic languages like Python, the type of a variable (whether it's a number, string, list, etc.) is determined while the program is running, not when you write the code. 
+        </p>
+            
+            <p>In <term>static languages</term>, all variable types need to be declared upfront.
+            You might think of Python as being fairly informal about data types.
+            Java and C++ are more formal about types.
         </p>
 
-        <p>
+        <p><idx>performance</idx>
             These languages have some advantages of their own.
-            First, is speed: Java and C++ code will generally give better performance than Python code. (See <xref ref="note-python-performance"/>.)
-            Second is their maintainability.
+            First, is speed: Java and C++ code will generally give better <term>performance</term> than Python code. (See <xref ref="note-python-performance"/>.)
+            Second is their <term>maintainability</term> over time. Maintainability is the ease with which a program can be modified to correct faults, improve performance, or adapt to a changed environment.
             A lot of what makes Python easy to use is that you must remember certain things.
-            For example if you set variable <c>x</c> to reference a turtle, and forget later that <c>x</c> is a turtle but try to invoke a string method on it, you will get an error.
+            For example, if you set Python variable <c>x</c> to reference a turtle, and forget later that <c>x</c> is a turtle but try to invoke a string method on it, you will get an error.
             Java and C++ protect you by forcing you to be upfront and formal about the kind of object each variable is going to refer to.
         </p>
 
-            <p>
-                In one sense Python is representative of a whole class of languages, sometimes referred to as &#x201C;scripting languages.&#x201D; Other languages in the same category as Python are Ruby and Perl.
-                Java is representative of what I will call industrial strength languages.
-                Industrial strength languages are good for projects with several people working on the project where being formal and careful about what you do may impact lots of other people.
-                Languages in this category include Rust, C++, C#, and Ada.
+            <p><idx>scripting language</idx> <idx>industrial strength languages</idx>
+                In one sense Python is representative of a whole class of languages, sometimes referred to as <term>scripting languages</term>. Other languages in the same category as Python are JavaScript, Ruby, and Perl.
+                Java is representative of what we might call <term>industrial strength languages</term>.
+        Industrial strength languages are good for large projects with multiple programmers, where being formal and careful about code structure is important because changes made by one person can impact many others.
+               Other industrial strength languages include Rust, C++, C#, and Ada.
             </p>
 
         <p>
@@ -343,7 +347,7 @@
                     
             <p>
   
-            Although Python code is generally slower than Java and C++ code, in practice Python programs can achieve equivalent performance.
+            Although Python code is generally slower than Java and C++ code, in practice Python programs can achieve equivalent performance. Performance can be defined as how efficiently software can accomplish its tasks. 
             This can be done by compiling Python code to C code (see: <url href="https://cython.org" visual="https://cython.org">Cython</url>) or by calling high-performance libraries from Python (e.g., <url href="https://numpy.org" visual="https://numpy.org">NumPy</url>, <url href="https://scikit-learn.org/stable/" visual="https://scikit-learn.org/stable/">scikit-learn</url>, etc.).
             So native language performance is just one criteria to consider when deciding which language to use for a program.
             </p>
@@ -351,7 +355,7 @@
 
 </section>
 
-    <section xml:id="sec-why-java-why-not-c-or-c">
+    <section xml:id="sec-why-java-why-not-c-or-cpp">
         <title>Why Learn Java? Why not C or C++?</title>
 
         <p>
@@ -361,16 +365,17 @@
         <p>
             <ul>
                 <li>
-                    <p>
-                        Java includes a larger standard library than C or C++, which means that sophisticated programs can be created in Java without including external dependencies.
+                    <p><idx>standard library</idx>
+                        Java includes a larger <term>standard library</term> than C or C++, which means that sophisticated programs can be created in Java without including external dependencies.
                         The Java Standard Edition contains thousands of built-in classes that support tasks like file input/output, networking, data structures, and graphical interfaces.
-                        We could not begin to scratch the surface of these classes even if we devoted all of class time! However, we will cover many useful and powerful features of the Java standard library this semester.
+                        We could not begin to scratch the surface of these classes even if we devoted many more chapters! However, we will cover many useful and powerful features of the Java standard library.
                     </p>
                 </li>
 
                 <li>
-                    <p>
-                        Java incorporates automatic garbage collection of memory, whereas C and C++ programs typically include some degree of manual memory management.
+                    <p><idx>garbage collection</idx> 
+                        Java incorporates automatic <term>garbage collection</term> of memory, which is an automatic memory management process that identifies and removes unused objects from memory, helping to free up space and improve program efficiency. 
+                        C and C++ programs typically include some degree of manual memory management.
                         This makes programming in those languages more challenging.
                     </p>
                 </li>
