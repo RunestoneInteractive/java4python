@@ -75,7 +75,7 @@ public class Hello {
                 <idx>interpreter</idx>
                 <idx>interpreted language</idx>
                 <idx>compile</idx>
-                The first question you probably have about this little program is "How do I run it on my own computer?" Running a Java program on your computer is not as simple as running a Python program. The first thing you need to do with a Java program is to compile it. The first big difference between Java and Python is that Python is an <term>interpreted language</term>. We could run our Python programs in the Python <term>interpreter</term> and we were quite happy to do that. Java makes running programs a two-step process. First, we must type the hello world program into a file and save that file using the name <c>Hello.java</c> The file name must be the same as the public class you define in the file. Once we have saved the file we <term>compile</term> it from the command line as follows: 
+               A natural question that you may have about this little program is "How would I run it on my own computer?" Running a Java program on your computer is not as simple as running a Python program because the first thing you need to do with a Java program is to compile it, which is not needed in Python. Python is an <term>interpreted language</term>. We could run our Python programs in the Python <term>interpreter</term> and we can be quite happy to do only that. Java makes running programs a two-step process. First, we must type the hello world program into a file and save that file using the filename <c>Hello.java</c> because the file name must be the same as the public class that you define in the file. Once we have saved the file, we <term>compile</term> it either in our IDE or from the command line as follows: 
             </p>
 
             <program language="java">
@@ -91,8 +91,8 @@ $ ls -l Hello.*
                 <idx>byte code</idx> 
                 <idx><c>javac</c></idx>
                 The command <c>javac</c> compiles our Java source code into compiled <term>byte code</term> and saves it in a file called <c>Hello.class</c>.
-                <c>Hello.class</c> is a binary file so you won't learn much if you try to examine the class file with an editor.
-                Hopefully you didn't make any mistakes, but if you did you may want to consult the <xref ref="common-mistakes-id1"/> section for helpful hints on compiler errors.
+                <c>Hello.class</c> is a binary file, so you won't learn much if you try to examine the class file with an editor.
+                Hopefully you didn't make any mistakes, but if you did you may want to consult the <xref ref="common-mistakes"/> section for helpful hints on compiler errors.
             </p>
 
             <p>
@@ -127,9 +127,9 @@ $
             </p>
 
             <p>
-                <idx>JVM</idx>
+                <idx>JVM</idx><idx>Java Virtual Machine</idx>
                 <idx>byte code</idx>
-                The job of the compiler is to turn your java code into language that the <term>Java Virtual Machine</term> (<term>JVM</term>) can understand.
+                The job of the compiler is to turn your java code into language that the <term>Java virtual machine</term> (<term>JVM</term>) can understand.
                 We call the code that the JVM understands <term>byte code</term>.
                 The JVM interprets the byte code much like the Python interpreter interprets your Python.
                 However since byte code is much closer to the native language of the computer it can run faster.
