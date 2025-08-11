@@ -289,7 +289,7 @@ public class ArrayProcessor {
             Neither language supports <idx> tail call optimization </idx><term>tail call optimization</term>, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative (loop-based) approach is the preferred solution in both Python and Java.
         </p>
         <p>
-            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to aRecursionError.
+            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to a RecursionError.
         </p>
         <program xml:id="python-recursion-error" interactive="activecode" language="python">
             <code>
@@ -331,4 +331,121 @@ public class ArrayProcessor {
             </code>
         </program>
     </section>
+
+    <section xml:id="recursion_java_summary">
+    <title>Summary &amp; Reading Questions</title>
+    <p><ol label="1">
+        <li>
+            <p>Recursion solves problems by defining a <em>base case</em> and a <em>recursive step</em>; each call reduces the problem size until the base case is reached.</p>
+        </li>
+        <li>
+            <p>Java methods must declare visibility, static/instance context, return type, and parameter types; e.g., <c>public static int factorial(int n)</c>.</p>
+        </li>
+        <li>
+            <p>The recursive logic in Java mirrors Python conceptually, but Java uses curly braces <c>{}</c> and explicit types instead of indentation and dynamic typing.</p>
+        </li>
+        <li>
+            <p>The helper-method pattern keeps public APIs clean (e.g., <c>sumArray(int[] arr)</c>) while a private helper (e.g., <c>sumHelper(int[] arr, int index)</c>) carries extra state like the current index.</p>
+        </li>
+        <li>
+            <p>Closing over array bounds and indexes in the helper avoids forcing callers to provide implementation details (like a starting index).</p>
+        </li>
+        <li>
+            <p>Deep or unbounded recursion can exhaust the call stack: Python raises <c>RecursionError</c>; Java throws <c>StackOverflowError</c>.</p>
+        </li>
+        <li>
+            <p>Neither Java nor Python guarantees tail call optimization; prefer iterative solutions for algorithms requiring very deep recursion.</p>
+        </li>
+        <li>
+            <p>Error signaling differs across languages; for example, a Java factorial that receives a negative <c>n</c> might return a sentinel value (e.g., <c>-1</c>) after printing an error message.</p>
+        </li>
+    </ol></p>
+    <reading-questions xml:id="rqs-recursion-java">
+        <exercise label="recursion-1">
+            <statement>
+                <p>Which method signature and behavior best match a typical Java recursive factorial implementation?</p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p><c>public void factorial(int n)</c> that prints each partial product and stops when <c>n</c> reaches zero.</p></statement>
+                    <feedback><p>No. Printing results is fine for testing, but a proper factorial method should return the computed value.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p><c>public static int factorial(int n)</c> that returns <c>1</c> when <c>n &lt;= 1</c> and otherwise returns <c>n * factorial(n - 1)</c>.</p></statement>
+                    <feedback><p>Correct. This matches the standard recursive factorial definition in Java.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p><c>private static int factorial(double n)</c> that repeatedly multiplies <c>n</c> and decrements it until it reaches 1.</p></statement>
+                    <feedback><p>No. Factorials are for integers, and using <c>double</c> here is unnecessary and can cause rounding issues.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p><c>public int factorial()</c> that uses a stored class field for <c>n</c> instead of a method parameter.</p></statement>
+                    <feedback><p>No. Relying on a class field hides the input and makes recursion less flexible.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="recursion-2">
+            <statement>
+                <p>Why use a private helper method (e.g., <c>sumHelper(int[] arr, int index)</c>) behind a public method (e.g., <c>sumArray(int[] arr)</c>) in recursive array processing?</p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p>Because it allows Java to automatically optimize the recursion for faster execution.</p></statement>
+                    <feedback><p>No. Java does not automatically optimize recursion just because you use a helper method.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p>To keep the public API simple while encapsulating extra recursion state (such as the current index) inside a private method.</p></statement>
+                    <feedback><p>Correct. This keeps the interface clean while hiding internal details from the caller.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Because public methods cannot take more than one parameter in recursive calls.</p></statement>
+                    <feedback><p>No. Public methods can take multiple parameters; this is about interface clarity, not parameter limits.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>To eliminate the need for a base case by handling termination in the helper method automatically.</p></statement>
+                    <feedback><p>No. The helper method still needs an explicit base case to stop recursion.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="recursion-3">
+    <statement>
+        <p>Which statement about recursion limits and errors is accurate?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>Java can handle very deep or even infinite recursion if the method body is short and does not perform significant operations.</p>
+            </statement>
+            <feedback>
+                <p>No. Regardless of the method’s complexity, each recursive call consumes stack space, and infinite recursion will always cause a stack overflow.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p>When the call stack is exhausted, Python raises a <c>RecursionError</c> whereas Java throws a <c>StackOverflowError</c>, and neither language applies automatic tail call optimization.</p>
+            </statement>
+            <feedback>
+                <p>Correct. This difference in exception types and the lack of built-in tail call optimization is a key distinction between the two languages.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Declaring a recursive method as <c>static</c> in Java reduces memory usage per call, allowing more recursive calls before a stack overflow occurs.</p>
+            </statement>
+            <feedback>
+                <p>No. The <c>static</c> modifier changes method context (class vs. instance) but does not meaningfully affect per-call stack memory usage.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Increasing a method’s parameter type from <c>int</c> to <c>long</c> in Java can prevent stack overflows for large input values by storing bigger numbers more efficiently.</p>
+            </statement>
+            <feedback>
+                <p>No. The size of the number type does not influence the maximum recursion depth; stack space usage depends on the number of active calls, not numeric range.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+    </reading-questions>
+</section>
 </chapter>
