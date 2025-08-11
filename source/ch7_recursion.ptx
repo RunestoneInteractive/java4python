@@ -324,14 +324,14 @@ public class ArrayProcessor {
                     public static void main(String[] args) {
                         System.out.println("Calling the recursive method... this will end in an error!");
 
-                        causeStackOverflow();
+                            causeStackOverflow();
                     }
                 }
             </code>
         </program>
     </section>
 
-    <section xml:id="recursion_java_summary">
+    <section xml:id="recursion_summary">
     <title>Summary &amp; Reading Questions</title>
     <p><ol label="1">
         <li>
@@ -344,23 +344,20 @@ public class ArrayProcessor {
             <p>The recursive logic in Java mirrors Python conceptually, but Java uses curly braces <c>{}</c> and explicit types instead of indentation and dynamic typing.</p>
         </li>
         <li>
-            <p>The helper-method pattern keeps public APIs clean (e.g., <c>sumArray(int[] arr)</c>) while a private helper (e.g., <c>sumHelper(int[] arr, int index)</c>) carries extra state like the current index.</p>
-        </li>
-        <li>
-            <p>Closing over array bounds and indexes in the helper avoids forcing callers to provide implementation details (like a starting index).</p>
+            <p>The helper method pattern hides implementation details (like array indices) from callers, providing clean public interfaces while managing recursive state privately.</p>
         </li>
         <li>
             <p>Deep or unbounded recursion can exhaust the call stack: Python raises <c>RecursionError</c>; Java throws <c>StackOverflowError</c>.</p>
         </li>
         <li>
-            <p>Neither Java nor Python guarantees tail call optimization; prefer iterative solutions for algorithms requiring very deep recursion.</p>
+            <p>Neither Java nor Python guarantees tail call optimization, so programmers should use iterative solutions for algorithms that would require very deep recursion.</p>
         </li>
         <li>
-            <p>Error signaling differs across languages; for example, a Java factorial that receives a negative <c>n</c> might return a sentinel value (e.g., <c>-1</c>) after printing an error message.</p>
+            <p>Recursive methods in Java must specify return types explicitly, unlike Python's dynamic typing, which affects how you handle error cases and return values.</p>
         </li>
     </ol></p>
     <reading-questions xml:id="rqs-recursion-java">
-        <exercise label="recursion-1">
+        <exercise label="recursion-method-signature">
             <statement>
                 <p>Which method signature and behavior best match a typical Java recursive factorial implementation?</p>
             </statement>
@@ -383,7 +380,7 @@ public class ArrayProcessor {
                 </choice>
             </choices>
         </exercise>
-        <exercise label="recursion-2">
+        <exercise label="recursion-helper-method">
             <statement>
                 <p>Why use a private helper method (e.g., <c>sumHelper(int[] arr, int index)</c>) behind a public method (e.g., <c>sumArray(int[] arr)</c>) in recursive array processing?</p>
             </statement>
@@ -406,7 +403,7 @@ public class ArrayProcessor {
                 </choice>
             </choices>
         </exercise>
-        <exercise label="recursion-3">
+        <exercise label="recursion-limits">
     <statement>
         <p>Which statement about recursion limits and errors is accurate?</p>
     </statement>

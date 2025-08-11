@@ -1011,7 +1011,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
         </program>
     </section>
     
-<section xml:id="chapter6_summary">
+<section xml:id="java_classes_summary">
     <title>Summary &amp; Reading Questions</title>
     <p><ol>
         <li>
