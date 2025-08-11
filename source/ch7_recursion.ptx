@@ -7,10 +7,10 @@
 <section xml:id="basic-recursion">
         <title>Basic Recursion</title>
         <p>
-            In this chapter, we will explore how to translate your recursive logic from Python to Java. While the core concepts of recursion remain the same, the syntax and structure of your code will change somewhat.
+            In this chapter, we will explore how to translate your recursive logic from Python to Java. While the core concepts of recursion remain the same, the syntax and a bit of the structure of your code will change somewhat.
         </p>
-        <p><idx>recursion</idx>
-            As you may know from Python, <term>recursion</term> is a powerful problem-solving technique involving base cases and recursive steps in which a function or method calls itself. When moving to Java, the core logic you've learned remains identical. The challenge is adapting that logic to Java's statically-typed, class-based syntax.
+        <p><idx>recursion</idx><idx>base case</idx><idx>recursive step</idx>
+            As you may know from Python, <term>recursion</term> is a powerful problem-solving technique involving one or more <term>base cases</term> and <term>recursive steps</term> in which a function or method calls itself while moving towards a base case. When moving to Java, the core logic you've learned remains identical. The challenge is adapting that logic to Java's statically-typed, class-based syntax.
         </p>
 
 <p>
@@ -34,7 +34,7 @@
     as <m>n \times (n-1)!</m>.
 </p>
         <p>
-            Here is a Python implementation of factorial using functions:
+            Here is a Python implementation of factorial using just one function:
         </p>
         <program xml:id="factorial-python-function" interactive="activecode" language="python">
             <code>
@@ -49,20 +49,18 @@ def factorial(n):
     # Recursive Step: n * (n-1)!
     return n * factorial(n - 1)
 
-def main():
-    number = 5
-    print(str(number) + "! is " + str(factorial(number)))
+number = 5
+print(str(number) + "! is " + str(factorial(number)))
 
-main()
-            </code>
+     </code>
         </program>
         
         <p>
-            Many Python programs organize related functions into classes. The same factorial function can be placed inside a class as a method. Then you need to create an instance of the class to call the method. There we create the class <c>MathTools</c> with a method <c>factorial</c>, and we call it from the <c>main</c> function.
+            Many Python programs organize related functions into classes. The same factorial function can be placed inside a class as a method instead of as a function. When this is done, you need to create an instance of the class in order to call the method. Below, we create the class <c>MathTools</c> with a method <c>factorial</c>, and we call it from the <c>main</c> function.
         </p>
         <program xml:id="factorial-python-class" interactive="activecode" language="python">
             <code>
-class MathTools:
+class MTools:
     def factorial(self, n):
         # Check for negative numbers
         if n &lt; 0:
@@ -76,9 +74,9 @@ class MathTools:
 
 def main():
     # Create an instance of the class and call the method
-    math_tools = MathTools()
+    mtools_instance = MTools()
     number = 5
-    print(str(number) + "! is " + str(math_tools.factorial(number)))
+    print(str(number) + "! is " + str(mtools_instance.factorial(number)))
 
 main()
             </code>
@@ -92,7 +90,7 @@ main()
         </p>
         <program xml:id="factorial-java-class" interactive="activecode" language="java">
             <code>
-public class MathTools {
+public class MTools {
     public static int factorial(int n) {
         // Check for negative numbers
         if (n &lt; 0) {
@@ -115,7 +113,7 @@ public class MathTools {
             </code>
         </program>
         <p>
-           Notice the key differences from Python: instead of <c>def factorial(n):</c>, Java uses <c>public static int factorial(int n)</c> which declares the method's visibility as <c>public</c>, that it belongs to the class rather than an instance (hence, <c>static</c>), the return type as integer, and the parameter type also as integer. The recursive logic—base case and recursive step—remains identical to Python, but all code blocks use curly braces <c>{}</c> instead of indentation.
+           Notice the key differences from Python: instead of <c>def factorial(n):</c>, Java uses <c>public static int factorial(int n)</c> which declares the method's visibility as <c>public</c>, that it belongs to the class rather than an instance (hence, <c>static</c>), the return type as integer, and the parameter type also as integer. The recursive logic—base case and recursive step—remains identical to Python, and, of course, all code blocks use curly braces <c>{}</c> instead of indentation.
         </p>
     </section>
 
