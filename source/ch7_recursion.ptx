@@ -256,7 +256,7 @@ public class ArrayProcessor {
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         int result = sumArray(numbers);
-        System.out.println("The sum of [1, 2, 3, 4, 5] is " + result);
+        System.out.println("The sum of " + Arrays.toString(numbers) + " is " + result);
     }
 }
         </code>
@@ -274,7 +274,7 @@ public class ArrayProcessor {
     <section xml:id="recursion-limits-in-java">
         <title>Recursion Limits: Python vs. Java</title>
         <p>
-            The consequence of deep recursion, running out of stack space, is a concept you've already encountered in Python. Java handles this in a very similar way, throwing an error when the call stack depth is exceeded.
+            The consequence of deep recursion, running out of stack space, is a concept you may have already encountered in Python. Java handles this in a very similar way to Python, throwing an error when the call stack depth is exceeded.
         </p>
         <p>
             The key difference is the name of the error:
@@ -284,10 +284,10 @@ public class ArrayProcessor {
             <li>In Java, this throws a <c>StackOverflowError</c>.</li>
         </ul>
         <p>
-            Neither language supports <idx> tail call optimization </idx><term>tail call optimization</term>, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative (loop-based) approach is the preferred solution in both Python and Java.
+            Neither language supports <idx> tail call optimization </idx><term>tail call optimization</term>, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative, loop-based, approach is likely going to be the preferred solution in both Python and Java.
         </p>
         <p>
-            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to a RecursionError.
+            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to a <c>RecursionError</c>.
         </p>
         <program xml:id="python-recursion-error" interactive="activecode" language="python">
             <code>
@@ -297,32 +297,33 @@ public class ArrayProcessor {
                     """
                     cause_recursion_error()
 
-                # Standard Python entry point
-                if __name__ == "__main__":
-                    print("Calling the recursive function... this will end in an error!")
-                    
-                    # This line starts the infinite recursion.
-                    # Python will stop it and raise a RecursionError automatically.
-                    cause_recursion_error()
+                print("Calling the recursive function... this will end in an error!")
+
+                # The line below will start the infinite recursion.
+                # Python will stop it and raise a RecursionError automatically.
+                # Each call adds a new layer to the program's call stack.
+                # Eventually, the call stack runs out of space, causing the error.
+                cause_recursion_error()
             </code>
         </program>
 
         <p>
-            The following Java code demonstrates a similar situation, where a method calls itself indefinitely without a base case, leading to a StackOverflowError.
+            The following Java code demonstrates a similar situation, where a method calls itself indefinitely without a base case, leading to a <c>StackOverflowError</c>.
         </p>
         <program xml:id="java-stack-overflow" interactive="activecode" language="java">
             <code>
                 public class Crash {
                     public static void causeStackOverflow() {
-                        // This method calls itself endlessly without a stopping condition (a base case).
-                        // Each call adds a new layer to the program's call stack.
-                        // Eventually, the stack runs out of space, causing the error.
+                    // The line below will start the infinite recursion.
+                    // Java will stop it and raise a StackOverflowError automatically.
+                    // Each call adds a new layer to the program's call stack.
+                    // Eventually, the call stack runs out of space, causing the error.
                         causeStackOverflow();
                     }
-                    // A main method is required to run the program.
+                    // A main method is required to run the Java program.
                     public static void main(String[] args) {
                         System.out.println("Calling the recursive method... this will end in an error!");
-                        // This line starts the infinite recursion.
+
                         causeStackOverflow();
                     }
                 }
