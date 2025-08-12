@@ -363,10 +363,6 @@
             </code> 
         </program>
 
-        <p>
-            Files in a specific directory can be written to using the same technique as the last section in which file paths are specified, with two back slashes used in Windows environments. 
-        </p>    
-
         <note>
             <p>
                 If a file does not already exist (for example, <c>myfile.txt</c> does not exist), the <c>write()</c> method will create the file. Despite this, it is still a good idea to create separate methods or classes for creating and writing to files. Not only is it good practice to ensure methods only accomplish one thing, but the <c>createNewFile()</c> method avoids overwriting files that already exist. Imagine a file with the name <c>myfile.txt</c> already exists and contains important information. Attempting to create a file using the <c>write()</c> method will delete that data forever.
@@ -382,7 +378,7 @@
         </pre>
 
         <p>
-            Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the <c>boolean</c> argument:
+            Now, when we use <c>write()</c> method like before, the text will be appended if there is already tSext in the document. If we were to update our code to include the <c>boolean</c> argument:
         </p>
         <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes">
                 <pre>
@@ -419,7 +415,7 @@
         </pre>
 
         <p>
-            This doesn't look very good! If we want each additional write to appear on a new line? The first solution may be to use the <c>\n</c> newline character:
+            This doesn't look very good! If we want each additional write to appear on a new line? A simple solution is to use the <c>\n</c> newline character:
         </p>
 
         <pre>
@@ -428,16 +424,7 @@
         </pre>
 
         <p>
-            The System.lineseseparator() method is a better solution. This method returns the system's default line separator, which is platform-dependent. For example, on Windows, it returns <c>\n</c>, while on Linux and macOS, it returns <c>\n</c>. Using this method ensures that your code works correctly across different operating systems:
-        </p>
-
-        <pre>
-            myWriter.write("File successfully updated!" + System.lineseparator()); // Added newline character 
-            myWriter.close();
-        </pre>
-
-        <p>
-            Running it twice will result in the following contents in myfile.txt:
+            Running the code with the newline character twice will result in the following contents in myfile.txt:
         </p>
 
         <pre>
