@@ -42,33 +42,33 @@
             Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create <c>File</c> objects, and use its public methods. 
         </p>
 
-        <pre>
+        <program language="java">
         import java.io.File;
-        </pre>
+        </program>
         <p>
             The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
 
-        <pre>
+        <program language="java">
             import java.util.Scanner; 
-        </pre>
+        </program>
 
         <p>
             The <c>FileWriter</c> class can be used to write to files. In the same way that the <c>Scanner</c> class isn't needed unless the program will read from a file, the <c>FileWriter</c> class isn't needed unless the program will write to a file.
         </p>
 
-        <pre>
+        <program language="java">
             import java.io.FileWriter;
-        </pre>
+        </program>
 
         <p>
             Finally, these last two classes provide error handling and must be used in tandem with the <c>File</c> class when reading from or writing to files. <c>IOException</c> handles file creation and writing errors, while <c>FileNotFoundException</c> handles errors when trying to read files. 
         </p>
 
-        <pre>
+        <program language="java">
             import java.io.IOException;
             import java.io.FileNotFoundException;
-        </pre>
+        </program>
         
     </section>
 
@@ -235,7 +235,7 @@
             Let us create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
         </p>
         
-        <pre>
+        <program language="java">
             import java.io.File;
             import java.io.FileWriter;
             import java.io.IOException;
@@ -245,24 +245,24 @@
                  
                 }
             }
-        </pre>
+        </program>
         
         <p>
             Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
         </p>
 
-        <pre>
+        <program language="java">
             FileWriter myWriter = new FileWriter("myfile.txt");
-        </pre>
+        </program>
 
         <p>
             In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types:
         </p>
 
-        <pre>
+        <program language="java">
             myWriter.write("File successfully updated!");
             myWriter.close();
-        </pre>
+        </program>
 
         <note>
             <p>
@@ -301,7 +301,7 @@
                 
             </pre>
         </datafile>
-        <pre>
+        <program language="java">
             try {
                 FileWriter myWriter = new FileWriter("myfile.txt");
                 myWriter.write("File successfully updated!");
@@ -311,7 +311,7 @@
                 System.out.println("An error occurred.");
                 e.printStackTrace();
             }
-        </pre>
+        </program>
 
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
@@ -373,17 +373,17 @@
             Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a <c>boolean</c> argument along with the file name when creating a new data argument:
         </p>
 
-        <pre>
+        <program language="java">
             FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
-        </pre>
+        </program>
 
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already tSext in the document. If we were to update our code to include the <c>boolean</c> argument:
         </p>
         <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes">
-                <pre>
+                <program language="java">
                     
-                </pre>
+                </program>
             </datafile>
         <program xml:id="file-write-exp6" interactive="activecode" language="java" add-files = "my-file-8-4-6">
             <code>
@@ -410,18 +410,18 @@
             Then if we run the program twice, the contents of <c>myfile.txt</c> would be:
         </p>
 
-        <pre>
+        <program language="java">
             File successfully updated!File successfully updated!
-        </pre>
+        </program>
 
         <p>
             This doesn't look very good! If we want each additional write to appear on a new line? A simple solution is to use the <c>\n</c> newline character:
         </p>
 
-        <pre>
+        <program language="java">
             myWriter.write("File successfully updated!\n"); // Added newline character 
             myWriter.close(); 
-        </pre>
+        </program>
 
         <p>
             Running the code with the newline character twice will result in the following contents in myfile.txt:
@@ -439,6 +439,36 @@
         <p>
             Finally, we will take a look at using Java to delete files. This one is pretty straight-forward and follows the structure used to create files. This time, however, try/catch blocks are not needed for the program to compile. We will call this class DeleteFile. The completed code should look something like this.
         </p>
+
+        <datafile label="myfile-delete" filename="myfile.txt" xml:id= "myfile-delete" editable="no">
+            <pre>
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+            </pre>
+    </datafile>
+
+        <program interactive="activecode" language="python">
+            <input>
+                # Name of the file to delete
+                file_name = "myfile.txt"
+
+                # Check if the file exists before deleting
+                if os.path.exists(file_name):
+                    try:
+                        os.remove(file_name)
+                        print("Deleted", file_name)
+                    except Exception as e:
+                        print("File could not be deleted.")
+                else:
+                    print("File could not be deleted.")
+            </input>
+        </program>
         
         <program interactive="activecode" language="java">
             <code>
