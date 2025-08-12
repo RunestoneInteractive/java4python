@@ -250,7 +250,7 @@
             Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>. The equivalent Python code to this operation is:
         </p>
 
-        <program xml:id="write-and-close-python" language="python">
+        <program xml:id="filerwriter-object-python" language="python">
             with open("myfile.txt", "w") as myWriter:
         </program>
 
