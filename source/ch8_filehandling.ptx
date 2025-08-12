@@ -477,7 +477,7 @@
             The next example is Python code that can be used to delete files. This code cannot be run because importing <c>os</c> is not possible with the technologies used to write this book:
         </p>
 
-        <program xml:id="delete-file-java" language="python">
+        <program xml:id="delete-file-python" language="python">
             import os
             file_name = "myfile.txt"
             if os.path.exists(file_name):
