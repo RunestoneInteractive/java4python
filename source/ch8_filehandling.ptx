@@ -85,8 +85,7 @@
             import java.io.File;
             public class CreateFile {
                 public static void main(String[] args) {
-                    File myFile = new File("myfile.txt");
-                    System.out.println(myFile);
+
                 }
             }
             </input> 
@@ -248,7 +247,15 @@
         </program>
         
         <p>
-            Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
+            Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>. The equivalent Python code to this operation is:
+        </p>
+
+        <program xml:id="write-and-close-python" language="python">
+            with open("myfile.txt", "w") as myWriter:
+        </program>
+
+        <p>
+            The Java code to create a <c>FileWriter</c> object is:
         </p>
 
         <program xml:id="filerwriter-object-java" language="java">
@@ -256,10 +263,18 @@
         </program>
 
         <p>
-            In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types:
+            In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types. First, how this step is completed with Python:
+        </p>
+        
+        <program xml:id="write-and-close-python" language="python">
+            my_writer.write("File successfully updated!")
+        </program>
+
+        <p>
+            And the Java equivalent. This is almost completely identical except for the second line, which is very important!
         </p>
 
-        <program xml:id="write-and-clase-java" language="java">
+        <program xml:id="write-and-close-java" language="java">
             myWriter.write("File successfully updated!");
             myWriter.close();
         </program>
@@ -280,8 +295,7 @@
                     3
                 </pre>
             </datafile>
-        <program xml:id="file-try-catch-python" interactive="activecode" language="python" add-files = "my-file-8-4-2">
-            <input>
+        <program xml:id="file-try-catch-python" language="python" add-files = "my-file-8-4-2">
                 try:
                     with open("myfile.txt", "w") as my_writer:
                         my_writer.write("File successfully updated!")
@@ -290,17 +304,12 @@
                     print("An error occurred.")
                     import traceback
                     traceback.print_exc()
-            </input>
         </program>
 
         <p>
             And the equivalent Java code:
         </p>
-        <datafile label="my-file-8-4-3" filename="myfile8-4-3.txt" xml:id= "my-file-8-4-3" editable="yes">
-            <pre>
-                
-            </pre>
-        </datafile>
+
         <program language="java" xml:id="file-try-catch-java">
             try {
                 FileWriter myWriter = new FileWriter("myfile.txt");
@@ -316,11 +325,11 @@
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
         </p>
-        <datafile label="my-file-8-4-4" filename="myfile.txt" xml:id= "my-file-8-4-4" editable="yes">
+        <datafile label="my-file-8-4-4" filename="my-file-8-4-4" xml:id= "my-file-8-4-4" editable="yes">
                 <pre>
                     
                 </pre>
-            </datafile>
+        </datafile>
         <program xml:id="file-write-full-python" interactive="activecode" language="python" add-files="my-file-8-4-4">
             <input>
             try:
@@ -380,7 +389,7 @@
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already tSext in the document. If we were to update our code to include the <c>boolean</c> argument:
         </p>
-        <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes">
+        <datafile label="my-file-8-4-6" filename="my-file-8-4-6" xml:id= "my-file-8-4-6" editable="yes">
                 <pre>
                     
                 </pre>
