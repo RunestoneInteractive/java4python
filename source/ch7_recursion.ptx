@@ -356,12 +356,16 @@ public class ArrayProcessor {
             <p>Recursive methods in Java must specify return types explicitly, unlike Python's dynamic typing, which affects how you handle error cases and return values.</p>
         </li>
     </ol></p>
-    <reading-questions xml:id="rqs-recursion-java">
+  <reading-questions xml:id="rqs-recursion-java">
         <exercise label="recursion-method-signature">
             <statement>
                 <p>Which method signature and behavior best match a typical Java recursive factorial implementation?</p>
             </statement>
             <choices>
+                <choice>
+                    <statement><p><c>public static int factorial(int n)</c> that returns <c>0</c> when <c>n &lt;= 0</c> and otherwise returns <c>n * factorial(n - 1)</c>.</p></statement>
+                    <feedback><p>No. While this handles negative numbers, the base case is incorrect - factorial of 0 should be 1, not 0.</p></feedback>
+                </choice>
                 <choice>
                     <statement><p><c>public void factorial(int n)</c> that prints each partial product and stops when <c>n</c> reaches zero.</p></statement>
                     <feedback><p>No. Printing results is fine for testing, but a proper factorial method should return the computed value.</p></feedback>
@@ -371,12 +375,8 @@ public class ArrayProcessor {
                     <feedback><p>Correct. This matches the standard recursive factorial definition in Java.</p></feedback>
                 </choice>
                 <choice>
-                    <statement><p><c>private static int factorial(double n)</c> that repeatedly multiplies <c>n</c> and decrements it until it reaches 1.</p></statement>
-                    <feedback><p>No. Factorials are for integers, and using <c>double</c> here is unnecessary and can cause rounding issues.</p></feedback>
-                </choice>
-                <choice>
-                    <statement><p><c>public int factorial()</c> that uses a stored class field for <c>n</c> instead of a method parameter.</p></statement>
-                    <feedback><p>No. Relying on a class field hides the input and makes recursion less flexible.</p></feedback>
+                    <statement><p><c>public static long factorial(int n)</c> that returns <c>1</c> when <c>n == 0</c> and otherwise returns <c>n * factorial(n - 1)</c>.</p></statement>
+                    <feedback><p>No. While this logic is close, it doesn't handle the case when n = 1, and using long as return type when int parameter is used creates inconsistency.</p></feedback>
                 </choice>
             </choices>
         </exercise>
@@ -408,20 +408,20 @@ public class ArrayProcessor {
         <p>Which statement about recursion limits and errors is accurate?</p>
     </statement>
     <choices>
-        <choice>
-            <statement>
-                <p>Java can handle very deep or even infinite recursion if the method body is short and does not perform significant operations.</p>
-            </statement>
-            <feedback>
-                <p>No. Regardless of the method’s complexity, each recursive call consumes stack space, and infinite recursion will always cause a stack overflow.</p>
-            </feedback>
-        </choice>
         <choice correct="yes">
             <statement>
                 <p>When the call stack is exhausted, Python raises a <c>RecursionError</c> whereas Java throws a <c>StackOverflowError</c>, and neither language applies automatic tail call optimization.</p>
             </statement>
             <feedback>
                 <p>Correct. This difference in exception types and the lack of built-in tail call optimization is a key distinction between the two languages.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Java automatically applies tail call optimization to recursive methods marked as <c>final</c>, preventing most stack overflows.</p>
+            </statement>
+            <feedback>
+                <p>No. Java does not perform automatic tail call optimization, regardless of whether methods are marked as final.</p>
             </feedback>
         </choice>
         <choice>
@@ -434,10 +434,10 @@ public class ArrayProcessor {
         </choice>
         <choice>
             <statement>
-                <p>Increasing a method’s parameter type from <c>int</c> to <c>long</c> in Java can prevent stack overflows for large input values by storing bigger numbers more efficiently.</p>
+                <p>The JVM can detect simple recursive patterns and automatically convert them to iterative loops to prevent stack overflow.</p>
             </statement>
             <feedback>
-                <p>No. The size of the number type does not influence the maximum recursion depth; stack space usage depends on the number of active calls, not numeric range.</p>
+                <p>No. The JVM does not automatically convert recursive methods to iterative ones. This optimization must be done manually by the programmer.</p>
             </feedback>
         </choice>
     </choices>
