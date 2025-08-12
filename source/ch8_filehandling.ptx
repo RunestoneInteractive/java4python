@@ -195,7 +195,7 @@
         </program>
 
         <p>
-            The following Java code functions very similarly to the previous Python. The main difference here is that unlike Python, In Java we use the <c>Scanner</c> object to iterate through and read lines in the file. You will notice that the structure of the Java code is still similar to the Python; Both use a try and catch statement to read the file and catch any errors.
+            The following Java code functions very similarly to the previous Python. The main difference here is that unlike Python, in Java we use the <c>Scanner</c> object to iterate through and read lines in the file. You will notice that the structure of the Java code is still similar to the Python; Both use a try and catch statement to read the file and catch any errors.
         </p>
 
         <program xml:id="file-read-java" interactive="activecode"  language="java" add-files= "myfile-read">
@@ -235,34 +235,17 @@
             Let us create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
         </p>
         
-        <program xml:id="file-write-exp1" interactive="activecode" language="java">
-            <code>
+        <pre>
             import java.io.File;
             import java.io.FileWriter;
             import java.io.IOException;
             import java.util.Scanner;
             public class WriteFile {
                 public static void main(String[] args) {
-                    String filename = "test_file.txt";        
-                    try (FileWriter writer = new FileWriter(filename)) {
-                        writer.write("This line was written by the program.");
-                        System.out.println("Successfully wrote to the file.");
-                    } 
-                    catch (IOException e) {
-                        System.out.println("An error occurred during writing.");
-                    }        System.out.println("--- Reading file back ---");        
-                    try (Scanner reader = new Scanner(new File(filename))) {
-                        while (reader.hasNextLine()) {
-                            System.out.println(reader.nextLine());
-                        }
-                    } 
-                    catch (IOException e) {
-                        System.out.println("An error occurred during reading.");
-                    }
+                 
                 }
             }
-            </code> 
-        </program>
+        </pre>
         
         <p>
             Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
@@ -299,12 +282,14 @@
             </datafile>
         <program xml:id="file-write-exp2" interactive="activecode" language="python" add-files = "my-file-8-4-2">
             <code>
-                with open("myfile8-4-2.txt", "r") as file_reader:
-                    while True:
-                        line = file_reader.readline()
-                        if not line:  # End of file
-                            break
-                        print(line.strip())
+                try:
+                    with open("myfile.txt", "w") as my_writer:
+                        my_writer.write("File successfully updated!")
+                    print("File successfully written to.")
+                except OSError as e:
+                    print("An error occurred.")
+                    import traceback
+                    traceback.print_exc()
             </code>
         </program>
 
@@ -312,29 +297,21 @@
             And the equivalent Java code:
         </p>
         <datafile label="my-file-8-4-3" filename="myfile8-4-3.txt" xml:id= "my-file-8-4-3" editable="yes">
-                <pre>
-                    
-                </pre>
-            </datafile>
-        <program xml:id="file-write-exp3" interactive="activecode" language="java" add-files = "my-file-8-4-3">
-            <code>
-            import java.io.File;
-            import java.io.IOException;
-            import java.util.Scanner;public class WriteFile {
-                public static void main(String[] args) {
-                    String filename = "myfile8-4-3.txt";
-                    try (Scanner reader = new Scanner(new File(filename))) {
-                        while (reader.hasNextLine()) {
-                            String line = reader.nextLine();
-                            System.out.println(line.trim());
-                        }
-                    } catch (IOException e) {
-                        System.out.println("An error occurred.");
-                    }
-                }
+            <pre>
+                
+            </pre>
+        </datafile>
+        <pre>
+            try {
+                FileWriter myWriter = new FileWriter("myfile.txt");
+                myWriter.write("File successfully updated!");
+                myWriter.close();
+                System.out.println("File successfully written to.");
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
             }
-            </code> 
-        </program>
+        </pre>
 
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
