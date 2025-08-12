@@ -273,23 +273,30 @@ public class ArrayProcessor {
 
     <section xml:id="recursion-limits-in-java">
         <title>Recursion Limits: Python vs. Java</title>
-        <p>
-            The consequence of deep recursion, running out of stack space, is a concept you may have already encountered in Python. Java handles this in a very similar way to Python, throwing an error when the call stack depth is exceeded.
+        <p><idx>recursion limits</idx><idx>call stack</idx>
+            When using recursion, both Python and Java have practical limits on how deep the recursion can go before running into errors. This is due to the way both languages manage something called the <term>call stack</term>, which is a limited amount of memory used to keep track of function or method calls.
         </p>
         <p>
-            The key difference is the name of the error:
-        </p>
+            The consequence of running out of call stack space, is a concept you may have already encountered in Python. Java handles this in a very similar way to Python, both throwing an error when the call stack depth is exceeded.
+<idx><c>RecursionError</c></idx><idx><c>StackOverflowError</c></idx>
+            The only difference is the name of the error:
+
         <ul>
-            <li>In Python, this raises a <c>RecursionError</c>.</li>
-            <li>In Java, this throws a <c>StackOverflowError</c>.</li>
+            <li>In Python, overflowing the call stack raises a <c>RecursionError</c> error.</li>
+            <li>In Java, it throws a <c>StackOverflowError</c>.</li>
         </ul>
-        <p>
-            Neither language supports tail call optimization, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative, loop-based, approach is likely going to be the preferred solution in both Python and Java.
         </p>
-        <p><idx> Tail Call Optimization </idx> <term>Tail Call Optimization</term> (TCO) is a technique used in programming to improve the efficiency of recursive function calls by reusing the current function's stack frame instead of creating a new one. This helps prevent stack overflow errors and reduces memory usage, especially in languages that support it.</p>
+        <aside>
+        <p>
+                <idx>tail-call optimization</idx><idx>TCO </idx><term>Tail-call optimization (TCO)</term> is a technique used in programming to improve the efficiency of recursive function or method calls when the recursive call is the very last operation. This helps prevent some stack overflow errors, especially in languages that support automatic tail call optimization. Unfortunately, neither Python nor Java support automatic tail-call optimization.</p>
+        </aside>
+        <p>
+            In both languages, if you write a recursive function that doesn't have a base case or that just recurses too deeply, you'll eventually hit this limit. When this happens, Python will raise a <c>RecursionError</c>, while Java will throw a <c>StackOverflowError</c>. This is because both languages use a call stack to keep track of function calls, and when the stack runs out of space, it results in an error.
+                 Hence, when an algorithm might require thousands of recursive calls, an iterative, loop-based, approach is likely going to be the preferred solution in both Python and Java.
+        </p>
 
         <p>
-            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to a <c>RecursionError</c>.
+            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to a <c>RecursionError</c> due to overflowing the call stack.
         </p>
         <program xml:id="python-recursion-error" interactive="activecode" language="python">
             <code>
