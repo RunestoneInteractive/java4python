@@ -446,39 +446,55 @@
         <title>Deleting Files</title>
 
         <p>
-            Finally, we will take a look at using Java to delete files. This one is pretty straight-forward and follows the structure used to create files. This time, however, try/catch blocks are not needed for the program to compile. We will call this class DeleteFile. The completed code should look something like this.
+            Finally, we will take a look at using Java to delete files. This one is pretty straight-forward and follows the structure used to create files. This time, however, try/catch blocks are not needed for the program to compile. First, the CreateFile class from before will be used to create a file:
         </p>
 
-        <datafile label="myfile-delete" filename="myfile.txt" xml:id= "myfile-delete" editable="no">
-            <pre>
-                1
-                2
-                3
-                4
-                5
-                6
-                7
-                8
-            </pre>
-    </datafile>
-
-        <program xml:id="delete-file-python" interactive="activecode" language="python">
+        <program xml:id="create-file-to-delete-java" interactive="activecode" language="java">
             <input>
-                # Name of the file to delete
-                file_name = "myfile.txt"
+            import java.io.File;
+            import java.io.IOException;
 
-                # Check if the file exists before deleting
-                if os.path.exists(file_name):
-                    try:
-                        os.remove(file_name)
-                        print("Deleted", file_name)
-                    except Exception as e:
-                        print("File could not be deleted.")
-                else:
-                    print("File could not be deleted.")
-            </input>
+            public class CreateFile {
+                public static void main(String[] args) {
+                    File myFile = new File("myfile.txt");
+                    try {
+                        if (myFile.createNewFile()) {
+                            System.out.println("The file " + myFile.getName() + " was created successfully.");
+                        } else {
+                            System.out.println("The file " + myFile.getName() + " already exists.");
+                        }
+                    } catch (IOException e) {
+                        // This code runs if an IOException occurs
+                        System.out.println("An error occurred while creating the file.");
+                        e.printStackTrace(); // This prints the stack trace for more detailed error info
+                    }
+                }
+            }
+            </input> 
         </program>
         
+        <p>
+            The next example is Python code that can be used to delete files. This code cannot be run because importing <c>os</c> is not possible with the technologies used to write this book:
+        </p>
+
+        <program xml:id="delete-file-java" language="python">
+            import os
+            file_name = "myfile.txt"
+            if os.path.exists(file_name):
+                try:
+                    os.remove(file_name)
+                    print("Deleted", file_name)
+                except Exception as e:
+                    print("File could not be deleted.")
+            else:
+                print("File could not be deleted.")
+        </program>
+
+        <p>
+            And finally, we have Java code that deletes files. We will call this class DeleteFile:
+        </p>
+
+
         <program xml:id="delete-file-java" interactive="activecode" language="java">
             <input>
             import java.io.File; 
