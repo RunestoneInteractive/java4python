@@ -79,11 +79,7 @@
         <p>
             We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
         </p>
-        <datafile label="myfile-created" filename="myfile.txt" xml:id= "myfile-created" editable="yes">
-                <pre>
-                    empty file
-                </pre>
-            </datafile>
+        
         <program xml:id="create-file-java" interactive="activecode" language="java" add-files="myfile-created">
             <code>
             import java.io.File;
