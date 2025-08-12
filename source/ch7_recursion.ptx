@@ -284,8 +284,10 @@ public class ArrayProcessor {
             <li>In Java, this throws a <c>StackOverflowError</c>.</li>
         </ul>
         <p>
-            Neither language supports <idx> tail call optimization </idx><term>tail call optimization</term>, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative, loop-based, approach is likely going to be the preferred solution in both Python and Java.
+            Neither language supports tail call optimization, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative, loop-based, approach is likely going to be the preferred solution in both Python and Java.
         </p>
+        <p><idx> Tail Call Optimization </idx> <term>Tail Call Optimization</term> (TCO) is a technique used in programming to improve the efficiency of recursive function calls by reusing the current function's stack frame instead of creating a new one. This helps prevent stack overflow errors and reduces memory usage, especially in languages that support it.</p>
+
         <p>
             The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to a <c>RecursionError</c>.
         </p>
