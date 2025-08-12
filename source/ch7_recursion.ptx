@@ -7,10 +7,10 @@
 <section xml:id="basic-recursion">
         <title>Basic Recursion</title>
         <p>
-            In this chapter, we will explore how to translate your recursive logic from Python to Java. While the core concepts of recursion remain the same, the syntax and structure of your code will change somewhat.
+            In this chapter, we will explore how to translate your recursive logic from Python to Java. While the core concepts of recursion remain the same, the syntax and a bit of the structure of your code will change somewhat.
         </p>
-        <p><idx>recursion</idx>
-            As you may know from Python, <term>recursion</term> is a powerful problem-solving technique involving base cases and recursive steps in which a function or method calls itself. When moving to Java, the core logic you've learned remains identical. The challenge is adapting that logic to Java's statically-typed, class-based syntax.
+        <p><idx>recursion</idx><idx>base case</idx><idx>recursive step</idx>
+            As you may know from Python, <term>recursion</term> is a powerful problem-solving technique involving one or more <term>base cases</term> and <term>recursive steps</term> in which a function or method calls itself while moving towards a base case. When moving to Java, the core logic you've learned remains identical. The challenge is adapting that logic to Java's statically-typed, class-based syntax.
         </p>
 
 <p>
@@ -34,7 +34,7 @@
     as <m>n \times (n-1)!</m>.
 </p>
         <p>
-            Here is a Python implementation of factorial using functions:
+            Here is a Python implementation of factorial using just one function:
         </p>
         <program xml:id="factorial-python-function" interactive="activecode" language="python">
             <code>
@@ -49,20 +49,18 @@ def factorial(n):
     # Recursive Step: n * (n-1)!
     return n * factorial(n - 1)
 
-def main():
-    number = 5
-    print(str(number) + "! is " + str(factorial(number)))
+number = 5
+print(str(number) + "! is " + str(factorial(number)))
 
-main()
-            </code>
+     </code>
         </program>
         
         <p>
-            Many Python programs organize related functions into classes. The same factorial function can be placed inside a class as a method. Then you need to create an instance of the class to call the method. There we create the class <c>MathTools</c> with a method <c>factorial</c>, and we call it from the <c>main</c> function.
+            Many Python programs organize related functions into classes. The same factorial function can be placed inside a class as a method instead of as a function. When this is done, you need to create an instance of the class in order to call the method. Below, we create the class <c>MathTools</c> with a method <c>factorial</c>, and we call it from the <c>main</c> function.
         </p>
         <program xml:id="factorial-python-class" interactive="activecode" language="python">
             <code>
-class MathTools:
+class MTools:
     def factorial(self, n):
         # Check for negative numbers
         if n &lt; 0:
@@ -76,9 +74,9 @@ class MathTools:
 
 def main():
     # Create an instance of the class and call the method
-    math_tools = MathTools()
+    mtools_instance = MTools()
     number = 5
-    print(str(number) + "! is " + str(math_tools.factorial(number)))
+    print(str(number) + "! is " + str(mtools_instance.factorial(number)))
 
 main()
             </code>
@@ -92,7 +90,7 @@ main()
         </p>
         <program xml:id="factorial-java-class" interactive="activecode" language="java">
             <code>
-public class MathTools {
+public class MTools {
     public static int factorial(int n) {
         // Check for negative numbers
         if (n &lt; 0) {
@@ -115,7 +113,7 @@ public class MathTools {
             </code>
         </program>
         <p>
-           Notice the key differences from Python: instead of <c>def factorial(n):</c>, Java uses <c>public static int factorial(int n)</c> which declares the method's visibility as <c>public</c>, that it belongs to the class rather than an instance (hence, <c>static</c>), the return type as integer, and the parameter type also as integer. The recursive logic—base case and recursive step—remains identical to Python, but all code blocks use curly braces <c>{}</c> instead of indentation.
+           Notice the key differences from Python: instead of <c>def factorial(n):</c>, Java uses <c>public static int factorial(int n)</c> which declares the method's visibility as <c>public</c>, that it belongs to the class rather than an instance (hence, <c>static</c>), the return type as integer, and the parameter type also as integer. The recursive logic—base case and recursive step—remains identical to Python, and, of course, all code blocks use curly braces <c>{}</c> instead of indentation.
         </p>
     </section>
 
@@ -258,7 +256,7 @@ public class ArrayProcessor {
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         int result = sumArray(numbers);
-        System.out.println("The sum of [1, 2, 3, 4, 5] is " + result);
+        System.out.println("The sum of " + Arrays.toString(numbers) + " is " + result);
     }
 }
         </code>
@@ -276,7 +274,7 @@ public class ArrayProcessor {
     <section xml:id="recursion-limits-in-java">
         <title>Recursion Limits: Python vs. Java</title>
         <p>
-            The consequence of deep recursion, running out of stack space, is a concept you've already encountered in Python. Java handles this in a very similar way, throwing an error when the call stack depth is exceeded.
+            The consequence of deep recursion, running out of stack space, is a concept you may have already encountered in Python. Java handles this in a very similar way to Python, throwing an error when the call stack depth is exceeded.
         </p>
         <p>
             The key difference is the name of the error:
@@ -286,10 +284,10 @@ public class ArrayProcessor {
             <li>In Java, this throws a <c>StackOverflowError</c>.</li>
         </ul>
         <p>
-            Neither language supports <idx> tail call optimization </idx><term>tail call optimization</term>, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative (loop-based) approach is the preferred solution in both Python and Java.
+            Neither language supports <idx> tail call optimization </idx><term>tail call optimization</term>, so the practical limits on recursion depth are a factor in both. If an algorithm requires thousands of recursive calls, an iterative, loop-based, approach is likely going to be the preferred solution in both Python and Java.
         </p>
         <p>
-            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to aRecursionError.
+            The following Python code demonstrates a situation where a function calls itself indefinitely without a base case, leading to a <c>RecursionError</c>.
         </p>
         <program xml:id="python-recursion-error" interactive="activecode" language="python">
             <code>
@@ -299,36 +297,151 @@ public class ArrayProcessor {
                     """
                     cause_recursion_error()
 
-                # Standard Python entry point
-                if __name__ == "__main__":
-                    print("Calling the recursive function... this will end in an error!")
-                    
-                    # This line starts the infinite recursion.
-                    # Python will stop it and raise a RecursionError automatically.
-                    cause_recursion_error()
+                print("Calling the recursive function... this will end in an error!")
+
+                # The line below will start the infinite recursion.
+                # Python will stop it and raise a RecursionError automatically.
+                # Each call adds a new layer to the program's call stack.
+                # Eventually, the call stack runs out of space, causing the error.
+                cause_recursion_error()
             </code>
         </program>
 
         <p>
-            The following Java code demonstrates a similar situation, where a method calls itself indefinitely without a base case, leading to a StackOverflowError.
+            The following Java code demonstrates a similar situation, where a method calls itself indefinitely without a base case, leading to a <c>StackOverflowError</c>.
         </p>
         <program xml:id="java-stack-overflow" interactive="activecode" language="java">
             <code>
                 public class Crash {
                     public static void causeStackOverflow() {
-                        // This method calls itself endlessly without a stopping condition (a base case).
-                        // Each call adds a new layer to the program's call stack.
-                        // Eventually, the stack runs out of space, causing the error.
+                    // The line below will start the infinite recursion.
+                    // Java will stop it and raise a StackOverflowError automatically.
+                    // Each call adds a new layer to the program's call stack.
+                    // Eventually, the call stack runs out of space, causing the error.
                         causeStackOverflow();
                     }
-                    // A main method is required to run the program.
+                    // A main method is required to run the Java program.
                     public static void main(String[] args) {
                         System.out.println("Calling the recursive method... this will end in an error!");
-                        // This line starts the infinite recursion.
-                        causeStackOverflow();
+
+                            causeStackOverflow();
                     }
                 }
             </code>
         </program>
     </section>
+
+    <section xml:id="recursion_summary">
+    <title>Summary &amp; Reading Questions</title>
+    <p><ol label="1">
+        <li>
+            <p>Recursion solves problems by defining a <em>base case</em> and a <em>recursive step</em>; each call reduces the problem size until the base case is reached.</p>
+        </li>
+        <li>
+            <p>Java methods must declare visibility, static/instance context, return type, and parameter types; e.g., <c>public static int factorial(int n)</c>.</p>
+        </li>
+        <li>
+            <p>The recursive logic in Java mirrors Python conceptually, but Java uses curly braces <c>{}</c> and explicit types instead of indentation and dynamic typing.</p>
+        </li>
+        <li>
+            <p>The helper method pattern hides implementation details (like array indices) from callers, providing clean public interfaces while managing recursive state privately.</p>
+        </li>
+        <li>
+            <p>Deep or unbounded recursion can exhaust the call stack: Python raises <c>RecursionError</c>; Java throws <c>StackOverflowError</c>.</p>
+        </li>
+        <li>
+            <p>Neither Java nor Python guarantees tail call optimization, so programmers should use iterative solutions for algorithms that would require very deep recursion.</p>
+        </li>
+        <li>
+            <p>Recursive methods in Java must specify return types explicitly, unlike Python's dynamic typing, which affects how you handle error cases and return values.</p>
+        </li>
+    </ol></p>
+  <reading-questions xml:id="rqs-recursion-java">
+        <exercise label="recursion-method-signature">
+            <statement>
+                <p>Which method signature and behavior best match a typical Java recursive factorial implementation?</p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p><c>public static int factorial(int n)</c> that returns <c>0</c> when <c>n &lt;= 0</c> and otherwise returns <c>n * factorial(n - 1)</c>.</p></statement>
+                    <feedback><p>No. While this handles negative numbers, the base case is incorrect - factorial of 0 should be 1, not 0.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p><c>public void factorial(int n)</c> that prints each partial product and stops when <c>n</c> reaches zero.</p></statement>
+                    <feedback><p>No. Printing results is fine for testing, but a proper factorial method should return the computed value.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p><c>public static int factorial(int n)</c> that returns <c>1</c> when <c>n &lt;= 1</c> and otherwise returns <c>n * factorial(n - 1)</c>.</p></statement>
+                    <feedback><p>Correct. This matches the standard recursive factorial definition in Java.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p><c>public static long factorial(int n)</c> that returns <c>1</c> when <c>n == 0</c> and otherwise returns <c>n * factorial(n - 1)</c>.</p></statement>
+                    <feedback><p>No. While this logic is close, it doesn't handle the case when n = 1, and using long as return type when int parameter is used creates inconsistency.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="recursion-helper-method">
+            <statement>
+                <p>Why use a private helper method (e.g., <c>sumHelper(int[] arr, int index)</c>) behind a public method (e.g., <c>sumArray(int[] arr)</c>) in recursive array processing?</p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p>Because it allows Java to automatically optimize the recursion for faster execution.</p></statement>
+                    <feedback><p>No. Java does not automatically optimize recursion just because you use a helper method.</p></feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p>To keep the public API simple while encapsulating extra recursion state (such as the current index) inside a private method.</p></statement>
+                    <feedback><p>Correct. This keeps the interface clean while hiding internal details from the caller.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>Because public methods cannot take more than one parameter in recursive calls.</p></statement>
+                    <feedback><p>No. Public methods can take multiple parameters; this is about interface clarity, not parameter limits.</p></feedback>
+                </choice>
+                <choice>
+                    <statement><p>To eliminate the need for a base case by handling termination in the helper method automatically.</p></statement>
+                    <feedback><p>No. The helper method still needs an explicit base case to stop recursion.</p></feedback>
+                </choice>
+            </choices>
+        </exercise>
+        <exercise label="recursion-limits">
+    <statement>
+        <p>Which statement about recursion limits and errors is accurate?</p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>When the call stack is exhausted, Python raises a <c>RecursionError</c> whereas Java throws a <c>StackOverflowError</c>, and neither language applies automatic tail call optimization.</p>
+            </statement>
+            <feedback>
+                <p>Correct. This difference in exception types and the lack of built-in tail call optimization is a key distinction between the two languages.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Java automatically applies tail call optimization to recursive methods marked as <c>final</c>, preventing most stack overflows.</p>
+            </statement>
+            <feedback>
+                <p>No. Java does not perform automatic tail call optimization, regardless of whether methods are marked as final.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Declaring a recursive method as <c>static</c> in Java reduces memory usage per call, allowing more recursive calls before a stack overflow occurs.</p>
+            </statement>
+            <feedback>
+                <p>No. The <c>static</c> modifier changes method context (class vs. instance) but does not meaningfully affect per-call stack memory usage.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The JVM can detect simple recursive patterns and automatically convert them to iterative loops to prevent stack overflow.</p>
+            </statement>
+            <feedback>
+                <p>No. The JVM does not automatically convert recursive methods to iterative ones. This optimization must be done manually by the programmer.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+    </reading-questions>
+</section>
 </chapter>
