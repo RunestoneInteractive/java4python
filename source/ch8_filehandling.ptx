@@ -37,24 +37,14 @@
         <p>
             Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create <c>File</c> objects, and use its public methods. the following code imports the <c>File</c> class and creates a <c>File</c> object called myFile. for now focus on how the class is imported and used in the program; We will cover the <c>IOException</c> class and <c>createNewFile</c> method later.
         </p>
-        <program xml:id = "file-class-import-io-example" interactive="activecode" language="java">
-            <code>
-            import java.io.File;
-            import java.io.IOException;
-            public class Main {
-                public static void main(String[] args) {
-                    try {
-                        File myFile = new File("newfile.txt");
-                        myFile.createNewFile();
-                        System.out.println("File Made.");
-                    } catch (IOException e) {
-                        System.out.println("An error occurred.");
-                    }
-                }
-            }
-            </code> 
-        </program>
 
+        <p>
+            Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create <c>File</c> objects, and use its public methods. 
+        </p>
+
+        <pre>
+        import java.io.File;
+        </pre>
         <p>
             The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
