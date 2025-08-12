@@ -23,7 +23,7 @@
             <code>
             import java.lang.Math;
 
-            public class Main {
+            public class SquareRoot {
                 public static void main(String[] args) {
                     System.out.println(Math.sqrt(25));
                 }
@@ -77,13 +77,13 @@
 
 
         <p>
-            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
+            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>. We will also call our class <c>CreateFile</c>
         </p>
         
         <program xml:id="create-file-java" interactive="activecode" language="java" add-files="myfile-created">
             <code>
             import java.io.File;
-            public class Main {
+            public class CreateFile {
                 public static void main(String[] args) {
                     File myFile = new File("myfile.txt");
                     System.out.println(myFile);
@@ -202,8 +202,9 @@
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner;public class Main {
-                public static void main(String[] args) {
+            import java.util.Scanner;
+            public class ReadFile {
+                public static void main (String[] args) {
                     String filename = "myfile.txt";
                     try (Scanner fileReader = new Scanner(new File(filename))) {
                         while (fileReader.hasNextLine()) {
@@ -319,7 +320,7 @@
             <code>
             import java.io.File;
             import java.io.IOException;
-            import java.util.Scanner;public class Main {
+            import java.util.Scanner;public class WriteFile {
                 public static void main(String[] args) {
                     String filename = "myfile8-4-3.txt";
                     try (Scanner reader = new Scanner(new File(filename))) {
