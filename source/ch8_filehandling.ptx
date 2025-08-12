@@ -254,7 +254,7 @@
             import java.io.FileWriter;
             import java.io.IOException;
             import java.util.Scanner;
-            public class Main {
+            public class WriteFile {
                 public static void main(String[] args) {
                     String filename = "test_file.txt";        
                     try (FileWriter writer = new FileWriter(filename)) {
