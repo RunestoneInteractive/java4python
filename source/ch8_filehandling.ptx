@@ -35,10 +35,6 @@
         </p>
 
         <p>
-            Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create <c>File</c> objects, and use its public methods. the following code imports the <c>File</c> class and creates a <c>File</c> object called myFile. for now focus on how the class is imported and used in the program; We will cover the <c>IOException</c> class and <c>createNewFile</c> method later.
-        </p>
-
-        <p>
             Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create <c>File</c> objects, and use its public methods. 
         </p>
 
@@ -85,7 +81,9 @@
             import java.io.File;
             public class CreateFile {
                 public static void main(String[] args) {
-
+                    import java.io.File;
+                    File myFile = new File("myfile.txt");
+                    System.out.println(myFile);
                 }
             }
             </input> 
@@ -99,7 +97,7 @@
 
 
         <p>
-            Now let's learn how to make a file in Java. In Python. files can be made using the <c>open()</c> function on a file path that doesn't exist yet. Similarly, in Java you create a file by using the <c>createNewFile()</c> method on a <c>File</c> object. This method actually does the work of creating a file and saving it in the current working directory, and returns a boolean value of either true or false if the file is successfully created. We can use this method's possible return values in tandem with an try/catch structure to determine if the file was created, or catch the error if a file with that file name already exists in the directory.
+            Now let's learn how to make a file in Java. In Python. files can be made using the <c>open()</c> function on a file path that doesn't exist yet. Similarly, in Java you create a file by using the <c>createNewFile()</c> method on a <c>File</c> object. This method actually does the work of creating a file and saving it in the current working directory, and returns a boolean value of either true or false if the file is successfully created. We can use this method's possible return values in tandem with an if/else selection to determine if the file was created. Finally, we encase this code within try/catch blocks. This step is required in the Java code to be compiled. If try/catch blocks using <c>IOException</c> are not included, there will be compilation errors.
         </p>
 
         <p>
@@ -263,7 +261,7 @@
         </program>
 
         <p>
-            In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types. First, how this step is completed with Python:
+            In this next step, we will use the <c>write()</c> method from the FileWriter class. This method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types. First, how this step is completed with Python:
         </p>
         
         <program xml:id="write-and-close-python" language="python">
@@ -281,20 +279,14 @@
 
         <note>
             <p>
-                You may have noticed the <c>close()</c> function being used after writing to the file. This is a very important step and must be included when working with files! Without using this method, the file may remain active in system resources even after the program is closed. This can lead file corruption or other terrible problems that are best avoided!
+                The <c>close()</c> method is being used after writing to the file. This is a very important step and must be included when working with files! Without using this method, the file may remain active in system resources even after the program is closed. This can lead file corruption or other terrible problems that are best avoided!
             </p>
         </note>
 
         <p>
             Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
         </p>
-        <datafile label="my-file-8-4-2" filename="myfile8-4-2.txt" xml:id= "my-file-8-4-2" editable="yes">
-                <pre>
-                    1
-                    2
-                    3
-                </pre>
-            </datafile>
+        
         <program xml:id="file-try-catch-python" language="python" add-files = "my-file-8-4-2">
                 try:
                     with open("myfile.txt", "w") as my_writer:
@@ -325,7 +317,7 @@
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
         </p>
-        <datafile label="my-file-8-4-4" filename="my-file-8-4-4" xml:id= "my-file-8-4-4" editable="yes">
+        <datafile label="my-file-8-4-4" filename="myfile.txt" xml:id= "my-file-8-4-4" editable="yes">
                 <pre>
                     
                 </pre>
@@ -359,7 +351,7 @@
             public class WriteFile {
                 public static void main(String[] args) {
                     try {
-                        FileWriter myWriter = new FileWriter("newfile.txt");
+                        FileWriter myWriter = new FileWriter("myfile.txt");
                         myWriter.write("File successfully updated!");
                         myWriter.close();
                         System.out.println("File successfully written to.");
@@ -389,7 +381,7 @@
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already tSext in the document. If we were to update our code to include the <c>boolean</c> argument:
         </p>
-        <datafile label="my-file-8-4-6" filename="my-file-8-4-6" xml:id= "my-file-8-4-6" editable="yes">
+        <datafile label="my-file-8-4-6" filename="myfile" xml:id= "my-file-8-4-6" editable="yes">
                 <pre>
                     
                 </pre>
@@ -402,7 +394,7 @@
             public class WriteFile {
                 public static void main(String[] args) {
                     try {
-                        FileWriter myWriter = new FileWriter("newfile.txt", true); // true enables append mode
+                        FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
                         myWriter.write("File successfully updated!");
                         myWriter.close();
                         System.out.println("File successfully written to.");
