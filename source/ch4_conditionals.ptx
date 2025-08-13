@@ -316,7 +316,7 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
                     }
                 }
             }
-            </code>
+            </code> <stdin> </stdin> <tests> </tests>
         </program>
 
         <p>
