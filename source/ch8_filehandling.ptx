@@ -73,20 +73,22 @@
 
 
         <p>
-            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>. We will also call our class <c>CreateFile</c>
+            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>, and we will call our class <c>CreateFileObject</c>.
         </p>
         
-        <program xml:id="create-file-class-java" interactive="activecode" language="java" add-files="myfile-created">
-            <input>
-            import java.io.File;
-            public class CreateFile {
-                public static void main(String[] args) {
-                    import java.io.File;
-                    File myFile = new File("myfile.txt");
-                    System.out.println(myFile);
-                }
-            }
-            </input> 
+        <program xml:id="create-file-object-java" interactive="activecode" language="java" add-files="myfile-created">
+            <code>
+import java.io.File;
+
+public class CreateFile {
+    public static void main(String[] args) {
+        // First, create a File object that represents "myfile.txt"
+        File myFile = new File("myfile.txt"); 
+        // Mext, print the file path (just the filename.)
+        System.out.println(myFile); 
+    }
+}
+            </code> 
         </program>
 
         <note>
