@@ -10,75 +10,61 @@
             File handling is an integral part of programming. Most programming languages have the ability to create, read from, write to, and delete, files. In Python, most built-in libraries are available without needing  to explicitly import additional packages, but some libraries like <c>math</c> do need to be imported. Consider the following.
         </p>
         <program xml:id = "file-class-import-Python-example" interactive="activecode" language="python">
-            <code>
+            <input>
             import math
             print(math.sqrt(25))
-            </code> 
+            </input> 
         </program>
 
         <p>
             Delete the first line that says <c>import math</c> and see what happens. The <c>import math</c> is needed. The same program in Java would look like this:
         </p>
         <program xml:id = "file-class-import-Java-example" interactive="activecode" language="java">
-            <code>
+            <input>
             import java.lang.Math;
 
-            public class Main {
+            public class SquareRoot {
                 public static void main(String[] args) {
                     System.out.println(Math.sqrt(25));
                 }
             }
-            </code> 
+            </input> 
         </program>
         <p>
             Note the use of <c>import java.lang.Math;</c> in the above to import the <c>Math</c> class. Unlike Python, Java requires explicit <c>import</c> for most libraries, including the <c>Math</c> class and many  classes related to file handling.
         </p>
 
         <p>
-            Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create <c>File</c> objects, and use its public methods. the following code imports the <c>File</c> class and creates a <c>File</c> object called myFile. for now focus on how the class is imported and used in the program; We will cover the <c>IOException</c> class and <c>createNewFile</c> method later.
+            Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create <c>File</c> objects, and use its public methods. 
         </p>
-        <program xml:id = "file-class-import-io-example" interactive="activecode" language="java">
-            <code>
-            import java.io.File;
-            import java.io.IOException;
-            public class Main {
-                public static void main(String[] args) {
-                    try {
-                        File myFile = new File("newfile.txt");
-                        myFile.createNewFile();
-                        System.out.println("File Made.");
-                    } catch (IOException e) {
-                        System.out.println("An error occurred.");
-                    }
-                }
-            }
-            </code> 
-        </program>
 
+        <program xml:id="io-file-import" language="java">
+        import java.io.File;
+        </program>
         <p>
             The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
 
-        <pre>
+        <program xml:id="util-scanner-import" language="java">
             import java.util.Scanner; 
-        </pre>
+        </program>
 
         <p>
             The <c>FileWriter</c> class can be used to write to files. In the same way that the <c>Scanner</c> class isn't needed unless the program will read from a file, the <c>FileWriter</c> class isn't needed unless the program will write to a file.
         </p>
 
-        <pre>
+        <program xml:id="io-filewriter-import" language="java">
             import java.io.FileWriter;
-        </pre>
+        </program>
 
         <p>
             Finally, these last two classes provide error handling and must be used in tandem with the <c>File</c> class when reading from or writing to files. <c>IOException</c> handles file creation and writing errors, while <c>FileNotFoundException</c> handles errors when trying to read files. 
         </p>
 
-        <pre>
+        <program xml:id="io-exception-imports" language="java">
             import java.io.IOException;
             import java.io.FileNotFoundException;
-        </pre>
+        </program>
         
     </section>
 
@@ -87,23 +73,20 @@
 
 
         <p>
-            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>.
+            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>. We will also call our class <c>CreateFile</c>
         </p>
-        <datafile label="myfile-created" filename="myfile.txt" xml:id= "myfile-created" editable="yes">
-                <pre>
-                    empty file
-                </pre>
-            </datafile>
-        <program xml:id="create-file-java" interactive="activecode" language="java" add-files="myfile-created">
-            <code>
+        
+        <program xml:id="create-file-class-java" interactive="activecode" language="java" add-files="myfile-created">
+            <input>
             import java.io.File;
-            public class Main {
+            public class CreateFile {
                 public static void main(String[] args) {
+                    import java.io.File;
                     File myFile = new File("myfile.txt");
                     System.out.println(myFile);
                 }
             }
-            </code> 
+            </input> 
         </program>
 
         <note>
@@ -114,7 +97,7 @@
 
 
         <p>
-            Now let's learn how to make a file in Java. In Python. files can be made using the <c>open()</c> function on a file path that doesn't exist yet. Similarly, in Java you create a file by using the <c>createNewFile()</c> method on a <c>File</c> object. This method actually does the work of creating a file and saving it in the current working directory, and returns a boolean value of either true or false if the file is successfully created. We can use this method's possible return values in tandem with an try/catch structure to determine if the file was created, or catch the error if a file with that file name already exists in the directory.
+            Now let's learn how to make a file in Java. In Python. files can be made using the <c>open()</c> function on a file path that doesn't exist yet. Similarly, in Java you create a file by using the <c>createNewFile()</c> method on a <c>File</c> object. This method actually does the work of creating a file and saving it in the current working directory, and returns a boolean value of either true or false if the file is successfully created. We can use this method's possible return values in tandem with an if/else selection to determine if the file was created. Finally, we encase this code within try/catch blocks. This step is required in the Java code to be compiled. If try/catch blocks using <c>IOException</c> are not included, there will be compilation errors.
         </p>
 
         <p>
@@ -122,7 +105,7 @@
         </p>
         
         <program xml:id="create-file-python" interactive="activecode" language="python">
-            <code>
+            <input>
             filename = "newfile.txt"
             print("Attempting to write to '" + filename + "' using 'w' mode...")
             try:
@@ -133,15 +116,15 @@
                 # This would only catch other unexpected errors
                 print("An unexpected error occurred during write: " + str(e))
 
-            </code> 
+            </input> 
         </program>
 
         <p>
             Now, let's look at Java code that accomplishes the same task:
         </p>
         
-        <program xml:id="create-file-exp3" interactive="activecode" language="java">
-            <code>
+        <program xml:id="create-file-java" interactive="activecode" language="java">
+            <input>
             import java.io.File;
             import java.io.IOException;
 
@@ -161,7 +144,7 @@
                     }
                 }
             }
-            </code> 
+            </input> 
         </program>
 
         <note>
@@ -193,8 +176,8 @@
                 </pre>
             </datafile>
 
-        <program xml:id="file-read-py" interactive="activecode" language="python" add-files="myfile-read">
-            <code>
+        <program xml:id="file-read-python" interactive="activecode" language="python" add-files="myfile-read">
+            <input>
                 filename = "myfile.txt"
                 try:
                 # Attempt to open the file in read mode ('r')
@@ -205,19 +188,20 @@
                 except:
                 #catches if the file doesn't exist or can't be written to
                     print("file could not be opened")
-            </code>
+            </input>
         </program>
 
         <p>
-            The following Java code functions very similarly to the previous Python. The main difference here is that unlike Python, In Java we use the <c>Scanner</c> object to iterate through and read lines in the file. You will notice that the structure of the Java code is still similar to the Python; Both use a try and catch statement to read the file and catch any errors.
+            The following Java code functions very similarly to the previous Python. The main difference here is that unlike Python, in Java we use the <c>Scanner</c> object to iterate through and read lines in the file. You will notice that the structure of the Java code is still similar to the Python; Both use a try and catch statement to read the file and catch any errors.
         </p>
 
         <program xml:id="file-read-java" interactive="activecode"  language="java" add-files= "myfile-read">
-            <code>
+            <input>
             import java.io.File;
             import java.io.FileNotFoundException;
-            import java.util.Scanner;public class Main {
-                public static void main(String[] args) {
+            import java.util.Scanner;
+            public class ReadFile {
+                public static void main (String[] args) {
                     String filename = "myfile.txt";
                     try (Scanner fileReader = new Scanner(new File(filename))) {
                         while (fileReader.hasNextLine()) {
@@ -230,7 +214,7 @@
                     }
                 }
             }
-            </code> 
+            </input> 
         </program>
         <p>
             You may have noticed that there are some new methods you haven't seen yet. The <c>hasNextLine()</c> method checks if there is a next line in the file, and returns <c>false</c> if there isn't. This method allows us to iterate over every line till there is no next line. The <c>nextLine()</c> method of the Scanner object returns the next line in the file as a string.
@@ -248,105 +232,86 @@
             Let us create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
         </p>
         
-        <program xml:id="file-write-exp1" interactive="activecode" language="java">
-            <code>
+        <program xml:id="write-file-class-java" language="java">
             import java.io.File;
             import java.io.FileWriter;
             import java.io.IOException;
             import java.util.Scanner;
             public class WriteFile {
                 public static void main(String[] args) {
-                    String filename = "test_file.txt";        
-                    try (FileWriter writer = new FileWriter(filename)) {
-                        writer.write("This line was written by the program.");
-                        System.out.println("Successfully wrote to the file.");
-                    } 
-                    catch (IOException e) {
-                        System.out.println("An error occurred during writing.");
-                    }        System.out.println("--- Reading file back ---");        
-                    try (Scanner reader = new Scanner(new File(filename))) {
-                        while (reader.hasNextLine()) {
-                            System.out.println(reader.nextLine());
-                        }
-                    } 
-                    catch (IOException e) {
-                        System.out.println("An error occurred during reading.");
-                    }
+                 
                 }
             }
-            </code> 
         </program>
         
         <p>
-            Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>:
+            Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>. The equivalent Python code to this operation is:
         </p>
 
-        <pre>
-            FileWriter myWriter = new FileWriter("myfile.txt");
-        </pre>
+        <program xml:id="filerwriter-object-python" language="python">
+            with open("myfile.txt", "w") as myWriter:
+        </program>
 
         <p>
-            In this next step, we will use the <c>write()</c> method from the FileWriter class. This Method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types:
+            The Java code to create a <c>FileWriter</c> object is:
         </p>
 
-        <pre>
+        <program xml:id="filerwriter-object-java" language="java">
+            FileWriter myWriter = new FileWriter("myfile.txt");
+        </program>
+
+        <p>
+            In this next step, we will use the <c>write()</c> method from the FileWriter class. This method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types. First, how this step is completed with Python:
+        </p>
+        
+        <program xml:id="write-and-close-python" language="python">
+            my_writer.write("File successfully updated!")
+        </program>
+
+        <p>
+            And the Java equivalent. This is almost completely identical except for the second line, which is very important!
+        </p>
+
+        <program xml:id="write-and-close-java" language="java">
             myWriter.write("File successfully updated!");
             myWriter.close();
-        </pre>
+        </program>
 
         <note>
             <p>
-                You may have noticed the <c>close()</c> function being used after writing to the file. This is a very important step and must be included when working with files! Without using this method, the file may remain active in system resources even after the program is closed. This can lead file corruption or other terrible problems that are best avoided!
+                The <c>close()</c> method is being used after writing to the file. This is a very important step and must be included when working with files! Without using this method, the file may remain active in system resources even after the program is closed. This can lead file corruption or other terrible problems that are best avoided!
             </p>
         </note>
 
         <p>
             Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
         </p>
-        <datafile label="my-file-8-4-2" filename="myfile8-4-2.txt" xml:id= "my-file-8-4-2" editable="yes">
-                <pre>
-                    1
-                    2
-                    3
-                </pre>
-            </datafile>
-        <program xml:id="file-write-exp2" interactive="activecode" language="python" add-files = "my-file-8-4-2">
-            <code>
-                with open("myfile8-4-2.txt", "r") as file_reader:
-                    while True:
-                        line = file_reader.readline()
-                        if not line:  # End of file
-                            break
-                        print(line.strip())
-            </code>
+        
+        <program xml:id="file-try-catch-python" language="python" add-files = "my-file-8-4-2">
+                try:
+                    with open("myfile.txt", "w") as my_writer:
+                        my_writer.write("File successfully updated!")
+                    print("File successfully written to.")
+                except OSError as e:
+                    print("An error occurred.")
+                    import traceback
+                    traceback.print_exc()
         </program>
 
         <p>
             And the equivalent Java code:
         </p>
-        <datafile label="my-file-8-4-3" filename="myfile8-4-3.txt" xml:id= "my-file-8-4-3" editable="yes">
-                <pre>
-                    
-                </pre>
-            </datafile>
-        <program xml:id="file-write-exp3" interactive="activecode" language="java" add-files = "my-file-8-4-3">
-            <code>
-            import java.io.File;
-            import java.io.IOException;
-            import java.util.Scanner;public class Main {
-                public static void main(String[] args) {
-                    String filename = "myfile8-4-3.txt";
-                    try (Scanner reader = new Scanner(new File(filename))) {
-                        while (reader.hasNextLine()) {
-                            String line = reader.nextLine();
-                            System.out.println(line.trim());
-                        }
-                    } catch (IOException e) {
-                        System.out.println("An error occurred.");
-                    }
-                }
+
+        <program language="java" xml:id="file-try-catch-java">
+            try {
+                FileWriter myWriter = new FileWriter("myfile.txt");
+                myWriter.write("File successfully updated!");
+                myWriter.close();
+                System.out.println("File successfully written to.");
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
             }
-            </code> 
         </program>
 
         <p>
@@ -356,9 +321,9 @@
                 <pre>
                     
                 </pre>
-            </datafile>
-        <program xml:id="file-write-exp4" interactive="activecode" language="python" add-files = "my-file-8-4-4">
-            <code>
+        </datafile>
+        <program xml:id="file-write-full-python" interactive="activecode" language="python" add-files="my-file-8-4-4">
+            <input>
             try:
                 with open("myfile.txt", "w") as my_writer:
                     my_writer.write("File successfully updated!")
@@ -367,7 +332,7 @@
                 print("An error occurred.")
                 import traceback
                 traceback.print_exc()
-            </code> 
+            </input> 
         </program>
 
         <p>
@@ -378,15 +343,15 @@
                     
                 </pre>
             </datafile>
-        <program xml:id="file-write-exp5" interactive="activecode" language="java" add-files = "my-file-8-4-5">
-            <code>
+        <program xml:id="file-write-full-java" interactive="activecode" language="java" add-files = "my-file-8-4-5">
+            <input>
             import java.io.FileWriter;
             import java.io.IOException;
 
             public class WriteFile {
                 public static void main(String[] args) {
                     try {
-                        FileWriter myWriter = new FileWriter("newfile.txt");
+                        FileWriter myWriter = new FileWriter("myfile.txt");
                         myWriter.write("File successfully updated!");
                         myWriter.close();
                         System.out.println("File successfully written to.");
@@ -396,12 +361,8 @@
                     }
                 }
             }
-            </code> 
+            </input> 
         </program>
-
-        <p>
-            Files in a specific directory can be written to using the same technique as the last section in which file paths are specified, with two back slashes used in Windows environments. 
-        </p>    
 
         <note>
             <p>
@@ -413,27 +374,27 @@
             Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a <c>boolean</c> argument along with the file name when creating a new data argument:
         </p>
 
-        <pre>
+        <program xml:id="append-true" language="java">
             FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
-        </pre>
+        </program>
 
         <p>
-            Now, when we use <c>write()</c> method like before, the text will be appended if there is already text in the document. If we were to update our code to include the <c>boolean</c> argument:
+            Now, when we use <c>write()</c> method like before, the text will be appended if there is already tSext in the document. If we were to update our code to include the <c>boolean</c> argument:
         </p>
-        <datafile label="my-file-8-4-6" filename="myfile.txt" xml:id= "my-file-8-4-6" editable="yes">
+        <datafile label="my-file-8-4-6" filename="myfile" xml:id= "my-file-8-4-6" editable="yes">
                 <pre>
                     
                 </pre>
             </datafile>
-        <program xml:id="file-write-exp6" interactive="activecode" language="java" add-files = "my-file-8-4-6">
-            <code>
+        <program xml:id="file-write-with-append" interactive="activecode" language="java" add-files = "my-file-8-4-6">
+            <input>
             import java.io.FileWriter;
             import java.io.IOException;
 
             public class WriteFile {
                 public static void main(String[] args) {
                     try {
-                        FileWriter myWriter = new FileWriter("newfile.txt", true); // true enables append mode
+                        FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
                         myWriter.write("File successfully updated!");
                         myWriter.close();
                         System.out.println("File successfully written to.");
@@ -443,7 +404,7 @@
                     }
                 }
             }
-            </code> 
+            </input> 
         </program>
 
         <p>
@@ -455,25 +416,16 @@
         </pre>
 
         <p>
-            This doesn't look very good! If we want each additional write to appear on a new line? The first solution may be to use the <c>\n</c> newline character:
+            This doesn't look very good! If we want each additional write to appear on a new line? A simple solution is to use the <c>\n</c> newline character:
         </p>
 
-        <pre>
+        <program xml:id="newline" language="java">
             myWriter.write("File successfully updated!\n"); // Added newline character 
             myWriter.close(); 
-        </pre>
+        </program>
 
         <p>
-            The System.lineseseparator() method is a better solution. This method returns the system's default line separator, which is platform-dependent. For example, on Windows, it returns <c>\n</c>, while on Linux and macOS, it returns <c>\n</c>. Using this method ensures that your code works correctly across different operating systems:
-        </p>
-
-        <pre>
-            myWriter.write("File successfully updated!" + System.lineseparator()); // Added newline character 
-            myWriter.close();
-        </pre>
-
-        <p>
-            Running it twice will result in the following contents in myfile.txt:
+            Running the code with the newline character twice will result in the following contents in myfile.txt:
         </p>
 
         <pre>
@@ -486,11 +438,57 @@
         <title>Deleting Files</title>
 
         <p>
-            Finally, we will take a look at using Java to delete files. This one is pretty straight-forward and follows the structure used to create files. This time, however, try/catch blocks are not needed for the program to compile. We will call this class DeleteFile. The completed code should look something like this.
+            Finally, we will take a look at using Java to delete files. This one is pretty straight-forward and follows the structure used to create files. This time, however, try/catch blocks are not needed for the program to compile. First, the CreateFile class from before will be used to create a file:
         </p>
+
+        <program xml:id="create-file-to-delete-java" interactive="activecode" language="java">
+            <input>
+            import java.io.File;
+            import java.io.IOException;
+
+            public class CreateFile {
+                public static void main(String[] args) {
+                    File myFile = new File("myfile.txt");
+                    try {
+                        if (myFile.createNewFile()) {
+                            System.out.println("The file " + myFile.getName() + " was created successfully.");
+                        } else {
+                            System.out.println("The file " + myFile.getName() + " already exists.");
+                        }
+                    } catch (IOException e) {
+                        // This code runs if an IOException occurs
+                        System.out.println("An error occurred while creating the file.");
+                        e.printStackTrace(); // This prints the stack trace for more detailed error info
+                    }
+                }
+            }
+            </input> 
+        </program>
         
-        <program interactive="activecode" language="java">
-            <code>
+        <p>
+            The next example is Python code that can be used to delete files. This code cannot be run because importing <c>os</c> is not possible with the technologies used to write this book:
+        </p>
+
+        <program xml:id="delete-file-python" language="python">
+            import os
+            file_name = "myfile.txt"
+            if os.path.exists(file_name):
+                try:
+                    os.remove(file_name)
+                    print("Deleted", file_name)
+                except Exception as e:
+                    print("File could not be deleted.")
+            else:
+                print("File could not be deleted.")
+        </program>
+
+        <p>
+            And finally, we have Java code that deletes files. We will call this class DeleteFile:
+        </p>
+
+
+        <program xml:id="delete-file-java" interactive="activecode" language="java">
+            <input>
             import java.io.File; 
 
             public class DeleteFile {
@@ -503,7 +501,7 @@
                     } 
                 } 
             }
-            </code> 
+            </input> 
         </program>
 
         <p>
