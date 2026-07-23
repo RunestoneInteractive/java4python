@@ -91,12 +91,12 @@
             </p>
 
             <p>
-                Let&#x2019;s look at a simple Python function which converts a Fahrenheit temperature to Celsius.
+                <xref ref="python-temperature-conversion" text="type-global"/> is a simple Python function which converts a Fahrenheit temperature to Celsius.
                 If this program were run on the command-line, you would enter the temperature when prompted &#x2013; the Javascript pop-up for input is only an artifact of the digital textbook.
             </p>
 
-
-            <program xml:id="python-temperature-conversion" interactive="activecode" language="python">
+            <listing xml:id="python-temperature-conversion">
+            <program interactive="activecode" language="python">
                 <code>
 def main():
     fahr = int(input("Enter the temperature in F: "))
@@ -105,13 +105,15 @@ def main():
 main()
                 </code> <tests> </tests>
             </program>
+            </listing>
 
             <p>
- Next, lets look at the Java equivalent. If this program were run on the command-line, you would enter the temperature when prompted &#x2013; the &#x201C;Input for Program&#x201D; text box is only an artifact of the digital textbook. 
+ Next, <xref ref="java-temperature-conversion" text="type-global"/> is the Java equivalent. If this program were run on the command-line, you would enter the temperature when prompted &#x2013; the &#x201C;Input for Program&#x201D; text box is only an artifact of the digital textbook. 
             </p>
 
 
-            <program xml:id="java-temperature-conversion" interactive="activecode" language="java">
+            <listing xml:id="java-temperature-conversion">
+            <program interactive="activecode" language="java">
                 <code>
 import java.util.Scanner;
 public class TempConv {
@@ -128,6 +130,7 @@ public class TempConv {
 }
                 </code> <stdin> </stdin> <tests> </tests>
             </program>
+            </listing>
 
             <p>
  There are several new concepts introduced in this example. We will look at them in the following order: 
@@ -247,7 +250,9 @@ public class TempConv {
  For Python programmers, the following error is likely to be even more common. Suppose we forgot the declaration for <c>cel</c> and instead left line 6 blank. What would happen when we type <c>javac TempConv.java</c> on the command line? 
             </p>
 
-            <pre>
+            <listing xml:id="java-temperature-conversion-error">
+            <program>
+            <code>
             TempConv.java:13: cannot find symbol 
             symbol  : variable cel 
             location: class TempConv 
@@ -259,10 +264,12 @@ public class TempConv {
             System.out.println("The temperature in C is: " + cel); 
             ^ 
             2 errors
-            </pre>
+            </code>
+            </program>
+            </listing>
             
             <p>
- When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program. More common error messages are discussed in the section <xref ref="common-mistakes-id1"/>. 
+ When you see the first kind of error in <xref ref="java-temperature-conversion-error" text="type-global"/> , where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program. More common error messages are discussed in the section <xref ref="common-mistakes-id1"/>. 
             </p>
 
             <p>
