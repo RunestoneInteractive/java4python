@@ -31,10 +31,10 @@
     </p>
 
     <listing xml:id="python-class-example">
-        <program language="python">
+        <program interactive="activecode" language="python">
             <code>
         class Dog:
-        """ A simple Dog class definition. """
+            """ A simple Dog class definition. """
             def __init__(self, name, breed, fur_color):
             # constructor method to create a Dog object
                 self.name = name
@@ -175,7 +175,7 @@
     </p>
 
     <listing xml:id="python-hello-world">
-    <program language="python">
+    <program interactive="activecode" language="python">
         <code>
         def main(): 
             print("Hello World!")
@@ -184,7 +184,11 @@
     </listing>
 
     <p>
-        Remember that we can define this program right at the Python command line and then run it as per <xref ref="python-hello-world-run" text="type-global"/>.
+        Remember that we can define this program right at the Python command line and then run it with <c>main()</c> Try it in <xref ref="python-hello-world" text="type-global"/>. 
+    </p>
+
+    <p> 
+        The command line interface of the program is shown in <xref ref="python-hello-world-run" text="type-global"/>.
     </p>
 
     <listing xml:id="python-hello-world-run">
@@ -494,7 +498,7 @@ System.
     </p>
 
     <listing xml:id="python-static-method">
-    <program language="python">
+    <program interactive = "activecode" language="python">
         <code>
 class Hello(object):
     @staticmethod
@@ -506,21 +510,25 @@ class Hello(object):
 
     <p>
         Notice that we used the decorator <c>@staticmethod</c> to tell the Python interpreter that <c>main</c> is going to be a static method.
-        The impact of this is that we don&#x2019;t have to, indeed we should not, use <c>self</c> as the first parameter of the main method! Using this definition we can call the main method in a Python session like <xref ref="python-static-method-run" text="type-global"/>.
+        The impact of this is that we don&#x2019;t have to, indeed we should not, use <c>self</c> as the first parameter of the main method! Using this definition we can call the main method in a Python session with <c>Hello.main("")</c>. Try it in <xref ref="python-static-method" text="type-global"/>.
     </p>
 
+    <p>
+        The command line interface of the program is shown in <xref ref="python-static-method-run" text="type-global"/>.
+    </p>
 
     <listing xml:id="python-static-method-run">
     <program language="python">
         <code>
 &gt;&gt;&gt; Hello.main("")
 Hello World!
-&gt;&gt;&gt;
         </code>
     </program>
     </listing>
 
 </section>
+
+
     <section xml:id="lets_look_java_program_summary">
         <title>Summary &amp; Reading Questions</title>
         <p><ol label="1">
