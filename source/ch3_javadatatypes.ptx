@@ -14,10 +14,10 @@
                 In Java, some of the most basic data types like integers and floating point numbers are not objects.
                 The benefit of having these primitive data types be non-objects is that operations on the primitives are fast.
                 The problem is that it became difficult for programmers to combine objects and non-objects in the way that we do in Python.
-                So, eventually all the non-object primitives ended up with Objectified versions.
+                So, eventually all the non-object primitives ended up with Objectified versions. <xref ref="primitive-object-comparison" text="type-global"/> shows the comparison between Java's primitive and object data types.
             </p>
 
-            <table>
+            <table xml:id="primitive-object-comparison">
             <title> Comparison between Java's primitive and object data types.  </title>
                 <tabular>
                     <row header="yes">
