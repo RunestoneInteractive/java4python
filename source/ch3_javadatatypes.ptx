@@ -99,8 +99,9 @@
             <program interactive="activecode" language="python">
                 <code>
 def main():
-    fahr = int(input("Enter the temperature in F: "))
-    cel = (fahr - 32) * 5.0/9.0
+    """ Program to convert a temperature from Fahrenheit to Celsius. """
+    fahr = int(input("Enter the temperature in F: ")) # get the temperature in Fahrenheit
+    cel = (fahr - 32) * 5.0/9.0 # convert to Celsius
     print("the temperature in C is: ", cel)
 main()
                 </code> <tests> </tests>
@@ -115,16 +116,19 @@ main()
             <listing xml:id="java-temperature-conversion">
             <program interactive="activecode" language="java">
                 <code>
-import java.util.Scanner;
+import java.util.Scanner; // import the Scanner class to read input from the user
+ /** 
+  * Program to convert a temperature from Fahrenheit to Celsius in Java.
+  */
 public class TempConv {
     public static void main(String[] args) {
-        Double fahr;
+        Double fahr; 
         Double cel;
-        Scanner in;
-        in = new Scanner(System.in);
+        Scanner in; // declare a Scanner variable called in 
+        in = new Scanner(System.in); // create a Scanner object to read input from the user 
         System.out.println("Enter the temperature in F: ");
-        fahr = in.nextDouble();
-        cel = (fahr - 32) * 5.0/9.0;
+        fahr = in.nextDouble(); // read the temperature in Fahrenheit from the user
+        cel = (fahr - 32) * 5.0/9.0; // convert to Celsius
         System.out.println("The temperature in C is: " + cel);
     }
 }
