@@ -87,7 +87,7 @@
 
             </ul>
 
-            A data type fundamentally defines a set of values and the operations you can perform on them. For instance, you can do math with int and double values, but not with boolean values. This is simlar to Python, where you can perform arithmetic on integers and floats, but not on booleans or strings.
+            A data type fundamentally defines a set of values and the operations you can perform on them. For instance, you can do math with int and double values, but not with boolean values. This is similar to Python, where you can perform arithmetic on integers and floats, but not on booleans or strings.
             </p>
 
             <p>
@@ -448,7 +448,7 @@ def main():
         count[int(line)] = count[int(line)] + 1
     idx = 0
     for num in count:
-        print(idx, " occured ", num, " times.")
+        print(idx, " occurred ", num, " times.")
         idx += 1
 main()
             </code> <tests> </tests>
@@ -565,7 +565,7 @@ public class Histo {
         }
         idx = 0;
         for(Integer i : count) {
-            System.out.println(idx + " occured " + i + " times.");
+            System.out.println(idx + " occurred " + i + " times.");
             idx++;
         }
     }
@@ -691,7 +691,7 @@ public class HistoArray {
         }
         idx = 0;
         for(Integer i : count) {
-            System.out.println(idx + " occured " + i + " times.");
+            System.out.println(idx + " occurred " + i + " times.");
             idx++;
         }
     }
@@ -795,7 +795,7 @@ public class HistoMap {
             count.put(word,++wordCount);
         }
         for(String i : count.keySet()) {
-            System.out.printf("%-20s occured %5d times\n", i, count.get(i) );
+            System.out.printf("%-20s occurred %5d times\n", i, count.get(i) );
         }
     }
 }
