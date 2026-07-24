@@ -336,13 +336,18 @@ void main() {
     <listing xml:id="animal-dog-example">
     <program language="java">
         <code>
+/**
+    * Animal class is the superclass, with a method makeSound().
+    */        
 class Animal {
-
     public void makeSound() {
         System.out.println("The animal makes a sound.");
     }
 }
 
+/**
+    * Dog class is a subclass of Animal, with an additional method bark().
+    */
 class Dog extends Animal {
     public void bark() {
         System.out.println("The dog barks!");
@@ -358,18 +363,28 @@ class Dog extends Animal {
     <listing xml:id="upcasting-example">
     <program interactive="activecode" language="java">
         <code>
+
+/**
+    * Animal class is the superclass, with a method makeSound().
+    */
 class Animal {
     public void makeSound() {
         System.out.println("The animal makes a sound.");
     }
 }
 
+/**
+    * Dog class is a subclass of Animal, with an additional method bark().
+    */
 class Dog extends Animal {
     public void bark() {
         System.out.println("The dog barks!");
     }
 }
 
+/**
+    * Upcasting example: A Dog object is created, but the reference is of type Animal.   
+    */ 
 void main() {
 // A Dog object is created, but the reference is of type Animal.
 // This is implicit upcasting.
@@ -377,8 +392,8 @@ void main() {
 
     myAnimal.makeSound(); // This is valid, as makeSound() is defined in Animal.
 
-// myAnimal.bark(); // This would cause a compile-time error!
-// The compiler only knows about the methods in the Animal reference type.
+    // myAnimal.bark(); // This would cause a compile-time error!
+    // The compiler only knows about the methods in the Animal reference type.
 }
     </code>
     </program>
@@ -393,20 +408,28 @@ void main() {
     <listing xml:id="downcasting-example">
     <program interactive="activecode" language="java">
         <code>
+/**
+    * Animal class is the superclass, with a method makeSound().
+    */       
 class Animal {
     public void makeSound() {
         System.out.println("The animal makes a sound.");
     }
 }
 
+/**
+    * Dog class is a subclass of Animal, with an additional method bark().
+    */
 class Dog extends Animal {
     public void bark() {
         System.out.println("The dog barks!");
     }
 }
 
+/**
+    * Downcasting example: An Animal reference is downcast to a Dog reference after checking its type.
+    */
 void main() { 
-
     Animal myAnimal = new Dog();
 
     // 'myAnimal' is an Animal reference, but it points to a Dog object. 
