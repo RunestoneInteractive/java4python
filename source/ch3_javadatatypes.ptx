@@ -294,73 +294,157 @@ public class TempConv {
         </p>
 
         <p>
-            Implicit typecasting happens automatically when converting a value from a smaller data type to a larger one, as there is no risk of losing information. For example, you can assign an int to a double without any special syntax. 
+            Implicit typecasting happens automatically when converting a value from a smaller data type to a larger one, as there is no risk of losing information. For example, you can assign an int to a double without any special syntax as shown in <xref ref="implicit-typecasting" text="type-global"/>. 
         </p>
-        <pre> 
-        int myInt = 10;
-        double myDouble = myInt; // Automatic casting from int to double
-        </pre>
-            
+
+        <listing xml:id="implicit-typecasting">
+        <program interactive="activecode" language="java">
+            <code>
+void main() {
+    int myInt = 10;
+    double myDouble = myInt; // Automatic casting from int to double
+
+    System.out.println(myDouble); 
+} 
+         </code>
+        </program>
+        </listing>
+
         <p>
-            Explicit typecasting is required when converting from a larger data type to a smaller one, as you might lose data. You must do this manually by placing the target type in parentheses () before the value.
+            Explicit typecasting is required when converting from a larger data type to a smaller one, as you might lose data. You must do this manually by placing the target type in parentheses () before the value as shown in <xref ref="explicit-typecasting" text="type-global"/>.
         </p>
-        <pre>
-        double originalDouble = 9.78;
-        int castedInt = (int) originalDouble; // Explicitly casts double to int. The value of castedInt is now 9.
-        </pre>
+        <listing xml:id="explicit-typecasting">
+        <program interactive="activecode" language="java">
+            <code>
+void main() {
+    double originalDouble = 9.78;
+    int castedInt = (int) originalDouble; // Explicitly casts double to int. The value of castedInt is now 9.
+
+    System.out.println(castedInt); 
+}
+            </code>
+        </program>
+        </listing>
 
         <p>
         Besides primitive types, type casting is also a fundamental concept when working with objects, especially within an inheritance hierarchy. This involves converting an object reference from one class type to another, typically between a superclass and a subclass. This is often referred to as upcasting and downcasting.
     </p>
     <p>
-        Let's imagine we have a simple class hierarchy: an <c>Animal</c> superclass and a <c>Dog</c> subclass.
+        In <xref ref="animal-dog-example" text="type-global"/>, we have a simple class hierarchy: an <c>Animal</c> superclass and a <c>Dog</c> subclass.
     </p>
-    <pre>
+
+    <listing xml:id="animal-dog-example">
+    <program language="java">
+        <code>
+/**
+    * Animal class is the superclass, with a method makeSound().
+    */        
 class Animal {
     public void makeSound() {
         System.out.println("The animal makes a sound.");
     }
 }
 
+/**
+    * Dog class is a subclass of Animal, with an additional method bark().
+    */
 class Dog extends Animal {
     public void bark() {
         System.out.println("The dog barks!");
     }
 }
-    </pre>
+    </code>
+    </program>
+    </listing>
 
     <p>
-        <strong>Upcasting (Implicit):</strong> Upcasting is casting a subclass instance to a superclass reference type. This is always safe because a subclass object is guaranteed to have all the methods and properties of its superclass. Therefore, upcasting is done implicitly by the compiler.
+        <strong>Upcasting (Implicit):</strong> Upcasting is casting a subclass instance to a superclass reference type. This is always safe because a subclass object is guaranteed to have all the methods and properties of its superclass. Therefore, upcasting is done implicitly by the compiler as <xref ref="upcasting-example" text="type-global"/>.
     </p>
-    <pre>
+    <listing xml:id="upcasting-example">
+    <program interactive="activecode" language="java">
+        <code>
+
+/**
+    * Animal class is the superclass, with a method makeSound().
+    */
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
+
+/**
+    * Dog class is a subclass of Animal, with an additional method bark().
+    */
+class Dog extends Animal {
+    public void bark() {
+        System.out.println("The dog barks!");
+    }
+}
+
+/**
+    * Upcasting example: A Dog object is created, but the reference is of type Animal.   
+    */ 
+void main() {
 // A Dog object is created, but the reference is of type Animal.
 // This is implicit upcasting.
-Animal myAnimal = new Dog(); 
+    Animal myAnimal = new Dog(); 
 
-myAnimal.makeSound(); // This is valid, as makeSound() is defined in Animal.
+    myAnimal.makeSound(); // This is valid, as makeSound() is defined in Animal.
 
-// myAnimal.bark(); // This would cause a compile-time error!
-// The compiler only knows about the methods in the Animal reference type.
-    </pre>
+    // myAnimal.bark(); // This would cause a compile-time error!
+    // The compiler only knows about the methods in the Animal reference type.
+}
+    </code>
+    </program>
+    </listing>
+
     <p>
         <strong>Downcasting (Explicit):</strong> Downcasting is casting a superclass reference back to its original subclass type. This is potentially unsafe because the superclass reference might not actually point to an object of the target subclass. You must perform an explicit cast. If you cast to the wrong type, Java will throw a <c>ClassCastException</c> at runtime.
     </p>
     <p>
-        To safely downcast, you should first check the object's type using the <c>instanceof</c> operator.
+        To safely downcast, you should first check the object's type using the <c>instanceof</c> operator as shown in <xref ref="downcasting-example" text="type-global"/>.
     </p>
-    <pre>
-// 'myAnimal' is an Animal reference, but it points to a Dog object.
-if (myAnimal instanceof Dog) {
-    // The check passed, so this downcast is safe.
-    Dog myDog = (Dog) myAnimal;
-
-    // Now we can access methods specific to the Dog class.
-    myDog.bark(); // This is now valid.
+    <listing xml:id="downcasting-example">
+    <program interactive="activecode" language="java">
+        <code>
+/**
+    * Animal class is the superclass, with a method makeSound().
+    */       
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
 }
-    </pre>
+
+/**
+    * Dog class is a subclass of Animal, with an additional method bark().
+    */
+class Dog extends Animal {
+    public void bark() {
+        System.out.println("The dog barks!");
+    }
+}
+
+/**
+    * Downcasting example: An Animal reference is downcast to a Dog reference after checking its type.
+    */
+void main() { 
+    Animal myAnimal = new Dog();
+
+    // 'myAnimal' is an Animal reference, but it points to a Dog object. 
+    if (myAnimal instanceof Dog myDog) {
+        // Now we can access methods specific to the Dog class.
+        myDog.bark();
+    }
+}
+    
+    </code>
+    </program>
+    </listing>
 
         <p>
-            In this example, we first create a <c>Dog</c> object and assign it to an <c>Animal</c> reference (upcasting). Then, we check if the <c>Animal</c> reference is actually pointing to a <c>Dog</c> object before downcasting it back to a <c>Dog</c> reference.
+            In <xref ref="downcasting-example" text="type-global"/>, we first create a <c>Dog</c> object and assign it to an <c>Animal</c> reference (upcasting). Then, we check if the <c>Animal</c> reference is actually pointing to a <c>Dog</c> object before downcasting it back to a <c>Dog</c> reference.
         </p>
         </section>
 
