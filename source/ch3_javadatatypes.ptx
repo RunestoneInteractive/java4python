@@ -457,10 +457,11 @@ void main() {
         </p>
 
         <p>
- In fact, this is the first example of another big difference between Java and Python. Java does not support any operator overloading. Table 3 maps common Python string operations to their Java counterparts. For the examples shown in the table we will use a string variable called &#x201C;str&#x201D; 
+ In fact, this is the first example of another big difference between Java and Python. Java does not support any operator overloading. <xref ref="string-operations-comparison" text="type-global"/> maps common Python string operations to their Java counterparts. For the examples shown in the table we will use a string variable called &#x201C;str&#x201D; 
         </p>
 
-        <table>
+        <table xml:id="string-operations-comparison"> 
+        <title> Comparison of common string operations in Python and Java. </title>
             <tabular>
                 <row header="yes">
                     <cell> Python </cell>
