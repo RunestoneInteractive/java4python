@@ -833,15 +833,16 @@ public class HistoArray {
 
         <program xml:id="python-input-file2" interactive="activecode" language="python">
             <code>
-def main():
+def main(): 
+    """ Program to read a file and count the frequency of words in the file. """
     data = open('alice30.txt')
-    wordList = data.read().split()
+    wordList = data.read().split() # split the file into a list of words
     count = {}
-    for w in wordList:
+    for w in wordList: # iterate over the list of words
         w = w.lower()
         count[w] = count.get(w,0) + 1
-    keyList = sorted(count.keys())
-    for k in keyList:
+    keyList = sorted(count.keys()) # sort the keys in alphabetical order 
+    for k in keyList: # iterate over the sorted list of keys
         print("%-20s occurred %4d times" % (k, count[k]))
 main()
             </code> <tests> </tests>
@@ -880,19 +881,22 @@ main()
 
         <program xml:id="java-use-input-file" interactive="activecode" language="java" datafile="alice30.txt">
             <code>
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.io.File;
-import java.io.IOException;
-import java.util.TreeMap;
+import java.util.Scanner; 
+import java.util.ArrayList; // import the ArrayList class to use dynamic arrays
+import java.io.File; 
+import java.io.IOException; 
+import java.util.TreeMap; // import the TreeMap class to use a map for counting word frequencies
+/**
+ * Program to read a file and count the frequency of words in the file.
+ */
 public class HistoMap {
     public static void main(String[] args) {
         Scanner data = null;
-        TreeMap&lt;String,Integer&gt; count;
+        TreeMap&lt;String,Integer&gt; count; // create a TreeMap to hold word counts, mapping each word (String) to its frequency (Integer)
         Integer idx;
         String word;
         Integer wordCount;
-        try {
+        try { // Try to open the data file and handle any potential IOExceptions
                 data = new Scanner(new File("alice30.txt"));
         }
         catch ( IOException e) {
@@ -900,16 +904,16 @@ public class HistoMap {
             e.printStackTrace();
             System.exit(0);
         }
-        count = new TreeMap&lt;String,Integer&gt;();
+        count = new TreeMap&lt;String,Integer&gt;(); // create a TreeMap to hold word counts
         while(data.hasNext()) {
-            word = data.next().toLowerCase();
-            wordCount = count.get(word);
+            word = data.next().toLowerCase(); // read each word from the file, convert it to lowercase
+            wordCount = count.get(word); // get the current count for the word from the TreeMap
             if (wordCount == null) {
                 wordCount = 0;
             }
-            count.put(word,++wordCount);
+            count.put(word,++wordCount); // increment the count for the word and put it back into the TreeMap
         }
-        for(String i : count.keySet()) {
+        for(String i : count.keySet()) { // iterate over the keys (words) in the TreeMap
             System.out.printf("%-20s occurred %5d times\n", i, count.get(i) );
         }
     }
