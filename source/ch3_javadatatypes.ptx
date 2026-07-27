@@ -563,7 +563,7 @@ Lets review what is happening in this little program. First, we create a list an
         </p>
 
         <p>
-To write the Java version of this program we will have to introduce several new Java concepts. First, you will see the Java equivalent of a list, called an <c>ArrayList.</c> Next, you will see three different kinds of loops used in Java. Two of the loops we will use are going to be very familiar, the third one is different from what you are used to in Python but is easy when you understand the syntax:
+To write the Java version of this program we will have to introduce several new Java concepts. First, you will see the Java equivalent of a list, an <c>ArrayList</c>. Next, you will see three different kinds of loops used in Java. Two of the loops we will use are going to be very familiar, the third one is different from what you are used to in Python but is easy when you understand the syntax:
         </p>
 
         <p>
