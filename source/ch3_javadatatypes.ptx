@@ -277,7 +277,7 @@ public class TempConv {
             </p>
 
             <p>
- The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. In our temperature converter, the calculation (fahr - 32) * 5.0/9.0 works correctly because 5.0 and 9.0 are treated as double values, preventing the integer division that would occur if we had written 5/9, which would result in 0.
+ The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. In our temperature converter, the calculation <c>(fahr - 32) * 5.0/9.0</c> works correctly because 5.0 and 9.0 are treated as double values, preventing the integer division that would occur if we had written <c>5/9</c>, which would result in 0.
             </p>
             </subsection>
         </section>
