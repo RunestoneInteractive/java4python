@@ -531,12 +531,14 @@ void main() {
         <program xml:id="python-input-file1" interactive="activecode" language="python">
             <code>
 def main():
-    count = [0]*10
-    data = open('test.dat')
+    """ Program to read numbers from a file and produce a histogram. """
+    count = [0]*10 # create a list of 10 zeros
+    data = open('test.dat') # open the data file
+    # read each line and update the count
     for line in data:
         count[int(line)] = count[int(line)] + 1
     idx = 0
-    for num in count:
+    for num in count: # iterate over the list and print the histogram
         print(idx, " occurred ", num, " times.")
         idx += 1
 main()
@@ -627,33 +629,40 @@ Here is the Java code needed to write the exact same program:
 
         <program xml:id="java-null-object" interactive="activecode" language="java" datafile="test.dat">
             <code>
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.io.File;
-import java.io.IOException;
+import java.util.Scanner; // import the Scanner class to read input from the user
+import java.util.ArrayList; // import the ArrayList class to use dynamic arrays
+import java.io.File; // import the File class to read from files
+import java.io.IOException; // import the IOException class to handle file input/output exceptions
+/**
+ * Program to read numbers from a file and produce a histogram in Java.
+ */
 public class Histo {
     public static void main(String[] args) {
-        Scanner data = null;
-        ArrayList&lt;Integer&gt; count;
+        Scanner data = null; 
+        ArrayList&lt;Integer&gt; count; // create an ArrayList to hold counts of numbers, of type Integer
         Integer idx;
+
+        // Try to open the data file and handle any potential IOExceptions
         try {
                 data = new Scanner(new File("test.dat"));
         }
         catch ( IOException e) {
             System.out.println("Unable to open data file");
-            e.printStackTrace();
+            e.printStackTrace(); // print the stack trace for debugging
             System.exit(0);
         }
-        count = new ArrayList&lt;Integer&gt;(10);
+        count = new ArrayList&lt;Integer&gt;(10); // create an ArrayList with an initial capacity of 10
         for (Integer i = 0; i &lt; 10; i++) {
-            count.add(i,0);
+            count.add(i,0); // initialize the first 10 positions in the ArrayList to hold the value 0
         }
         while(data.hasNextInt()) {
-            idx = data.nextInt();
+            // read each integer from the file and update the count
+            idx = data.nextInt(); 
             count.set(idx,count.get(idx)+1);
         }
         idx = 0;
         for(Integer i : count) {
+            // iterate over each element in the ArrayList and print the histogram
             System.out.println(idx + " occurred " + i + " times.");
             idx++;
         }
