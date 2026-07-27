@@ -829,8 +829,8 @@ public class HistoArray {
  Lets stay with a simple frequency counting example, only this time we will count the frequency of words in a document. A simple Python program for this job could look like this: 
         </p>
 
-
-        <program xml:id="python-input-file2" interactive="activecode" language="python">
+        <listing xml:id="python-word-count">
+        <program interactive="activecode" language="python">
             <code>
 def main():
     data = open('alice30.txt')
@@ -845,11 +845,14 @@ def main():
 main()
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
     This program reads the file <c>alice30.txt</c> (which follows), and it then splits it into a list of words. Next it creates a dictionary called <c>count</c> which maps each word to the number of times that word occurs in the text. Finally, it prints out the words in alphabetical order along with their frequency.
         </p>
 
+        <data xml:id="datafile-alice1">
+        <title>Data file for testing the word frequency program</title>
         <datafile label="datafile-alice1" filename="alice30.txt" editable="no" cols="30" rows="15">
             <pre> 
             Down, down, down. Would the fall NEVER
@@ -872,12 +875,13 @@ main()
             nice grand words to say.)
             </pre>
         </datafile>
+        </data>
         <p>
  Notice that the structure of the program is very similar to the numeric histogram program. 
         </p>
 
-
-        <program xml:id="java-use-input-file" interactive="activecode" language="java" datafile="alice30.txt">
+        <listing xml:id="java-word-count">
+        <program interactive="activecode" language="java" datafile="alice30.txt">
             <code>
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -915,6 +919,7 @@ public class HistoMap {
 }
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
  Improve the program above to remove the punctuation. 
