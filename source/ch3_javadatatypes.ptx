@@ -527,8 +527,8 @@ void main() {
  Next, let&#x2019;s look at a program which reads numbers from a file and produces a histogram showing the frequency of the numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram. 
         </p>
 
-
-        <program xml:id="python-input-file1" interactive="activecode" language="python">
+        <listing xml:id="python-input-file1">
+        <program interactive="activecode" language="python">
             <code>
 def main():
     count = [0]*10
@@ -542,11 +542,13 @@ def main():
 main()
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
  Test running the program. It will read this data: 
         </p>
-        <datafile label="datafile-test" filename="test.dat" editable="no" cols="12" rows="6">
+        
+        <datafile xmlid="datafile-test" label="datafile-test" filename="test.dat" editable="no" cols="12" rows="6">
         <pre>
    1
    2
@@ -625,7 +627,8 @@ Here is the Java code needed to write the exact same program:
             </p>
         </note>
 
-        <program xml:id="java-null-object" interactive="activecode" language="java" datafile="test.dat">
+        <listing xml:id="java-null-object">
+        <program interactive="activecode" language="java" datafile="test.dat">
             <code>
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -661,6 +664,7 @@ public class Histo {
 }
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
  Before going any further, I suggest you try to compile the above program and run it on some test data that you create. 
@@ -674,10 +678,14 @@ public class Histo {
  Technically, you don&#x2019;t <em>have</em> to declare what is going to be in an array list. The compiler will allow you to leave the <c>&lt;``*Type*</c>&gt;`` off the declaration. If you don&#x2019;t tell Java what kind of object is going to be on the list Java will give you a warning message like this: 
         </p>
 
-        <pre>
+        <listing xml:id="java-arraylist-warning">
+        <program>
+        <code>
         Note: Histo.java uses unchecked or unsafe operations. 
         Note: Recompile with -Xlint:unchecked for details.
-        </pre>
+        </code>
+        </program>
+        </listing>
 
         <p>
  Without the <c>&lt;Integer&gt;</c> part of the declaration Java simply assumes that <em>any</em> object can be on the list. However, without resorting to an ugly notation called casting, you cannot do anything with the objects on a list like this! So, if you forget you will surely see more errors later in your code. (Try it and see what you get) 
@@ -686,14 +694,18 @@ public class Histo {
         <p>
  Lines 13&#x2014;20 are required to open the file. Why so many lines to open a file in Java? The additional code mainly comes from the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error. A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. The following example shows the general structure of a try/catch block. 
         </p>
-
-        <pre>
+        
+        <listing xml:id="java-try-catch">
+        <program>
+        <code>
         try { 
             Put some risky code in here, like opening a file 
         } catch (Exception e) { 
             If an error happens in the try block an exception is thrown. We will catch that exception here! 
         }
-        </pre>
+        </code>
+        </program>
+        </listing>
         
         <p>
  Notice that in line 16 we are catching an <c>IOException</c>. In fact, we will see later that we can have multiple catch blocks to catch different types of exceptions. If we want to be lazy and catch any old exception we can catch an <c>Exception</c> which is the parent of all exceptions. However, catching <c>Exception</c> is a terrible practice, since you may inadvertently catch exceptions you do not intend to, making it harder to identify bugs in your program. 
