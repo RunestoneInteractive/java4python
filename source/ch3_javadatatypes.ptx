@@ -777,11 +777,11 @@ public class Histo {
         <title>Arrays</title>
 
         <p>
- As was said at the outset of this section, we are going to use Java <c>ArrayLists</c> because they are easier to use and more closely match the way that Python lists behave. However, if you look at Java code on the internet or even in your core Java books you are going to see examples of something called an array. In fact, you have already seen one example of an array declared in the &#x2018;Hello World&#x2019; program. Let's rewrite this program to use primitive arrays rather than array lists. 
+ As was said at the outset of this section, we are going to use Java <c>ArrayLists</c> because they are easier to use and more closely match the way that Python lists behave. However, if you look at Java code on the internet or even in your core Java books you are going to see examples of something called an array. In fact, you have already seen one example of an array declared in the &#x2018;Hello World&#x2019; program. <xref ref="java-array" text="type-global"/> is a rewritten version of <xref ref="java-histogram" text="type-global"/> that uses primitive arrays rather than array lists.
         </p>
 
-
-        <program xml:id="java-array" interactive="activecode" language="java" datafile="test.dat">
+        <listing xml:id="java-array">
+        <program interactive="activecode" language="java" datafile="test.dat">
             <code>
 import java.util.Scanner;
 import java.io.File;
@@ -812,9 +812,10 @@ public class HistoArray {
 }
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
-  The main difference between this example and the previous example is that we declare <c>count</c> to be an <c>Array</c> of integers. We also can initialize short arrays directly using the syntax shown here: <c>Integer[] count = {0,0,0,0,0,0,0,0,0,0}</c>Then notice that we can use the square bracket notation <c>count[idx]</c> to index into an array.
+  The main difference between <xref ref="java-array" text="type-global"/> and <xref ref="java-histogram" text="type-global"/> is that we declare <c>count</c> to be an <c>Array</c> of integers. We also can initialize short arrays directly using the syntax shown here: <c>Integer[] count = {0,0,0,0,0,0,0,0,0,0}</c>Then notice that we can use the square bracket notation <c>count[idx]</c> to index into an array.
 </p>
     </section>
 
