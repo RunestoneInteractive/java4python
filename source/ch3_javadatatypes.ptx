@@ -528,7 +528,7 @@ void main() {
         </p>
 
         <listing xml:id="python-histogram">
-        <program interactive="activecode" language="python">
+        <program interactive="activecode" language="python" add-files="datafile-test">
             <code>
 def main():
     count = [0]*10
@@ -545,9 +545,11 @@ main()
         </listing>
 
         <p>
- Test running the program. It will read this data:  
+ Test running the program. It will read <xref ref="datafile-test" text="type-global"/>. 
         </p>
-        
+
+        <data xml:id="datafile-test">
+        <title>Data file for testing the histogram program</title>
         <datafile label="datafile-test" filename="test.dat" editable="no" cols="12" rows="6">
         <pre>
    1
@@ -557,6 +559,7 @@ main()
    1
         </pre>
         </datafile>
+        </data>
 
         <p>
 Lets review what is happening in this little program. First, we create a list and initialize the first 10 positions in the list to be 0. Next we open the data file called &#x2018;test.dat&#x2019;. Third, we have a loop that reads each line of the file. As we read each line we convert it to an integer and increment the counter at the position in the list indicated by the number on the line we just read. Finally we iterate over each element in the list, printing out both the position in the list and the total value stored in that position.
