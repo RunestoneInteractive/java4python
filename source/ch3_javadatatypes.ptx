@@ -783,13 +783,16 @@ public class Histo {
 
         <program xml:id="java-array" interactive="activecode" language="java" datafile="test.dat">
             <code>
-import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
+import java.util.Scanner; // import the Scanner class to read input from the user
+import java.io.File; // import the File class to read from files
+import java.io.IOException; // import the IOException class to handle file input/output exceptions
+/**
+ * Program to read numbers from a file and produce a histogram using arrays in Java.
+ */
 public class HistoArray {
     public static void main(String[] args) {
         Scanner data = null;
-        Integer[] count = {0,0,0,0,0,0,0,0,0,0};
+        Integer[] count = {0,0,0,0,0,0,0,0,0,0}; // create an array of 10 integers initialized to 0
         Integer idx;
         try {
             data = new Scanner(new File("test.dat"));
@@ -801,7 +804,7 @@ public class HistoArray {
         }
         while(data.hasNextInt()) {
             idx = data.nextInt();
-            count[idx] = count[idx] + 1;
+            count[idx] = count[idx] + 1; // increment the count for the number read from the file, using array indexing
         }
         idx = 0;
         for(Integer i : count) {
