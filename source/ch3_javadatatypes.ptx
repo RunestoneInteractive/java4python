@@ -524,10 +524,10 @@ void main() {
         <title>List</title>
 
         <p>
- Next, let&#x2019;s look at a program which reads numbers from a file and produces a histogram showing the frequency of the numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram. 
+ Next, let&#x2019;s look at a program which reads numbers from a file and produces a histogram showing the frequency of the numbers. The data file we will use has one number between 0 and 9 on each line of the file. <xref ref="python-histogram" text="type-global"/> is a simple Python program that creates and prints a histogram. 
         </p>
 
-        <listing xml:id="python-input-file1">
+        <listing xml:id="python-histogram">
         <program interactive="activecode" language="python">
             <code>
 def main():
@@ -545,17 +545,18 @@ main()
         </listing>
 
         <p>
- Test running the program. It will read this data: 
+ Test running the program. It will read this data:  
         </p>
         
-        <datafile xmlid="datafile-test" label="datafile-test" filename="test.dat" editable="no" cols="12" rows="6">
+        <datafile label="datafile-test" filename="test.dat" editable="no" cols="12" rows="6">
         <pre>
    1
    2
    3
    9
    1
-        </pre> </datafile>
+        </pre>
+        </datafile>
 
         <p>
 Lets review what is happening in this little program. First, we create a list and initialize the first 10 positions in the list to be 0. Next we open the data file called &#x2018;test.dat&#x2019;. Third, we have a loop that reads each line of the file. As we read each line we convert it to an integer and increment the counter at the position in the list indicated by the number on the line we just read. Finally we iterate over each element in the list, printing out both the position in the list and the total value stored in that position.
@@ -618,7 +619,7 @@ The <c>code</c> will be executed once for each element in the <c>collection</c>.
         </p>
 
         <p>
-Here is the Java code needed to write the exact same program:
+<xref ref="java-histogram" text="type-global"/> is the Java code needed to write the exact same program.
         </p>
 
         <note>
@@ -627,7 +628,7 @@ Here is the Java code needed to write the exact same program:
             </p>
         </note>
 
-        <listing xml:id="java-null-object">
+        <listing xml:id="java-histogram">
         <program interactive="activecode" language="java" datafile="test.dat">
             <code>
 import java.util.Scanner;
@@ -667,7 +668,7 @@ public class Histo {
         </listing>
 
         <p>
- Before going any further, I suggest you try to compile the above program and run it on some test data that you create. 
+ Before going any further, I suggest you try to compile <xref ref="java-histogram" text="type-global"/> and run it on some test data that you create. 
         </p>
 
         <p>
@@ -675,7 +676,7 @@ public class Histo {
         </p>
 
         <p>
- Technically, you don&#x2019;t <em>have</em> to declare what is going to be in an array list. The compiler will allow you to leave the <c>&lt;``*Type*</c>&gt;`` off the declaration. If you don&#x2019;t tell Java what kind of object is going to be on the list Java will give you a warning message like this: 
+ Technically, you don&#x2019;t <em>have</em> to declare what is going to be in an array list. The compiler will allow you to leave the <c>&lt;``*Type*</c>&gt;`` off the declaration. If you don&#x2019;t tell Java what kind of object is going to be on the list Java will give you a warning message like <xref ref="java-arraylist-warning" text="type-global"/> when you compile the program. 
         </p>
 
         <listing xml:id="java-arraylist-warning">
@@ -692,7 +693,7 @@ public class Histo {
         </p>
 
         <p>
- Lines 13&#x2014;20 are required to open the file. Why so many lines to open a file in Java? The additional code mainly comes from the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error. A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. The following example shows the general structure of a try/catch block. 
+ Lines 13&#x2014;20 are required to open the file. Why so many lines to open a file in Java? The additional code mainly comes from the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error. A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. <xref ref="java-try-catch" text="type-global"/> shows the general structure of a try/catch block. 
         </p>
         
         <listing xml:id="java-try-catch">
