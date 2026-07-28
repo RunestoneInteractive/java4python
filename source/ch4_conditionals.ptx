@@ -58,7 +58,7 @@ if score &gt;= 90:
             </code>
             </program>
 
-        <program xml:id="java-if-else" language="java">
+        <program xml:id="java-if-else"  interactive="activecode" language="java">
             <code>
         public class IfElseExample {
             public static void main(String[] args) {
