@@ -47,7 +47,7 @@ if score &gt;= 90:
     <section xml:id="use-the-if-else-statement">
         <title>Using the <c>if</c> - <c>else</c> Statement</title>
 
-        <xref ref= "python-if-else"  text="type-global"/>  shows how Python the <c>if</c> - <c>else</c>statement is written in Python.
+        <p><xref ref= "python-if-else"  text="type-global"/> shows how the <c>if</c> - <c>else</c>statement is written in Python.</p> 
         <listing xml:id="python-if-else">
         <program interactive="activecode" language="python">
             <code>
