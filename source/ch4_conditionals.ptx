@@ -19,7 +19,7 @@
         <program xml:id="python-simple-if" interactive="activecode" language="python">
             <code>
 score = 95
-if score &gt;= 90:
+if score &gt;= 90: # Note the colon at the end of the line
     print("Excellent work!")
             </code>
         </program>
@@ -31,7 +31,7 @@ if score &gt;= 90:
             public class SimpleIfExample {
                 public static void main(String[] args) {
                     int score = 70;
-                    if (score &lt;= 70) {
+                    if (score &lt;= 70) { // Note the parentheses and curly braces
                         System.out.println("Needs work!");
                     }
                 }
