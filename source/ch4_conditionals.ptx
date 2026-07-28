@@ -26,7 +26,9 @@ if score &gt;= 90:
         </program>
         </listing>
 
+
         <p>
+            In Java, this same pattern requires two changes: the condition must be in parentheses <c>()</c>, and the code block must be enclosed in curly braces <c>{}</c>.
             <xref ref="java-simple-if" text="type-global"/> shows how the simple <c>if</c> statement is written in Java.
         </p>
         <listing xml:id="java-simple-if">
