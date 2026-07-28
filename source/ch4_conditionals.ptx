@@ -48,7 +48,8 @@ if score &gt;= 90:
         <title>Using the <c>if</c> - <c>else</c> Statement</title>
 
             <p>The Java equivalent follows the same syntactical rules as before.</p>
-        <program xml:id="python-if-else" interactive="activecode" language="python">
+        <listing xml:id="python-if-else">
+        <program interactive="activecode" language="python">
             <code>
             age = 16
             if age &gt;= 18:
@@ -57,8 +58,10 @@ if score &gt;= 90:
                 print("You are not yet eligible to vote.")
             </code>
             </program>
+            </listing> 
 
-        <program xml:id="java-if-else"  interactive="activecode" language="java">
+        <listing xml:id="java-if-else">
+        <program interactive="activecode" language="java">
             <code>
         public class IfElseExample {
             public static void main(String[] args) {
@@ -72,6 +75,7 @@ if score &gt;= 90:
         }
             </code>
         </program>
+        </listing>
     </section>
 
     <section xml:id="elif">
