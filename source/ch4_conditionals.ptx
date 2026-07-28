@@ -47,7 +47,7 @@ if score &gt;= 90:
     <section xml:id="use-the-if-else-statement">
         <title>Using the <c>if</c> - <c>else</c> Statement</title>
 
-            <p>The Java equivalent follows the same syntactical rules as before.</p>
+        <xref ref= "python-if-else"  text="type-global"/>  shows how Python the <c>if</c> - <c>else</c>statement is written in Python.
         <listing xml:id="python-if-else">
         <program interactive="activecode" language="python">
             <code>
@@ -59,7 +59,8 @@ if score &gt;= 90:
             </code>
             </program>
             </listing> 
-
+        
+        <p> <xref ref="java-if-else" text="type-global"/> is Java equivalent that follows the same syntactical rules as before.</p>
         <listing xml:id="java-if-else">
         <program interactive="activecode" language="java">
             <code>
