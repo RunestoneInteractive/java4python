@@ -30,9 +30,9 @@ if score &gt;= 90: # Note the colon at the end of the line
             <code>
             public class SimpleIfExample {
                 public static void main(String[] args) {
-                    int score = 70;
-                    if (score &lt;= 70) { // Note the parentheses and curly braces
-                        System.out.println("Needs work!");
+                    int score = 95;
+                    if (score &gt;= 90) { // Note the parentheses and curly braces
+                        System.out.println("Excellent work!");
                     }
                 }
             }
