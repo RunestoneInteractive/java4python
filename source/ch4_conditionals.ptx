@@ -178,7 +178,7 @@ public class ElseIf {
         <title>Using the <c>switch</c> Statement</title>
 
         <p>
-Java also supports a <c>switch</c> statement that acts something like the <c>elif</c> or Python <c>match</c> statement under certain conditions.<xref ref="python-match" text="type-global"/> shows how the the grade program using a <c>switch</c> statement could be in Python.
+Java also supports a <c>switch</c> statement that acts something like the <c>elif</c> or Python <c>match</c> statement under certain conditions.<xref ref="python-match" text="type-global"/> shows how a grade program using a <c>switch</c> statement would look in Python.
 </p>
 
         <note>
@@ -186,7 +186,7 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
                 The <c>match - case</c> statement was introduced in Python 3.10, so doesn't run in earlier version of Python. Here is an example using Python's <c>match - case</c> structure.
             </p></note>
             <listing xml:id ="python-match">
-                    <program language="python">
+                    <program interactive="activecode" language="python">
             <title>Match Case Example</title>
             <code>
                 grade = 85
