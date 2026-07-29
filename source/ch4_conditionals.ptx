@@ -155,9 +155,9 @@ We can get even closer to the <c>elif</c> statement by taking advantage of the J
         <listing xml:id="java-if-else-no-nesting" >
         <program interactive="activecode" language="java">
             <code>
-public class ElseIf {
+public class ElseIf { 
     public static void main(String args[]) {
-     int grade = 85;
+     int grade = 85; 
      if (grade &lt; 60) {
          System.out.println('F');
      } else if (grade &lt; 70) {
@@ -185,7 +185,8 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
             <p>
                 The <c>match - case</c> statement was introduced in Python 3.10, so doesn't run in earlier version of Python. Here is an example using Python's <c>match - case</c> structure.
             </p></note>
-                    <program xml:id="python-match" language="python">
+            <listing xml:id ="python-match">
+                    <program language="python">
             <title>Match Case Example</title>
             <code>
                 grade = 85
@@ -206,6 +207,7 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
                 print(grading(tempgrade))
             </code>
         </program>
+        </listing>
 
         <p><idx><c>switch</c></idx>
             The <c>switch</c> statement in Java provides an alternative to chaining multiple <c>if-else</c> conditions,  when comparing a single variable against several constant values. It supports a variety of data types, including primitive types (<c>byte</c>, <c>short</c>, <c>char</c>, <c>int</c>), their wrapper classes, <c>enumerations</c>, and <c>String</c> (introduced in Java 7). Each <c>case</c> within a <c>switch</c> must be defined using a constant expression, and duplicate <c>case</c> values are not permitted. By default, control flow "<c>falls through</c>" from one <c>case</c> to the next unless a <c>break</c>, <c>return</c>, or <c>throw</c> statement is used to terminate execution. 
@@ -216,8 +218,9 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
             <idx><c>yield</c></idx>
             Java 14 introduced <c>switch</c> <term>expressions</term>, enhancing functionality by allowing the <c>switch</c> to return values and eliminating <c>fall-through</c> via the <c>-&gt;</c> arrow syntax. These expressions can even use <c>yield</c> within code blocks for more complex evaluations. <term><c>yield</c></term> is used inside a switch expression’s block to produce the value of that expression, unlike <c>break</c> which simply exits a switch statement or loop. It’s important to note that traditional <c>switch</c> statements do not support <c>null</c> values and will throw a <c>NullPointerException</c> if evaluated with <c>null</c>. As the language evolves, newer versions of Java continue to extend <c>switch</c> capabilities with features like <c>pattern matching</c> and enhanced <c>type handling</c>, making it a more powerful and expressive tool for decision-making in Java programs.
         </p>
-
-        <program xml:id="java-switch-up" interactive="activecode" language="java">
+        
+        <listing xml:id="java-switch-up">
+        <program interactive="activecode" language="java">
             <code>
             public class SwitchUp {
               public static void main(String args[]) {
@@ -245,6 +248,7 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
             }
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
 The <c>switch</c> statement is not used very often, and we recommend you do not use it. First, it is not as powerful as the <c>else if</c> model because the switch variable can only be compared for equality with an integer or enumerated constant. Second, it is very easy to forget to put in the <c>break</c> statement, so it is more error-prone. If the break statement is left out then then the next alternative will be automatically executed. For example, if the grade was 95 and the <c>break</c> was omitted from the <c>case 9:</c> alternative then the program would print(out both A and B.)
