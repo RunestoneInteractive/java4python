@@ -60,7 +60,7 @@ if score &gt;= 90: # Note the colon at the end of the line
         <program interactive="activecode" language="python">
             <code>
             age = 16
-            if age &gt;= 18: 
+            if age &gt;= 18: # notice the semicolon
                 print("You can vote.")
             else: # notice the semicolon 
                 print("You are not yet eligible to vote.")
@@ -75,7 +75,7 @@ if score &gt;= 90: # Note the colon at the end of the line
         public class IfElseExample {
             public static void main(String[] args) {
                 int age = 16;
-                if (age &gt;= 18) {
+                if (age &gt;= 18) { 
                     System.out.println("You can vote.");
                 } else { // else has its own block.
                     System.out.println("You are not yet eligible to vote.");
@@ -102,7 +102,7 @@ if score &gt;= 90: # Note the colon at the end of the line
 grade = int(input('enter a grade'))
 if grade &lt; 60: 
     print('F')
-elif grade &lt; 70:
+elif grade &lt; 70: # notice the semicolon 
     print('D')
 elif grade &lt; 80:
     print('C')
@@ -126,7 +126,7 @@ public class ElseIf {
      int grade = 85;
      if (grade &lt; 60) {
          System.out.println('F');
-     } else {
+     } else { // else has its own block.
          if (grade &lt; 70) {
              System.out.println('D');
          } else {
@@ -160,7 +160,7 @@ public class ElseIf {
      int grade = 85; 
      if (grade &lt; 60) {
          System.out.println('F');
-     } else if (grade &lt; 70) {
+     } else if (grade &lt; 70) { // notice how we got rid of the curly braces. 
          System.out.println('D');
      } else if (grade &lt; 80) {
          System.out.println('C');
