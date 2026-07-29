@@ -826,7 +826,7 @@ public class HistoArray {
         </p>
 
         <p>
- Lets stay with a simple frequency counting example, only this time we will count the frequency of words in a document. <xref ref="python-word-count" text="type-global"/> shows a simple Python program for what this could look. 
+ Lets stay with a simple frequency counting example, only this time we will count the frequency of words in a document. <xref ref="python-word-count" text="type-global"/> shows a simple Python program for how this could look. 
         </p>
 
         <listing xml:id="python-word-count">
