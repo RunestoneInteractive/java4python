@@ -348,10 +348,10 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         <p>
             <idx>checked exception</idx>
             <idx>unchecked exception</idx>
-            Exceptions in Java fall under two categories: checked and unchecked. <term>Checked exceptions</term> must be explicitly imported and declared along with <c>try-catch</c> blocks for a program to compile. <term>Unchecked exceptions</term> do not need to be imported unless <c>try-catch</c> blocks are implemented for them (except for <c>java.lang</c> exceptions). <c>InputMismatchException</c> is an unchecked exception that is not part of the <c>java.lang</c> library, so it is only included if <c>try-catch</c> blocks declare it. Here are some common exceptions used with <c>try-catch</c> blocks:
+            Exceptions in Java fall under two categories: checked and unchecked. <term>Checked exceptions</term> must be explicitly imported and declared along with <c>try-catch</c> blocks for a program to compile. <term>Unchecked exceptions</term> do not need to be imported unless <c>try-catch</c> blocks are implemented for them (except for <c>java.lang</c> exceptions). <c>InputMismatchException</c> is an unchecked exception that is not part of the <c>java.lang</c> library, so it is only included if <c>try-catch</c> blocks declare it. <xref ref="java-exceptions" text="type-global"/> shows the exceptions used with <c>try-catch</c> blocks.
         </p>
 
-        <table>
+        <table xml:id="java-exceptions">
             <title>Exceptions</title>
             <tabular>
                 <row>
