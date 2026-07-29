@@ -421,10 +421,10 @@ The conditionals used in the if statement can be <term>Boolean variables</term>,
         </p>
 
 <p><idx>ternary operator</idx>
-Java also provides the ternary operator <c>condition ? valueIfTrue : valueIfFalse</c>, which lets you use a <c>boolean</c> test directly inside an assignment. If the condition is true, the first value is chosen; otherwise, the second value is used. The table below summarizes how it works:
+Java also provides the ternary operator <c>condition ? valueIfTrue : valueIfFalse</c>, which lets you use a <c>boolean</c> test directly inside an assignment. If the condition is true, the first value is chosen; otherwise, the second value is used. <xref ref="ternary-operator-table" text="type-global"/> summarizes how it works.
 </p>
 
-<table>
+<table xml:id="ternary-operator-table">
   <title>Ternary Operator in Java</title>
   <tabular>
     <row>
