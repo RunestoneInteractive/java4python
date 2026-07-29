@@ -13,20 +13,26 @@
     
 
         <p>
-            In Python the simple <c>if</c> statement is written as:
+            <xref ref="python-simple-if" text="type-global"/> shows how the simple <c>if</c> statement is written in Python. 
         </p>
 
-        <program xml:id="python-simple-if" interactive="activecode" language="python">
+        <listing xml:id="python-simple-if">
+        <program interactive="activecode" language="python">
             <code>
 score = 95
 if score &gt;= 90:
     print("Excellent work!")
             </code>
         </program>
+        </listing>
+
+
         <p>
             In Java, this same pattern requires two changes: the condition must be in parentheses <c>()</c>, and the code block must be enclosed in curly braces <c>{}</c>.
+            <xref ref="java-simple-if" text="type-global"/> shows how the simple <c>if</c> statement is written in Java.
         </p>
-        <program xml:id="java-simple-if" interactive="activecode" language="java">
+        <listing xml:id="java-simple-if">
+        <program interactive="activecode" language="java">
             <code>
             public class SimpleIfExample {
                 public static void main(String[] args) {
@@ -38,6 +44,8 @@ if score &gt;= 90:
             }
             </code>
         </program>
+        </listing>
+
         <p>
             Once again you can see that in Java the curly braces define a block rather than indentation.
             In Java, the parentheses around the condition are required because it is technically a function that evaluates to <c>True</c> or <c>False</c>.
