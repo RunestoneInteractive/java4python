@@ -83,8 +83,8 @@ if score &gt;= 90:
             Here is a simple example in both Python and Java.
         </p>
 
-
-        <program xml:id="python-if-nesting" interactive="activecode" language="python">
+        <listing xml:id="python-if-nesting">
+        <program interactive="activecode" language="python">
             <code>
 grade = int(input('enter a grade'))
 if grade &lt; 60:
@@ -99,13 +99,14 @@ else:
     print('A')
             </code> <tests> </tests>
         </program>
+        </listing> 
 
         <p>
 In Java, we have a couple of ways to write this.
         </p>
 
-
-        <program xml:id="java-ifnesting" interactive="activecode" language="java">
+        <listing xml:id="java-ifnesting">
+        <program interactive="activecode" language="java">
             <code>
 public class ElseIf {
     public static void main(String args[]) {
@@ -131,14 +132,15 @@ public class ElseIf {
  }
             </code> <tests> </tests>
         </program>
+        </listing> 
 
         <p>
 We can get even closer to the <c>elif</c> statement by taking advantage of the Java rule that a single statement does not need to be enclosed in curly braces. Since the <c>if</c> is the only statement used in each <c>else</c> block, we can get away with the following.
         </p>
 
 
-
-        <program xml:id="java-if-else-no-nesting" interactive="activecode" language="java">
+        <listing xml:id="java-if-else-no-nesting" >
+        <program interactive="activecode" language="java">
             <code>
 public class ElseIf {
     public static void main(String args[]) {
@@ -156,6 +158,7 @@ public class ElseIf {
 }
             </code> <tests> </tests>
         </program>
+        </listing> 
     </section>
 
     <section xml:id="switch">
