@@ -458,7 +458,7 @@ Java also provides the ternary operator <c>condition ? valueIfTrue : valueIfFals
 </table>
 
 <p>
-Using this operator can make code shorter and more readable in cases where a simple conditional assignment is needed. See the following as an example where we see the same logic implemented in two different ways.
+Using this operator can make code shorter and more readable in cases where a simple conditional assignment is needed. <xref ref="java-ternary" text="type-global"/> shows an example where we see the same logic implemented in two different ways.
 </p>
         <listing xml:id="java-ternary">
         <program interactive="activecode" language ="java">
