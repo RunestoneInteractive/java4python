@@ -352,7 +352,7 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         </p>
 
         <table xml:id="java-exceptions">
-            <title>Exceptions</title>
+            <title>Java Exceptions Used with <c>try-catch</c> Blocks</title>
             <tabular>
                 <row>
                     <cell><term>Exception</term></cell>
