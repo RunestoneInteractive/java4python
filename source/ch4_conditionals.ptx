@@ -266,9 +266,9 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
 
         <program xml:id="python-square-input" interactive="activecode" language="python">
             <code>
-            number = int(input("Please enter a whole number: "))
-            squared = number ** 2
-            print("Your number squared is " + str(squared))            
+            number = int(input("Please enter a whole number: ")) # ask user for a number
+            squared = number ** 2 # square the number
+            print("Your number squared is " + str(squared))             
             </code>
         </program>
 
@@ -282,11 +282,11 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
 
             public class SquareNumber {
                 public static void main(String[] args) {
-                    Scanner user_input = new Scanner(System.in);
+                    Scanner user_input = new Scanner(System.in); // create a scanner object
                     
-                    System.out.print("Please enter a whole number: ");
-                    int number = user_input.nextInt();
-                    int squared = number * number;
+                    System.out.print("Please enter a whole number: "); 
+                    int number = user_input.nextInt(); // ask user for a number
+                    int squared = number * number; // square the number
                     
                     System.out.println("Your number squared is " + squared);
                 }
@@ -301,12 +301,12 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         <program xml:id="python-square-input-exception" interactive="activecode" language="python">
             <code>
             while True:
-                try:
+                try: # try to convert the user input to an integer
                     number = int(input("Please enter a whole number: "))
                     squared = number ** 2
                     print("Your number squared is " + str(squared))
                     break
-                except ValueError:
+                except ValueError: # if the user enters a non-integer, print an error message
                     print("That was not a valid number. Please try again: ")   
             </code>
         </program>
@@ -324,14 +324,14 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
                 public static void main(String[] args) {
                     Scanner scanner = new Scanner(System.in);
                     
-                    while (true) {
-                        try {
+                    while (true) { // keep asking the user for a number until they enter a valid integer
+                        try { // try to convert the user input to an integer
                             System.out.print("Please enter a whole number: ");
                             int number = scanner.nextInt();
                             int squared = number * number;
                             System.out.println("Your number squared is " + squared);
                             break;
-                        } catch (InputMismatchException e) {
+                        } catch (InputMismatchException e) { // if the user enters a non-integer, print an error message
                             System.out.println("That was not a valid number. Please try again: ");
                             scanner.nextLine(); // Clear the invalid input from the scanner
                         }
