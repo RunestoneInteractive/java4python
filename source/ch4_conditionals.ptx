@@ -193,7 +193,7 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
                 # Convert grade to a scale of 0-10 using integer division
                 tempgrade = grade // 10
                 def grading(tempgrade):
-                    match grade:
+                    match tempgrade:
                         case 10 | 9:
                             return 'A'
                         case 8:
