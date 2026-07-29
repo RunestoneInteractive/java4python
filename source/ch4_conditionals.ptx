@@ -488,7 +488,7 @@ public class Ternary {
         </listing>
 
         <p>
-            In this example we are using this ternary operator to assign a value to <c>a</c> based on whether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, you might want to use it sparingly, as it can make code less readable if overused or used with complex expressions.
+            In <xref ref="java-ternary" text="type-global"/>, we are using this ternary operator to assign a value to <c>a</c> based on whether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, you might want to use it sparingly, as it can make code less readable if overused or used with complex expressions.
         </p>
 
 
