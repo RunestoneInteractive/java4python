@@ -60,9 +60,9 @@ if score &gt;= 90: # Note the colon at the end of the line
         <program interactive="activecode" language="python">
             <code>
             age = 16
-            if age &gt;= 18:
+            if age &gt;= 18: 
                 print("You can vote.")
-            else:
+            else: # notice the semicolon 
                 print("You are not yet eligible to vote.")
             </code>
             </program>
@@ -77,7 +77,7 @@ if score &gt;= 90: # Note the colon at the end of the line
                 int age = 16;
                 if (age &gt;= 18) {
                     System.out.println("You can vote.");
-                } else {
+                } else { // else has its own block.
                     System.out.println("You are not yet eligible to vote.");
                 }
             }
