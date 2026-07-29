@@ -93,14 +93,14 @@ if score &gt;= 90: # Note the colon at the end of the line
         <p><idx><c>elif</c> statement</idx>
             Java does not have an <c>elif</c> pattern like Python.
             In Java you can get the functionality of an <c>elif</c> statement by nesting <c>if</c> and <c>else</c>.
-            Here is a simple example in both Python and Java.
+            Here is a simple example in both Python and Java. <xref ref="python-if-nesting" text="type-global"/> shows how it is written in Python.  
         </p>
 
-
-        <program xml:id="python-if-nesting" interactive="activecode" language="python">
+        <listing xml:id="python-if-nesting">
+        <program interactive="activecode" language="python">
             <code>
 grade = int(input('enter a grade'))
-if grade &lt; 60:
+if grade &lt; 60: 
     print('F')
 elif grade &lt; 70:
     print('D')
@@ -112,13 +112,14 @@ else:
     print('A')
             </code> <tests> </tests>
         </program>
+        </listing> 
 
         <p>
-In Java, we have a couple of ways to write this.
+In Java, we have a couple of ways to write this. <xref ref="java-ifnesting" text="type-global"/> shows one way. 
         </p>
 
-
-        <program xml:id="java-ifnesting" interactive="activecode" language="java">
+        <listing xml:id="java-ifnesting">
+        <program interactive="activecode" language="java">
             <code>
 public class ElseIf {
     public static void main(String args[]) {
@@ -144,14 +145,15 @@ public class ElseIf {
  }
             </code> <tests> </tests>
         </program>
+        </listing> 
 
         <p>
-We can get even closer to the <c>elif</c> statement by taking advantage of the Java rule that a single statement does not need to be enclosed in curly braces. Since the <c>if</c> is the only statement used in each <c>else</c> block, we can get away with the following.
+We can get even closer to the <c>elif</c> statement by taking advantage of the Java rule that a single statement does not need to be enclosed in curly braces. Since the <c>if</c> is the only statement used in each <c>else</c> block, we can get away with <xref ref="java-if-else-no-nesting" text="type-global"/>. 
         </p>
 
 
-
-        <program xml:id="java-if-else-no-nesting" interactive="activecode" language="java">
+        <listing xml:id="java-if-else-no-nesting" >
+        <program interactive="activecode" language="java">
             <code>
 public class ElseIf {
     public static void main(String args[]) {
@@ -169,6 +171,7 @@ public class ElseIf {
 }
             </code> <tests> </tests>
         </program>
+        </listing> 
     </section>
 
     <section xml:id="switch">
