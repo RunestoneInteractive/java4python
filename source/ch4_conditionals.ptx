@@ -178,7 +178,7 @@ public class ElseIf {
         <title>Using the <c>switch</c> Statement</title>
 
         <p>
-Java also supports a <c>switch</c> statement that acts something like the <c>elif</c> or Python <c>match</c> statement under certain conditions. To write the grade program using a <c>switch</c> statement we would use the following:
+Java also supports a <c>switch</c> statement that acts something like the <c>elif</c> or Python <c>match</c> statement under certain conditions.<xref ref="python-match" text="type-global"/> shows how the the grade program using a <c>switch</c> statement could be in Python.
 </p>
 
         <note>
@@ -216,7 +216,7 @@ Java also supports a <c>switch</c> statement that acts something like the <c>eli
         <p>
             <idx><c>switch</c> expressions</idx>
             <idx><c>yield</c></idx>
-            Java 14 introduced <c>switch</c> <term>expressions</term>, enhancing functionality by allowing the <c>switch</c> to return values and eliminating <c>fall-through</c> via the <c>-&gt;</c> arrow syntax. These expressions can even use <c>yield</c> within code blocks for more complex evaluations. <term><c>yield</c></term> is used inside a switch expression’s block to produce the value of that expression, unlike <c>break</c> which simply exits a switch statement or loop. It’s important to note that traditional <c>switch</c> statements do not support <c>null</c> values and will throw a <c>NullPointerException</c> if evaluated with <c>null</c>. As the language evolves, newer versions of Java continue to extend <c>switch</c> capabilities with features like <c>pattern matching</c> and enhanced <c>type handling</c>, making it a more powerful and expressive tool for decision-making in Java programs.
+            Java 14 introduced <c>switch</c> <term>expressions</term>, enhancing functionality by allowing the <c>switch</c> to return values and eliminating <c>fall-through</c> via the <c>-&gt;</c> arrow syntax. These expressions can even use <c>yield</c> within code blocks for more complex evaluations. <term><c>yield</c></term> is used inside a switch expression’s block to produce the value of that expression, unlike <c>break</c> which simply exits a switch statement or loop. It’s important to note that traditional <c>switch</c> statements do not support <c>null</c> values and will throw a <c>NullPointerException</c> if evaluated with <c>null</c>. As the language evolves, newer versions of Java continue to extend <c>switch</c> capabilities with features like <c>pattern matching</c> and enhanced <c>type handling</c>, making it a more powerful and expressive tool for decision-making in Java programs. <xref ref="java-switch-up" text="type-global"/> shows how the <c>switch</c> expression is written in Java.
         </p>
         
         <listing xml:id="java-switch-up">
