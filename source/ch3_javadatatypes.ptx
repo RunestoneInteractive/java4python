@@ -688,7 +688,7 @@ public class Histo {
         </p>
 
         <p>
- Technically, you don&#x2019;t <em>have</em> to declare what is going to be in an array list. The compiler will allow you to leave the <c>&lt;``*Type*</c>&gt;`` off the declaration. If you don&#x2019;t tell Java what kind of object is going to be on the list Java will give you a warning message like <xref ref="java-arraylist-warning" text="type-global"/> when you compile the program. 
+ Technically, you don&#x2019;t <em>have</em> to declare what is going to be in an array list. The compiler will allow you to leave the <c>&lt;*Type*&gt;</c> off the declaration. If you don&#x2019;t tell Java what kind of object is going to be on the list Java will give you a warning message like <xref ref="java-arraylist-warning" text="type-global"/> when you compile the program. 
         </p>
 
         <listing xml:id="java-arraylist-warning">
