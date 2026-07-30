@@ -734,25 +734,47 @@ public class Histo {
 <exercise label="matching-python-java-loops">
   <statement>
     <p>
-      Match each Python <c>for</c> loop with its equivalent Java <c>for</c> loop.
+      Match each Python <c>for</c> loop with its equivalent Java <c>for</c> loop. 
+      Note: There are extra options that represent common syntax mistakes or off-by-one errors.
     </p>
   </statement>
+     
   <matches>
+
     <match>
       <premise><c>for i in range(2, 101, 2)</c></premise>
       <response><c>for (int i = 2; i &lt; 101; i += 2)</c></response>
     </match>
+
     <match>
       <premise><c>for i in range(1, 100)</c></premise>
       <response><c>for (int i = 1; i &lt; 100; i++)</c></response>
     </match>
+
+     <match>
+      <response><c>for (int i = 1; i &lt;= 100; i++)</c></response>
+    </match>
+
     <match>
       <premise><c>for i in range(100, 0, -1)</c></premise>
       <response><c>for (int i = 100; i &gt; 0; i--)</c></response>
     </match>
+    
     <match>
+      <response><c>for (int i = 2; i &lt;= 101; i += 2)</c></response>
+    </match>
+
+     <match>
       <premise><c>for x, y in zip(range(10), range(0, 20, 2))</c></premise>
       <response><c>for (int x = 0, y = 0; x &lt; 10; x++, y += 2)</c></response>
+    </match> 
+   
+    <match>
+      <response><c>for (int i = 100; i &lt; 0; i--)</c></response>
+    </match>
+
+    <match>
+      <response><c>for (int x = 0, int y = 0; x &lt; 10; x++, y += 2)</c></response>
     </match>
   </matches>
 </exercise>
