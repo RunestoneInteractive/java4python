@@ -14,19 +14,21 @@
             A <term>definite loop</term> is a loop that is executed a specific or definite number of times. In Python, the easiest way to write a definite loop is using the <c>for</c> loop in conjunction with the <c>range</c> function.
             For example:
         </p>
-
-        <program  xml:id="python-definite-loop"  interactive="activecode" language="python">
+        <listing xml:id="python-definite-loop">
+        <program interactive="activecode" language="python">
             <code>
 for i in range(10):
     print(i)
             </code>
         </program>
+        </listing>
 
         <p>
             In Java, we would write this as:
         </p>
 
-        <program  xml:id="pjava-definite-loop" interactive="activecode" language="java">
+        <listing xml:id="java-definite-loop">
+        <program interactive="activecode" language="java">
             <code>
 public class DefiniteLoopExample {
     public static void main(String[] args) {
@@ -37,6 +39,7 @@ public class DefiniteLoopExample {
 }
             </code>
         </program>
+        </listing>
 
         <p>
             Recall that the <c>range</c> function provides you with a wide variety of options for controlling the value of the loop variable.
@@ -65,18 +68,20 @@ public class DefiniteLoopExample {
             If you want to start at 100, stop at 0 and count backward by 5, the Python loop would be written as:
         </p>
 
-        <program xml:id="python-deinite-decrement" interactive="activecode" language="python">
+        <listing xml:id="python-deinite-decrement">
+        <program interactive="activecode" language="python">
             <code>
 for i in range(100, -1, -5):
     print(i)
             </code>
         </program>
+        </listing>
 
         <p>
             In Java, we would write this as:
         </p>
-
-        <program xml:id="java-definite-decrement" interactive="activecode" language="java">
+        <listing xml:id="java-definite-decrement">
+        <program interactive="activecode" language="java">
             <code>
 public class DefiniteLoopBackward {
     public static void main(String[] args) {
@@ -87,7 +92,7 @@ public class DefiniteLoopBackward {
 }
             </code>
         </program>
-
+        </listing>
         <p>
             In Python, the <c>for</c> loop can also iterate over any sequence such as a list, a string, or a tuple.
             Java also provides a variation of its <c>for</c> loop that provides the same functionality in its so-called for each loop.
@@ -96,20 +101,21 @@ public class DefiniteLoopBackward {
         <p>
             In Python, we can iterate over a list as follows:
         </p>
-
-        <program  xml:id="python-list-iteration" interactive="activecode" language="python">
+        <listing xml:id="python-list-iteration">
+        <program interactive="activecode" language="python">
             <code>
 l = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in l:
     print(fib)
             </code>
         </program>
+        </listing>
 
         <p>
             In Java we can iterate over an <c>ArrayList</c> of integers too. Note that this requires importing the <c>ArrayList</c> class.
         </p>
-
-        <program xml:id="java-list-iteration" interactive="activecode" language="java">
+        <listing xml:id="java-list-iteration">
+        <program interactive="activecode" language="java">
             <code>
 import java.util.ArrayList;
 
@@ -131,13 +137,15 @@ public class ForEachArrayListExample {
 }
             </code>
         </program>
+        </listing>
 
         <p>
             This example stretches the imagination a bit, and in fact points out one area where Java's primitive arrays are easier to use than an array list.
             In fact, all primitive arrays can be used in a <term>for each</term> loop.
         </p>
 
-        <program xml:id="java-for-each" interactive="activecode" language="java">
+        <listing xml:id="java-for-each">
+        <program interactive="activecode" language="java">
             <code>
 public class ForEachArrayExample {
     public static void main(String[] args) {
@@ -149,12 +157,13 @@ public class ForEachArrayExample {
 }
             </code>
         </program>
+        </listing>
 
         <p>
             To iterate over the characters in a string in Java do the following:
-        </p>
-
-        <program xml:id="java-string-iteration" interactive="activecode" language="java">
+        </p>    
+        <listing xml:id="java-string-iteration">
+        <program interactive="activecode" language="java">
             <code>
 public class StringIterationExample {
     public static void main(String[] args) {
@@ -166,6 +175,7 @@ public class StringIterationExample {
 }
             </code>
         </program>
+        </listing>
 
     </section>
 
