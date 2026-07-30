@@ -11,8 +11,7 @@
         </p>
 
         <p><idx><c>for</c> loop</idx>
-            A <term>definite loop</term> is a loop that is executed a specific or definite number of times. In Python, the easiest way to write a definite loop is using the <c>for</c> loop in conjunction with the <c>range</c> function.
-            For example:
+            A <term>definite loop</term> is a loop that is executed a specific or definite number of times. In Python, the easiest way to write a definite loop is using the <c>for</c> loop in conjunction with the <c>range</c> function. <xref ref="python-range-options" text="type-global"/> shows the syntax for the <c>range</c> function.
         </p>
         <listing xml:id="python-definite-loop">
         <program interactive="activecode" language="python">
@@ -24,7 +23,7 @@ for i in range(10):
         </listing>
 
         <p>
-            In Java, we would write this as:
+            <xref ref="java-definite-loop" text="type-global"/> shows how the <c>for</c> loop is written in Java.
         </p>
 
         <listing xml:id="java-definite-loop">
@@ -42,23 +41,24 @@ public class DefiniteLoopExample {
         </listing>
 
         <p>
-            Recall that the <c>range</c> function provides you with a wide variety of options for controlling the value of the loop variable.
+            Recall that the <c>range</c> function provides you with a wide variety of options for controlling the value of the loop variable as shown in <xref ref="python-range-options" text="type-global"/>.
         </p>
-
-        <program xml:id="python-range-options">
+        <listing xml:id="python-range-options">
+        <program>
         <code>
         range(stop)
         range(start,stop)
         range(start,stop,step)
         </code>
         </program>
+        </listing>
 
         <p>
-            The Java <c>for</c> loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parenthesis.
-            You can think of it this way:
+            The Java <c>for</c> loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parenthesis. 
+            <xref ref="java-for-loop-syntax" text="type-global"/> shows how the Java <c>for</c> loop is written.
         </p>
-
-        <program xml:id="java-for-loop-syntax">
+        <listing xml:id="java-for-loop-syntax">
+        <program>
         <code>
         for (start clause; stop clause; step clause) {
             statement1
@@ -67,12 +67,13 @@ public class DefiniteLoopExample {
         }
         </code>
         </program>
-
+        </listing>
+        
         <p>
-            If you want to start at 100, stop at 0 and count backward by 5, the Python loop would be written as:
+            If you want to start at 100, stop at 0 and count backward by 5, <xref ref="python-definite-decrement" text="type-global"/> shows how the Python <c>for</c> loop is written.
         </p>
 
-        <listing xml:id="python-deinite-decrement">
+        <listing xml:id="python-definite-decrement">
         <program interactive="activecode" language="python">
             <code>
 for i in range(100, -1, -5):
@@ -82,7 +83,7 @@ for i in range(100, -1, -5):
         </listing>
 
         <p>
-            In Java, we would write this as:
+            <xref ref="java-definite-decrement" text="type-global"/> shows how the <c>for</c> loop is written in Java.
         </p>
         <listing xml:id="java-definite-decrement">
         <program interactive="activecode" language="java">
@@ -103,7 +104,7 @@ public class DefiniteLoopBackward {
         </p>
 
         <p>
-            In Python, we can iterate over a list as follows:
+            <xref ref="python-list-iteration" text="type-global"/> shows how the <c>for</c> loop can be used to iterate over a list in Python.
         </p>
         <listing xml:id="python-list-iteration">
         <program interactive="activecode" language="python">
@@ -116,7 +117,7 @@ for fib in l:
         </listing>
 
         <p>
-            In Java we can iterate over an <c>ArrayList</c> of integers too. Note that this requires importing the <c>ArrayList</c> class.
+            <xref ref="java-list-iteration" text="type-global"/> shows how the <c>for</c> loop can be used to iterate over an <c>ArrayList</c> of integers in Java.
         </p>
         <listing xml:id="java-list-iteration">
         <program interactive="activecode" language="java">
@@ -144,8 +145,8 @@ public class ForEachArrayListExample {
         </listing>
 
         <p>
-            This example stretches the imagination a bit, and in fact points out one area where Java's primitive arrays are easier to use than an array list.
-            In fact, all primitive arrays can be used in a <term>for each</term> loop.
+            <xref ref="java-list-iteration" text="type-global"/> stretches the imagination a bit, and in fact points out one area where Java's primitive arrays are easier to use than an array list.
+            <xref ref="java-for-each" text="type-global"/> shows how the <c>for</c> loop can be used to iterate over all elements in a primitive array in Java.
         </p>
 
         <listing xml:id="java-for-each">
@@ -164,7 +165,7 @@ public class ForEachArrayExample {
         </listing>
 
         <p>
-            To iterate over the characters in a string in Java do the following:
+            <xref ref="java-for-each" text="type-global"/> shows how the <c>for</c> loop can be used to iterate over all elements in a string in Java.
         </p>    
         <listing xml:id="java-string-iteration">
         <program interactive="activecode" language="java">
