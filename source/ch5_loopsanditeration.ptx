@@ -174,7 +174,7 @@ public class StringIterationExample {
 
         <p><idx><c>while</c> loop</idx>
             Both Python and Java support the <c>while</c> loop, which continues to execute as long as a condition is true.
-            Here is a simple example in Python that counts down from 5:
+            <xref ref="python-countdown" text="type-global"/> shows a simple example in Python that counts down from 5.
         </p>
         <listing xml:id="python-countdown">
         <program interactive="activecode" language="python">
@@ -188,7 +188,7 @@ while i &gt; 0:
         </listing>
 
         <p>
-            In Java, we add parentheses and curly braces. Here is the same countdown loop in Java:
+            In Java, we add parentheses and curly braces. <xref ref="java-countdown" text="type-global"/> shows the same countdown loop in Java.
         </p>
         <listing xml:id="java-countdown">
         <program interactive="activecode" language="java">
@@ -211,7 +211,7 @@ public class WhileLoopExample {
             The <c>do-while</c> loop is very similar to <c>while</c> except that the condition is evaluated at the end of the loop rather than the beginning.
             This ensures that a loop will be executed at least one time.
             Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop.
-            For example, the following loop will execute once even though the condition is initially false.
+            For example, <xref ref="java-do-while" text="type-global"/> shows how loop will execute once even though the condition is initially false.
         </p>
         <listing xml:id="java-do-while">
         <program interactive="activecode" language="java">
@@ -227,7 +227,7 @@ public class DoWhileExample {
             </code>
         </program>
         </listing>
-        
+
     </section>
     <section xml:id="chapter5_summary">
         <title>Summary &amp; Reading Questions</title>
