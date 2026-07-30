@@ -179,9 +179,9 @@ public class StringIterationExample {
         <program xml:id="python-countdown" interactive="activecode" language="python">
             <code>
 i = 5
-while i &gt; 0:
+while i &gt; 0: # while i is greater than 0
     print(i)
-    i = i - 1
+    i = i - 1 # decrement i by 1
             </code>
         </program>
 
@@ -192,10 +192,10 @@ while i &gt; 0:
             <code>
 public class WhileLoopExample {
     public static void main(String[] args) {
-        int i = 5;
-        while (i &gt; 0) {
+        int i = 5; // initialize i to 5
+        while (i &gt; 0) {  // while i is greater than 0
             System.out.println(i);
-            i = i - 1;
+            i = i - 1; // decrement i by 1
         }
     }
 }
@@ -214,10 +214,10 @@ public class WhileLoopExample {
             <code>
 public class DoWhileExample {
     public static void main(String[] args) {
-        int i = 10;
-        do {
+        int i = 10; // initialize i to 10
+        do { // do-while loop, will run at least once no matter the condition
             System.out.println("This runs once, i = " + i);
-        } while (i &lt; 5);
+        } while (i &lt; 5); // while i is less than 5
     }
 }
             </code>
