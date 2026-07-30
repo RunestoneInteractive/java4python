@@ -257,7 +257,91 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
     </subsection>
     </section>
 
-    <section xml:id="exception-handling">
+    <section xml:id="ternary-operator">
+        <title>The Ternary Operator</title>
+
+        <p><idx>Boolean operators</idx> <idx>simple comparisons</idx> <idx>compound Boolean expressions</idx>
+The conditionals used in the if statement can be <term>Boolean variables</term>, <term>simple comparisons</term>, and <term>compound Boolean expressions</term>.
+        </p>
+
+<p><idx>ternary operator</idx>
+Java also provides the ternary operator <c>condition ? valueIfTrue : valueIfFalse</c>, which lets you use a <c>boolean</c> test directly inside an assignment. If the condition is true, the first value is chosen; otherwise, the second value is used. <xref ref="ternary-operator-table" text="type-global"/> summarizes how it works.
+</p>
+
+<table xml:id="ternary-operator-table">
+  <title>Ternary Operator in Java</title>
+  <tabular>
+    <row>
+      <cell><term>Component</term></cell>
+      <cell><term>Description</term></cell>
+    </row>
+    <row>
+      <cell><c>condition</c></cell>
+      <cell>The <c>boolean</c> expression that is evaluated (e.g., <c>a % 2 == 0</c>).</cell>
+    </row>
+    <row>
+        <cell><c>?</c></cell>
+        <cell> This is the ternary operator that separates the condition from the <c>trueValue</c>.</cell>
+    </row>
+    <row>
+      <cell><c>trueValue</c></cell>
+      <cell>The value assigned if the condition is true (e.g., <c>a * a</c>).</cell>
+    </row>
+    <row>
+        <cell><c>:</c></cell>
+        <cell> This is the ternary operator that separates the <c>trueValue</c> from the <c>falseValue</c>.</cell>
+    </row>
+    <row>
+      <cell><c>falseValue</c></cell>
+      <cell>The value assigned if the condition is false (e.g., <c>3 * x - 1</c>).</cell>
+    </row>
+    <row>
+      <cell>Example Usage</cell>
+      <cell><c>a = a % 2 == 0 ? a * a : 3 * x - 1</c></cell>
+    </row>
+    <row>
+      <cell>Equivalent if-else Code</cell>
+      <cell>Can also be written with a regular <c>if-else</c> statement, but the ternary form is more concise.</cell>
+    </row>
+  </tabular>
+</table>
+
+<p>
+Using this operator can make code shorter and more readable in cases where a simple conditional assignment is needed. <xref ref="java-ternary" text="type-global"/> shows an example where we see the same logic implemented in two different ways.
+</p>
+        <listing xml:id="java-ternary">
+        <program interactive="activecode" language ="java">
+            <code>
+public class Ternary {
+    public static void main(String[] args) {
+        int a = 4;
+        int x = 2;
+        int outp;
+
+        // ternary:
+        outp = (a % 2 == 0) ? (a * a) : (3 * x - 1);
+        System.out.println("ternary result: " + outp);
+
+        // Equivalent using if/else
+        if (a % 2 == 0) {
+            outp = a * a;
+        } else {
+            outp = 3 * x - 1;
+        }
+
+        System.out.println("if/else result: " + outp);
+    }
+}
+            </code>
+        </program>
+        </listing>
+
+        <p>
+            In <xref ref="java-ternary" text="type-global"/>, we are using this ternary operator to assign a value to <c>a</c> based on whether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, you might want to use it sparingly, as it can make code less readable if overused or used with complex expressions.
+        </p>
+        </section>
+
+         <section xml:id="exception-handling">
         <title>Exception Handling</title>
         
         <p>
@@ -410,92 +494,6 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         <p>
             Note that as with other structures in Java, <c>try-catch</c> blocks blocks must be encased with braces <c>{}</c>. The most important part of this code is, after <c>catch</c>, there is a set of parenthesis with an exception type and a variable name <c>catch (InputMismatchException e)</c>. This is where we declare a <c>InputMismatchException</c> exception and name it with the variable name <c>e</c>. It is common practice, though not a requirement, to name exception variables <c>e</c> in this manner.
         </p>
-
-    </section>
-
-    <section xml:id="ternary-operator">
-        <title>The Ternary Operator</title>
-
-        <p><idx>Boolean operators</idx> <idx>simple comparisons</idx> <idx>compound Boolean expressions</idx>
-The conditionals used in the if statement can be <term>Boolean variables</term>, <term>simple comparisons</term>, and <term>compound Boolean expressions</term>.
-        </p>
-
-<p><idx>ternary operator</idx>
-Java also provides the ternary operator <c>condition ? valueIfTrue : valueIfFalse</c>, which lets you use a <c>boolean</c> test directly inside an assignment. If the condition is true, the first value is chosen; otherwise, the second value is used. <xref ref="ternary-operator-table" text="type-global"/> summarizes how it works.
-</p>
-
-<table xml:id="ternary-operator-table">
-  <title>Ternary Operator in Java</title>
-  <tabular>
-    <row>
-      <cell><term>Component</term></cell>
-      <cell><term>Description</term></cell>
-    </row>
-    <row>
-      <cell><c>condition</c></cell>
-      <cell>The <c>boolean</c> expression that is evaluated (e.g., <c>a % 2 == 0</c>).</cell>
-    </row>
-    <row>
-        <cell><c>?</c></cell>
-        <cell> This is the ternary operator that separates the condition from the <c>trueValue</c>.</cell>
-    </row>
-    <row>
-      <cell><c>trueValue</c></cell>
-      <cell>The value assigned if the condition is true (e.g., <c>a * a</c>).</cell>
-    </row>
-    <row>
-        <cell><c>:</c></cell>
-        <cell> This is the ternary operator that separates the <c>trueValue</c> from the <c>falseValue</c>.</cell>
-    </row>
-    <row>
-      <cell><c>falseValue</c></cell>
-      <cell>The value assigned if the condition is false (e.g., <c>3 * x - 1</c>).</cell>
-    </row>
-    <row>
-      <cell>Example Usage</cell>
-      <cell><c>a = a % 2 == 0 ? a * a : 3 * x - 1</c></cell>
-    </row>
-    <row>
-      <cell>Equivalent if-else Code</cell>
-      <cell>Can also be written with a regular <c>if-else</c> statement, but the ternary form is more concise.</cell>
-    </row>
-  </tabular>
-</table>
-
-<p>
-Using this operator can make code shorter and more readable in cases where a simple conditional assignment is needed. <xref ref="java-ternary" text="type-global"/> shows an example where we see the same logic implemented in two different ways.
-</p>
-        <listing xml:id="java-ternary">
-        <program interactive="activecode" language ="java">
-            <code>
-public class Ternary {
-    public static void main(String[] args) {
-        int a = 4;
-        int x = 2;
-        int outp;
-
-        // ternary:
-        outp = (a % 2 == 0) ? (a * a) : (3 * x - 1);
-        System.out.println("ternary result: " + outp);
-
-        // Equivalent using if/else
-        if (a % 2 == 0) {
-            outp = a * a;
-        } else {
-            outp = 3 * x - 1;
-        }
-
-        System.out.println("if/else result: " + outp);
-    }
-}
-            </code>
-        </program>
-        </listing>
-
-        <p>
-            In <xref ref="java-ternary" text="type-global"/>, we are using this ternary operator to assign a value to <c>a</c> based on whether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, you might want to use it sparingly, as it can make code less readable if overused or used with complex expressions.
-        </p>
-
 
     </section>
         <section xml:id="chapter4_summary">
