@@ -735,15 +735,14 @@ public class Histo {
   <statement>
     <p>
       Match each Python <c>for</c> loop with its equivalent Java <c>for</c> loop. 
-      Note: There are extra options that represent common syntax mistakes or off-by-one errors.
     </p>
   </statement>
      
   <matches>
 
     <match>
-      <premise><c>for i in range(2, 101, 2)</c></premise>
-      <response><c>for (int i = 2; i &lt; 101; i += 2)</c></response>
+      <premise><c>for i in range(2, 102, 2)</c></premise>
+      <response><c>for (int i = 2; i &lt; 102; i += 2)</c></response>
     </match>
 
     <match>
@@ -761,7 +760,7 @@ public class Histo {
     </match>
     
     <match>
-      <response><c>for (int i = 2; i &lt;= 101; i += 2)</c></response>
+      <response><c>for (int i = 2; i &lt;= 102; i += 2)</c></response>
     </match>
 
      <match>
