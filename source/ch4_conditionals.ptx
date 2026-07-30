@@ -4,8 +4,7 @@
 <chapter xml:id="conditionals">
     <title>Conditionals</title>
 
-    <section xml:id="simple-if">
-        <title>Using the Simple <c>if</c> Statement</title>
+    <section xml:id="using-conditional-in-java">        <title>Using Conditional Statements in Java</title>
         <p><idx>conditional statements</idx>
             Conditional statements in Python and Java are very similar.
             In Python we have three patterns:
@@ -50,9 +49,9 @@ if score &gt;= 90: # Note the colon at the end of the line
             Once again you can see that in Java the curly braces define a block rather than indentation.
             In Java, the parentheses around the condition are required because it is technically a function that evaluates to <c>True</c> or <c>False</c>.
         </p>
-    </section>
+    
 
-    <section xml:id="use-the-if-else-statement">
+    <subsection xml:id="use-the-if-else-statement">
         <title>Using the <c>if</c> - <c>else</c> Statement</title>
 
         <p><xref ref= "python-if-else"  text="type-global"/> shows how the <c>if</c> - <c>else</c>statement is written in Python.</p> 
@@ -85,9 +84,9 @@ if score &gt;= 90: # Note the colon at the end of the line
             </code>
         </program>
         </listing>
-    </section>
+    </subsection>
 
-    <section xml:id="elif">
+    <subsection xml:id="elif">
         <title>Can we use <c>elif</c>?</title>
 
         <p><idx><c>elif</c> statement</idx>
@@ -172,9 +171,9 @@ public class ElseIf {
             </code> <tests> </tests>
         </program>
         </listing> 
-    </section>
+    </subsection>
 
-    <section xml:id="switch">
+    <subsection xml:id="switch">
         <title>Using the <c>switch</c> Statement</title>
 
         <p>
@@ -255,6 +254,7 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         </p>
         <p>
             Finally, the <c>switch</c> statement does not support relational expressions such as greater than or less than. So you cannot use it to completely replace the <c>elif</c>. Even with the new features of Java 14+ the <c>switch</c> statement is still limited to constant comparisons using equality.</p>
+    </subsection>
     </section>
 
     <section xml:id="exception-handling">
