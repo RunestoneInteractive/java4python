@@ -575,7 +575,7 @@ public String toString() {
                 Therefore once you write your own <c>equals</c> method:
             </p>
 
-            <listing xml:id="java-class-equalqqual">
+            <listing xml:id="java-class-equalequal">
             <program language="java">
                 <code>
 object1 == object2
@@ -639,7 +639,7 @@ public boolean equals(Fraction other) {
                 Here is code that makes the <c>Fraction</c> class a child of <c>Number</c>:
             </p>
 
-            <listing xml:id="pjava-extends">    
+            <listing xml:id="java-class-extends">    
             <program language="java">
                 <code>
 public class Fraction extends Number {
