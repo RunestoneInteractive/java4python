@@ -488,7 +488,7 @@ Fraction@6ff3c5b5
             <p>
                 <idx><c>toString</c></idx>
                 In Java, the equivalent of <c>__str__</c> is the <c>toString</c> method.
-                Every object in Java already has a <c>toString</c> method defined for it because every class in Java automatically inherits from the <c>Object</c> class.
+                Every object in Java already has a <term> <c>toString</c> method</term> defined for it because every class in Java automatically inherits from the <c>Object</c> class.
                 The <c>Object</c> class provides default implementations for the following methods.
             </p>
 
@@ -567,6 +567,7 @@ public String toString() {
             </listing>
 
             <p>
+                <idx><c>equals</c></idx>
                 The other important class for us to implement from the list of methods inherited from <c>Object</c> is the <c>equals</c> method.
                 In Java, when two objects are compared using the <c>==</c> operator they are tested to see if they are exactly the same object (that is, do the two objects occupy the same exact space in the computer&#x2019;s memory?).
                 This is also the default behavior of the <c>equals</c> method provided by <c>Object</c>.
@@ -651,7 +652,7 @@ public class Fraction extends Number {
 
             <p>
                 <idx><c>extends</c></idx>
-                The keyword <c>extends</c> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
+                The keyword <term><c>extends</c></term> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
                 A child class always extends its parent.
             </p>
 
