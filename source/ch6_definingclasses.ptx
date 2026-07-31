@@ -280,8 +280,8 @@ public Fraction(Integer num, Integer den) {
                 Let&#x2019;s begin by implementing addition in Java:
             </p>
 
-
-            <program xml:id="java-fraction-class-addition" language="java">
+            <listing xml:id="java-fraction-class-addition">
+            <program language="java"> 
                 <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * this.numerator +
@@ -292,6 +292,7 @@ public Fraction add(Fraction otherFrac) {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 First you will notice that the <c>add</c> method is declared as <c>public Fraction</c> The <c>public</c> part means that any other method may call the <c>add</c> method.
@@ -304,8 +305,8 @@ public Fraction add(Fraction otherFrac) {
                 So the following version of the code is equivalent:
             </p>
 
-
-            <program xml:id="java-fraction-class-addition2" language="java">
+            <listing xml:id="java-fraction-class-addition2">
+            <program language="java">
                 <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * numerator +
@@ -316,6 +317,7 @@ public Fraction add(Fraction otherFrac) {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 The addition takes place by multiplying each numerator by the opposite denominator before adding.
@@ -365,8 +367,8 @@ public Fraction add(Fraction otherFrac) {
                 The new methods that accomplish this task are as follows:
             </p>
 
-
-            <program xml:id="java-method-overloading" language="java">
+            <listing xml:id="java-method-overloading">
+            <program language="java">
                 <code>
 public Fraction(Integer num) {
     this.numerator = num;
@@ -377,6 +379,7 @@ public Fraction add(Integer other) {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 Notice that the overloading approach can provide us with a certain elegance to our code.
@@ -389,8 +392,8 @@ public Fraction add(Integer other) {
                 You should compile and run the program to see what happens.
             </p>
 
-
-            <program xml:id="java-full-fraction-class" interactive="activecode" language="java">
+            <listing xml:id="java-full-fraction-class">
+            <program interactive="activecode" language="java">
                 <code>
 public class Fraction {
     private Integer numerator;
@@ -434,6 +437,8 @@ public class Fraction {
 }
                 </code> <tests> </tests>
             </program>
+            </listing>
+            
         </subsection>
     </section>
 
