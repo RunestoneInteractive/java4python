@@ -303,11 +303,11 @@ public Fraction(Integer num, Integer den) {
 
             <program xml:id="java-fraction-class-addition" language="java">
                 <code>
-public Fraction add(Fraction otherFrac) {
+public Fraction add(Fraction otherFrac) { 
     Integer newNum = otherFrac.getDenominator() * this.numerator +
-                             this.denominator * otherFrac.getNumerator();
-    Integer newDen = this.denominator * otherFrac.getDenominator();
-    Integer common = gcd(newNum, newDen);
+                             this.denominator * otherFrac.getNumerator(); // notice the use of this. 
+    Integer newDen = this.denominator * otherFrac.getDenominator(); // find the new denominator
+    Integer common = gcd(newNum, newDen); // find the greatest common divisor
     return new Fraction(newNum/common, newDen/common);
 }
                 </code>
@@ -329,7 +329,7 @@ public Fraction add(Fraction otherFrac) {
                 <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * numerator +
-                             denominator * otherFrac.getNumerator();
+                             denominator * otherFrac.getNumerator(); // notice the absence of this. 
     Integer newDen = denominator * otherFrac.getDenominator();
     Integer common = gcd(newNum, newDen);
     return new Fraction(newNum/common, newDen/common);
@@ -388,12 +388,12 @@ public Fraction add(Fraction otherFrac) {
 
             <program xml:id="java-method-overloading" language="java">
                 <code>
-public Fraction(Integer num) {
-    this.numerator = num;
+public Fraction(Integer num) { 
+    this.numerator = num; // set the numerator to the Integer
     this.denominator = 1;
 }
-public Fraction add(Integer other) {
-    return add(new Fraction(other));
+public Fraction add(Integer other) { // overload the add method when the parameter is an Integer
+    return add(new Fraction(other)); 
 }
                 </code>
             </program>
@@ -415,11 +415,11 @@ public Fraction add(Integer other) {
 public class Fraction {
     private Integer numerator;
     private Integer denominator;
-    public Fraction(Integer num, Integer den) {
+    public Fraction(Integer num, Integer den) { // constructor that takes two Integers
         this.numerator = num;
         this.denominator = den;
     }
-    public Fraction(Integer num) {
+    public Fraction(Integer num) { // constructor that takes a single Integer, sets the denominator to 1
         this.numerator = num;
         this.denominator = 1;
     }
@@ -435,10 +435,10 @@ public class Fraction {
         Integer common = gcd(newNum,newDen);
         return new Fraction(newNum/common, newDen/common );
     }
-    public Fraction add(Integer other) {
+    public Fraction add(Integer other) { // overload the add method when the parameter is an Integer 
         return add(new Fraction(other));
     }
-    private static Integer gcd(Integer m, Integer n) {
+    private static Integer gcd(Integer m, Integer n) { // a helper method for the add method
         while (m % n != 0) {
             Integer oldm = m;
             Integer oldn = n;
@@ -447,7 +447,7 @@ public class Fraction {
         }
         return n;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) { // a main method
         Fraction f1 = new Fraction(1,2);
         System.out.println(f1.add(1));
     }
