@@ -769,8 +769,8 @@ public void test(Number a, Number b) {
             Here is an excerpt from <url href="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)" visual="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)">the official documentation</url> for the <c>compareTo</c> method as specified by the <c>Comparable</c> interface.
         </p>
 
-
-        <program  xml:id="java-comparable" language="text">
+        <listing xml:id="java-comparable">
+        <program language="text">
             <code>
 int compareTo(T o)
 Compares this object with the specified object for order. Returns a
@@ -782,27 +782,29 @@ iff y.compareTo(x) throws an exception.)
 ...
             </code>
         </program>
+        </listing>
 
         <p>
             To make our <c>Fraction</c> class <c>Comparable</c> we must modify the class declaration line as follows:
         </p>
 
-
-        <program  xml:id="java-make-comparable"  language="java">
+        <listing xml:id="java-make-comparable">
+        <program language="java">
             <code>
 public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
     ...
 }
             </code>
         </program>
+        </listing>
 
         <p>
             The specification <c>Comparable&lt;Fraction&gt;</c> makes it clear that <c>Fraction</c> is only comparable with another <c>Fraction</c>.
             The <c>compareTo</c> method could be implemented as follows:
         </p>
 
-
-        <program  xml:id="java-comparable2"  language="java">
+        <listing xml:id="java-comparable2">
+        <program language="java">
             <code>
 public int compareTo(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
@@ -811,7 +813,10 @@ public int compareTo(Fraction other) {
 }
             </code>
         </program>
+        </listing>
+        
     </section>
+
 
     <section xml:id="static-member-variables">
         <title>Static member variables</title>
