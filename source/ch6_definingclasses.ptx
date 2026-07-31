@@ -803,7 +803,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
             The <c>compareTo</c> method could be implemented as follows:
         </p>
 
-        <listing xml:id="java-comparable2">
+        <listing xml:id="java-compare-to">
         <program language="java">
             <code>
 public int compareTo(Fraction other) {
@@ -814,7 +814,7 @@ public int compareTo(Fraction other) {
             </code>
         </program>
         </listing>
-        
+
     </section>
 
 
