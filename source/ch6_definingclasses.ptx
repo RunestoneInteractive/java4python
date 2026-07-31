@@ -280,7 +280,7 @@ public Fraction(Integer num, Integer den) {
                 Let&#x2019;s begin by implementing addition in Java:
             </p>
 
-            <listing xml:id="java-fraction-class-addition">
+            <listing xml:id="java-fraction-class-addition-initial">
             <program language="java"> 
                 <code>
 public Fraction add(Fraction otherFrac) {
@@ -305,7 +305,7 @@ public Fraction add(Fraction otherFrac) {
                 So the following version of the code is equivalent:
             </p>
 
-            <listing xml:id="java-fraction-class-addition2">
+            <listing xml:id="java-fraction-class-addition-equivalent">
             <program language="java">
                 <code>
 public Fraction add(Fraction otherFrac) {
@@ -438,7 +438,7 @@ public class Fraction {
                 </code> <tests> </tests>
             </program>
             </listing>
-            
+
         </subsection>
     </section>
 
