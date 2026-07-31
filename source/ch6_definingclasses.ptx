@@ -277,7 +277,7 @@ public Fraction(Integer num, Integer den) {
                 However, if you reassign the parameter to a completely new object inside the method (e.g., <c>otherFrac = new Fraction(0,1);</c>), it would <em>not</em> affect the original variable outside the method, because you are only changing the local copy of the reference.
             </p>
             <p>
-                Let&#x2019;s begin by implementing addition in Java:
+                <xref ref="java-fraction-class-addition-initial" text="type-global"/> shows the first part of the Fraction class definition.
             </p>
 
             <listing xml:id="java-fraction-class-addition-initial">
@@ -302,7 +302,7 @@ public Fraction add(Fraction otherFrac) {
             <p>
                 Second, you will notice that the method makes use of the <c>this</c> variable.
                 In this method, <c>this</c> is not necessary, because there is no ambiguity about the <c>numerator</c> and <c>denominator</c> variables.
-                So the following version of the code is equivalent:
+                <xref ref="java-fraction-class-addition-equivalent" text="type-global"/> is an equivalent version of <xref ref="java-fraction-class-addition-initial" text="type-global"/>.
             </p>
 
             <listing xml:id="java-fraction-class-addition-equivalent">
@@ -364,7 +364,7 @@ public Fraction add(Fraction otherFrac) {
                 To solve the problem of adding an <c>Integer</c> and a <c>Fraction</c> in Java we will overload both the constructor and the <c>add</c> method.
                 We will overload the constructor so that if it only receives a single <c>Integer</c> it will convert the <c>Integer</c> into a <c>Fraction</c>.
                 We will also overload the <c>add</c> method so that if it receives an <c>Integer</c> as a parameter it will first construct a <c>Fraction</c> from that integer and then add the two <c>Fractions</c> together.
-                The new methods that accomplish this task are as follows:
+                <xref ref="java-method-overloading" text="type-global"/> shows the new methods that accomplish this task.
             </p>
 
             <listing xml:id="java-method-overloading">
