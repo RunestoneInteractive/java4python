@@ -388,7 +388,7 @@ public Fraction add(Integer other) {
             </p>
 
             <p>
-                Our full <c>Fraction</c> class to this point would look like the following.
+                Our full <c>Fraction</c> class to this point would look <xref ref="java-full-fraction-class" text="type-global"/>.
                 You should compile and run the program to see what happens.
             </p>
 
