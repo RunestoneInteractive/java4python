@@ -207,7 +207,7 @@ public void setDenominator(Integer denominator) {
         <program xml:id="java-fraction-constructor" language="java">
             <code>
 public Fraction(Integer top, Integer bottom) {
-    num = top;
+    num = top; // notice the use of num instead of top
     den = bottom;
 }
             </code>
@@ -228,7 +228,7 @@ public Fraction(Integer top, Integer bottom) {
         <program xml:id="java-fraction-class-this" language="java">
             <code>
 public Fraction(Integer num, Integer den) {
-    this.num = num;
+    this.num = num; // notice how we use this.num instead of num
     this.den = den;
 }
             </code>
