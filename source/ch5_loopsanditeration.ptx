@@ -12,7 +12,7 @@
 
         <p><idx><c>for</c> loop</idx>
             <idx>definite loop</idx> 
-            A <term>definite loop</term> is a loop that is executed a specific or definite number of times. In Python, the easiest way to write a definite loop is using the <c>for</c> loop in conjunction with the <c>range</c> function. <xref ref="python-range-options" text="type-global"/> shows the syntax for the <c>range</c> function.
+            A <term>definite loop</term>, also known as a <term><c>for</c> loop</term>, is a loop that is executed for a specific or <em>definite</em> number of times. In Python, the easiest way to write a definite loop is using the <c>for</c> loop structure in conjunction with the <c>range</c> function. <xref ref="python-range-options" text="type-global"/> shows the syntax for the <c>range</c> function.
         </p>
         <listing xml:id="python-definite-loop">
         <program interactive="activecode" language="python">
