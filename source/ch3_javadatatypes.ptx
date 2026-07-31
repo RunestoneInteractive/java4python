@@ -729,36 +729,54 @@ public class Histo {
         </p>
 
         <p>
- The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using range. In fact <c>for (Integer i = 0; i &lt; 10; i++)</c> is exactly equivalent to the Python <c>for i in range(10)</c> The first statement inside the parenthesis declares and initializes a loop variable <c>i</c>. The second statement is a Boolean expression that is our exit condition. In other words we will keep looping as long as this expression evaluates to true. The third clause is used to increment the value of the loop variable at the end of iteration through the loop. In fact <c>i++</c> is Java shorthand for <c>i = i + 1</c> Java also supports the shorthand <c>i--</c> to decrement the value of i. Like Python, you can also write <c>i += 2</c> as shorthand for <c>i = i + 2</c> Try to rewrite the following Python for loops as Java for loops: 
-        </p>
+ The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using range. In fact <c>for (Integer i = 0; i &lt; 10; i++)</c> is exactly equivalent to the Python <c>for i in range(10)</c> The first statement inside the parenthesis declares and initializes a loop variable <c>i</c>. The second statement is a Boolean expression that is our exit condition. In other words we will keep looping as long as this expression evaluates to true. The third clause is used to increment the value of the loop variable at the end of iteration through the loop. In fact <c>i++</c> is Java shorthand for <c>i = i + 1</c> Java also supports the shorthand <c>i--</c> to decrement the value of i. Like Python, you can also write <c>i += 2</c> as shorthand for <c>i = i + 2</c>. </p>
 
-        <p>
-            <ul>
-                <li>
-                    <p>
-                        <c>for i in range(2,101,2)</c>
-                    </p>
-                </li>
+<exercise label="matching-python-java-loops">
+  <statement>
+    <p>
+      Match each Python <c>for</c> loop with its equivalent Java <c>for</c> loop. 
+    </p>
+  </statement>
+     
+  <matches>
 
-                <li>
-                    <p>
-                        <c>for i in range(1,100)</c>
-                    </p>
-                </li>
+    <match>
+      <premise><c>for i in range(2, 102, 2)</c></premise>
+      <response><c>for (int i = 2; i &lt; 102; i += 2)</c></response>
+    </match>
 
-                <li>
-                    <p>
-                        <c>for i in range(100,0,-1)</c>
-                    </p>
-                </li>
+    <match>
+      <premise><c>for i in range(1, 100)</c></premise>
+      <response><c>for (int i = 1; i &lt; 100; i++)</c></response>
+    </match>
 
-                <li>
-                    <p>
-                        <c>for x,y in zip(range(10),range(0,20,2))</c> [hint, you can separate statements in the same clause with a ,]
-                    </p>
-                </li>
-            </ul>
-        </p>
+     <match>
+      <response><c>for (int i = 1; i &lt;= 100; i++)</c></response>
+    </match>
+
+    <match>
+      <premise><c>for i in range(100, 0, -1)</c></premise>
+      <response><c>for (int i = 100; i &gt; 0; i--)</c></response>
+    </match>
+    
+    <match>
+      <response><c>for (int i = 2; i &lt;= 102; i += 2)</c></response>
+    </match>
+
+     <match>
+      <premise><c>for x, y in zip(range(10), range(0, 20, 2))</c></premise>
+      <response><c>for (int x = 0, y = 0; x &lt; 10; x++, y += 2)</c></response>
+    </match> 
+   
+    <match>
+      <response><c>for (int i = 100; i &lt; 0; i--)</c></response>
+    </match>
+
+    <match>
+      <response><c>for (int x = 0, int y = 0; x &lt; 10; x++, y += 2)</c></response>
+    </match>
+  </matches>
+</exercise>
 
         <p>
  The next loop (lines 27&#x2013;30) shows a typical Java pattern for reading data from a file. Java while loops and Python while loops are identical in their logic. In this case, we will continue to process the body of the loop as long as <c>data.hasNextInt()</c> returns true. 

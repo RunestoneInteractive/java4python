@@ -17,7 +17,7 @@
 
         <program  xml:id="python-definite-loop"  interactive="activecode" language="python">
             <code>
-for i in range(10):
+for i in range(10): # range(10) is a list of integers from 0 to 9
     print(i)
             </code>
         </program>
@@ -30,7 +30,7 @@ for i in range(10):
             <code>
 public class DefiniteLoopExample {
     public static void main(String[] args) {
-        for (Integer i = 0; i &lt; 10; i++ ) {
+        for (Integer i = 0; i &lt; 10; i++ ) { // notice how the initialization, condition, and update are all on the same line.
             System.out.println(i);
         }
     }
@@ -67,7 +67,7 @@ public class DefiniteLoopExample {
 
         <program xml:id="python-deinite-decrement" interactive="activecode" language="python">
             <code>
-for i in range(100, -1, -5):
+for i in range(100, -1, -5): # start at 100, stop at 0, decrement by 5
     print(i)
             </code>
         </program>
@@ -80,7 +80,7 @@ for i in range(100, -1, -5):
             <code>
 public class DefiniteLoopBackward {
     public static void main(String[] args) {
-        for (Integer i = 100; i &gt;= 0; i -= 5) {
+        for (Integer i = 100; i &gt;= 0; i -= 5) { // start at 100, stop at 0, decrement by 5
             System.out.println(i);
         }
     }
@@ -99,8 +99,8 @@ public class DefiniteLoopBackward {
 
         <program  xml:id="python-list-iteration" interactive="activecode" language="python">
             <code>
-l = [1, 1, 2, 3, 5, 8, 13, 21]
-for fib in l:
+l = [1, 1, 2, 3, 5, 8, 13, 21] # create a list of integers
+for fib in l: # iterate over the list
     print(fib)
             </code>
         </program>
@@ -115,16 +115,16 @@ import java.util.ArrayList;
 
 public class ForEachArrayListExample {
     public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; l = new ArrayList&lt;Integer&gt;();
-        l.add(1);
-        l.add(1);
-        l.add(2);
+        ArrayList&lt;Integer&gt; l = new ArrayList&lt; // create an ArrayList of integers
+        l.add(1); // add the first integer to the list
+        l.add(1); // add the second integer to the list
+        l.add(2); // keep going
         l.add(3);
         l.add(5);
         l.add(8);
         l.add(13);
-        l.add(21);
-        for (Integer i : l) {
+        l.add(21); // add the last integer to the list
+        for (Integer i : l) { // iterate over the list
             System.out.println(i);
         }
     }
@@ -141,8 +141,8 @@ public class ForEachArrayListExample {
             <code>
 public class ForEachArrayExample {
     public static void main(String[] args) {
-        int l[] = {1,1,2,3,5,8,13,21};
-        for(int i : l) {
+        int l[] = {1,1,2,3,5,8,13,21}; // create an array of integers using primitive syntax
+        for(int i : l) { // iterate over the array
             System.out.println(i);
         }
     }
@@ -158,8 +158,8 @@ public class ForEachArrayExample {
             <code>
 public class StringIterationExample {
     public static void main(String[] args) {
-        String t = "Hello World";
-        for (char c : t.toCharArray()) {
+        String t = "Hello World"; // create a string
+        for (char c : t.toCharArray()) { // iterate over the characters in the string
             System.out.println(c);
         }
     }
@@ -181,7 +181,7 @@ public class StringIterationExample {
 i = 5
 while i &gt; 0: # while i is greater than 0
     print(i)
-    i = i - 1 # decrement i by 1
+    i = i - 1 
             </code>
         </program>
 
@@ -214,7 +214,7 @@ public class WhileLoopExample {
             <code>
 public class DoWhileExample {
     public static void main(String[] args) {
-        int i = 10; // initialize i to 10
+        int i = 10; 
         do { // do-while loop, will run at least once no matter the condition
             System.out.println("This runs once, i = " + i);
         } while (i &lt; 5); // while i is less than 5
