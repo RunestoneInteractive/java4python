@@ -62,10 +62,10 @@
                 </p>
 
                 <p>
-                    <xref ref="python-fracion-class1" text="type-global"/> is a mostly complete implementation of a Fraction class in Python that we will refer to throughout this section. 
+                    <xref ref="python-fraction-class-all" text="type-global"/> is a mostly complete implementation of a Fraction class in Python that we will refer to throughout this section. 
                 </p>
 
-                <listing xml:id="python-fracion-class1">
+                <listing xml:id="python-fraction-class-all">
                 <program interactive="activecode" language="python">
                     <code>
         class Fraction:
@@ -134,10 +134,10 @@
                 </p>
 
                 <p>
-        The declarations of instance variables can come at the beginning of the class definition or the end. Cay Horstman, author of <url href="https://horstmann.com/corejava/index.html" visual="https://horstmann.com/corejava/index.html">the &#x201C;Core Java&#x201D; books</url> puts the declarations at the end of the class. I like them at the very beginning so you see the variables that are declared before you begin looking at the code that uses them. With that in mind <xref ref="java-fraction-class1" text="type-global"/> shows the first part of the Fraction class definition.
+        The declarations of instance variables can come at the beginning of the class definition or the end. Cay Horstman, author of <url href="https://horstmann.com/corejava/index.html" visual="https://horstmann.com/corejava/index.html">the &#x201C;Core Java&#x201D; books</url> puts the declarations at the end of the class. I like them at the very beginning so you see the variables that are declared before you begin looking at the code that uses them. With that in mind <xref ref="java-fraction-class-start" text="type-global"/> shows the first part of the Fraction class definition.
                 </p>
 
-                <listing xml:id="java-fraction-class1">
+                <listing xml:id="java-fraction-class-start">
                 <program interactive="activecode" language="java">
                     <code>
         public class Fraction {
@@ -149,6 +149,7 @@
                 </listing>
 
                 <p>
+                    <idx>private</idx>
                     Notice that we have declared the numerator and denominator to be <term>private</term>.
                     This means that the compiler will generate an error if another method tries to write code like <xref ref="java-private" text="type-global"/>.
                 </p>
