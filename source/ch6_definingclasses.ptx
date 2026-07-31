@@ -281,7 +281,7 @@ public Fraction(Integer num, Integer den) {
             </p>
 
             <listing xml:id="java-fraction-class-addition-initial">
-            <program language="java"> 
+            <program> 
                 <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * this.numerator +
@@ -306,7 +306,7 @@ public Fraction add(Fraction otherFrac) {
             </p>
 
             <listing xml:id="java-fraction-class-addition-equivalent">
-            <program language="java">
+            <program>
                 <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * numerator +
@@ -368,7 +368,7 @@ public Fraction add(Fraction otherFrac) {
             </p>
 
             <listing xml:id="java-method-overloading">
-            <program language="java">
+            <program>
                 <code>
 public Fraction(Integer num) {
     this.numerator = num;
