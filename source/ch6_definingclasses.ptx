@@ -462,7 +462,7 @@ public class Fraction {
 
         <introduction>
             <p>
- If you ran the program above you probably noticed that the output is not very satisfying. Chances are your output looked something like this: 
+ If you ran the program above you probably noticed that the output is not very satisfying. Chances are your output looked something like <xref ref="java-no-friendly-output" text="type-global"/>.
             </p>
 
             <listing xml:id="java-no-friendly-output">
@@ -552,8 +552,7 @@ Fraction@6ff3c5b5
 
             <p>
                 We are not interested in most of the methods on that list, and many Java programmers live happy and productive lives without knowing much about most of the methods on that list.
-                However, to make our output nicer we will implement the <c>toString</c> method for the <c>Fraction</c> class.
-                A simple version of the method is provided below.
+                However, to make our output nicer we will implement the <c>toString</c> method for the <c>Fraction</c> class. <xref ref="java-tostring" text="type-global"/> shows a simple version of the method.
             </p>
 
             <listing xml:id="java-tostring">
@@ -576,8 +575,8 @@ public String toString() {
                 Therefore once you write your own <c>equals</c> method:
             </p>
 
-            <listing xml:id="java-class-equalequal">
-            <program language="java">
+            <listing xml:id="java-class-equal-equal">
+            <program>
                 <code>
 object1 == object2
                 </code>
@@ -585,11 +584,11 @@ object1 == object2
             </listing>
 
             <p>
-                is NOT the same as:
+                <xref ref="java-class-equal-equal" text="type-global"/> is NOT the same as <xref ref="java-class-dot-equals" text="type-global"/>.
             </p>
 
             <listing xml:id="java-class-dot-equals">
-            <program language="java">
+            <program>
                 <code>
 object1.equals(object2)
                 </code>
@@ -597,7 +596,7 @@ object1.equals(object2)
             </listing>
 
             <p>
-                Here is an <c>equals</c> method for the <c>Fraction</c> class:
+                <xref ref="java-fraction-equals" text="type-global"/> is an <c>equals</c> method for the <c>Fraction</c> class.
             </p>
 
             <listing xml:id="java-fraction-equals">
@@ -637,11 +636,11 @@ public boolean equals(Fraction other) {
             </p>
 
             <p>
-                Here is code that makes the <c>Fraction</c> class a child of <c>Number</c>:
+                <xref ref="java-class-extends" text="type-global"/> makes the <c>Fraction</c> class a child of <c>Number</c>.
             </p>
 
             <listing xml:id="java-class-extends">    
-            <program language="java">
+            <program>
                 <code>
 public class Fraction extends Number {
     ...
@@ -689,7 +688,7 @@ public class Fraction extends Number {
             </p>
 
             <p>
-                This really isn&#x2019;t much work for us to implement these methods, as all we have to do is some type conversion and some division:
+                This really isn&#x2019;t much work for us to implement these methods, as all we have to do is some type conversion and some division as shown in <xref ref="java-object-type-conversions" text="type-global"/>.
             </p>
 
             <listing xml:id="java-object-type-conversions">
@@ -725,7 +724,7 @@ public long longValue() {
             </p>
 
             <p>
-                Suppose you try to define a method as follows:
+                Suppose you try to define a method as <xref ref="java-ugly-add-method" text="type-global"/>.
             </p>
 
             <listing xml:id="java-ugly-add-method">
