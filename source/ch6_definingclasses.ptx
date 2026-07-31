@@ -65,8 +65,8 @@
                     Here is a mostly complete implementation of a Fraction class in Python that we will refer to throughout this section:
                 </p>
 
-
-                <program xml:id="python-fracion-class1" interactive="activecode" language="python">
+                <listing xml:id="python-fracion-class1">
+                <program interactive="activecode" language="python">
                     <code>
         class Fraction:
             def __init__(self, num, den):
@@ -126,6 +126,7 @@
         print(sorted([Fraction(5, 16), Fraction(3, 16), Fraction(1, 16) + 1]))
                     </code> <tests> </tests>
                 </program>
+                </listing>
 
                 <p>
                     <idx>data members</idx>
@@ -136,8 +137,8 @@
         The declarations of instance variables can come at the beginning of the class definition or the end. Cay Horstman, author of <url href="https://horstmann.com/corejava/index.html" visual="https://horstmann.com/corejava/index.html">the &#x201C;Core Java&#x201D; books</url> puts the declarations at the end of the class. I like them at the very beginning so you see the variables that are declared before you begin looking at the code that uses them. With that in mind the first part of the Fraction class definition is as follows: 
                 </p>
 
-
-                <program xml:id="java-fraction-class1" language="java">
+                <listing xml:id="java-fraction-class1">
+                <program interactive="activecode" language="java">
                     <code>
         public class Fraction {
             private Integer numerator;
@@ -145,19 +146,21 @@
         }
                     </code>
                 </program>
+                </listing>
 
                 <p>
                     Notice that we have declared the numerator and denominator to be <term>private</term>.
                     This means that the compiler will generate an error if another method tries to write code like the following:
                 </p>
 
-
-                <program xml:id="java-private" language="java">
+                <listing xml:id="java-private">
+                <program interactive="activecode" language="java">
                     <code>
         Fraction f = new Fraction(1,2);
         Integer y = f.numerator * 10;
                     </code>
                 </program>
+                </listing>
 
                 <p>
                     <idx>getter method</idx>
@@ -167,8 +170,8 @@
                     Hence, it is a very common programming practice to both provide <term>getter methods</term> and <term>setter methods</term> when needed for instance variables in Java.
                 </p>
 
-
-        <program xml:id="java-getter-and-setter" language="java">
+                <listing xml:id="java-getter-and-setter">
+                <program interactive="activecode" language="java">
             <code>
 public Integer getNumerator() {
     return numerator;
@@ -184,6 +187,7 @@ public void setDenominator(Integer denominator) {
 }
             </code>
         </program>
+        </listing>
     </introduction>
 </section>
 
