@@ -62,7 +62,7 @@
                 </p>
 
                 <p>
-                    Here is a mostly complete implementation of a Fraction class in Python that we will refer to throughout this section:
+                    <xref ref="python-fracion-class1" text="type-global"/> is a mostly complete implementation of a Fraction class in Python that we will refer to throughout this section. 
                 </p>
 
                 <listing xml:id="python-fracion-class1">
@@ -134,7 +134,7 @@
                 </p>
 
                 <p>
-        The declarations of instance variables can come at the beginning of the class definition or the end. Cay Horstman, author of <url href="https://horstmann.com/corejava/index.html" visual="https://horstmann.com/corejava/index.html">the &#x201C;Core Java&#x201D; books</url> puts the declarations at the end of the class. I like them at the very beginning so you see the variables that are declared before you begin looking at the code that uses them. With that in mind the first part of the Fraction class definition is as follows: 
+        The declarations of instance variables can come at the beginning of the class definition or the end. Cay Horstman, author of <url href="https://horstmann.com/corejava/index.html" visual="https://horstmann.com/corejava/index.html">the &#x201C;Core Java&#x201D; books</url> puts the declarations at the end of the class. I like them at the very beginning so you see the variables that are declared before you begin looking at the code that uses them. With that in mind <xref ref="java-fraction-class1" text="type-global"/> shows the first part of the Fraction class definition.
                 </p>
 
                 <listing xml:id="java-fraction-class1">
@@ -150,7 +150,7 @@
 
                 <p>
                     Notice that we have declared the numerator and denominator to be <term>private</term>.
-                    This means that the compiler will generate an error if another method tries to write code like the following:
+                    This means that the compiler will generate an error if another method tries to write code like <xref ref="java-private" text="type-global"/>.
                 </p>
 
                 <listing xml:id="java-private">
@@ -167,7 +167,7 @@
                     <idx>setter method</idx>
                     Direct access to instance variables is not allowed in Java.
                     Therefore if we legitimately want to be able to access information such as the numerator or the denominator for a particular fraction we must have a <term>getter method</term> that returns the needed value.
-                    Hence, it is a very common programming practice to both provide <term>getter methods</term> and <term>setter methods</term> when needed for instance variables in Java.
+                    Hence, it is a very common programming practice to both provide <term>getter methods</term> and <term>setter methods</term> when needed for instance variables in Java. <xref ref="java-getter-and-setter" text="type-global"/> shows how the getter and setter methods are written.
                 </p>
 
                 <listing xml:id="java-getter-and-setter">
