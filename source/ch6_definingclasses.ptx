@@ -203,8 +203,8 @@ public void setDenominator(Integer denominator) {
             Our constructor will take two parameters: the numerator and the denominator.
         </p>
 
-
-        <program xml:id="java-fraction-constructor" language="java">
+        <listing xml:id="java-fraction-constructor">
+        <program interactive="activecode" language="java">
             <code>
 public Fraction(Integer top, Integer bottom) {
     num = top;
@@ -212,6 +212,7 @@ public Fraction(Integer top, Integer bottom) {
 }
             </code>
         </program>
+        </listing>
 
         <p>
             <idx><c>this</c></idx>
@@ -224,8 +225,8 @@ public Fraction(Integer top, Integer bottom) {
             For example this alternate definition of the the Fraction constructor uses <c>this</c> to differentiate between parameters and instance variables.
         </p>
 
-
-        <program xml:id="java-fraction-class-this" language="java">
+        <listing xml:id="java-fraction-class-this">
+        <program interactive="activecode" language="java">
             <code>
 public Fraction(Integer num, Integer den) {
     this.num = num;
@@ -233,6 +234,7 @@ public Fraction(Integer num, Integer den) {
 }
             </code>
         </program>
+        </listing>
     </section>
 
     <section xml:id="methods">
