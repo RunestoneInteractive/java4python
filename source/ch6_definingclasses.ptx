@@ -465,12 +465,13 @@ public class Fraction {
  If you ran the program above you probably noticed that the output is not very satisfying. Chances are your output looked something like this: 
             </p>
 
-
-            <program xml:id="java-no-friendly-output" language="java">
+            <listing xml:id="java-no-friendly-output">
+            <program language="java">
                 <code>
 Fraction@6ff3c5b5
                 </code>
             </program>
+            </listing>
 
             <p>
                 The reason is that we have not yet provided a friendly string representation for our <c>Fraction</c> objects.
@@ -555,14 +556,15 @@ Fraction@6ff3c5b5
                 A simple version of the method is provided below.
             </p>
 
-
-            <program xml:id="java-tostring" language="java">
+            <listing xml:id="java-tostring">
+            <program language="java">
                 <code>
 public String toString() {
     return numerator.toString() + "/" + denominator.toString();
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 The other important class for us to implement from the list of methods inherited from <c>Object</c> is the <c>equals</c> method.
@@ -573,30 +575,32 @@ public String toString() {
                 Therefore once you write your own <c>equals</c> method:
             </p>
 
-
-            <program xml:id="java-class-equalqqual" language="java">
+            <listing xml:id="java-class-equalqqual">
+            <program language="java">
                 <code>
 object1 == object2
                 </code>
             </program>
+            </listing>
 
             <p>
                 is NOT the same as:
             </p>
 
-
-            <program xml:id="java-class-dot-equals" language="java">
+            <listing xml:id="java-class-dot-equals">
+            <program language="java">
                 <code>
 object1.equals(object2)
                 </code>
             </program>
+            </listing>
 
             <p>
                 Here is an <c>equals</c> method for the <c>Fraction</c> class:
             </p>
 
-
-            <program xml:id="java-fraction-equals" language="java">
+            <listing xml:id="java-fraction-equals">
+            <program language="java">
                 <code>
 public boolean equals(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
@@ -608,6 +612,7 @@ public boolean equals(Fraction other) {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 One important thing to remember about <c>equals</c> is that it only checks to see if two objects are equal &#x2013; it does not have any notion of less than or greater than.
@@ -634,14 +639,15 @@ public boolean equals(Fraction other) {
                 Here is code that makes the <c>Fraction</c> class a child of <c>Number</c>:
             </p>
 
-
-            <program xml:id="pjava-extends" language="java">
+            <listing xml:id="pjava-extends">    
+            <program language="java">
                 <code>
 public class Fraction extends Number {
     ...
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 <idx><c>extends</c></idx>
@@ -685,8 +691,8 @@ public class Fraction extends Number {
                 This really isn&#x2019;t much work for us to implement these methods, as all we have to do is some type conversion and some division:
             </p>
 
-
-            <program xml:id="java-object-type-conversions" language="java">
+            <listing xml:id="java-object-type-conversions">
+            <program language="java">
                 <code>
 public double doubleValue() {
     return numerator.doubleValue() / denominator.doubleValue();
@@ -702,6 +708,7 @@ public long longValue() {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 <idx>is-a</idx>
@@ -720,14 +727,15 @@ public long longValue() {
                 Suppose you try to define a method as follows:
             </p>
 
-
-            <program xml:id="java-ugly-add-method" language="java">
+            <listing xml:id="java-ugly-add-method">
+            <program language="java">
                 <code>
 public void test(Number a, Number b) {
     a.add(b);
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 The Java compiler would give an error because <c>add</c> is not a defined method of the <c>Number</c> class.
