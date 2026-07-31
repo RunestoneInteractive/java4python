@@ -559,7 +559,7 @@ Fraction@6ff3c5b5
             <program xml:id="java-tostring" language="java">
                 <code>
 public String toString() {
-    return numerator.toString() + "/" + denominator.toString();
+    return numerator.toString() + "/" + denominator.toString(); // convert to a string
 }
                 </code>
             </program>
@@ -598,10 +598,10 @@ object1.equals(object2)
 
             <program xml:id="java-fraction-equals" language="java">
                 <code>
-public boolean equals(Fraction other) {
-    Integer num1 = this.numerator * other.getDenominator();
-    Integer num2 = this.denominator * other.getNumerator();
-    if (num1 == num2)
+
+public boolean equals(Fraction other) { // a method to compare two fractions
+    Integer num1 = this.numerator * other.getDenominator();     Integer num2 = this.denominator * other.getNumerator();
+    if (num1 == num2) // if the numerators are equal in value, the fractions are equal 
         return true;
     else
         return false;
@@ -688,16 +688,16 @@ public class Fraction extends Number {
 
             <program xml:id="java-object-type-conversions" language="java">
                 <code>
-public double doubleValue() {
+public double doubleValue() { // convert to a double
     return numerator.doubleValue() / denominator.doubleValue();
 }
-public float floatValue() {
+public float floatValue() { // convert to a float
     return numerator.floatValue() / denominator.floatValue();
 }
-public int intValue() {
+public int intValue() {  // convert to an int
     return numerator.intValue() / denominator.intValue();
 }
-public long longValue() {
+public long longValue() { // convert to a long
     return numerator.longValue() / denominator.longValue();
 }
                 </code>
@@ -724,7 +724,7 @@ public long longValue() {
             <program xml:id="java-ugly-add-method" language="java">
                 <code>
 public void test(Number a, Number b) {
-    a.add(b);
+    a.add(b); // this is a bad idea
 }
                 </code>
             </program>
