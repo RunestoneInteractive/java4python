@@ -307,7 +307,6 @@ public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * this.numerator +
                              this.denominator * otherFrac.getNumerator(); // notice the use of this. 
     Integer newDen = this.denominator * otherFrac.getDenominator(); // find the new denominator
-    Integer newDen = this.denominator * otherFrac.getDenominator();
     Integer common = gcd(newNum, newDen); // find the greatest common divisor
     return new Fraction(newNum/common, newDen/common);
 }
