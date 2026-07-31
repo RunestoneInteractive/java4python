@@ -766,7 +766,7 @@ public void test(Number a, Number b) {
 
         <p>
             The <c>Comparable</c> interface says that any object that claims to be <c>Comparable</c> must implement the <c>compareTo</c> method.
-            Here is an excerpt from <url href="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)" visual="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)">the official documentation</url> for the <c>compareTo</c> method as specified by the <c>Comparable</c> interface.
+            Here is an excerpt from <url href="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)" visual="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)">the official documentation</url> for the <c>compareTo</c> method as specified by the <c>Comparable</c> interface. <xref ref="java-comparable" text="type-global"/> shows the excerpt.
         </p>
 
         <listing xml:id="java-comparable">
@@ -785,7 +785,7 @@ iff y.compareTo(x) throws an exception.)
         </listing>
 
         <p>
-            To make our <c>Fraction</c> class <c>Comparable</c> we must modify the class declaration line as follows:
+            To make our <c>Fraction</c> class <c>Comparable</c> we must modify the class declaration line as shown in <xref ref="java-make-comparable" text="type-global"/>.
         </p>
 
         <listing xml:id="java-make-comparable">
@@ -800,7 +800,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
 
         <p>
             The specification <c>Comparable&lt;Fraction&gt;</c> makes it clear that <c>Fraction</c> is only comparable with another <c>Fraction</c>.
-            The <c>compareTo</c> method could be implemented as follows:
+            The <c>compareTo</c> method could be implemented as shown in <xref ref="java-compare-to" text="type-global"/>.
         </p>
 
         <listing xml:id="java-compare-to">
