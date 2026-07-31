@@ -76,37 +76,54 @@
                 """
                 self.num = num
                 self.den = den
-            def __repr__(self):
-                if self.num &gt; self.den:
-                    retWhole = int(self.num / self.den)
-                    retNum = self.num - (retWhole * self.den)
+            def __repr__(self): 
+                """
+                :return: a string representation of the fraction
+                """ 
+                if self.num &gt; self.den: 
+                    retWhole = int(self.num / self.den) # find the whole number part
+                    retNum = self.num - (retWhole * self.den) # find the numerator part
                     return str(retWhole) + " " + str(retNum) + "/" + str(self.den)
                 else:
                     return str(self.num) + "/" + str(self.den)
             def show(self):
+                """
+                :return: print the fraction
+                """
                 print(self.num, "/", self.den)
             def __add__(self, other):
+                """
+                :param other: the fraction to add
+                :return: the sum of the two fractions
+                """
                 # convert to a fraction
                 other = self.toFract(other)
-                newnum = self.num * other.den + self.den * other.num
-                newden = self.den * other.den
+                newnum = self.num * other.den + self.den * other.num # find the new numerator
+                newden = self.den * other.den # find the new denominator
                 common = gcd(newnum, newden)
                 return Fraction(int(newnum / common), int(newden / common))
-            __radd__ = __add__
+            __radd__ = __add__ # allow the fraction to be added to a number
             def __lt__(self, other):
+                """
+                :param other: the fraction to compare
+                :return: whether the fraction is less than the other
+                """
                 num1 = self.num * other.den
                 num2 = self.den * other.num
                 return num1 &lt; num2
             def toFract(self, n):
+                """
+                :param n: the number to convert to a fraction
+                :return: the fraction representation of the number
+                """
                 if isinstance(n, int):
                     other = Fraction(n, 1)
                 elif isinstance(n, float):
                     wholePart = int(n)
-                    fracPart = n - wholePart
-                    # convert to 100ths???
-                    fracNum = int(fracPart * 100)
-                    newNum = wholePart * 100 + fracNum
-                    other = Fraction(newNum, 100)
+                    fracPart = n - wholePart 
+                    fracNum = int(fracPart * 100) # convert to 100ths
+                    newNum = wholePart * 100 + fracNum # combine the whole and fractional parts
+                    other = Fraction(newNum, 100) 
                 elif isinstance(n, Fraction):
                     other = n
                 else:
@@ -115,9 +132,12 @@
                 return other
         def gcd(m, n):
             """
-            A helper function for Fraction
+            A helper function for Fraction.
+            :param m: the first number
+            :param n: the second number
+            :return: the greatest common divisor
             """
-            while m % n != 0:
+            while m % n != 0: # keep going until the gcd is found
                 oldm = m
                 oldn = n
                 m = oldn
@@ -140,8 +160,8 @@
                 <listing xml:id="java-fraction-class-start">
                 <program interactive="activecode" language="java">
                     <code>
-        public class Fraction {
-            private Integer numerator;
+        public class Fraction { 
+            private Integer numerator; // notice the private modifier
             private Integer denominator;
         }
                     </code>
@@ -157,8 +177,8 @@
                 <listing xml:id="java-private">
                 <program interactive="activecode" language="java">
                     <code>
-        Fraction f = new Fraction(1,2);
-        Integer y = f.numerator * 10;
+        Fraction f = new Fraction(1,2); 
+        Integer y = f.numerator * 10; // trying to access the numerator 
                     </code>
                 </program>
                 </listing>
@@ -174,16 +194,16 @@
                 <listing xml:id="java-getter-and-setter">
                 <program interactive="activecode" language="java">
             <code>
-public Integer getNumerator() {
+public Integer getNumerator() { // getter method
     return numerator;
 }
-public void setNumerator(Integer numerator) {
+public void setNumerator(Integer numerator) { // setter method
     this.numerator = numerator;
 }
-public Integer getDenominator() {
+public Integer getDenominator() { // getter method
     return denominator;
 }
-public void setDenominator(Integer denominator) {
+public void setDenominator(Integer denominator) { // setter method
     this.denominator = denominator;
 }
             </code>
