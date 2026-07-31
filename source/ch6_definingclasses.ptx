@@ -200,7 +200,7 @@ public void setDenominator(Integer denominator) {
             In Java, <term>constructors</term> have the same name as the class and are declared public.
             They are declared without a return type.
             So any method that is named the same as the class and has no return type is a constructor.
-            Our constructor will take two parameters: the numerator and the denominator.
+            Our constructor will take two parameters: the numerator and the denominator. <xref ref="java-fraction-constructor" text="type-global"/> shows the constructor for the <c>Fraction</c> class.
         </p>
 
         <listing xml:id="java-fraction-constructor">
@@ -222,7 +222,7 @@ public Fraction(Integer top, Integer bottom) {
             This allows the Java compiler to do the work of dereferencing the current Java object.
             Java does provide a special variable called <c>this</c> that works like the <c>self</c> variable.
             In Java, <c>this</c> is typically only used when it is needed to differentiate between a parameter or local variable and an instance variable.
-            For example this alternate definition of the the Fraction constructor uses <c>this</c> to differentiate between parameters and instance variables.
+            For example,<xref ref="java-fraction-constructor" text="type-global"/> shows an alternate definition of the the Fraction constructor that uses <c>this</c> to differentiate between parameters and instance variables.
         </p>
 
         <listing xml:id="java-fraction-class-this">
