@@ -841,11 +841,11 @@ public int compareTo(Fraction other) { // compare this fraction with another fra
             Suppose that you wanted to write a Student class so that the class could keep track of the number of students it had created.
             Although you could do this with a global counter variable that is an ugly solution.
             The right way to do it is to use a <c>static</c> variable.
-            In Python, we could do this as follows:
+            <xref ref="python-static-member-variable" text="type-global"/> shows how to do this in Python.
         </p>
 
-
-        <program  xml:id="python-static" interactive="activecode" language="python">
+        <listing xml:id="python-static-member-variable">    
+        <program interactive="activecode" language="python">
             <code>
 class Student:
     numStudents = 0
@@ -860,13 +860,14 @@ def main():
 main()
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
- In Java, we would write this same example using a <c>static</c> declaration. 
+ <xref ref="java-static-member-variable" text="type-global"/> shows how to do this in Java. 
         </p>
 
-
-        <program  xml:id="java-static"  interactive="activecode" language="java">
+        <listing xml:id="java-static-member-variable">  
+        <program  interactive="activecode" language="java">
             <code>
 public class Student {
     public static Integer numStudents = 0;
@@ -886,10 +887,11 @@ public class Student {
 }
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
             <idx>static member variable</idx>
- In this example notice that we create a <term>static member variable</term> by using the <c>static</c> modifier on the variable declaration. Once a variable has been declared <c>static</c> in Java it can be accessed from inside the class without prefixing the name of the class as we had to do in Python. 
+ In <xref ref="java-static-member-variable" text="type-global"/>, notice that we create a <term>static member variable</term> by using the <c>static</c> modifier on the variable declaration. Once a variable has been declared <c>static</c> in Java it can be accessed from inside the class without prefixing the name of the class as we had to do in Python. 
         </p>
     </section>
 
