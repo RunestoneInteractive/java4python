@@ -215,7 +215,7 @@ public void setDenominator(Integer denominator) { // setter method
     <section xml:id="writing-a-constructor">
         <title>Writing a constructor</title>
 
-        <p>
+        <p><idx><h>constructor</h></idx>
             Once you have identified the instance variables for your class the next thing to consider is the constructor.
             In Java, <term>constructors</term> have the same name as the class and are declared public.
             They are declared without a return type.
@@ -278,8 +278,8 @@ public Fraction(Integer num, Integer den) {
                     <li>
                         <p>
                             <idx>pass-by-value</idx>
-                            <idx>value of the reference</idx>
-                            <term>Java is strictly pass-by-value.</term> For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <em><term>value of the reference</term></em> (the memory address) is passed.
+                       
+                            Java is strictly <term>pass-by-value</term>. For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <term>reference</term>(Namely, the memory address) is passed.
                         </p>
                     </li>
                     <li>
@@ -571,7 +571,7 @@ public String toString() {
                 In Java, when two objects are compared using the <c>==</c> operator they are tested to see if they are exactly the same object (that is, do the two objects occupy the same exact space in the computer&#x2019;s memory?).
                 This is also the default behavior of the <c>equals</c> method provided by <c>Object</c>.
                 The <c>equals</c> method allows us to decide if two objects are equal by looking at their instance variables.
-                However it is important to remember that since Java does not have operator overloading <term>if you want to use your</term> <c>equals</c> <term>method you must call it directly</term>.
+                However it is important to remember that since Java does not have operator overloading <em>if you want to use your</em> <c>equals</c> <em>method you must call it directly</em>.
                 Therefore once you write your own <c>equals</c> method:
             </p>
 
@@ -631,7 +631,7 @@ public boolean equals(Fraction other) {
                 If you look at the documentation for <c>Integer</c> you will see that <c>Integer</c>&#x2019;s parent class is <c>Number</c>.
                 Number is an <term>abstract class</term> that specifies several methods that all of its children must implement.
                 In Java an abstract class is more than just a placeholder for common methods.
-                In Java an abstract class has the power to specify certain methods that all of its children <term>must</term> implement.
+                In Java an abstract class has the power to specify certain methods that all of its children <em>must</em> implement.
                 You can trace this power back to the strong typing nature of Java.
             </p>
 
@@ -650,7 +650,7 @@ public class Fraction extends Number {
             </listing>
 
             <p>
-                <idx><c>extends</c></idx>
+                <idx><c>extending a class</c></idx>
                 The keyword <term><c>extends</c></term> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
                 A child class always extends its parent.
             </p>
@@ -720,7 +720,7 @@ public long longValue() {
             </p>
 
             <p>
-                However, and this is a big however, it is important to remember that if you specify <c>Number</c> as the type of a particular parameter then the Java compiler will <term>only let you use the methods of a</term> <c>Number</c>: <c>longValue</c>, <c>intValue</c>, <c>floatValue</c>, and <c>doubleValue</c>.
+                However, and this is a big however, it is important to remember that if you specify <c>Number</c> as the type of a particular parameter then the Java compiler will <em>only let you use the methods of a</em> <c>Number</c>: <c>longValue</c>, <c>intValue</c>, <c>floatValue</c>, and <c>doubleValue</c>.
             </p>
 
             <p>
@@ -739,7 +739,7 @@ public void test(Number a, Number b) {
 
             <p>
                 The Java compiler would give an error because <c>add</c> is not a defined method of the <c>Number</c> class.
-                You will <term>still get this error</term> even if all your code that calls this <c>test</c> method passes two <c>Fractions</c> as parameters (remember that <c>Fraction</c> does implement <c>add</c>).
+                You will <em>still get this error</em> even if all your code that calls this <c>test</c> method passes two <c>Fractions</c> as parameters (remember that <c>Fraction</c> does implement <c>add</c>).
             </p>
         </subsection>
     </section>
@@ -748,7 +748,6 @@ public void test(Number a, Number b) {
         <title>Interfaces</title>
 
         <p>
-            <idx><c>Comparable</c></idx>
             <idx>single inheritance</idx>
             Lets turn our attention to making a list of fractions sortable by the standard Java sorting method <c>Collections.sort</c>.
             In Python, we would just need to implement the <c>__cmp__</c> method.
