@@ -34,7 +34,7 @@
     as <m>n \times (n-1)!</m>.
 </p>
         <p>
-            Here is a Python implementation of factorial using just one function:
+            <xref ref="factorial-python-function" text="type-global"/> is the Python implementation of the factorial function. It checks for negative numbers, defines the base case for 0! and 1!, and implements the recursive step.
         </p>
         <listing xml:id="factorial-python-function">
         <program interactive="activecode" language="python">
@@ -60,6 +60,10 @@ print(str(number) + "! is " + str(factorial(number)))
         <p>
             Many Python programs organize related functions into classes. The same factorial function can be placed inside a class as a method instead of as a function. When this is done, you need to create an instance of the class in order to call the method. Below, we create the class <c>MathTools</c> with a method <c>factorial</c>, and we call it from the <c>main</c> function.
         </p>
+        <p>
+            <xref ref="factorial-python-class" text="type-global"/> is the Python implementation of the factorial function as a method within a class. It maintains the same logic as the previous function but is now encapsulated within a class structure.
+        </p>
+
         <listing xml:id="factorial-python-class">
         <program interactive="activecode" language="python">
             <code>
@@ -90,7 +94,7 @@ main()
            See if you can spot the differences in the Java version below.
         </p>
         <p>
-            Here is the equivalent Java code:
+            <xref ref="factorial-java-class" text="type-global"/> is the Java implementation of the factorial function. It follows the same logic as the Python version but adapts to Java's syntax and type system.
         </p>
         <listing xml:id="factorial-java-class">
         <program interactive="activecode" language="java">
