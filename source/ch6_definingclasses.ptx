@@ -215,23 +215,26 @@ public void setDenominator(Integer denominator) { // setter method
     <section xml:id="writing-a-constructor">
         <title>Writing a constructor</title>
 
-        <p><idx><h>constructor</h></idx>
+        <p>
+            <idx>constructor</idx>
+
             Once you have identified the instance variables for your class the next thing to consider is the constructor.
             In Java, <term>constructors</term> have the same name as the class and are declared public.
             They are declared without a return type.
             So any method that is named the same as the class and has no return type is a constructor.
-            Our constructor will take two parameters: the numerator and the denominator.
+            Our constructor will take two parameters: the numerator and the denominator. <xref ref="java-fraction-constructor" text="type-global"/> shows the constructor for the <c>Fraction</c> class.
         </p>
 
-
-        <program xml:id="java-fraction-constructor" language="java">
+        <listing xml:id="java-fraction-constructor">
+        <program interactive="activecode" language="java">
             <code>
 public Fraction(Integer top, Integer bottom) {
-    num = top;
+    num = top; // notice the use of num instead of top
     den = bottom;
 }
             </code>
         </program>
+        </listing>
 
         <p>
             <idx><c>this</c></idx>
@@ -241,18 +244,19 @@ public Fraction(Integer top, Integer bottom) {
             This allows the Java compiler to do the work of dereferencing the current Java object.
             Java does provide a special variable called <c>this</c> that works like the <c>self</c> variable.
             In Java, <c>this</c> is typically only used when it is needed to differentiate between a parameter or local variable and an instance variable.
-            For example this alternate definition of the the Fraction constructor uses <c>this</c> to differentiate between parameters and instance variables.
+            For example,<xref ref="java-fraction-constructor" text="type-global"/> shows an alternate definition of the the Fraction constructor that uses <c>this</c> to differentiate between parameters and instance variables.
         </p>
 
-
-        <program xml:id="java-fraction-class-this" language="java">
+        <listing xml:id="java-fraction-class-this">
+        <program interactive="activecode" language="java">
             <code>
 public Fraction(Integer num, Integer den) {
-    this.num = num;
+    this.num = num; // notice how we use this.num instead of num
     this.den = den;
 }
             </code>
         </program>
+        </listing>
     </section>
 
     <section xml:id="methods">
@@ -297,11 +301,11 @@ public Fraction(Integer num, Integer den) {
                 However, if you reassign the parameter to a completely new object inside the method (e.g., <c>otherFrac = new Fraction(0,1);</c>), it would <em>not</em> affect the original variable outside the method, because you are only changing the local copy of the reference.
             </p>
             <p>
-                Let&#x2019;s begin by implementing addition in Java:
+                <xref ref="java-fraction-class-addition-initial" text="type-global"/> shows the first part of the Fraction class definition.
             </p>
 
-
-            <program xml:id="java-fraction-class-addition" language="java">
+            <listing xml:id="java-fraction-class-addition-initial">
+            <program> 
                 <code>
 public Fraction add(Fraction otherFrac) { 
     Integer newNum = otherFrac.getDenominator() * this.numerator +
@@ -312,6 +316,7 @@ public Fraction add(Fraction otherFrac) {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 First you will notice that the <c>add</c> method is declared as <c>public Fraction</c> The <c>public</c> part means that any other method may call the <c>add</c> method.
@@ -321,11 +326,11 @@ public Fraction add(Fraction otherFrac) {
             <p>
                 Second, you will notice that the method makes use of the <c>this</c> variable.
                 In this method, <c>this</c> is not necessary, because there is no ambiguity about the <c>numerator</c> and <c>denominator</c> variables.
-                So the following version of the code is equivalent:
+                <xref ref="java-fraction-class-addition-equivalent" text="type-global"/> is an equivalent version of <xref ref="java-fraction-class-addition-initial" text="type-global"/>.
             </p>
 
-
-            <program xml:id="java-fraction-class-addition2" language="java">
+            <listing xml:id="java-fraction-class-addition-equivalent">
+            <program>
                 <code>
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator() * numerator +
@@ -336,6 +341,7 @@ public Fraction add(Fraction otherFrac) {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 The addition takes place by multiplying each numerator by the opposite denominator before adding.
@@ -382,11 +388,11 @@ public Fraction add(Fraction otherFrac) {
                 To solve the problem of adding an <c>Integer</c> and a <c>Fraction</c> in Java we will overload both the constructor and the <c>add</c> method.
                 We will overload the constructor so that if it only receives a single <c>Integer</c> it will convert the <c>Integer</c> into a <c>Fraction</c>.
                 We will also overload the <c>add</c> method so that if it receives an <c>Integer</c> as a parameter it will first construct a <c>Fraction</c> from that integer and then add the two <c>Fractions</c> together.
-                The new methods that accomplish this task are as follows:
+                <xref ref="java-method-overloading" text="type-global"/> shows the new methods that accomplish this task.
             </p>
 
-
-            <program xml:id="java-method-overloading" language="java">
+            <listing xml:id="java-method-overloading">
+            <program>
                 <code>
 public Fraction(Integer num) { 
     this.numerator = num; // set the numerator to the Integer
@@ -397,6 +403,7 @@ public Fraction add(Integer other) { // overload the add method when the paramet
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 Notice that the overloading approach can provide us with a certain elegance to our code.
@@ -405,12 +412,12 @@ public Fraction add(Integer other) { // overload the add method when the paramet
             </p>
 
             <p>
-                Our full <c>Fraction</c> class to this point would look like the following.
+                Our full <c>Fraction</c> class to this point would look <xref ref="java-full-fraction-class" text="type-global"/>.
                 You should compile and run the program to see what happens.
             </p>
 
-
-            <program xml:id="java-full-fraction-class" interactive="activecode" language="java">
+            <listing xml:id="java-full-fraction-class">
+            <program interactive="activecode" language="java">
                 <code>
 public class Fraction {
     private Integer numerator;
@@ -454,6 +461,8 @@ public class Fraction {
 }
                 </code> <tests> </tests>
             </program>
+            </listing>
+
         </subsection>
     </section>
 
