@@ -238,6 +238,7 @@ def main():
 main()
         </code>
     </program>
+    </listing>
     
     <p><idx>separation of concerns</idx>
         The key insight here is called the <term>separation of concerns</term>. The public <c>sum_array</c> method provides a user-friendly interface—callers just pass an array and get the sum. Users don't need to know about indexes or how the recursion works internally. The private <c>_sum_helper</c> method handles the recursive logic with the extra parameter needed to track progress through the array.
