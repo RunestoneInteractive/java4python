@@ -879,8 +879,12 @@ public class Student {
  We have already discussed the most common static method of all, <c>main</c>. However in our <c>Fraction</c> class we also implemented a method to calculate the greatest common divisor for two fractions (<c>gdc</c>). There is no reason for this method to be a member method since it takes two <c>Integer</c> values as its parameters. Therefore we declare the method to be a static method of the class. Furthermore, since we are only going to use this <c>gcd</c> method for our own purposes we can make it <c>private</c>. 
         </p>
 
+        <p>
+                    <xref ref="java-gcd-helper-method" text="type-global"/> shows the implementation of the static gcd helper method in Java.
+                </p>
 
-        <program  xml:id="java-gcd"  language="java">
+        <listing xml:id="java-gcd-helper-method">
+        <program interactive="activecode" language="java">
             <code>
 private static Integer gcd(Integer m, Integer n) {
     while (m % n != 0) {
@@ -893,6 +897,7 @@ private static Integer gcd(Integer m, Integer n) {
 }
             </code>
         </program>
+        </listing>
     </section>
 
     <section xml:id="full-implementation-of-the-fraction-class">
