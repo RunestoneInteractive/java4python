@@ -217,6 +217,7 @@ public void setDenominator(Integer denominator) { // setter method
 
         <p>
             <idx>constructor</idx>
+
             Once you have identified the instance variables for your class the next thing to consider is the constructor.
             In Java, <term>constructors</term> have the same name as the class and are declared public.
             They are declared without a return type.
@@ -281,8 +282,8 @@ public Fraction(Integer num, Integer den) {
                     <li>
                         <p>
                             <idx>pass-by-value</idx>
-                            <idx>value of the reference</idx>
-                            <term>Java is strictly pass-by-value.</term> For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <em><term>value of the reference</term></em> (the memory address) is passed.
+                       
+                            Java is strictly <term>pass-by-value</term>. For primitive types (like <c>int</c>), a copy of the value is passed. For object types (like our <c>Fraction</c>), a copy of the <term>reference</term>(Namely, the memory address) is passed.
                         </p>
                     </li>
                     <li>
@@ -470,15 +471,16 @@ public class Fraction {
 
         <introduction>
             <p>
- If you ran the program above you probably noticed that the output is not very satisfying. Chances are your output looked something like this: 
+ If you ran the program above you probably noticed that the output is not very satisfying. Chances are your output looked something like <xref ref="java-no-friendly-output" text="type-global"/>.
             </p>
 
-
-            <program xml:id="java-no-friendly-output" language="java">
+            <listing xml:id="java-no-friendly-output">
+            <program language="java">
                 <code>
 Fraction@6ff3c5b5
                 </code>
             </program>
+            </listing>
 
             <p>
                 The reason is that we have not yet provided a friendly string representation for our <c>Fraction</c> objects.
@@ -495,7 +497,7 @@ Fraction@6ff3c5b5
             <p>
                 <idx><c>toString</c></idx>
                 In Java, the equivalent of <c>__str__</c> is the <c>toString</c> method.
-                Every object in Java already has a <c>toString</c> method defined for it because every class in Java automatically inherits from the <c>Object</c> class.
+                Every object in Java already has a <term> <c>toString</c> method</term> defined for it because every class in Java automatically inherits from the <c>Object</c> class.
                 The <c>Object</c> class provides default implementations for the following methods.
             </p>
 
@@ -559,52 +561,55 @@ Fraction@6ff3c5b5
 
             <p>
                 We are not interested in most of the methods on that list, and many Java programmers live happy and productive lives without knowing much about most of the methods on that list.
-                However, to make our output nicer we will implement the <c>toString</c> method for the <c>Fraction</c> class.
-                A simple version of the method is provided below.
+                However, to make our output nicer we will implement the <c>toString</c> method for the <c>Fraction</c> class. <xref ref="java-tostring" text="type-global"/> shows a simple version of the method.
             </p>
 
-
-            <program xml:id="java-tostring" language="java">
+            <listing xml:id="java-tostring">
+            <program language="java">
                 <code>
 public String toString() {
     return numerator.toString() + "/" + denominator.toString();
 }
                 </code>
             </program>
+            </listing>
 
             <p>
+                <idx><c>equals</c></idx>
                 The other important class for us to implement from the list of methods inherited from <c>Object</c> is the <c>equals</c> method.
                 In Java, when two objects are compared using the <c>==</c> operator they are tested to see if they are exactly the same object (that is, do the two objects occupy the same exact space in the computer&#x2019;s memory?).
                 This is also the default behavior of the <c>equals</c> method provided by <c>Object</c>.
                 The <c>equals</c> method allows us to decide if two objects are equal by looking at their instance variables.
-                However it is important to remember that since Java does not have operator overloading <term>if you want to use your</term> <c>equals</c> <term>method you must call it directly</term>.
+                However it is important to remember that since Java does not have operator overloading <em>if you want to use your</em> <c>equals</c> <em>method you must call it directly</em>.
                 Therefore once you write your own <c>equals</c> method:
             </p>
 
-
-            <program xml:id="java-class-equalqqual" language="java">
+            <listing xml:id="java-class-equal-equal">
+            <program>
                 <code>
 object1 == object2
                 </code>
             </program>
+            </listing>
 
             <p>
-                is NOT the same as:
+                <xref ref="java-class-equal-equal" text="type-global"/> is NOT the same as <xref ref="java-class-dot-equals" text="type-global"/>.
             </p>
 
-
-            <program xml:id="java-class-dot-equals" language="java">
+            <listing xml:id="java-class-dot-equals">
+            <program>
                 <code>
 object1.equals(object2)
                 </code>
             </program>
+            </listing>
 
             <p>
-                Here is an <c>equals</c> method for the <c>Fraction</c> class:
+                <xref ref="java-fraction-equals" text="type-global"/> is an <c>equals</c> method for the <c>Fraction</c> class.
             </p>
 
-
-            <program xml:id="java-fraction-equals" language="java">
+            <listing xml:id="java-fraction-equals">
+            <program language="java">
                 <code>
 public boolean equals(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
@@ -616,6 +621,7 @@ public boolean equals(Fraction other) {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 One important thing to remember about <c>equals</c> is that it only checks to see if two objects are equal &#x2013; it does not have any notion of less than or greater than.
@@ -634,26 +640,27 @@ public boolean equals(Fraction other) {
                 If you look at the documentation for <c>Integer</c> you will see that <c>Integer</c>&#x2019;s parent class is <c>Number</c>.
                 Number is an <term>abstract class</term> that specifies several methods that all of its children must implement.
                 In Java an abstract class is more than just a placeholder for common methods.
-                In Java an abstract class has the power to specify certain methods that all of its children <term>must</term> implement.
+                In Java an abstract class has the power to specify certain methods that all of its children <em>must</em> implement.
                 You can trace this power back to the strong typing nature of Java.
             </p>
 
             <p>
-                Here is code that makes the <c>Fraction</c> class a child of <c>Number</c>:
+                <xref ref="java-class-extends" text="type-global"/> makes the <c>Fraction</c> class a child of <c>Number</c>.
             </p>
 
-
-            <program xml:id="pjava-extends" language="java">
+            <listing xml:id="java-class-extends">    
+            <program>
                 <code>
 public class Fraction extends Number {
     ...
 }
                 </code>
             </program>
+            </listing>
 
             <p>
-                <idx><c>extends</c></idx>
-                The keyword <c>extends</c> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
+                <idx><c>extending a class</c></idx>
+                The keyword <term><c>extends</c></term> tells the compiler that the class <c>Fraction</c> extends, or adds new functionality to the <c>Number</c> class.
                 A child class always extends its parent.
             </p>
 
@@ -690,11 +697,11 @@ public class Fraction extends Number {
             </p>
 
             <p>
-                This really isn&#x2019;t much work for us to implement these methods, as all we have to do is some type conversion and some division:
+                This really isn&#x2019;t much work for us to implement these methods, as all we have to do is some type conversion and some division as shown in <xref ref="java-object-type-conversions" text="type-global"/>.
             </p>
 
-
-            <program xml:id="java-object-type-conversions" language="java">
+            <listing xml:id="java-object-type-conversions">
+            <program language="java">
                 <code>
 public double doubleValue() {
     return numerator.doubleValue() / denominator.doubleValue();
@@ -710,6 +717,7 @@ public long longValue() {
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 <idx>is-a</idx>
@@ -721,25 +729,26 @@ public long longValue() {
             </p>
 
             <p>
-                However, and this is a big however, it is important to remember that if you specify <c>Number</c> as the type of a particular parameter then the Java compiler will <term>only let you use the methods of a</term> <c>Number</c>: <c>longValue</c>, <c>intValue</c>, <c>floatValue</c>, and <c>doubleValue</c>.
+                However, and this is a big however, it is important to remember that if you specify <c>Number</c> as the type of a particular parameter then the Java compiler will <em>only let you use the methods of a</em> <c>Number</c>: <c>longValue</c>, <c>intValue</c>, <c>floatValue</c>, and <c>doubleValue</c>.
             </p>
 
             <p>
-                Suppose you try to define a method as follows:
+                Suppose you try to define a method as <xref ref="java-ugly-add-method" text="type-global"/>.
             </p>
 
-
-            <program xml:id="java-ugly-add-method" language="java">
+            <listing xml:id="java-ugly-add-method">
+            <program language="java">
                 <code>
 public void test(Number a, Number b) {
     a.add(b);
 }
                 </code>
             </program>
+            </listing>
 
             <p>
                 The Java compiler would give an error because <c>add</c> is not a defined method of the <c>Number</c> class.
-                You will <term>still get this error</term> even if all your code that calls this <c>test</c> method passes two <c>Fractions</c> as parameters (remember that <c>Fraction</c> does implement <c>add</c>).
+                You will <em>still get this error</em> even if all your code that calls this <c>test</c> method passes two <c>Fractions</c> as parameters (remember that <c>Fraction</c> does implement <c>add</c>).
             </p>
         </subsection>
     </section>
@@ -748,7 +757,6 @@ public void test(Number a, Number b) {
         <title>Interfaces</title>
 
         <p>
-            <idx><c>Comparable</c></idx>
             <idx>single inheritance</idx>
             Lets turn our attention to making a list of fractions sortable by the standard Java sorting method <c>Collections.sort</c>.
             In Python, we would just need to implement the <c>__cmp__</c> method.
