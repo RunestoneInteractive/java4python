@@ -922,11 +922,11 @@ private static Integer gcd(Integer m, Integer n) {
         <title>Full Implementation of the Fraction Class</title>
 
         <p>
-            Here is a final version of the <c>Fraction</c> class in Java, which includes all the features we discussed:
+            <xref ref="java-final-fraction-class" text="type-global"/> shows a final version of the <c>Fraction</c> class in Java, which includes all the features we discussed:
         </p>
 
 
-        <program  xml:id="java-final-fraction-class"  interactive="activecode" language="java">
+        <listing  xml:id="java-final-fraction-class"> <program interactive="activecode" language="java">
             <code>
 import java.util.ArrayList;
 import java.util.Collections;
@@ -1020,6 +1020,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
 }
             </code> <tests> </tests>
         </program>
+        </listing>
     </section>
     
 <section xml:id="java_classes_summary">
