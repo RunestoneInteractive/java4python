@@ -165,6 +165,8 @@ public class CreateFile {
         <p>
             Consider the following Python code example that reads each line of the file and prints it to the console.
         </p>
+        <data xml:id="myfile-read">
+            <title>Data file for reading example</title>
         <datafile label="myfile-read" filename="myfile.txt" xml:id= "myfile-read" editable="no">
                 <pre>
                     1
@@ -177,8 +179,9 @@ public class CreateFile {
                     8
                 </pre>
             </datafile>
-
-        <program xml:id="file-read-python" interactive="activecode" language="python" add-files="myfile-read">
+        </data>
+        <listing xml:id="file-read-python">
+        <program interactive="activecode" language="python" add-files="myfile-read">
             <code>
                 filename = "myfile.txt"
                 try:
@@ -192,12 +195,14 @@ public class CreateFile {
                     print("file could not be opened")
             </code>
         </program>
+        </listing>
 
         <p>
             The following Java code functions very similarly to the previous Python. The main difference here is that unlike Python, in Java we use the <c>Scanner</c> object to iterate through and read lines in the file. You will notice that the structure of the Java code is still similar to the Python; Both use a try and catch statement to read the file and catch any errors.
         </p>
 
-        <program xml:id="file-read-java" interactive="activecode"  language="java" add-files= "myfile-read">
+        <listing xml:id="file-read-java">
+        <program interactive="activecode"  language="java" add-files= "myfile-read">
             <code>
             import java.io.File;
             import java.io.FileNotFoundException;
@@ -218,6 +223,7 @@ public class CreateFile {
             }
             </code> 
         </program>
+        </listing>
         <p>
             You may have noticed that there are some new methods you haven't seen yet. The <c>hasNextLine()</c> method checks if there is a next line in the file, and returns <c>false</c> if there isn't. This method allows us to iterate over every line till there is no next line. The <c>nextLine()</c> method of the Scanner object returns the next line in the file as a string.
         </p>
