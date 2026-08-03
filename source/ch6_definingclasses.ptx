@@ -820,7 +820,7 @@ public int compareTo(Fraction other) {
             Suppose that you wanted to write a Student class so that the class could keep track of the number of students it had created.
             Although you could do this with a global counter variable that is an ugly solution.
             The right way to do it is to use a <c>static</c> variable.
-            In Python, we could do this as follows:
+            <xref ref="python-static-member-variable" text="The following Python code"/> shows how to do this in Python.
         </p>
 
         <listing xml:id="python-static-member-variable">    
@@ -842,7 +842,7 @@ main()
         </listing>
 
         <p>
- In Java, we would write this same example using a <c>static</c> declaration. 
+ <xref ref="java-static-member-variable" text="The following Java code"/> shows how to do this in Java. 
         </p>
 
         <listing xml:id="java-static-member-variable">  
