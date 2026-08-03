@@ -167,7 +167,7 @@ public class CreateFile {
         </p>
         <data xml:id="myfile-read">
             <title>Data file for reading example</title>
-        <datafile label="myfile-read" filename="myfile.txt" xml:id= "myfile-read" editable="no">
+        <datafile label="myfile-read" filename="myfile.txt" editable="no">
                 <pre>
                     1
                     2
