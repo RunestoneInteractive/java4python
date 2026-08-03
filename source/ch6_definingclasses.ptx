@@ -839,10 +839,10 @@ class Student:
     def __init__(self, id, name): 
         self.id = id
         self.name = name
-        Student.numStudents = Student.numStudents + 1 # increment the static variable
+        Student.numStudents = Student.numStudents + 1 # this is a static variable, that can be accessed without the self prefix
 def main():
     for i in range(10):
-        s = Student(i,"Student-"+str(i)) // create a new student
+        s = Student(i,"Student-"+str(i)) # create a new Student object
     print('Number of students:', Student.numStudents)
 main()
             </code> <tests> </tests>
