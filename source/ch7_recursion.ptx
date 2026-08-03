@@ -321,10 +321,11 @@ public class ArrayProcessor {
         </listing>
 
         <p>
-            The following Java code demonstrates a similar situation, where a method calls itself indefinitely without a base case, leading to a <c>StackOverflowError</c>.
+            The following Java code in <xref ref="java-stack-overflow" text="type-global"/> demonstrates a similar situation, where a method calls itself indefinitely without a base case, leading to a <c>StackOverflowError</c>.
         </p>
-        <program xml:id="java-stack-overflow" interactive="activecode" language="java">
-            <code>
+        <listing xml:id="java-stack-overflow">
+            <program interactive="activecode" language="java">
+                <code>
                 public class Crash {
                     public static void causeStackOverflow() {
                     // The line below will start the infinite recursion.
@@ -342,6 +343,7 @@ public class ArrayProcessor {
                 }
             </code>
         </program>
+        </listing>
     </section>
 
     <section xml:id="recursion_summary">
