@@ -849,13 +849,14 @@ public int compareTo(Fraction other) { // compare this fraction with another fra
             <code>
 class Student:
     numStudents = 0
-    def __init__(self, id, name):
+    def __init__(self, id, name): 
         self.id = id
         self.name = name
-        Student.numStudents = Student.numStudents + 1
+        # this is a static variable, that can be accessed without the self prefix
+        Student.numStudents = Student.numStudents + 1 
 def main():
     for i in range(10):
-        s = Student(i,"Student-"+str(i))
+        s = Student(i,"Student-"+str(i)) # create a new Student object
     print('Number of students:', Student.numStudents)
 main()
             </code> <tests> </tests>
@@ -870,13 +871,13 @@ main()
         <program  interactive="activecode" language="java">
             <code>
 public class Student {
-    public static Integer numStudents = 0;
+    public static Integer numStudents = 0; // static member variable, shared by all instances of the class
     private int id;
     private String name;
     public Student(Integer id, String name) {
         this.id = id;
         this.name = name;
-        numStudents = numStudents + 1;
+        numStudents = numStudents + 1; // a static variable, that can be accessed without the Student prefix
     }
     public static void main(String[] args) {
         for(Integer i = 0; i &lt; 10; i++) {
