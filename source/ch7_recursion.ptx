@@ -36,7 +36,8 @@
         <p>
             Here is a Python implementation of factorial using just one function:
         </p>
-        <program xml:id="factorial-python-function" interactive="activecode" language="python">
+        <listing xml:id="factorial-python-function">
+        <program interactive="activecode" language="python">
             <code>
 def factorial(n):
     # Check for negative numbers
@@ -54,11 +55,13 @@ print(str(number) + "! is " + str(factorial(number)))
 
      </code>
         </program>
+        </listing>
         
         <p>
             Many Python programs organize related functions into classes. The same factorial function can be placed inside a class as a method instead of as a function. When this is done, you need to create an instance of the class in order to call the method. Below, we create the class <c>MathTools</c> with a method <c>factorial</c>, and we call it from the <c>main</c> function.
         </p>
-        <program xml:id="factorial-python-class" interactive="activecode" language="python">
+        <listing xml:id="factorial-python-class">
+        <program interactive="activecode" language="python">
             <code>
 class MTools:
     def factorial(self, n):
@@ -81,6 +84,7 @@ def main():
 main()
             </code>
         </program>
+        </listing>
         
         <p>
            See if you can spot the differences in the Java version below.
@@ -88,7 +92,8 @@ main()
         <p>
             Here is the equivalent Java code:
         </p>
-        <program xml:id="factorial-java-class" interactive="activecode" language="java">
+        <listing xml:id="factorial-java-class">
+        <program interactive="activecode" language="java">
             <code>
 public class MTools {
     public static int factorial(int n) {
@@ -112,6 +117,7 @@ public class MTools {
 }
             </code>
         </program>
+        </listing>
         <p>
            Notice the key differences from Python: instead of <c>def factorial(n):</c>, Java uses <c>public static int factorial(int n)</c> which declares the method's visibility as <c>public</c>, that it belongs to the class rather than an instance (hence, <c>static</c>), the return type as integer, and the parameter type also as integer. The recursive logic—base case and recursive step—remains identical to Python, and, of course, all code blocks use curly braces <c>{}</c> instead of indentation.
         </p>
