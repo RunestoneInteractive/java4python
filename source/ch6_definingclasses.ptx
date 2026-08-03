@@ -576,7 +576,7 @@ public String toString() {
 
             <program xml:id="java-class-equalqqual" language="java">
                 <code>
-object1 == object2
+object1 == object2 // this checks to see if the two objects are the same object in memory
                 </code>
             </program>
 
@@ -587,7 +587,7 @@ object1 == object2
 
             <program xml:id="java-class-dot-equals" language="java">
                 <code>
-object1.equals(object2)
+object1.equals(object2) // this checks to see if the two objects are equal by looking at their instance variables
                 </code>
             </program>
 
@@ -598,7 +598,7 @@ object1.equals(object2)
 
             <program xml:id="java-fraction-equals" language="java">
                 <code>
-public boolean equals(Fraction other) {
+public boolean equals(Fraction other) { // check if this fraction is equal to another fraction
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
     if (num1 == num2)
@@ -637,7 +637,7 @@ public boolean equals(Fraction other) {
 
             <program xml:id="pjava-extends" language="java">
                 <code>
-public class Fraction extends Number {
+public class Fraction extends Number { // fraction class is a child of Number
     ...
 }
                 </code>
@@ -790,7 +790,7 @@ iff y.compareTo(x) throws an exception.)
 
         <program  xml:id="java-make-comparable"  language="java">
             <code>
-public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
+public class Fraction extends Number implements Comparable&lt;Fraction&gt; { // fraction class is a child of Number and implements the Comparable interface
     ...
 }
             </code>
@@ -804,7 +804,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
 
         <program  xml:id="java-comparable2"  language="java">
             <code>
-public int compareTo(Fraction other) {
+public int compareTo(Fraction other) { // compare this fraction with another fraction
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
     return num1 - num2;
