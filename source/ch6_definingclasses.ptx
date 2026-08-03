@@ -909,7 +909,7 @@ public class Student {
         <listing xml:id="java-gcd-helper-method">
         <program interactive="activecode" language="java">
             <code>
-private static Integer gcd(Integer m, Integer n) {
+private static Integer gcd(Integer m, Integer n) { // static method to compute the greatest common divisor of two integers
     while (m % n != 0) {
         Integer oldm = m;
         Integer oldn = n;
