@@ -823,8 +823,8 @@ public int compareTo(Fraction other) {
             In Python, we could do this as follows:
         </p>
 
-
-        <program  xml:id="python-static" interactive="activecode" language="python">
+        <listing xml:id="python-static-member-variable">    
+        <program interactive="activecode" language="python">
             <code>
 class Student:
     numStudents = 0
@@ -839,13 +839,14 @@ def main():
 main()
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
  In Java, we would write this same example using a <c>static</c> declaration. 
         </p>
 
-
-        <program  xml:id="java-static"  interactive="activecode" language="java">
+        <listing xml:id="java-static-member-variable">  
+        <program  interactive="activecode" language="java">
             <code>
 public class Student {
     public static Integer numStudents = 0;
@@ -865,6 +866,7 @@ public class Student {
 }
             </code> <tests> </tests>
         </program>
+        </listing>
 
         <p>
             <idx>static member variable</idx>
