@@ -73,7 +73,7 @@
 
 
         <p>
-            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>, and we will call our class <c>CreateFileObject</c>.
+            We will now create a <c>File</c> object. It is important to create a meaningful name for the <c>File</c> object. We will call ours <c>myFile</c>, and we will call our class <c>CreateFileObject</c>. <xref ref="create-file-object-java" text="text-global"/> shows the code to create a <c>File</c> object in Java. 
         </p>
         <listing xml:id="create-file-object-java">
         <program interactive="activecode" language="java" add-files="myfile-created">
@@ -104,7 +104,7 @@ public class CreateFile {
         </p>
 
         <p>
-            First, lets look at the equivalent Python code:
+            <xref ref="create-file-python" text="text-global"/> shows the equivalent code to create a file in Python.
         </p>
         <listing xml:id="create-file-python">
         <program interactive="activecode" language="python">
@@ -124,7 +124,7 @@ public class CreateFile {
         </listing>
 
         <p>
-            Now, let's look at Java code that accomplishes the same task:
+            <xref ref="create-file-java" text="text-global"/> shows the equivalent code to create a file in Java.
         </p>
         <listing xml:id="create-file-java">
         <program interactive="activecode" language="java">
