@@ -14,24 +14,24 @@
         </p>
 
 <p>
-    Let's take the familiar factorial function, which calculates <m>n!</m> (read as "n factorial"), so for example 5! = 5 × 4 × 3 × 2 × 1 = 120. Factorial is a classic example of recursion, where the function calls itself with a smaller value until it reaches a base case. 
-    In general, <m>n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1</m>, 
-    or recursively defined as <m>n! = n \times (n-1)!</m> with base cases <m>0! = 1</m> and <m>1! = 1</m>.
+    Let's take the familiar factorial function, which calculates <m>n!</m> (read as "n factorial"), so for example <md> 5! = 5 × 4 × 3 × 2 × 1 = 120.</md> Factorial is a classic example of recursion, where the function calls itself with a smaller value until it reaches a base case. 
+    In general, <md>n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1</md>, 
+    or recursively defined as <md>n! = n \times (n-1)!</md> with base cases <m>0! = 1</m> and <m>1! = 1</m>.
 </p>
 <p>
     You may recall mathematical notation using the symbol <m>\sum</m> (Greek letter sigma) 
     to represent "sum." For example, when we sum all elements in an array, we write 
-    <m>\sum_{i=0}^{n-1} a_i</m>, where <m>i=0</m> below the symbol indicates we start at index 0, 
+    <md>\sum_{i=0}^{n-1} a_i</md>, where <m>i=0</m> below the symbol indicates we start at index 0, 
     <m>n-1</m> above it means we end at index <m>n-1</m>, and <m>a_i</m> represents the array 
-    element at each index <m>i</m>. Similarly, <m>\sum_{i=1}^{n} i</m> means "sum all integers 
+    element at each index <m>i</m>. Similarly, <md>\sum_{i=1}^{n} i</md> means "sum all integers 
     <m>i</m> from 1 to <m>n</m>."
 </p>
 <p>
     Factorial involves multiplication rather than addition, so we use the product symbol 
-    <m>\prod</m> (Greek letter pi): <m>n! = \prod_{i=1}^{n} i</m>, which means "multiply 
+    <m>\prod</m> (Greek letter pi): <md>n! = \prod_{i=1}^{n} i</md>, which means "multiply 
     all integers <m>i</m> from 1 to <m>n</m>." Both summation and factorial can be expressed 
     recursively—summation as the first element plus the sum of remaining elements, and factorial 
-    as <m>n \times (n-1)!</m>.
+    as <md>n \times (n-1)!</md>.
 </p>
         <p>
             Here is a Python implementation of factorial using just one function:
