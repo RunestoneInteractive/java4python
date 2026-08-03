@@ -216,6 +216,7 @@ public void setDenominator(Integer denominator) { // setter method
         <title>Writing a constructor</title>
 
         <p>
+            <idx>constructor</idx>
             Once you have identified the instance variables for your class the next thing to consider is the constructor.
             In Java, <term>constructors</term> have the same name as the class and are declared public.
             They are declared without a return type.
@@ -227,7 +228,7 @@ public void setDenominator(Integer denominator) { // setter method
         <program interactive="activecode" language="java">
             <code>
 public Fraction(Integer top, Integer bottom) {
-    num = top;
+    num = top; // notice the use of num instead of top
     den = bottom;
 }
             </code>
@@ -249,7 +250,7 @@ public Fraction(Integer top, Integer bottom) {
         <program interactive="activecode" language="java">
             <code>
 public Fraction(Integer num, Integer den) {
-    this.num = num;
+    this.num = num; // notice how we use this.num instead of num
     this.den = den;
 }
             </code>
