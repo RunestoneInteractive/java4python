@@ -129,9 +129,10 @@ public class MTools {
 
     
     <p>
-        First, let's see what happens if we try to write a recursive array sum function <em>without</em> using a helper method. In this approach, the user must provide the starting index, which is awkward and exposes implementation details:
+        First, let's see what happens if we try to write a recursive array sum function <em>without</em> using a helper method. In this approach, the user must provide the starting index, which is awkward and exposes implementation details. <xref ref="array-sum-python-no-helper" text="type-global"/> shows a Python version.
     </p>
-    <program xml:id="array-sum-python-no-helper" interactive="activecode" language="python">
+    <listing xml:id="array-sum-python-no-helper">
+    <program interactive="activecode" language="python">
         <code>
 class ArrayProcessor:
     def sum_array(self, arr, index):
@@ -156,11 +157,13 @@ def main():
 main()
         </code>
     </program>
+    </listing>
     
     <p>
-        This approach has a significant problem, namely that users must remember to start with index 0. Hence, the method signature is cluttered with an implementation detail, and it's easy to make a mistake by passing the wrong starting index. The same awkward pattern appears in Java:
+        <xref ref="array-sum-python-no-helper" text="type-global"/>'s approach has a significant problem, namely that users must remember to start with index 0. Hence, the method signature is cluttered with an implementation detail, and it's easy to make a mistake by passing the wrong starting index. The same awkward pattern appears in Java as shown in <xref ref="array-sum-java-no-helper" text="type-global"/>.
     </p>
-    <program xml:id="array-sum-java-no-helper" interactive="activecode" language="java">
+    <listing xml:id="array-sum-java-no-helper">
+    <program interactive="activecode" language="java">
         <code>
 public class ArrayProcessor {
     public static int sumArray(int[] arr, int index) {
@@ -182,14 +185,16 @@ public class ArrayProcessor {
 }
         </code>
     </program>
+    </listing>
     
     <p>
         Both versions force users to understand and provide implementation details they shouldn't need to know about. Now let's see how helper methods solve this problem by providing a clean, user-friendly interface. Notice how the public method only requires the array itself, and the hidden recursive logic tracks the current index position.
     </p>
     <p>
-        Here's the improved Python version using a helper method:
+        <xref ref="array-sum-python-with-helper" text="type-global"/> shows the improved Python version using a helper method.
     </p>
-    <program xml:id="array-sum-python-with-helper" interactive="activecode" language="python">
+    <listing xml:id="array-sum-python-with-helper">
+    <program interactive="activecode" language="python">
         <code>
 class ArrayProcessor:
     def sum_array(self, arr):
@@ -229,9 +234,10 @@ main()
     </p>
     
     <p>
-        Now let's see the improved Java version using a helper method:
+        The same helper method pattern can be applied in Java, as shown in <xref ref="array-sum-java-with-helper" text="type-global"/>. The public method <c>sumArray</c> provides a clean interface, while the private helper method <c>sumHelper</c> manages the recursion and index tracking.
     </p>
-    <program xml:id="array-sum-java-with-helper" interactive="activecode" language="java">
+    <listing xml:id="array-sum-java-with-helper">
+    <program interactive="activecode" language="java">
         <code>
 import java.util.Arrays; 
 
@@ -263,6 +269,7 @@ public class ArrayProcessor {
 }
         </code>
     </program>
+    </listing>
     
     <p>
         Compare these improved versions with the earlier problematic ones. Notice how much cleaner the method calls become: <c>processor.sum_array(numbers)</c> in Python and <c>sumArray(numbers)</c> in Java. Users no longer need to worry about providing a starting index or understanding the internal mechanics of the recursion. The helper method pattern creates a clear separation between what users need to know (just pass an array) and the implementation details (tracking the index through recursion).
