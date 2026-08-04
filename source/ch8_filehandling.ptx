@@ -374,7 +374,10 @@ public class CreateFile {
                     
                 </pre>
             </datafile>
-        <program xml:id="file-write-full-java" interactive="activecode" language="java" add-files = "data-file-write-full-java">
+            </data>
+
+        <listing xml:id="file-write-full-java">
+        <program interactive="activecode" language="java" add-files = "data-file-write-full-java">
             <code>
             import java.io.FileWriter;
             import java.io.IOException;
@@ -394,7 +397,8 @@ public class CreateFile {
             }
             </code> 
         </program>
-        </data>
+        </listing>
+        
 
         <note>
             <p>
