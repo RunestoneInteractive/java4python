@@ -451,9 +451,11 @@ public class CreateFile {
             Then if we run the program twice, the contents of <c>myfile.txt</c> would be:
         </p>
 
-        <pre>
+        <listing xml:id="file-write-with-append-output">
+        <program>
             File successfully updated!File successfully updated!
-        </pre>
+        </program>
+        </listing>
 
         <p>
             This doesn't look very good! If we want each additional write to appear on a new line? A simple solution is to use the <c>\n</c> newline character:
@@ -469,11 +471,14 @@ public class CreateFile {
         <p>
             Running the code with the newline character twice will result in the following contents in myfile.txt:
         </p>
-        
-        <pre>
+
+        <listing xml:id="file-write-with-newline-output">
+        <program>
             File successfully updated!
             File successfully updated!
-        </pre>
+        </program>
+        </listing>
+
     </section>
 
     <section xml:id="file-delete">
