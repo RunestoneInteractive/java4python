@@ -46,6 +46,7 @@
             }//End of class
             </code>
         </program>
+        </listing>
         <p>
           In <xref ref="println-debugging" text="type-global"/>, <c>System.out.println()</c> is used inside both <c>main</c> and <c>multiplyByTwo()</c> to trace what values are being passed and returned. This kind of print-based debugging can quickly reveal logic errors, unexpected behavior, or whether a method is even being called. However, overuse of this technique will often take more time than using the debugging tools that are built into your IDE.
         </p>
