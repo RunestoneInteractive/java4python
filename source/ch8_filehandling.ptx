@@ -166,11 +166,11 @@ public class CreateFile {
             Let’s take a look at how we can use Python to understand how read file contents in Java. In order to read files generally you iterate through each line in the file and read the line's content. In Java, you read files in a very similar way, however in Java we will use the <c>Scanner</c> class in order to iterate through the lines.
         </p>
         <p>
-            Consider <xref ref="file-read-python" text="type-global"/> that reads each line of <xref ref="myfile-read" text="type-global"/> and prints it to the console.
+            Consider <xref ref="file-read-python" text="type-global"/> that reads each line of <xref ref="listing-myfile-read" text="type-global"/> and prints it to the console.
         </p>
-        <data xml:id="myfile-read">
+        <data xml:id="listing-myfile-read">
             <title>Data file for reading example</title>
-        <datafile label="myfile-read" filename="myfile.txt" editable="no">
+        <datafile xml:id= "myfile-read" label="myfile-read" filename="myfile.txt" editable="no">
                 <pre>
                     1
                     2
