@@ -23,8 +23,9 @@
         </p>
 
         <p>
-            Consider the following example where we have a method that multiplies a number by two. We can add print statements to help us debug the code:
+            Consider the following example where we have a method that multiplies a number by two. We can add print statements to help us debug the code and verify that the method is being called correctly and returning the expected result as shown below in <xref ref="println-debugging">.
         </p>
+        <listing xml:id="println-debugging" text="type-global"> 
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
             // DebugExample.java
@@ -46,7 +47,7 @@
             </code>
         </program>
         <p>
-          In the example above, <c>System.out.println()</c> is used inside both <c>main</c> and <c>multiplyByTwo()</c> to trace what values are being passed and returned. This kind of print-based debugging can quickly reveal logic errors, unexpected behavior, or whether a method is even being called. However, overuse of this technique will often take more time than using the debugging tools that are built into your IDE.
+          In <xref ref="println-debugging" text="type-global"/>, <c>System.out.println()</c> is used inside both <c>main</c> and <c>multiplyByTwo()</c> to trace what values are being passed and returned. This kind of print-based debugging can quickly reveal logic errors, unexpected behavior, or whether a method is even being called. However, overuse of this technique will often take more time than using the debugging tools that are built into your IDE.
         </p>
         <p>
             Useful tools in the built-in Java debugger can help you step through your code, inspect variables, and evaluate expressions at runtime. Familiarizing yourself with these tools can greatly enhance your debugging efficiency.
