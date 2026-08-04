@@ -449,10 +449,10 @@ public class CreateFile {
         <title>Deleting Files</title>
 
         <p>
-            Lastly, we will take a look at using Java to delete a file. This is pretty straight-forward and follows the structure used to create files. Here is the <c>CreateFile</c> class from before that will be used to create a file that we will soon delete:
+            Lastly, we will take a look at using Java to delete a file. This is pretty straight-forward and follows the structure used to create files. <xref ref="create-file-to-delete-java" text="type-global"/> shows the <c>CreateFile</c> class from before that will be used to create a file that we will soon delete:
         </p>
 
-        <program xml:id="create-file-to-delete-java" interactive="activecode" language="java">
+        <listing xml:id="create-file-to-delete-java"> <program interactive="activecode" language="java">
             <code>
             import java.io.File;
             import java.io.IOException;
@@ -475,15 +475,17 @@ public class CreateFile {
             }
             </code> 
         </program>
+        </listing>
         
 
         <p>
-            And finally, we have Java code that deletes a file. We will call this class <c>DeleteFile</c>:
+            And finally, <xref ref="delete-file-java" text="type-global"/> shows the Java code that deletes a file. We will call this class <c>DeleteFile</c>:
         </p>
 
 
-        <program xml:id="delete-file-java" interactive="activecode" language="java">
-            <code>
+        <listing xml:id="delete-file-java">
+            <program interactive="activecode" language="java">
+                <code>
 import java.io.File;
 import java.io.IOException;
 
@@ -508,7 +510,7 @@ public class DeleteFile {
 
             </code> 
         </program>
-
+        </listing>
         <p>
             Note that this is almost identical to the code within the <c>try</c> block of the <c>CreateFile</c> class that we made earlier. The key difference is the use of the <c>delete()</c> method which will delete the file with the name that was linked to the myFile object. Similar to the <c>createNewFile()</c> method, it will return <c>true</c> if the file exists and can be deleted, and <c>false</c> if the file cannot be deleted. 
         </p>
