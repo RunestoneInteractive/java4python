@@ -242,8 +242,9 @@ public class CreateFile {
         <p>
             Let us create the framework for a class that will write to a file. Let's call this class <c>WriteFile</c>:
         </p>
-        
-        <program xml:id="write-file-class-java" language="java">
+
+        <listing xml:id="write-file-class-java">
+        <program language="java">
             import java.io.File;
             import java.io.FileWriter;
             import java.io.IOException;
@@ -254,39 +255,46 @@ public class CreateFile {
                 }
             }
         </program>
+        </listing>
         
         <p>
             Next, we will create a <c>FileWriter</c> object. Let's call it <c>myWriter</c>. The equivalent Python code to this operation is:
         </p>
-
-        <program xml:id="filerwriter-object-python" language="python">
+        <listing xml:id="filerwriter-object-python">
+        <program language="python">
             with open("myfile.txt", "w") as myWriter:
         </program>
+        </listing>
 
         <p>
             The Java code to create a <c>FileWriter</c> object is:
         </p>
 
-        <program xml:id="filerwriter-object-java" language="java">
+        <listing xml:id="filerwriter-object-java">
+        <program language="java">
             FileWriter myWriter = new FileWriter("myfile.txt");
         </program>
+        </listing>
 
         <p>
             In this next step, we will use the <c>write()</c> method from the FileWriter class. This method will take any data within the parenthesis and write that data to the file selected. The <c>write()</c> method takes most standard data types. First, how this step is completed with Python:
         </p>
-        
-        <program xml:id="write-and-close-python" language="python">
+        <listing xml:id="write-and-close-python">
+        <program language="python">
             my_writer.write("File successfully updated!")
         </program>
+        </listing>
 
         <p>
             And the Java equivalent. This is almost completely identical except for the second line, which is very important!
         </p>
 
-        <program xml:id="write-and-close-java" language="java">
+        <listing xml:id="write-and-close-java">
+        <program language="java">
             myWriter.write("File successfully updated!");
             myWriter.close();
         </program>
+        </listing>
 
         <note>
             <p>
@@ -298,7 +306,8 @@ public class CreateFile {
             Next, we will again add the required try/catch blocks utilizing the <c>IOException</c> class. Just like with creating files, the program will not compile without these crucial additions! We will also add some print statements to inform us of the success of the file write operation. First, a Python example:
         </p>
         
-        <program xml:id="file-try-catch-python" language="python" add-files = "my-file-8-4-2">
+        <listing xml:id="file-try-catch-python">
+        <program language="python" add-files = "my-file-8-4-2">
                 try:
                     with open("myfile.txt", "w") as my_writer:
                         my_writer.write("File successfully updated!")
@@ -308,12 +317,14 @@ public class CreateFile {
                     import traceback
                     traceback.print_exc()
         </program>
+        </listing>
 
         <p>
             And the equivalent Java code:
         </p>
 
-        <program language="java" xml:id="file-try-catch-java">
+        <listing xml:id="file-try-catch-java">
+        <program language="java">
             try {
                 FileWriter myWriter = new FileWriter("myfile.txt");
                 myWriter.write("File successfully updated!");
@@ -324,16 +335,22 @@ public class CreateFile {
                 e.printStackTrace();
             }
         </program>
+        </listing>
 
         <p>
             And that's it! We will add our code to the foundational code for a complete program. First, an example of equivalent Python code:
         </p>
+        <data xml:id="my-file-8-4-2">
+            <title>Data file for writing example</title>
         <datafile label="my-file-8-4-4" filename="myfile.txt" xml:id= "my-file-8-4-4" editable="yes">
                 <pre>
                     
                 </pre>
         </datafile>
-        <program xml:id="file-write-full-python" interactive="activecode" language="python" add-files="my-file-8-4-4">
+        </data>
+
+        <listing xml:id="file-write-full-python">
+        <program interactive="activecode" language="python" add-files="my-file-8-4-4">
             <code>
             try:
                 with open("myfile.txt", "w") as my_writer:
@@ -345,10 +362,13 @@ public class CreateFile {
                 traceback.print_exc()
             </code> 
         </program>
+        </listing>
 
         <p>
             The completed Java code:
         </p>
+        <data xml:id="my-file-8-4-5">
+            <title>Data file for writing example</title>
         <datafile label="my-file-8-4-5" filename="myfile.txt" xml:id= "my-file-8-4-5" editable="yes">
                 <pre>
                     
@@ -374,6 +394,7 @@ public class CreateFile {
             }
             </code> 
         </program>
+        </data>
 
         <note>
             <p>
@@ -385,19 +406,26 @@ public class CreateFile {
             Speaking of overwriting data, what if we want to append text to the end of any text already in <c>myfile.txt</c>? To accomplish this, we can pass a <c>boolean</c> argument along with the file name when creating a new data argument:
         </p>
 
-        <program xml:id="append-true" language="java">
+        <listing xml:id="append-true">
+        <program language="java">
             FileWriter myWriter = new FileWriter("myfile.txt", true); // true enables append mode
         </program>
+        </listing>
 
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already tSext in the document. If we were to update our code to include the <c>boolean</c> argument:
         </p>
-        <datafile label="my-file-8-4-6" filename="myfile" xml:id= "my-file-8-4-6" editable="yes">
+        <data xml:id="my-file-8-4-6">
+            <title>Data file for writing example</title>
+        <datafile label="my-file-8-4-6" filename="myfile" editable="yes">
                 <pre>
                     
                 </pre>
             </datafile>
-        <program xml:id="file-write-with-append" interactive="activecode" language="java" add-files = "my-file-8-4-6">
+        </data>
+
+        <listing xml:id="file-write-with-append">
+        <program interactive="activecode" language="java" add-files = "my-file-8-4-6">
             <code>
             import java.io.FileWriter;
             import java.io.IOException;
@@ -417,6 +445,7 @@ public class CreateFile {
             }
             </code> 
         </program>
+        </listing>
 
         <p>
             Then if we run the program twice, the contents of <c>myfile.txt</c> would be:
@@ -430,15 +459,17 @@ public class CreateFile {
             This doesn't look very good! If we want each additional write to appear on a new line? A simple solution is to use the <c>\n</c> newline character:
         </p>
 
-        <program xml:id="newline" language="java">
+        <listing xml:id="file-write-with-newline">
+        <program  language="java">
             myWriter.write("File successfully updated!\n"); // Added newline character 
             myWriter.close(); 
         </program>
+        </listing>
 
         <p>
             Running the code with the newline character twice will result in the following contents in myfile.txt:
         </p>
-
+        
         <pre>
             File successfully updated!
             File successfully updated!
