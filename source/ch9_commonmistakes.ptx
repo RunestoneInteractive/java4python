@@ -23,9 +23,9 @@
         </p>
 
         <p>
-            Consider the following example where we have a method that multiplies a number by two. We can add print statements to help us debug the code and verify that the method is being called correctly and returning the expected result as shown below in <xref ref="println-debugging">.
+            Consider the following example where we have a method that multiplies a number by two. We can add print statements to help us debug the code and verify that the method is being called correctly and returning the expected result as shown below in <xref ref="println-debugging" text="type-global">.
         </p>
-        <listing xml:id="println-debugging" text="type-global"> 
+        <listing xml:id="println-debugging"> 
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
             // DebugExample.java
