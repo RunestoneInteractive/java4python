@@ -418,6 +418,7 @@ public class CreateFile {
 
         <p>
             Now, when we use <c>write()</c> method like before, the text will be appended if there is already tSext in the document. If we were to update our code to include the <c>boolean</c> argument as shown in <xref ref="file-write-with-append" text="type-global"/>. 
+        </p>
 
         <data xml:id="data-file-write-with-append">
             <title>Data file for writing example</title>
