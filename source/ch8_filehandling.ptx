@@ -208,18 +208,18 @@ public class CreateFile {
         <program interactive="activecode"  language="java" add-files= "myfile-read">
             <code>
             import java.io.File;
-            import java.io.FileNotFoundException;
+            import java.io.FileNotFoundException; // This import is necessary to handle the exception if the file is not found
             import java.util.Scanner;
             public class ReadFile {
                 public static void main (String[] args) {
                     String filename = "myfile.txt";
-                    try (Scanner fileReader = new Scanner(new File(filename))) {
-                        while (fileReader.hasNextLine()) {
+                    try (Scanner fileReader = new Scanner(new File(filename))) { // try to open the file and create a Scanner object
+                        while (fileReader.hasNextLine()) { // while there is a next line in the file
                             String data = fileReader.nextLine();
                             System.out.println(data);
                         }
                     } 
-                    catch (FileNotFoundException e) {
+                    catch (FileNotFoundException e) { // and catch the exception if the file is not found
                         System.out.println("Error: The file '" + filename + "' was not found.");
                     }
                 }
