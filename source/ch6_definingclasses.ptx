@@ -4,6 +4,172 @@
 <chapter xml:id="classes-in-java">
     <title>Classes in Java</title>
 
+
+
+<section xml:id="sec-classes-and-objects">
+    <title>Classes and Objects</title>
+
+    <p>
+        <idx>object-oriented programming</idx> <idx>OOP</idx>
+        Depending on how deep your knowledge of Python and programming in general is, you may or may not be familiar with classes and objects. These two important <term>Object-Oriented Programming</term> (<term>OOP</term>) concepts will briefly be discussed. If you already have a good understanding of classes and objects in Python, this section may be skipped.
+    </p>
+
+    <p>
+        <idx>object</idx>
+        <idx>attribute</idx>
+        <idx>instance variable</idx>
+        <idx>method</idx>
+        <term>Objects</term> in the context of programming are instances of classes. Objects contain <term>attributes</term> (also referred to as <term>instance variables</term>), which are data that describe the object or are associated with the object, and <term>methods</term>, which are special functions used by the object. Methods are typically actions the object can perform, or can be used to make changes to the object's attributes.
+    </p>
+
+    <p>
+        <idx>class</idx>
+        <idx>constructor</idx>
+        <term>Classes</term> can be thought of as being similar to blueprints or a recipe; they hold details of how to create an instance of an object. Classes contain a special method called a <term>constructor</term> that is used to create an instance of an object. Once the object is created, it will use the class definition to define its attributes and call methods.
+    </p>
+
+    <p>
+        The best way to understand classes and objects is to see them in action. Let's define a <c>Dog</c> class in Python:
+    </p>
+
+    <listing xml:id="python-class-example">
+        <program interactive="activecode" language="python">
+            <code>
+        class Dog:
+            """ A simple Dog class definition. """
+            def __init__(self, name, breed, fur_color):
+            # constructor method to create a Dog object
+                self.name = name
+                self.breed = breed
+                self.fur_color = fur_color
+                self.trained = False # dogs are not trained by default
+                print("Dog named " + self.name + " created!")
+
+            def bark(self):
+            # method to make the dog bark
+                print(self.name + " says woof!")
+                
+            def sit(self):
+            # method to make the dog sit
+                if self.trained: # check if the dog has been trained otherwise it will not sit
+                    print(self.name + " sits.")
+                else:
+                    print(self.name + " has not been trained.")
+                    
+            def train(self):
+            # method to train the dog, which will set the trained attribute to True
+                self.trained = True
+            </code>
+        </program>
+    </listing>
+
+    <p>
+        Let's unpack what is going on in <xref ref="python-class-example" text="type-global"/>. The first line is where we declare the class definition and name it <c>Dog</c>. Next, we have a special method called <c>__init__</c>. This <c>__init__</c> method is the constructor and is required for every Python class definition. Within the <c>__init__</c> method, attributes are defined. As you can see, the attributes <c>name</c>, <c>breed</c>, and <c>fur_color</c> must be defined when creating a Dog object using this class definition, but the <c>trained</c> attribute is defined within the constructor and is initialized as <c>False</c>. We can also have the <c>__init__</c> method run any code, such as the print statement informing us that a Dog object was created.
+    </p>
+
+    <p>
+        The next three blocks of code are the class's methods. These include <c>bark(self)</c>, <c>sit(self)</c>, and <c>train(self)</c>. As you can see, the class defines attributes (the variables in the <c>__init__</c> method) and methods for instances of the Dog class.
+    </p>
+
+    <p>
+        <idx><c>self</c></idx>
+        Within each method, and for each attribute, you will notice the use of <term><c>self</c></term>. This is required in Python. <c>self</c> simply indicates that an attribute or method is being used for a specific instance of an object created with a class. 
+    </p>
+
+    <p>
+        Next, we will use this class to create a new <c>Dog</c> object. We will call this new Dog object <c>my_dog</c>:
+    </p>
+    <listing xml:id="python-class-create-object" names="python-class-create-object">
+    <program interactive="activecode" language="python" >
+        <code>
+        class Dog:
+            """ A simple Dog class definition. """
+            def __init__(self, name, breed, fur_color):
+            # constructor method to create a Dog object
+                self.name = name
+                self.breed = breed
+                self.fur_color = fur_color
+                self.trained = False # dogs are not trained by default
+                print("Dog named " + self.name + " created!")
+
+            def bark(self):
+            # method to make the dog bark
+                print(self.name + " says woof!")
+                
+            def sit(self):
+            # method to make the dog sit
+                if self.trained: # check if the dog has been trained otherwise it will not sit
+                    print(self.name + " sits.")
+                else:
+                    print(self.name + " has not been trained.")
+                    
+            def train(self):
+            # method to train the dog, which will set the trained attribute to True
+                self.trained = True
+
+        # Create a Dog object called my_dog
+        my_dog = Dog("Rex", "pug", "brown")
+        </code>
+    </program>
+    </listing>
+    <p>
+        In the final line of code in <xref ref="python-class-create-object" text="type-global"/>, we have created an object called <c>my_dog</c>. We have initialized its attributes, setting <c>name</c> to Rex, <c>breed</c> to pug, and <c>fur_color</c> to brown.
+    </p>
+
+    <p>
+        Now that we have created a <c>Dog</c> object using the class we defined, we can utilize the class's methods: 
+    </p>
+
+    <listing xml:id="python-class-full" names="python-class-full">
+    <program interactive="activecode" language="python">
+        <code>
+        class Dog:
+            """ A simple Dog class definition. """
+            def __init__(self, name, breed, fur_color):
+            # constructor method to create a Dog object
+                self.name = name
+                self.breed = breed
+                self.fur_color = fur_color
+                self.trained = False # dogs are not trained by default
+                print("Dog named " + self.name + " created!")
+
+            def bark(self):
+            # method to make the dog bark
+                print(self.name + " says woof!")
+                
+            def sit(self):
+            # method to make the dog sit
+                if self.trained:
+                    print(self.name + " sits.")
+                else:
+                    print(self.name + " has not been trained.")
+                    
+            def train(self):
+            # method to train the dog, which will set the trained attribute to True
+                self.trained = True
+
+        
+        my_dog = Dog("Rex", "pug", "brown")
+        my_dog.bark() # call the bark method
+        my_dog.sit() # call the sit method
+        </code>
+    </program>
+    </listing>
+
+    <note>
+        <p>
+            When running <xref ref="python-class-full" text="type-global"/>, the line <c>Rex has not been trained.</c> will appear in the output when calling the <c>sit()</c> method. Try adding a one or more lines of code so that <c>Rex sits.</c> appears in the output!
+        </p>
+    </note>
+
+    <p>
+        Now, we have a full class definition and have utilized its methods. Class definitions in Java will be covered thoroughly in chapter 6. For now, it is important to know that Python programs can be written without using classes at all. Java, on the other hand, requires all code to reside in a class. This will be discussed later in chapter 6.
+    </p>
+ 
+</section>
+
+
+
 <section xml:id="defining-classes-in-java">
     <title>Defining Classes in Java</title>
     <introduction>
