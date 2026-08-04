@@ -36,7 +36,7 @@
             </code> 
         </program>
         </listing>
-        
+
         <p>
             Note the use of <c>import java.lang.Math;</c> in the above to import the <c>Math</c> class. Unlike Python, Java requires explicit <c>import</c> for most libraries, including the <c>Math</c> class and many  classes related to file handling.
         </p>
@@ -46,7 +46,7 @@
         </p>
 
         <listing  xml:id = "io-file-import">
-        <program language="java">
+        <program>
         import java.io.File;
         </program>
         </listing>
@@ -55,7 +55,7 @@
             The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
         </p>
         <listing  xml:id = "util-scanner-import">
-        <program language="java">
+        <program>
             import java.util.Scanner; 
         </program>
         </listing>
@@ -65,7 +65,7 @@
         </p>
 
         <listing  xml:id = "io-filewriter-import">
-        <program language="java">
+        <program>
             import java.io.FileWriter;
         </program>
         </listing>
@@ -75,7 +75,7 @@
         </p>
 
         <listing  xml:id = "io-exception-imports">
-        <program language="java">
+        <program>
             import java.io.IOException;
             import java.io.FileNotFoundException;
         </program>
