@@ -366,6 +366,39 @@ Hello World!
     </program>
     </listing>
 
+    
+
+    <exercise xml:id="java-name-color-practice-exercise" label="java-name-color-practice">
+    <statement>
+        <p>
+            Now that we have seen the hello world program in both Python and Java, use the ideas present in this chapter to write a Java program that prints your name and your favorite color.
+        </p>
+        <program xml:id="java-name-color-practice" interactive="activecode" language="java">
+            <input>
+public class NameColor {
+    public static void main(String[] args) {
+        // Write your code here
+        
+    }
+}
+            </input>
+        </program>
+    </statement>
+    <solution>
+        <program language="java">
+            <input>
+public class NameColor {
+    public static void main(String[] args) {
+        System.out.println("Name: Alex");
+        System.out.println("Favorite Color: Blue");
+    }
+}
+            </input>
+        </program>
+    </solution>
+</exercise>
+
+
 </section>
 
 
