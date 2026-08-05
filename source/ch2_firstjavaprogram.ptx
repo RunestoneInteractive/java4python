@@ -389,8 +389,8 @@ public class NameColor {
             <input>
 public class NameColor {
     public static void main(String[] args) {
-        System.out.println("Name: Alex");
-        System.out.println("Favorite Color: Blue");
+        System.out.println("Name: your name");
+        System.out.println("Favorite Color: your favorite color");
     }
 }
             </input>
