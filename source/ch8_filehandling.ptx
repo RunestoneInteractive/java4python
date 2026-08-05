@@ -14,7 +14,7 @@
         <program interactive="activecode" language="python">
             <code>
             import math
-            print(math.sqrt(25))
+            print(math.sqrt(25)) # notice the lower case 'm' in math
             </code> 
         </program>
         </listing>
@@ -30,7 +30,7 @@
 
             public class SquareRoot {
                 public static void main(String[] args) {
-                    System.out.println(Math.sqrt(25));
+                    System.out.println(Math.sqrt(25)); // notice the upper case 'M' in Math
                 }
             }
             </code> 
