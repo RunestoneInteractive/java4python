@@ -231,43 +231,6 @@ public class TempConv {
  So, what exactly does the import statement do? What it does is tell the compiler that we are going to use a shortened version of the class&#x2019;s name. In this example we are going to use the class <c>java.util.Scanner</c> but we can refer to it as just <c>Scanner</c>. We could use the <c>java.util.Scanner</c> class without any problem and without any import statement, provided that we always referred to it by its full name. As an experiment, you may want to try this yourself. Remove the import statement and change the string Scanner to <c>java.util.Scanner</c> in the rest of the code. The program should still compile and run. 
             </p>
 
-        <exercise xml:id="java-square-number-exercise" label="java-square-number-exercise">
-    <statement>
-        <p>
-             Write a program that converts km to miles. Use the <c>Scanner</c> class to read the input. Note that 1 km is approximately equal to 0.621 miles.
-        </p>
-        <program xml:id="java-square-number" interactive="activecode" language="java">
-            <input>
-public class KmToMiles {
-    public static void main(String[] args) {
-      // write your code here
-    }
-}
-            </input>
-        </program>
-    </statement>
-    <solution>
-        <program language="java">
-            <input>
-import java.util.Scanner;
-public class KmToMiles {
-    public static void main(String[] args) {
-        Double kilometers;
-        Double miles;
-        Scanner input;
-        input = new Scanner(System.in);
-        System.out.print("Enter distance in kilometers: ");
-        kilometers = input.nextDouble();
-        miles = kilometers * 0.621;
-        System.out.println(kilometers + " kilometers is equal to " + miles + " miles.");
-    }
-}
-            </input>
-        </program>
-    </solution>
-</exercise>
-
-
         </subsection>
 
 
@@ -317,6 +280,44 @@ public class KmToMiles {
             <p>
  The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. In our temperature converter, the calculation <c>(fahr - 32) * 5.0/9.0</c> works correctly because 5.0 and 9.0 are treated as double values, preventing the integer division that would occur if we had written <c>5/9</c>, which would result in 0.
             </p>
+
+            
+        <exercise xml:id="java-square-number-exercise" label="java-square-number-exercise">
+    <statement>
+        <p>
+             Write a program that converts km to miles. Use the <c>Scanner</c> class to read the input. Note that 1 km is approximately equal to 0.621 miles.
+        </p>
+        <program xml:id="java-square-number" interactive="activecode" language="java">
+            <input>
+public class KmToMiles {
+    public static void main(String[] args) {
+      // write your code here
+    }
+}
+            </input>
+        </program>
+    </statement>
+    <solution>
+        <program language="java">
+            <input>
+import java.util.Scanner;
+public class KmToMiles {
+    public static void main(String[] args) {
+        Double kilometers;
+        Double miles;
+        Scanner input;
+        input = new Scanner(System.in);
+        System.out.print("Enter distance in kilometers: ");
+        kilometers = input.nextDouble();
+        miles = kilometers * 0.621;
+        System.out.println(kilometers + " kilometers is equal to " + miles + " miles.");
+    }
+}
+            </input>
+        </program>
+    </solution>
+</exercise>
+
             </subsection>
         </section>
 
