@@ -148,6 +148,7 @@
         <p>
             Unlike Python, where you can create a new object without explicitly using a keyword, Java requires the <c>new</c> keyword to instantiate a new object.
         </p>
+        <listing xml:id="new-keyword-error">
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
                 // Histo.java // The filename for this example
@@ -164,6 +165,7 @@
                 } // End of class
             </code>
         </program>
+        </listing>
         <p>
           This error message occurs when you forget to use the <c>new</c> keyword to instantiate an object. 
           Specifically, on line 8 of <c>Histo.java</c>, <c>data = Scanner(new File("test.dat"));</c> leads to a 'cannot find symbol' error. 
