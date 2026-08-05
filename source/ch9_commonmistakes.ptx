@@ -63,6 +63,7 @@
         <p>
             A common mistake in Java is to forget that every statement must end with a semicolon (<c>;</c>).
         </p>
+        <listing xml:id="semicolon-error">
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
             // Histo.java
@@ -77,8 +78,9 @@
             }//End of class
         </code>
         </program>
+        </listing>
         <p>
-            The error "';' expected" on line 7 of <c>Histo.java</c> means that a semicolon is missing at the end of the statement <c>Scanner data = null</c>. In Java, every statement must be terminated with a semicolon (<c>;</c>) to indicate its completion. The arrow points to <c>null</c> because that's where the compiler expected to find the semicolon.
+            The error "';' expected" on line 7 of <c>Histo.java</c> in <xref ref="semicolon-error" text="type-global"/> means that a semicolon is missing at the end of the statement <c>Scanner data = null</c>. In Java, every statement must be terminated with a semicolon (<c>;</c>) to indicate its completion. The arrow points to <c>null</c> because that's where the compiler expected to find the semicolon.
         </p>
 
     </section>
@@ -87,8 +89,9 @@
         <title>Forgetting to declare your variables</title>
         <p>
             In Python, you can use a variable without declaring it first, but in Java, you must declare all variables before using them.
-            If you try to use a variable that has not been declared, the Java compiler will give you an error message like this:
+            <xref ref="undeclared-variable" text="type-global"/> shows If you try to use a variable that has not been declared, the Java compiler will give you an error message like this:
         </p>
+        <listing xml:id="undeclared-variable">
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
             import java.util.ArrayList; // Import necessary class
@@ -108,6 +111,7 @@
             } // End of class    
         </code>
         </program>
+        </listing>
         <p>
             The 'cannot find symbol' error for the variable <c>count</c> on line 6 indicates that <c>count</c> was used before it was declared within the <c>Histo</c> class. In Java, all variables must be explicitly declared with a data type (e.g., <c>int</c>, <c>String</c>, <c>ArrayList&lt;Integer&gt;</c>) before they can be assigned a value or referenced in any way. The arrow in the error message points to where the undeclared variable <c>count</c> was first encountered. To resolve this, <c>count</c> needs to be declared with its appropriate type (e.g., <c>ArrayList&lt;Integer&gt; count;</c>) before any attempt to initialize or use it.
         </p>
