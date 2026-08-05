@@ -167,7 +167,7 @@
         </program>
         </listing>
         <p>
-          This error message occurs when you forget to use the <c>new</c> keyword to instantiate an object. 
+          The error message in <xref ref="new-keyword-error" text="type-global"/> occurs when you forget to use the <c>new</c> keyword to instantiate an object. 
           Specifically, on line 8 of <c>Histo.java</c>, <c>data = Scanner(new File("test.dat"));</c> leads to a 'cannot find symbol' error. 
           While the message states 'symbol: method Scanner(File)', this can be misleading. 
           Java incorrectly interprets <c>Scanner()</c> as an attempt to call a static method named <c>Scanner</c> within the <c>Histo</c> class 
