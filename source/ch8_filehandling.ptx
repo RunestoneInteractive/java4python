@@ -7,19 +7,24 @@
     <section xml:id="class-imports">
         <title>Class Imports</title>
         <p>
-            File handling is an integral part of programming. Most programming languages have the ability to create, read from, write to, and delete, files. In Python, most built-in libraries are available without needing  to explicitly import additional packages, but some libraries like <c>math</c> do need to be imported. Consider the following.
+            File handling is an integral part of programming. Most programming languages have the ability to create, read from, write to, and delete, files. In Python, most built-in libraries are available without needing  to explicitly import additional packages, but some libraries like <c>math</c> do need to be imported. <xref ref="file-class-import-Python-example" text="type-global"/> shows an example of importing the <c>math</c> library in Python.
         </p>
-        <program xml:id = "file-class-import-Python-example" interactive="activecode" language="python">
+
+        <listing  xml:id = "file-class-import-Python-example">
+        <program interactive="activecode" language="python">
             <code>
             import math
             print(math.sqrt(25))
             </code> 
         </program>
+        </listing>
 
         <p>
-            Delete the first line that says <c>import math</c> and see what happens. The <c>import math</c> is needed. The same program in Java would look like this:
+            Delete the first line that says <c>import math</c> and see what happens. The <c>import math</c> is needed. The same program in Java would look like <xref ref="file-class-import-Java-example" text="type-global"/>.
         </p>
-        <program xml:id = "file-class-import-Java-example" interactive="activecode" language="java">
+
+        <listing  xml:id ="file-class-import-Java-example">
+        <program interactive="activecode" language="java">
             <code>
             import java.lang.Math;
 
@@ -30,42 +35,52 @@
             }
             </code> 
         </program>
+        </listing>
+
         <p>
             Note the use of <c>import java.lang.Math;</c> in the above to import the <c>Math</c> class. Unlike Python, Java requires explicit <c>import</c> for most libraries, including the <c>Math</c> class and many  classes related to file handling.
         </p>
 
         <p>
-            Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library. This class allows you to create <c>File</c> objects, and use its public methods. 
+            Much like the <c>Math</c> class, in order for your program to work with files you need use <c>import</c>. Java includes a class called <c>File</c> in the <c>io</c> library shown in <xref ref="io-file-import" text="type-global"/>. This class allows you to create <c>File</c> objects, and use its public methods. 
         </p>
 
-        <program xml:id="io-file-import" language="java">
+        <listing  xml:id = "io-file-import">
+        <program>
         import java.io.File;
         </program>
-        <p>
-            The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
-        </p>
+        </listing>
 
-        <program xml:id="util-scanner-import" language="java">
+        <p>
+            The <c>Scanner</c> class from the <c>util</c> library will need to be imported if there is any need for a program to read a file as shown in <xref ref="util-scanner-import" text="type-global"/>. It should be noted that this library is unnecessary if the program will not be reading any data from a file.
+        </p>
+        <listing  xml:id = "util-scanner-import">
+        <program>
             import java.util.Scanner; 
         </program>
+        </listing>
 
         <p>
-            The <c>FileWriter</c> class can be used to write to files. In the same way that the <c>Scanner</c> class isn't needed unless the program will read from a file, the <c>FileWriter</c> class isn't needed unless the program will write to a file.
+            The <c>FileWriter</c> class can be used to write to files as shown in <xref ref="io-filewriter-import" text="type-global"/>. In the same way that the <c>Scanner</c> class isn't needed unless the program will read from a file, the <c>FileWriter</c> class isn't needed unless the program will write to a file.
         </p>
 
-        <program xml:id="io-filewriter-import" language="java">
+        <listing  xml:id = "io-filewriter-import">
+        <program>
             import java.io.FileWriter;
         </program>
+        </listing>
 
         <p>
-            Finally, these last two classes provide error handling and must be used in tandem with the <c>File</c> class when reading from or writing to files. <c>IOException</c> handles file creation and writing errors, while <c>FileNotFoundException</c> handles errors when trying to read files. 
+            Finally, these last two classes provide error handling and must be used in tandem with the <c>File</c> class when reading from or writing to files as shown in <xref ref="io-exception-imports" text="type-global"/>. <c>IOException</c> handles file creation and writing errors, while <c>FileNotFoundException</c> handles errors when trying to read files. 
         </p>
 
-        <program xml:id="io-exception-imports" language="java">
+        <listing  xml:id = "io-exception-imports">
+        <program>
             import java.io.IOException;
             import java.io.FileNotFoundException;
         </program>
-        
+        </listing>
+
     </section>
 
     <section xml:id="creating-files">
