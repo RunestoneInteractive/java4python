@@ -744,7 +744,7 @@ public class Histo {
         </p>
 
         <p>
- Lines 13&#x2014;20 are required to open the file. Why so many lines to open a file in Java? The additional code mainly comes from the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error. A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. <xref ref="java-try-catch" text="type-global"/> shows the general structure of a try/catch block. 
+ Lines 13&#x2014;20 are required to open the file. Why so many lines to open a file in Java? The additional code mainly comes from the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error. A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. For a more detailed explanation of try/catch blocks, including how to use them with a loop to keep prompting the user until they provide valid input, see <xref ref="exception-handling"/>. <xref ref="java-try-catch" text="type-global"/> shows the general structure of a try/catch block. 
         </p>
         
         <listing xml:id="java-try-catch">
