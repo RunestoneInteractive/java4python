@@ -183,6 +183,8 @@
         <p>
             Java is a statically typed language, meaning you must specify the type of objects that can be stored in a container like an <c>ArrayList</c>. If you forget to declare the type, the compiler will give you an error.
         </p>
+
+        <listing xml:id="unchecked-warning">
         <program language="java" interactive="activecode" line-numbers="yes">
             <code>
                 // UncheckedWarningDemo.java 
@@ -202,6 +204,7 @@
                 } // End of class
             </code>
         </program>
+        </listing>
         <p>
             This is a compiler warning, not an error, indicating a potential type safety issue. It occurs because you are calling the <c>add()</c> method on <c>rawList</c>, which is an <c>ArrayList</c> used as a raw type (i.e., without specifying a generic type like <c>&lt;String&gt;</c> or <c>&lt;Integer&gt;</c>).
         </p>
