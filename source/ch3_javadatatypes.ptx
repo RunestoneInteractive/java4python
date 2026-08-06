@@ -308,36 +308,42 @@ public class TempConv {
         </block>
 
         <block order="4">
-            <choice correct="yes">
-                <cline>        Scanner input = new Scanner(System.in);</cline>
-            </choice>
-            <choice correct="no">
-                <cline>        Scanner input = new Scanner(System.out);</cline>
-            </choice>
+            <cline>Scanner input;</cline>
+            <cline>Double kilometers;</cline>
+            <cline>Double miles;</cline>
         </block>
 
         <block order="5">
             <choice correct="yes">
-                <cline>        double kilometers = input.nextDouble();</cline>
+                <cline>        input = new Scanner(System.in);</cline>
             </choice>
             <choice correct="no">
-                <cline>        double kilometers = input.readDouble();</cline>
+                <cline>        input = new Scanner(System.out);</cline>
             </choice>
         </block>
 
         <block order="6">
             <choice correct="yes">
-                <cline>        double miles = kilometers * 0.621;</cline>
+                <cline>        kilometers = input.nextDouble();</cline>
             </choice>
             <choice correct="no">
-                <cline>        double miles = kilometers / 0.621;</cline>
+                <cline>        kilometers = input.readDouble();</cline>
             </choice>
         </block>
 
         <block order="7">
+            <choice correct="yes">
+                <cline>        miles = kilometers * 0.621;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        miles = kilometers / 0.621;</cline>
+            </choice>
+        </block>
+
+        <block order="8">
             <cline>        System.out.println(kilometers + " kilometers is equal to " + miles + " miles.");</cline>
         </block>
-        <block order="8">
+        <block order="9">
             <cline>    }</cline>
             <cline>}</cline>
         </block>
@@ -529,8 +535,10 @@ void main() {
 
     <block order="2">
          <cline>class Circle extends Shape {</cline>
-            <cline>    public void drawCircle() { System.out.println("Circle"); }</cline>
-            <cline>}</cline>
+            <cline>public void drawCircle() { 
+                        System.out.println("Circle"); 
+                    }</cline>
+        <cline>}</cline>
         </block>
 
         <block order="3">
