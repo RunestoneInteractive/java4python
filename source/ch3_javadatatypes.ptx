@@ -280,6 +280,69 @@ public class TempConv {
             <p>
  The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. In our temperature converter, the calculation <c>(fahr - 32) * 5.0/9.0</c> works correctly because 5.0 and 9.0 are treated as double values, preventing the integer division that would occur if we had written <c>5/9</c>, which would result in 0.
             </p>
+
+     <exercise xml:id="java-km-to-miles-parsons-exercise" label="java-km-to-miles-parsons">
+    <statement>
+        <p>
+            Construct a complete Java program that reads a distance in kilometers from the user and converts it to miles. 
+            Drag the blocks into the correct order on the right.
+        </p>
+    </statement>
+
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>import java.util.Scanner;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>import Scanner;</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <cline>public class KmToMiles {</cline>
+        </block>
+
+        <block order="3">
+            <cline>    public static void main(String[] args) {</cline>
+        </block>
+
+        <block order="4">
+            <choice correct="yes">
+                <cline>        Scanner input = new Scanner(System.in);</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        Scanner input = new Scanner(System.out);</cline>
+            </choice>
+        </block>
+
+        <block order="5">
+            <choice correct="yes">
+                <cline>        double kilometers = input.nextDouble();</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        double kilometers = input.readDouble();</cline>
+            </choice>
+        </block>
+
+        <block order="6">
+            <choice correct="yes">
+                <cline>        double miles = kilometers * 0.621;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        double miles = kilometers / 0.621;</cline>
+            </choice>
+        </block>
+
+        <block order="7">
+            <cline>        System.out.println(kilometers + " kilometers is equal to " + miles + " miles.");</cline>
+        </block>
+        <block order="8">
+            <cline>    }</cline>
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
             
 
             </subsection>
@@ -449,6 +512,61 @@ void main() {
         <p>
             In <xref ref="downcasting-example" text="type-global"/>, we first create a <c>Dog</c> object and assign it to an <c>Animal</c> reference (upcasting). Then, we check if the <c>Animal</c> reference is actually pointing to a <c>Dog</c> object before downcasting it back to a <c>Dog</c> reference.
         </p>
+
+<exercise xml:id="java-downcasting-parsons-exercise" label="java-downcasting-parsons">
+    <statement>
+        <p>
+            Construct a program that safely downcasts a <c>Shape</c> reference to a <c>Circle</c> object and calls a subclass method. 
+            Drag the blocks into the correct order on the right.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <cline>class Shape { 
+                    ...
+            }</cline>
+        </block>
+
+    <block order="2">
+         <cline>class Circle extends Shape {</cline>
+            <cline>    public void drawCircle() { System.out.println("Circle"); }</cline>
+            <cline>}</cline>
+        </block>
+
+        <block order="3">
+            <cline>public class Downcast {</cline>
+            <cline>    public static void main(String[] args) {</cline>
+            <cline>        Shape myShape = new Circle();</cline>
+        </block>
+
+        <block order="4">
+            <choice correct="yes">
+                <cline>        if (myShape instanceof Circle) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        if (myShape.equals(Circle)) {</cline>
+            </choice>
+        </block>
+
+        <block order="5">
+            <choice correct="yes">
+                <cline>            Circle myCircle = (Circle) myShape;</cline>
+                <cline>            myCircle.drawCircle();</cline>
+            </choice>
+            <choice correct="no">
+                <cline>            Circle myCircle = myShape;</cline>
+                <cline>            myCircle.drawCircle();</cline>
+            </choice>
+        </block>
+
+        <block order="6">
+            <cline>        }</cline>
+            <cline>    }</cline>
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
+
         </section>
 
     
@@ -1135,70 +1253,6 @@ public class HistoMap {
                 </choice>
             </choices>            
         </exercise>
-        <exercise xml:id="java-km-to-miles-parsons-exercise" label="java-km-to-miles-parsons">
-    <statement>
-        <p>
-            Construct a complete Java program that reads a distance in kilometers from the user and converts it to miles. 
-            Drag the blocks into the correct order on the right.
-        </p>
-    </statement>
-
-    <blocks>
-        <block order="1">
-            <choice correct="yes">
-                <cline>import java.util.Scanner;</cline>
-            </choice>
-            <choice correct="no">
-                <cline>import Scanner;</cline>
-            </choice>
-        </block>
-
-        <block order="2">
-            <cline>public class KmToMiles {</cline>
-        </block>
-
-        <block order="3">
-            <cline>    public static void main(String[] args) {</cline>
-        </block>
-
-        <block order="4">
-            <choice correct="yes">
-                <cline>        Scanner input = new Scanner(System.in);</cline>
-            </choice>
-            <choice correct="no">
-                <cline>        Scanner input = new Scanner(System.out);</cline>
-            </choice>
-        </block>
-
-        <block order="5">
-            <choice correct="yes">
-                <cline>        System.out.print("Enter distance in kilometers: ");</cline>
-                <cline>        double kilometers = input.nextDouble();</cline>
-            </choice>
-            <choice correct="no">
-                <cline>        System.out.print("Enter distance in kilometers: ");</cline>
-                <cline>        double kilometers = input.readDouble();</cline>
-            </choice>
-        </block>
-
-        <block order="6">
-            <choice correct="yes">
-                <cline>        double miles = kilometers * 0.621;</cline>
-            </choice>
-            <choice correct="no">
-                <cline>        double miles = kilometers / 0.621;</cline>
-            </choice>
-        </block>
-
-        <block order="7">
-            <cline>        System.out.println(kilometers + " kilometers is equal to " + miles + " miles.");</cline>
-        </block>
-        <block order="8">
-            <cline>    }</cline>
-            <cline>}</cline>
-        </block>
-    </blocks>
-</exercise>
 
     </reading-questions>
 </section>
