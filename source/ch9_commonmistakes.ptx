@@ -140,7 +140,7 @@
         </program>
         </listing>
         <p>
-             You may notice that this error message looks similar to the previous one, however, it has an entirely different cause. In Java, classes like <c>Scanner</c> that are part of external packages (like <c>java.util</c>) must be explicitly imported into your source file. Java does not automatically recognize these classes. To resolve this error, you need to add an import statement for the <c>Scanner</c> class at the beginning of your <c>Histo.java</c> file, typically import <c>java.util.Scanner;</c>.
+             You may notice that this error message looks similar to the previous one  <xref ref="undeclared-variable" text="type-global"/>, however, it has an entirely different cause. In Java, classes like <c>Scanner</c> that are part of external packages (like <c>java.util</c>) must be explicitly imported into your source file. Java does not automatically recognize these classes. To resolve this error, you need to add an import statement for the <c>Scanner</c> class at the beginning of your <c>Histo.java</c> file, typically import <c>java.util.Scanner;</c>.
         </p>
 
     </section>
