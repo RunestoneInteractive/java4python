@@ -368,36 +368,6 @@ Hello World!
 
     
 
-    <exercise xml:id="java-name-color-practice-exercise" label="java-name-color-practice">
-    <statement>
-        <p>
-            Now that we have seen the hello world program in both Python and Java, use the ideas present in this chapter to write a Java program that prints your name and your favorite color.
-        </p>
-        <program xml:id="java-name-color-practice" interactive="activecode" language="java">
-            <input>
-public class NameColor {
-    public static void main(String[] args) {
-        // Write your code here
-        
-    }
-}
-            </input>
-        </program>
-    </statement>
-    <solution>
-        <program language="java">
-            <input>
-public class NameColor {
-    public static void main(String[] args) {
-        System.out.println("Name: your name");
-        System.out.println("Favorite Color: your favorite color");
-    }
-}
-            </input>
-        </program>
-    </solution>
-</exercise>
-
 
 </section>
 
@@ -509,6 +479,49 @@ public class NameColor {
                     </choice>
                 </choices>
             </exercise>
+
+            <exercise xml:id="java-name-color-parsons-exercise">
+    <statement>
+        <p>
+            Construct a complete Java program that prints your name and your favorite color to the console. 
+            Drag the blocks into the correct order on the right.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <cline>public class NameColor {</cline>
+        </block>
+        
+        <block order="2">
+            <cline>    public static void main(String[] args) {</cline>
+        </block>
+
+        <block order="3">
+            <cline>        System.out.println("Name: Alex");</cline>
+            <cline>        System.out.println("Favorite Color: Blue");</cline>
+        </block>
+
+        <block order="4">
+            <cline>    }</cline>
+            <cline>}</cline>
+        </block>
+
+        <block correct="no">
+            <cline>        system.out.println(Name: Alex);</cline>
+            <cline>        System.out.println("Favorite Color: Blue")</cline>
+        </block>
+
+        <block correct="no">
+            <cline>    def main(args):</cline>
+        </block>
+
+        <block correct="no">
+            <cline>    public static main(String[] args) {</cline>
+        </block>
+
+    </blocks>
+</exercise>
+
         </reading-questions>
     </section>
 </chapter>
