@@ -480,7 +480,7 @@ Hello World!
                 </choices>
             </exercise>
 
-            <exercise xml:id="java-name-color-parsons-exercise">
+<exercise xml:id="java-name-color-parsons-exercise" label="java-name-color-parsons">
     <statement>
         <p>
             Construct a complete Java program that prints your name and your favorite color to the console. 
@@ -489,36 +489,38 @@ Hello World!
     </statement>
     <blocks>
         <block order="1">
-            <cline>public class NameColor {</cline>
+            <choice correct="yes">
+                <cline>public class NameColor {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>class NameColor {</cline>
+            </choice>
         </block>
-        
+
         <block order="2">
-            <cline>    public static void main(String[] args) {</cline>
+            <choice correct="yes">
+                <cline>    public static void main(String[] args) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public static main(String[] args) {</cline>
+            </choice>
         </block>
 
         <block order="3">
-            <cline>        System.out.println("Name: Alex");</cline>
-            <cline>        System.out.println("Favorite Color: Blue");</cline>
+            <choice correct="yes">
+                <cline>        System.out.println("Name: Alex");</cline>
+                <cline>        System.out.println("Favorite Color: Blue");</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        system.out.println(Name: Alex);</cline>
+                <cline>        System.out.println("Favorite Color: Blue")</cline>
+            </choice>
         </block>
 
         <block order="4">
             <cline>    }</cline>
             <cline>}</cline>
         </block>
-
-        <block correct="no">
-            <cline>        system.out.println(Name: Alex);</cline>
-            <cline>        System.out.println("Favorite Color: Blue")</cline>
-        </block>
-
-        <block correct="no">
-            <cline>    def main(args):</cline>
-        </block>
-
-        <block correct="no">
-            <cline>    public static main(String[] args) {</cline>
-        </block>
-
     </blocks>
 </exercise>
 
