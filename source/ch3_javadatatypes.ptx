@@ -1080,57 +1080,46 @@ public class HistoMap {
  Improve <xref ref="java-word-count" text="type-global"/> to remove the punctuation. 
         </p>
 
-        <exercise label="java_map_parsons_example">
+<exercise label="java_map_parsons_example">
     <statement>
         <p>
-            Rearrange and indent the blocks to create a Java method that accepts a dictionary (Map) of item prices and updates the price of a specific item.
+            Rearrange and indent the blocks to create a general Java method that accepts a dictionary (Map) of item prices and updates the price of a specific item. If the item does not exist, do nothing.
         </p>
     </statement>
     <blocks>
         <block order="1">
             <choice correct="yes">
-                <code language="java">
-public void updatePrice(Map&lt;String, Double&gt; catalog, String item, double newPrice) {
-                </code>
+                <cline>public void updatePrice(Map&lt;String, Double&gt; catalog, String item, double newPrice) {</cline>
             </choice>
             <choice correct="no">
-                <code language="java">
-public void updatePrice(Map&lt;String, Double&gt; catalog, item, newPrice) {
-                </code>
+                <cline>public void updatePrice() {</cline>
+                <cline>    Map&lt;String, Double&gt; catalog,</cline>
+                <cline>    String item,</cline>
+                <cline>    double newPrice</cline>
             </choice>
         </block>
 
         <block order="2">
             <choice correct="yes">
-                <code language="java">
-    if (catalog.containsKey(item)) {
-                </code>
+                <cline>    if (catalog.containsKey(item)) {</cline>
             </choice>
             <choice correct="no">
-                <code language="java">
-    if (catalog.get(item) == null) {
-                </code>
+                <cline>    if (catalog.get(item) == null) {</cline>
             </choice>
         </block>
 
         <block order="3">
             <choice correct="yes">
-                <code language="java">
-        catalog.put(item, newPrice);
-                </code>
+                <cline>        catalog.put(item, newPrice);</cline>
             </choice>
             <choice correct="no">
-                <code language="java">
-        catalog.add(item, newPrice);
-                </code>
+                <cline>        catalog.add(item, newPrice);</cline>
             </choice>
         </block>
 
         <block order="4">
-            <code language="java">
-    }
-}
-            </code>
+            <cline>    }</cline>
+            <cline>}</cline>
         </block>
     </blocks>
 </exercise>
