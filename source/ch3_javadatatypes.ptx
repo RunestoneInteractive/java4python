@@ -1116,6 +1116,52 @@ public class HistoMap {
             </li>
         </ul>
     </p>
+
+    <exercise label="mcq-java-vs-python-variable-names">
+  <statement>
+    <p>
+      Which of the following is a valid variable name according to the core syntax rules of Java, but causes a syntax error in Python?
+    </p>
+  </statement>
+  <choices>
+    <choice>
+      <statement><c>_variableName</c></statement>
+      <feedback>
+        <p>
+          Incorrect. Leading underscores are valid in both Java and Python (commonly used in Python for private/protected attributes).
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><c>variable_name</c></statement>
+      <feedback>
+        <p>
+          Incorrect. Snake_case names with underscores are valid in both languages (and are actually standard convention in Python).
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement><c>$variableName</c></statement>
+      <feedback>
+        <p>
+          Correct! Java allows the dollar sign (<c>$</c>) in variable names, but Python generates a <c>SyntaxError</c> because <c>$</c> is not a permitted identifier character in Python.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><c>variableName2</c></statement>
+      <feedback>
+        <p>
+          Incorrect. Numbers at the end of variable names are valid syntax in both Java and Python.
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+</exercise>
+
         </section>
 
 <section xml:id="chapter3_summary">
