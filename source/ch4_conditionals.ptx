@@ -401,6 +401,57 @@ public class Ternary {
         <p>
             In <xref ref="java-ternary" text="type-global"/>, we are using this ternary operator to assign a value to <c>a</c> based on whether <c>a</c> is even or odd. If <c>a</c> is even, it will be squared; if odd, it will be instead be calculated as <c>3 * x - 1</c>. This is a concise way to write conditional assignments in Java. However, you might want to use it sparingly, as it can make code less readable if overused or used with complex expressions.
         </p>
+
+        <exercise label="java_conditionals_ternary_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a Java method that calculates shipping costs. Orders over $100 get free shipping ($0.0), while members pay $5.0 and non-members pay $10.0.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>public double calculateShipping(double orderTotal, boolean isMember) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>public double calculateShipping() 
+                double orderTotal
+                boolean isMember 
+                {</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    if (orderTotal &gt;= 100.0) {</cline>
+                <cline>        return 0.0;</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    if (orderTotal = 100.0) {</cline>
+                <cline>        return 0.0;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>    else {</cline>
+                <cline>        return isMember ? 5.0 : 10.0;</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    else {</cline>
+                <cline>        return isMember : 5.0 ? 10.0;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
         </section>
 
          <section xml:id="exception-handling">
