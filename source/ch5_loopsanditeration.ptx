@@ -183,6 +183,59 @@ public class StringIterationExample {
         </program>
         </listing>
 
+        <exercise label="java_loops_sum_evens_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a Java method that accepts an upper bound integer <c>limit</c> and calculates the sum of all even numbers from 2 up to and including <c>limit</c>. 
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+                <cline>public int sumEvens(int limit) {</cline>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    int total = 0;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    int total;</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>    for (int i = 2; i &lt;= limit; i += 2) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    for (int i = 2; i &lt; limit; i =+ 2) {</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <choice correct="yes">
+                <cline>        total += i;</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        total = i;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="5">
+            <choice correct="yes">
+                <cline>    return total;</cline>
+                <cline>}</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    return i;</cline>
+                <cline>}</cline>
+            </choice>
+        </block>
+    </blocks>
+</exercise>
+
     </section>
 
     <section xml:id="indefinite-loops">
