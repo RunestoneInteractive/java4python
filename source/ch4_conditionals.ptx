@@ -255,6 +255,68 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
         <p>
             Finally, the <c>switch</c> statement does not support relational expressions such as greater than or less than. So you cannot use it to completely replace the <c>elif</c>. Even with the new features of Java 14+ the <c>switch</c> statement is still limited to constant comparisons using equality.</p>
     </subsection>
+
+    <exercise label="java_conditionals_temperature_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a Java method that accepts a temperature reading and returns a status string ("CRITICAL", "WARNING", or "NORMAL").
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>public String checkTemperature(double temp) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>public String checkTemperature(double temp); {</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    if (temp &gt;= 100.0) {</cline>
+                <cline>        return "CRITICAL";</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    if (temp == 100.0) {</cline>
+                <cline>        return "CRITICAL";</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>    else if (temp &gt;= 75.0) {</cline>
+                <cline>        return "WARNING";</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    else (temp &gt;= 75.0) {</cline>
+                <cline>        return "WARNING";</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <choice correct="yes">
+                <cline>    else {</cline>
+                <cline>        return "NORMAL";</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    else if {</cline>
+                <cline>        return "NORMAL";</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="5">
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
+    
     </section>
 
     <section xml:id="ternary-operator">
