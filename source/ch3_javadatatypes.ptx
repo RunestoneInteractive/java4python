@@ -967,6 +967,48 @@ public class HistoArray {
         <p>
   The main difference between <xref ref="java-array" text="type-global"/> and <xref ref="java-histogram" text="type-global"/> is that we declare <c>count</c> to be an <c>Array</c> of integers. We also can initialize short arrays directly using the syntax shown here: <c>Integer[] count = {0,0,0,0,0,0,0,0,0,0}</c>Then notice that we can use the square bracket notation <c>count[idx]</c> to index into an array.
 </p>
+
+<exercise xml:id="java-arrays-parsons-exercise" label="java-arrays-parsons">
+    <statement>
+        <p>
+            Construct a short Java program that creates an array of three integers, 
+            changes the first value, and prints it. Drag the blocks into the correct order on the right.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <cline>public class ArrayExample {</cline>
+            <cline>    public static void main(String[] args) {</cline>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>        Integer[] nums = {1, 2, 3};</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        Integer[] nums = (1, 2, 3);</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>        nums[0] = 5;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        nums(0) = 5;</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <cline>        System.out.println(nums[0]);</cline>
+        </block>
+
+        <block order="5">
+            <cline>    }</cline>
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
     </section>
 
     <section xml:id="dictionary">
