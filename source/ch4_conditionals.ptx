@@ -257,7 +257,6 @@ The <c>switch</c> statement is not used very often, and we recommend you do not 
     </subsection>
 
     <exercise label="java_conditionals_temperature_parsons">
-    <title>Java Temperature Status Monitor</title>
     <statement>
         <p>
             Rearrange the blocks to create a Java method that accepts a temperature reading and returns a status string ("CRITICAL", "WARNING", or "NORMAL").
