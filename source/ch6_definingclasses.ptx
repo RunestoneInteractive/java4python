@@ -628,8 +628,80 @@ public class Fraction {
                 </code> <tests> </tests>
             </program>
             </listing>
-
         </subsection>
+    <exercise label="java_fraction_subtract_constructors_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a <c>Fraction</c> class that uses constructor overloading and chaining to perform subtraction. The <c>subtract</c> method should accept another <c>Fraction</c> object, and an overloaded constructor should easily convert an <c>int</c> into a <c>Fraction</c> so both types can be subtracted seamlessly. 
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>public class Fraction {</cline>
+                <cline>    private int num, den;</cline>
+                <cline>    public Fraction(int num, int den) {</cline>
+                <cline>        this.num = num;</cline>
+                <cline>        this.den = den;</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>public class Fraction {</cline>
+                <cline>    private int num, den;</cline>
+                <cline>    public void Fraction(int num, int den) {</cline>
+                <cline>        this.num = num;</cline>
+                <cline>        this.den = den;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    public Fraction(int wholeNumber) {</cline>
+                <cline>        this(wholeNumber, 1);</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public Fraction(int wholeNumber) {</cline>
+                <cline>        Fraction(wholeNumber, 1);</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>    public Fraction subtract(Fraction other) {</cline>
+                <cline>        int newNum = this.num * other.den - other.num * this.den;</cline>
+                <cline>        int newDen = this.den * other.den;</cline>
+                <cline>        return new Fraction(newNum, newDen);</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public Fraction subtract(Fraction other) {</cline>
+                <cline>        int newNum = this.num * other.den - other.num * this.den;</cline>
+                <cline>        int newDen = this.den * other.den;</cline>
+                <cline>        return new Fraction();</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <choice correct="yes">
+                <cline>    public Fraction subtract(int number) {</cline>
+                <cline>        return this.subtract(new Fraction(number));</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public Fraction subtract(int number) {</cline>
+                <cline>        return this.subtract(Fraction(number));</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="5">
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
     </section>
 
     <section xml:id="inheritance">
