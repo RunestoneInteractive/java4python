@@ -423,6 +423,76 @@ public Fraction(Integer num, Integer den) {
             </code>
         </program>
         </listing>
+        <exercise label="java_cat_default_constructor_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a <c>Cat</c> class with instance variables <c>name</c> and <c>age</c>. Implement a default constructor that initializes <c>name</c> to "Unknown" and <c>age</c> to 0. Finally, instantiate a <c>Cat</c> object in <c>main</c> and print its values.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>public class Cat {</cline>
+                <cline>    private String name;</cline>
+                <cline>    private int age;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>public class Cat {</cline>
+                <cline>    private String name = "Unknown";</cline>
+                <cline>    private int age = 0;</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    public Cat() {</cline>
+                <cline>        this.name = "Unknown";</cline>
+                <cline>        this.age = 0;</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public void Cat() {</cline>
+                <cline>        this.name = "Unknown";</cline>
+                <cline>        this.age = 0;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>    public static void main(String[] args) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public void main(String[] args) {</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <choice correct="yes">
+                <cline>        Cat myCat = new Cat();</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        Cat myCat = Cat();</cline>
+            </choice>
+        </block>
+
+        <block order="5">
+            <choice correct="yes">
+                <cline>        System.out.println("Name: " + myCat.name);</cline>
+                <cline>        System.out.println("Age: " + myCat.age);</cline>
+                <cline>    }</cline>
+                <cline>}</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        System.out.println("Name: " + Cat.name);</cline>
+                <cline>        System.out.println("Age: " + Cat.age);</cline>
+                <cline>    }</cline>
+                <cline>}</cline>
+            </choice>
+        </block>
+    </blocks>
+</exercise>
+        
     </section>
 
     <section xml:id="methods">
@@ -629,79 +699,7 @@ public class Fraction {
             </program>
             </listing>
         </subsection>
-    <exercise label="java_fraction_subtract_constructors_parsons">
-    <statement>
-        <p>
-            Rearrange the blocks to create a <c>Fraction</c> class that uses constructor overloading and chaining to perform subtraction. The <c>subtract</c> method should accept another <c>Fraction</c> object, and an overloaded constructor should easily convert an <c>int</c> into a <c>Fraction</c> so both types can be subtracted seamlessly. 
-    </statement>
-    <blocks>
-        <block order="1">
-            <choice correct="yes">
-                <cline>public class Fraction {</cline>
-                <cline>    private int num, den;</cline>
-                <cline>    public Fraction(int num, int den) {</cline>
-                <cline>        this.num = num;</cline>
-                <cline>        this.den = den;</cline>
-                <cline>    }</cline>
-            </choice>
-            <choice correct="no">
-                <cline>public class Fraction {</cline>
-                <cline>    private int num, den;</cline>
-                <cline>    public void Fraction(int num, int den) {</cline>
-                <cline>        this.num = num;</cline>
-                <cline>        this.den = den;</cline>
-                <cline>    }</cline>
-            </choice>
-        </block>
 
-        <block order="2">
-            <choice correct="yes">
-                <cline>    public Fraction(int wholeNumber) {</cline>
-                <cline>        this(wholeNumber, 1);</cline>
-                <cline>    }</cline>
-            </choice>
-            <choice correct="no">
-                <cline>    public Fraction(int wholeNumber) {</cline>
-                <cline>        Fraction(wholeNumber, 1);</cline>
-                <cline>    }</cline>
-            </choice>
-        </block>
-
-        <block order="3">
-            <choice correct="yes">
-                <cline>    public Fraction subtract(Fraction other) {</cline>
-                <cline>        int newNum = this.num * other.den - other.num * this.den;</cline>
-                <cline>        int newDen = this.den * other.den;</cline>
-                <cline>        return new Fraction(newNum, newDen);</cline>
-                <cline>    }</cline>
-            </choice>
-            <choice correct="no">
-                <cline>    public Fraction subtract(Fraction other) {</cline>
-                <cline>        int newNum = this.num * other.den - other.num * this.den;</cline>
-                <cline>        int newDen = this.den * other.den;</cline>
-                <cline>        return new Fraction();</cline>
-                <cline>    }</cline>
-            </choice>
-        </block>
-
-        <block order="4">
-            <choice correct="yes">
-                <cline>    public Fraction subtract(int number) {</cline>
-                <cline>        return this.subtract(new Fraction(number));</cline>
-                <cline>    }</cline>
-            </choice>
-            <choice correct="no">
-                <cline>    public Fraction subtract(int number) {</cline>
-                <cline>        return this.subtract(Fraction(number));</cline>
-                <cline>    }</cline>
-            </choice>
-        </block>
-
-        <block order="5">
-            <cline>}</cline>
-        </block>
-    </blocks>
-</exercise>
     </section>
 
     <section xml:id="inheritance">
