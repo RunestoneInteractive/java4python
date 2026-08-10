@@ -630,7 +630,7 @@ public class Fraction {
             </listing>
 
             <p>
-            If you ran the program above you probably noticed that the output is not very satisfying. Chances are your output looked something like <xref ref="java-no-friendly-output" text="type-global"/>.
+            If you ran <xref ref="java-full-fraction-class" text="type-global"/>, you probably noticed that the output is not very satisfying. Chances are your output looked something like <xref ref="java-no-friendly-output" text="type-global"/>.
             </p>
 
             <listing xml:id="java-no-friendly-output">
@@ -645,7 +645,7 @@ Fraction@6ff3c5b5
                 The reason is that we have not yet provided a friendly string representation for our <c>Fraction</c> objects.
                 Just like in Python, whenever an object is printed by the <c>println</c> method it must be converted to string format.
                 In Python you can control how that looks by writing an <c>__str__</c> method for your class.
-                If you do not then you will get the default, which looks something like the above.
+                If you do not then you will get the default, which looks something like <xref ref="java-no-friendly-output" text="type-global"/>.
             </p>
 
         </subsection>
