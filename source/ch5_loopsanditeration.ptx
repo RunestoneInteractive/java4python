@@ -244,6 +244,59 @@ public class DoWhileExample {
         </program>
         </listing>
 
+        <exercise label="java_loops_indefinite_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a Java method that accepts a starting balance and a target amount, then calculates how many years it takes for the balance to reach or exceed the target by doubling each year.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>public int yearsToTarget(double balance, double target) {</cline>
+                <cline>    int years = 0;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>public int yearsToTarget(double balance, double target) {</cline>
+                <cline>    int years;</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    while (balance &lt; target) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    while (balance &gt;= target) {</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>        balance *= 2;</cline>
+                <cline>        years++;</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        balance * 2;</cline>
+                <cline>        years++;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <choice correct="yes">
+                <cline>    return years;</cline>
+                <cline>}</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    return balance;</cline>
+                <cline>}</cline>
+            </choice>
+        </block>
+    </blocks>
+</exercise>
+
     </section>
     <section xml:id="chapter5_summary">
         <title>Summary &amp; Reading Questions</title>
