@@ -423,75 +423,73 @@ public Fraction(Integer num, Integer den) {
             </code>
         </program>
         </listing>
-        <exercise label="java_cat_default_constructor_parsons">
+
+    <exercise label="java_encapsulation_getters_setters_parsons">
     <statement>
         <p>
-            Rearrange the blocks to create a <c>Cat</c> class with instance variables <c>name</c> and <c>age</c>. Implement a default constructor that initializes <c>name</c> to "Unknown" and <c>age</c> to 0. Finally, instantiate a <c>Cat</c> object in <c>main</c> and print its values.
+            Rearrange the blocks to construct a fully encapsulated <c>BankAccount</c> class. The class should feature:
+            <ul>
+                <li>A <c>private double balance</c> instance variable.</li>
+                <li>A public getter method <c>getBalance()</c> that returns the balance.</li>
+                <li>A public setter method <c>setBalance(double balance)</c> that updates the balance only if the value is non-negative ($ \ge 0 $).</li>
+            </ul>
         </p>
     </statement>
     <blocks>
         <block order="1">
             <choice correct="yes">
-                <cline>public class Cat {</cline>
-                <cline>    private String name;</cline>
-                <cline>    private int age;</cline>
+                <cline>public class BankAccount {</cline>
+                <cline>    private double balance;</cline>
             </choice>
             <choice correct="no">
-                <cline>public class Cat {</cline>
-                <cline>    private String name = "Unknown";</cline>
-                <cline>    private int age = 0;</cline>
+                <cline>public class BankAccount {</cline>
+                <cline>    public double balance;</cline>
             </choice>
         </block>
 
         <block order="2">
             <choice correct="yes">
-                <cline>    public Cat() {</cline>
-                <cline>        this.name = "Unknown";</cline>
-                <cline>        this.age = 0;</cline>
+                <cline>    public double getBalance() {</cline>
+                <cline>        return balance;</cline>
                 <cline>    }</cline>
             </choice>
             <choice correct="no">
-                <cline>    public void Cat() {</cline>
-                <cline>        this.name = "Unknown";</cline>
-                <cline>        this.age = 0;</cline>
+                <cline>    public void getBalance() {</cline>
+                <cline>        return balance;</cline>
                 <cline>    }</cline>
             </choice>
         </block>
 
         <block order="3">
             <choice correct="yes">
-                <cline>    public static void main(String[] args) {</cline>
+                <cline>    public void setBalance(double balance) {</cline>
             </choice>
             <choice correct="no">
-                <cline>    public void main(String[] args) {</cline>
+                <cline>    public double setBalance(double balance) {</cline>
             </choice>
         </block>
 
         <block order="4">
             <choice correct="yes">
-                <cline>        Cat myCat = new Cat();</cline>
+                <cline>        if (balance &gt;= 0.0) {</cline>
+                <cline>            this.balance = balance;</cline>
+                <cline>        }</cline>
+                <cline>    }</cline>
             </choice>
             <choice correct="no">
-                <cline>        Cat myCat = Cat();</cline>
+                <cline>        if (balance &gt;= 0.0) {</cline>
+                <cline>            balance = balance;</cline>
+                <cline>        }</cline>
+                <cline>    }</cline>
             </choice>
         </block>
 
         <block order="5">
-            <choice correct="yes">
-                <cline>        System.out.println("Name: " + myCat.name);</cline>
-                <cline>        System.out.println("Age: " + myCat.age);</cline>
-                <cline>    }</cline>
-                <cline>}</cline>
-            </choice>
-            <choice correct="no">
-                <cline>        System.out.println("Name: " + Cat.name);</cline>
-                <cline>        System.out.println("Age: " + Cat.age);</cline>
-                <cline>    }</cline>
-                <cline>}</cline>
-            </choice>
+            <cline>}</cline>
         </block>
     </blocks>
 </exercise>
+
         
     </section>
 
