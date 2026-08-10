@@ -961,6 +961,38 @@ public void test(Number a, Number b) {
                 You will <em>still get this error</em> even if all your code that calls this <c>test</c> method passes two <c>Fractions</c> as parameters (remember that <c>Fraction</c> does implement <c>add</c>).
             </p>
         </subsection>
+
+        <exercise xml:id="java-inheritance-parsons-exercise" label="java-inheritance-parsons">
+    <statement>
+        <p>
+            Construct the <c>toString</c> method for the <c>Fraction</c> class so that printing a 
+            fraction shows it in the form numerator/denominator. Drag the blocks into the correct order on the right.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>public String toString() {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>public void toString() {</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    return numerator.toString() + "/" + denominator.toString();</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    numerator.toString() + "/" + denominator.toString();</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
     </section>
 
     <section xml:id="interfaces">
