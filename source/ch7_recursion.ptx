@@ -125,6 +125,46 @@ public class MTools {
         <p>
            Notice the key differences from Python: instead of <c>def factorial(n):</c>, Java uses <c>public static int factorial(int n)</c> which declares the method's visibility as <c>public</c>, that it belongs to the class rather than an instance (hence, <c>static</c>), the return type as integer, and the parameter type also as integer. The recursive logic—base case and recursive step—remains identical to Python, and, of course, all code blocks use curly braces <c>{}</c> instead of indentation.
         </p>
+
+        <exercise xml:id="java-recursion-parsons-exercise" label="java-recursion-parsons">
+    <statement>
+        <p>
+            Construct a recursive Java method that computes the factorial of a number. 
+            Drag the blocks into the correct order on the right.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <cline>public static int factorial(int n) {</cline>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    if (n &lt;= 1) {</cline>
+                <cline>        return 1;</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    if (n &lt;= 1) {</cline>
+                <cline>        return 0;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>    return n * factorial(n - 1);</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    return n * factorial(n);</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
     </section>
 
 <section xml:id="using-helper-methods">
