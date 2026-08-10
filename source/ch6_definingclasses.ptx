@@ -431,7 +431,7 @@ public Fraction(Integer num, Integer den) {
             <ul>
                 <li>A <c>private double balance</c> instance variable.</li>
                 <li>A public getter method <c>getBalance()</c> that returns the balance.</li>
-                <li>A public setter method <c>setBalance(double balance)</c> that updates the balance only if the value is non-negative ($ \ge 0 $).</li>
+                <li>A public setter method <c>setBalance(double balance)</c> that updates the balance only if the value is non-negative <m>($ \ge 0 $)</m>.</li>
             </ul>
         </p>
     </statement>
