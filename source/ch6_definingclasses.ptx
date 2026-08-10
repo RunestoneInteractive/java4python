@@ -629,7 +629,51 @@ public class Fraction {
             </program>
             </listing>
 
+            <exercise label="java_method_overloading_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a <c>Printer</c> class with two overloaded <c>printData</c> methods—one that accepts an <c>int</c> and another that accepts a <c>String</c>.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <cline>public class Printer {</cline>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    public void printData(int number) {</cline>
+                <cline>        System.out.println("Number: " + number);</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public void printData(int number) {</cline>
+                <cline>        System.out.println("Number: " + number);</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>    public void printData(String text) {</cline>
+                <cline>        System.out.println("Text: " + text);</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public void printData(int text) {</cline>
+                <cline>        System.out.println("Text: " + text);</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
+
         </subsection>
+
+
     </section>
 
     <section xml:id="inheritance">
