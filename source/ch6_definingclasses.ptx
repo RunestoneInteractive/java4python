@@ -645,7 +645,7 @@ Fraction@6ff3c5b5
                 The reason is that we have not yet provided a friendly string representation for our <c>Fraction</c> objects.
                 Just like in Python, whenever an object is printed by the <c>println</c> method it must be converted to string format.
                 In Python you can control how that looks by writing an <c>__str__</c> method for your class.
-                If you do not then you will get the default, which looks something like <xref ref="java-no-friendly-output" text="type-global"/>.
+                If you do not then you will get the default, which looks something like <xref ref="java-no-friendly-output" text="type-global"/>. We will see how to provide a friendly string representation for our <c>Fraction</c> class in <xref ref="inheritance" text="type-global"/>.
             </p>
 
         </subsection>
