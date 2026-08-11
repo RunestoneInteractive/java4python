@@ -1195,7 +1195,7 @@ public class HistoMap {
             <p>Maps (<c>HashMap</c> and <c>TreeMap</c>) are Java's equivalent to Python dictionaries for storing key-value pairs.</p>
         </li>
     </ol></p>
-    <reading-questions xml:id="rqs-summary3">
+    <reading-questions xml:id="rqs-summary-data-types">
         <exercise label = "summary-arraylist">
             <statement>
                 <p>What is the correct way to declare an ArrayList that will hold String objects in Java?</p>
