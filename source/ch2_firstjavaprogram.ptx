@@ -374,7 +374,7 @@ Hello World!
 
     <section xml:id="lets_look_java_program_summary">
         <title>Summary &amp; Reading Questions</title>
-        <p><ol label="1">
+        <p><ol>
             <li>
                 <p>Java programs must be compiled before execution, unlike Python which is interpreted directly.</p>
             </li>
