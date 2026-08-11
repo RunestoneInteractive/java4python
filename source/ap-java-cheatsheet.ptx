@@ -10,7 +10,7 @@
       The following is intended to be useful in better understanding Java functions coming from a Python background.
       </p>
       </paragraphs>
-<paragraphs>
+
 <table>
     <title>Function/Method Equivalents: Python to Java</title>
     <tabular>
@@ -201,5 +201,4 @@
     </ul>
 </p>
 
-</paragraphs>
 </section>
