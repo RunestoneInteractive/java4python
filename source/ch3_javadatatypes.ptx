@@ -1172,7 +1172,7 @@ public class HistoMap {
 
 <section xml:id="chapter3_summary">
   <title>Summary &amp; Reading Questions</title>
-    <p><ol label="1">
+    <p><ol>
         <li>
             <p>All variables must be declared with their type before use in Java due to static typing.</p>
         </li>
