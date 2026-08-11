@@ -1170,7 +1170,7 @@ public class HistoMap {
 
 
 
-<section xml:id="chapter3_summary">
+<section xml:id="data_types_summary">
   <title>Summary &amp; Reading Questions</title>
     <p><ol>
         <li>
@@ -1235,7 +1235,7 @@ public class HistoMap {
                 </choice>
             </choices>            
         </exercise>
-        <exercise label = "summary-autoboxing">
+        <exercise label ="summary-autoboxing">
             <statement>
                 <p>The process of automatically converting between primitive types and their Object wrapper classes in Java is called:</p>
             </statement>
