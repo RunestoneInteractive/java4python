@@ -5,6 +5,7 @@
     <title>Conditionals</title>
 
     <section xml:id="using-conditional-in-java">        <title>Using Conditional Statements in Java</title>
+    <introduction>
         <p><idx>conditional statements</idx>
             Conditional statements in Python and Java are very similar.
             In Python we have three patterns:
@@ -50,7 +51,8 @@ if score &gt;= 90: # Note the colon at the end of the line
             In Java, the parentheses around the condition are required because it is technically a function that evaluates to <c>True</c> or <c>False</c>.
         </p>
     
-
+    </introduction>
+    
     <subsection xml:id="use-the-if-else-statement">
         <title>Using the <c>if</c> - <c>else</c> Statement</title>
 
