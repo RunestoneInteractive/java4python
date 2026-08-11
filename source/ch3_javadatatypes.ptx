@@ -867,7 +867,7 @@ public class Histo {
     </p>
   </statement>
      
-  <matches>
+  <cardsort>
 
     <match>
       <premise><c>for i in range(2, 102, 2)</c></premise>
@@ -904,7 +904,7 @@ public class Histo {
     <match>
       <response><c>for (int x = 0, int y = 0; x &lt; 10; x++, y += 2)</c></response>
     </match>
-  </matches>
+  </cardsort>
 </exercise>
 
         <p>
