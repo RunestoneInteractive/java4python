@@ -51,7 +51,7 @@ if score &gt;= 90: # Note the colon at the end of the line
             In Java, the parentheses around the condition are required because it is technically a function that evaluates to <c>True</c> or <c>False</c>.
         </p>
     
-    </introduction>
+    </introduction> 
     
     <subsection xml:id="use-the-if-else-statement">
         <title>Using the <c>if</c> - <c>else</c> Statement</title>
