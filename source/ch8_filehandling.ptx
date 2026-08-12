@@ -287,6 +287,44 @@ public class CreateFile {
         <p>
             You may have noticed that there are some new methods you haven't seen yet. The <c>hasNextLine()</c> method checks if there is a next line in the file, and returns <c>false</c> if there isn't. This method allows us to iterate over every line till there is no next line. The <c>nextLine()</c> method of the Scanner object returns the next line in the file as a string.
         </p>
+
+        <exercise xml:id="java-read-file-parsons-exercise" label="java-read-file-parsons">
+    <statement>
+        <p>
+            Construct the part of a Java program that opens a file with a <c>Scanner</c> and 
+            prints each line until there are no more lines. Drag the blocks into the correct order on the right.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>try (Scanner fileReader = new Scanner(new File(filename))) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>try (Scanner fileReader = new Scanner(filename)) {</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <choice correct="yes">
+                <cline>    while (fileReader.hasNextLine()) {</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    while (fileReader.nextLine()) {</cline>
+            </choice>
+        </block>
+
+        <block order="3">
+            <cline>        String data = fileReader.nextLine();</cline>
+            <cline>        System.out.println(data);</cline>
+        </block>
+
+        <block order="4">
+            <cline>    }</cline>
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
     </section>
 
     <section xml:id="writing-to-files">
