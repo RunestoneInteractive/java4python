@@ -115,6 +115,56 @@
         <p>
             The 'cannot find symbol' error for the variable <c>count</c> on line 6 indicates that <c>count</c> was used before it was declared within the <c>Histo</c> class. In Java, all variables must be explicitly declared with a data type (e.g., <c>int</c>, <c>String</c>, <c>ArrayList&lt;Integer&gt;</c>) before they can be assigned a value or referenced in any way. The arrow in the error message points to where the undeclared variable <c>count</c> was first encountered. To resolve this, <c>count</c> needs to be declared with its appropriate type (e.g., <c>ArrayList&lt;Integer&gt; count;</c>) before any attempt to initialize or use it.
         </p>
+        <exercise label="java-declare-variable-checkpoint">
+    <statement>
+        <p>
+            Based on <xref ref="undeclared-variable" text="type-global"/>, select all of the 
+            statements that are true about declaring variables in Java.
+        </p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>Every variable must be declared with a data type before it is used.</p>
+            </statement>
+            <feedback>
+                <p>Correct! Java requires a variable to be declared with its type before it can be assigned or referenced.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p>The "cannot find symbol" error happens because <c>count</c> was used before being declared.</p>
+            </statement>
+            <feedback>
+                <p>Correct! That error means the compiler reached a variable it has no declaration for.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p>Writing <c>ArrayList&lt;Integer&gt; count;</c> before using <c>count</c> would fix the "cannot find symbol" error.</p>
+            </statement>
+            <feedback>
+                <p>Correct! Declaring <c>count</c> with its type resolves the error.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Java lets you use a variable without declaring it first, just like Python.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. Unlike Python, Java requires all variables to be declared before use.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The error can be fixed by adding an import statement.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. The import is already present; the problem is the missing variable declaration, not a missing import.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
 
     </section>
 
