@@ -172,6 +172,48 @@ public class CreateFile {
                 You may have noticed the use of another method from the File class; <c>getName()</c>. This method returns a string containing the name of the file. 
             </p>
         </note>
+
+        <exercise xml:id="java-create-file-parsons-exercise" label="java-create-file-parsons">
+    <statement>
+        <p>
+            Construct a short Java program that creates a <c>File</c> object for "myfile.txt" 
+            and prints it. Drag the blocks into the correct order on the right.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>import java.io.File;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>import java.io.Scanner;</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <cline>public class CreateFile {</cline>
+            <cline>    public static void main(String[] args) {</cline>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>        File myFile = new File("myfile.txt");</cline>
+            </choice>
+            <choice correct="no">
+                <cline>        File myFile = new File();</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <cline>        System.out.println(myFile);</cline>
+        </block>
+
+        <block order="5">
+            <cline>    }</cline>
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
     </section>    
 
     <section xml:id="reading-files">
