@@ -228,6 +228,57 @@
 
         </p>
 
+        <exercise label="java-new-keyword-checkpoint">
+    <statement>
+        <p>
+            Based on <xref ref="new-keyword-error" text="type-global"/>, select all of the 
+            statements that are true about creating objects in Java.
+        </p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>Java requires the <c>new</c> keyword to create a new object.</p>
+            </statement>
+            <feedback>
+                <p>Correct! Unlike Python, Java needs the <c>new</c> keyword to instantiate an object.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p>Writing <c>data = new Scanner(new File("test.dat"));</c> would fix the error.</p>
+            </statement>
+            <feedback>
+                <p>Correct! Adding <c>new</c> before <c>Scanner</c> properly creates the object and resolves the error.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p><c>Scanner</c> is a constructor of the <c>Scanner</c> class, not a standalone method.</p>
+            </statement>
+            <feedback>
+                <p>Correct! Because <c>Scanner</c> is a constructor, it must be called with <c>new</c>.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Java can create objects without a keyword, just like Python.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. Unlike Python, Java requires the <c>new</c> keyword to instantiate objects.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The "cannot find symbol" error here means the <c>Scanner</c> class was not imported.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. The <c>Scanner</c> class is imported; the error is caused by the missing <c>new</c> keyword.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
     </section>
 
     <section xml:id="forgetting-to-declare-the-kind-of-object-in-a-container">
