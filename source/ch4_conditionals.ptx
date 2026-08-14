@@ -611,7 +611,7 @@ public class Ternary {
     </section>
         <section xml:id="chapter4_summary">
         <title>Summary &amp; Reading Questions</title>
-        <p><ol label="1">
+        <p><ol>
             <li>
                 <p>Java requires parentheses around the condition and curly braces for code blocks in <c>if</c> statements, unlike Python which uses indentation alone.</p>
             </li>
