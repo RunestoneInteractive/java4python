@@ -423,6 +423,58 @@ public Fraction(Integer num, Integer den) {
             </code>
         </program>
         </listing>
+
+    <exercise label="java_game_character_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a <c>Player</c> class with a <c>private int health</c> instance variable. Implement a getter and a setter that validates health points to remain within <c>0</c> and <c>100</c>.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>public class Player {</cline>
+                <cline>    private int health;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>public class Player {</cline>
+                <cline>    public int health;</cline>
+            </choice>
+        </block>
+        <block order="2">
+            <choice correct="yes">
+                <cline>    public int getHealth() {</cline>
+                <cline>        return health;</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public void getHealth() {</cline>
+                <cline>        return health;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+        <block order="3">
+            <choice correct="yes">
+                <cline>    public void setHealth(int health) {</cline>
+                <cline>        if (health &gt;= 0 &amp;&amp; health &lt;= 100) {</cline>
+                <cline>            this.health = health;</cline>
+                <cline>        }</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public void setHealth(int health) {</cline>
+                <cline>        if (health &gt;= 0 &amp;&amp; health &lt;= 100) {</cline>
+                <cline>            health = health;</cline>
+                <cline>        }</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+        <block order="4">
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
+        
     </section>
 
     <section xml:id="methods">
