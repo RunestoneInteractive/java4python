@@ -9,7 +9,8 @@
         <introduction>
         </introduction>
 
-        <subsection>
+        <subsection> 
+        <title>Primitive and Object Data Types</title>
             <p>
                 One of the great things about Python is that all of the basic data types are objects.
                 Integers are objects, floating point numbers are objects, lists are objects, everything.
