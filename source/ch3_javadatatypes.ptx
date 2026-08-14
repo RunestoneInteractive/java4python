@@ -6,8 +6,6 @@
 
     <section xml:id="numeric">
         <title>Numeric</title>
-        <introduction>
-        </introduction>
 
         <subsection> 
         <title>Primitive and Object Data Types</title>
