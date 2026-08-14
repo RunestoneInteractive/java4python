@@ -424,72 +424,56 @@ public Fraction(Integer num, Integer den) {
         </program>
         </listing>
 
-    <exercise label="java_encapsulation_getters_setters_parsons">
+    <exercise label="java_game_character_parsons">
     <statement>
         <p>
-            Rearrange the blocks to construct a fully encapsulated <c>BankAccount</c> class. The class should feature:
-            <ul>
-                <li>A <c>private double balance</c> instance variable.</li>
-                <li>A public getter method <c>getBalance()</c> that returns the balance.</li>
-                <li>A public setter method <c>setBalance(double balance)</c> that updates the balance only if the value is non-negative <m>($ \ge 0 $)</m>.</li>
-            </ul>
+            Rearrange the blocks to create a <c>Player</c> class with a <c>private int health</c> instance variable. Implement a getter and a setter that validates health points to remain within <c>0</c> and <c>100</c>.
         </p>
     </statement>
     <blocks>
         <block order="1">
             <choice correct="yes">
-                <cline>public class BankAccount {</cline>
-                <cline>    private double balance;</cline>
+                <cline>public class Player {</cline>
+                <cline>    private int health;</cline>
             </choice>
             <choice correct="no">
-                <cline>public class BankAccount {</cline>
-                <cline>    public double balance;</cline>
+                <cline>public class Player {</cline>
+                <cline>    public int health;</cline>
             </choice>
         </block>
-
         <block order="2">
             <choice correct="yes">
-                <cline>    public double getBalance() {</cline>
-                <cline>        return balance;</cline>
+                <cline>    public int getHealth() {</cline>
+                <cline>        return health;</cline>
                 <cline>    }</cline>
             </choice>
             <choice correct="no">
-                <cline>    public void getBalance() {</cline>
-                <cline>        return balance;</cline>
+                <cline>    public void getHealth() {</cline>
+                <cline>        return health;</cline>
                 <cline>    }</cline>
             </choice>
         </block>
-
         <block order="3">
             <choice correct="yes">
-                <cline>    public void setBalance(double balance) {</cline>
+                <cline>    public void setHealth(int health) {</cline>
+                <cline>        if (health &gt;= 0 &amp;&amp; health &lt;= 100) {</cline>
+                <cline>            this.health = health;</cline>
+                <cline>        }</cline>
+                <cline>    }</cline>
             </choice>
             <choice correct="no">
-                <cline>    public double setBalance(double balance) {</cline>
+                <cline>    public void setHealth(int health) {</cline>
+                <cline>        if (health &gt;= 0 &amp;&amp; health &lt;= 100) {</cline>
+                <cline>            health = health;</cline>
+                <cline>        }</cline>
+                <cline>    }</cline>
             </choice>
         </block>
-
         <block order="4">
-            <choice correct="yes">
-                <cline>        if (balance &gt;= 0.0) {</cline>
-                <cline>            this.balance = balance;</cline>
-                <cline>        }</cline>
-                <cline>    }</cline>
-            </choice>
-            <choice correct="no">
-                <cline>        if (balance &gt;= 0.0) {</cline>
-                <cline>            balance = balance;</cline>
-                <cline>        }</cline>
-                <cline>    }</cline>
-            </choice>
-        </block>
-
-        <block order="5">
             <cline>}</cline>
         </block>
     </blocks>
 </exercise>
-
         
     </section>
 
