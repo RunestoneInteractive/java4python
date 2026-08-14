@@ -7,6 +7,9 @@
     <section xml:id="numeric">
         <title>Numeric</title>
         <introduction>
+        </introduction>
+
+        <subsection>
             <p>
                 One of the great things about Python is that all of the basic data types are objects.
                 Integers are objects, floating point numbers are objects, lists are objects, everything.
@@ -156,7 +159,7 @@ public class TempConv {
 
                 </ul>
             </p>
-        </introduction>
+        </subsection>
 
         <subsection>
             <title>Import</title>
