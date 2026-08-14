@@ -1119,6 +1119,49 @@ public int compareTo(Fraction other) { // compare this fraction with another fra
         </program>
         </listing>
 
+       <exercise label="java_comparable_interface_bicycle_parsons">
+    <statement>
+        <p>
+            Rearrange the blocks to create a <c>Bicycle</c> class that implements <c>Comparable&lt;Bicycle&gt;</c>. The class should feature a <c>private double weight</c> field and a <c>compareTo</c> method that compares bicycles based on their weight. 
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <choice correct="yes">
+                <cline>public class Bicycle implements Comparable&lt;Bicycle&gt; {</cline>
+                <cline>    private double weight;</cline>
+            </choice>
+            <choice correct="no">
+                <cline>public class Bicycle extends Comparable&lt;Bicycle&gt; {</cline>
+                <cline>    public double weight;</cline>
+            </choice>
+        </block>
+
+        <block order="2">
+            <cline>    public Bicycle(double weight) {</cline>
+            <cline>        this.weight = weight;</cline>
+            <cline>    }</cline>
+        </block>
+
+        <block order="3">
+            <choice correct="yes">
+                <cline>    public int compareTo(Bicycle other) {</cline>
+                <cline>        return Double.compare(this.weight, other.weight);</cline>
+                <cline>    }</cline>
+            </choice>
+            <choice correct="no">
+                <cline>    public boolean compareTo(Bicycle other) {</cline>
+                <cline>        return this.weight - other.weight;</cline>
+                <cline>    }</cline>
+            </choice>
+        </block>
+
+        <block order="4">
+            <cline>}</cline>
+        </block>
+    </blocks>
+</exercise>
+
     </section>
 
 
