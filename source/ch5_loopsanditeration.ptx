@@ -351,7 +351,7 @@ public class DoWhileExample {
 </exercise>
 
     </section>
-    <section xml:id="chapter5_summary">
+    <section xml:id="loops-summary">
         <title>Summary &amp; Reading Questions</title>
         <p>
             <ol label="1">
@@ -376,7 +376,7 @@ public class DoWhileExample {
             </ol>
         </p>
 
-        <reading-questions xml:id="rqs-5">
+        <reading-questions xml:id="rqs-summary-loops">
             
             <exercise label="summary-for-loop-structure">
             <statement>
