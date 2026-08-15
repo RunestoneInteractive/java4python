@@ -575,7 +575,7 @@ public class DeleteFile {
 
     <section xml:id="chapter8_summary">
         <title>Summary &amp; Reading Questions</title>
-        <p><ol label="1">
+        <p><ol>
             <li>
                 <p>To work with files in Java, you must import specific classes like <c>java.io.File</c>, <c>java.io.FileWriter</c>, and handle exceptions such as <c>IOException</c>.</p>
             </li>
