@@ -354,7 +354,7 @@ public class DoWhileExample {
     <section xml:id="loops-summary">
         <title>Summary &amp; Reading Questions</title>
         <p>
-            <ol label="1">
+            <ol>
             <li>
                 <p>Java’s <c>for</c> loop syntax allows you to control loop initialization, condition, and update in one line using the format <c>for (init; condition; update)</c>.</p>
             </li>
