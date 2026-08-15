@@ -81,7 +81,7 @@ $ ls -l Hello.*
     <p>
         The command <c>javac</c> compiles our java source code into compiled byte code and saves it in a file called <c>Hello.class</c>.
         <c>Hello.class</c> is a binary file so you won&#x2019;t learn much if you try to examine the class file with an editor.
-        Hopefully you didn&#x2019;t make any mistakes, but if you did you may want to consult the <xref ref="common-mistakes-id1"/> section for helpful hints on compiler errors.
+        Hopefully you didn&#x2019;t make any mistakes, but if you did you may want to consult the <xref ref="common-mistakes"/> section for helpful hints on compiler errors.
     </p>
 
     <p>
