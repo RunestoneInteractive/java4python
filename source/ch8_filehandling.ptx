@@ -573,7 +573,7 @@ public class DeleteFile {
         </p>
     </section>
 
-    <section xml:id="chapter8_summary">
+    <section xml:id="file_handling_summary">
         <title>Summary &amp; Reading Questions</title>
         <p><ol>
             <li>
@@ -592,7 +592,7 @@ public class DeleteFile {
                 <p>You can delete a file using the <c>delete()</c> method on a <c>File</c> object, which returns <c>true</c> if successful.</p>
             </li>
         </ol></p>
-        <reading-questions xml:id="rqs-summary8">
+        <reading-questions xml:id="rqs-summary-file-handling">
             <exercise label="summary-imports">
                 <statement>
                     <p>Which import is needed to create and manipulate files in Java?</p>
