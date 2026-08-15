@@ -366,7 +366,7 @@ public class ArrayProcessor {
 
     <section xml:id="recursion_summary">
     <title>Summary &amp; Reading Questions</title>
-    <p><ol label="1">
+    <p><ol>
         <li>
             <p>Recursion solves problems by defining a <em>base case</em> and a <em>recursive step</em>; each call reduces the problem size until the base case is reached.</p>
         </li>
