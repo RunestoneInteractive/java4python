@@ -44,8 +44,9 @@
 
 
         <blockquote>
-            <p>
-                <image source="somerights20.png" width="50%" alt="image"/> This work is licensed under a Creative Commons Attribution 3.0 United States License. See <url href="http://creativecommons.org" visual="http://creativecommons.org">http://creativecommons.org</url>
+            
+                <image source="somerights20.png" width="50%" alt="image"/> 
+                <p>This work is licensed under a Creative Commons Attribution 3.0 United States License. See <url href="http://creativecommons.org" visual="http://creativecommons.org">http://creativecommons.org</url>
                 </p>
             </blockquote>
         </preface>
