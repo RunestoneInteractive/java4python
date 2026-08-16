@@ -276,7 +276,7 @@ public class TempConv {
             </listing>
             
             <p>
- When you see the first kind of error in <xref ref="java-temperature-conversion-error" text="type-global"/> , where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program. More common error messages are discussed in the section <xref ref="common-mistakes-id1"/>. 
+ When you see the first kind of error in <xref ref="java-temperature-conversion-error" text="type-global"/> , where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program. More common error messages are discussed in the section <xref ref="common-mistakes"/>. 
             </p>
 
             <p>
@@ -1172,9 +1172,9 @@ public class HistoMap {
 
 
 
-<section xml:id="chapter3_summary">
+<section xml:id="data_types_summary">
   <title>Summary &amp; Reading Questions</title>
-    <p><ol label="1">
+    <p><ol>
         <li>
             <p>All variables must be declared with their type before use in Java due to static typing.</p>
         </li>
@@ -1197,7 +1197,7 @@ public class HistoMap {
             <p>Maps (<c>HashMap</c> and <c>TreeMap</c>) are Java's equivalent to Python dictionaries for storing key-value pairs.</p>
         </li>
     </ol></p>
-    <reading-questions xml:id="rqs-summary3">
+    <reading-questions xml:id="rqs-summary-data-types">
         <exercise label = "summary-arraylist">
             <statement>
                 <p>What is the correct way to declare an ArrayList that will hold String objects in Java?</p>
@@ -1237,7 +1237,7 @@ public class HistoMap {
                 </choice>
             </choices>            
         </exercise>
-        <exercise label = "summary-autoboxing">
+        <exercise label ="summary-autoboxing">
             <statement>
                 <p>The process of automatically converting between primitive types and their Object wrapper classes in Java is called:</p>
             </statement>

@@ -613,9 +613,9 @@ public class Ternary {
         </p>
 
     </section>
-        <section xml:id="chapter4_summary">
+        <section xml:id="conidtionals-summary">
         <title>Summary &amp; Reading Questions</title>
-        <p><ol label="1">
+        <p><ol>
             <li>
                 <p>Java requires parentheses around the condition and curly braces for code blocks in <c>if</c> statements, unlike Python which uses indentation alone.</p>
             </li>
@@ -634,7 +634,7 @@ public class Ternary {
                 </p>
             </li>
         </ol></p>
-        <reading-questions xml:id="rqs-summary4">
+        <reading-questions xml:id="rqs-summary-conditionals">
             <exercise label="summary-if-parentheses">
                 <statement>
                     <p>Which is a correct Java <c>if</c> statement syntax?</p>

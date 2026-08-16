@@ -81,7 +81,7 @@ $ ls -l Hello.*
     <p>
         The command <c>javac</c> compiles our java source code into compiled byte code and saves it in a file called <c>Hello.class</c>.
         <c>Hello.class</c> is a binary file so you won&#x2019;t learn much if you try to examine the class file with an editor.
-        Hopefully you didn&#x2019;t make any mistakes, but if you did you may want to consult the <xref ref="common-mistakes-id1"/> section for helpful hints on compiler errors.
+        Hopefully you didn&#x2019;t make any mistakes, but if you did you may want to consult the <xref ref="common-mistakes"/> section for helpful hints on compiler errors.
     </p>
 
     <p>
@@ -374,7 +374,7 @@ Hello World!
 
     <section xml:id="lets_look_java_program_summary">
         <title>Summary &amp; Reading Questions</title>
-        <p><ol label="1">
+        <p><ol>
             <li>
                 <p>Java programs must be compiled before execution, unlike Python which is interpreted directly.</p>
             </li>
@@ -398,7 +398,7 @@ Hello World!
             </li>
         </ol></p>
         <reading-questions xml:id="rqs-hello-java">
-            <exercise label="hello-java-1">
+            <exercise label="hello-java-question-true-java-program">
                 <statement>
                     <p>Which of the following must be true of every Java program?</p>
                 </statement>
@@ -421,7 +421,7 @@ Hello World!
                     </choice>
                 </choices>
             </exercise>
-            <exercise label="hello-java-2">
+            <exercise label="hello-java-question-purpose-of-javac">
                 <statement>
                     <p>What is the purpose of the <c>javac</c> command?</p>
                 </statement>
@@ -444,7 +444,7 @@ Hello World!
                     </choice>
                 </choices>
             </exercise>
-            <exercise label="hello-java-3">
+            <exercise label="hello-java-question-end-of-statement">
                 <statement>
                     <p>What symbol does Java use to indicate the end of a statement?</p>
                 </statement>
