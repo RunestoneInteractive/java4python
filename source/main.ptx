@@ -10,7 +10,7 @@
         <xi:include href="ch1_overview.ptx" />
         <xi:include href="ch2_firstjavaprogram.ptx" />
         <xi:include href="ch3_javadatatypes.ptx" />
-        <xi:include href="ch4_conditionals.ptx" />git 
+        <xi:include href="ch4_conditionals.ptx" /> 
         <xi:include href="ch5_loopsanditeration.ptx" />
         <xi:include href="ch6_definingclasses.ptx" />
         <xi:include href="ch7_recursion.ptx" />
